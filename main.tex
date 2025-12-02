@@ -83,40 +83,53 @@
 
 \subsection{Conjugacy classes}
 
-Let us fix $n \geqslant 3$ in this paper and let us denote by 
-$\mathcal{H}=(\mathbb{R}/\mathbb{Z})^n/S_n$ the spaces of 
-conjugation classes of $\U(n)$ obtained by identifying a 
-conjugation class with the arguments of the corresponding 
-eigenvalues in sorted order. An element of $\mathcal{H}$ 
-corresponds to an 
-ordered $n$ tuples 
-$\theta=(\theta_1\geq \theta_2\geq \dots\geq\theta_n)$ with 
-$\theta_1\ldots,\theta_n\in[0,1[$.
-The corresponding conjugacy class is then $\Ocal(\theta)$ is 
+Throughout this paper, we fix an integer 
+$n \geq 3$ and let us denote by 
+$\mathcal{H}=(\mathbb{R}/\mathbb{Z})^n/S_n$
+where $S_n$ is the symmetric
+group of degree $n$ acting on
+$\mathbb R/\mathbb Z$ by permutations.
+As a set, we identify $\mathcal H$ with $\{\theta=(\theta_1,\dots,\theta_n) 
+\in [0,1[^n \colon \theta_1 \geq \dots \geq \theta_n\}$ in the usual way.
+For our purposes, $\mathcal H$ represents
+the set of conjugacy classes
+of $U(n)$, where
+the conjugacy class of
+$\theta \in \mathcal H$ is
 \begin{equation*}
-    \mathcal{O}(\theta) \coloneqq \left\lbrace Ue^{2i\pi\theta}U^*, 
-    \,U\in \U(n)\right\rbrace\text{, where } e^{2i\pi\theta}=
-    \begin{pmatrix} 
-        e^{2i\pi \theta_1}&0&\dots&\\0&e^{2i\pi\theta_2}&&\\ 
-        \vdots&&\ddots&\\&&&e^{2i\pi\theta_n}
-    \end{pmatrix}.
+	\mathcal{O}(\theta) = 
+	\left\lbrace Ue^{2\pi i\theta}U^{-1} \colon
+	\,U\in \U(n)\right\rbrace
+	\quad \text{ with } \quad e^{2\pi i\theta}=
+	\begin{pmatrix} 
+		e^{2\pi i \theta_1}&0&\dots& 0
+		\\0&e^{2\pi i\theta_2}&& \vdots\\ 
+		\vdots&&\ddots &\\
+		0 & \hdots &&e^{2\pi i\theta_n}
+	\end{pmatrix}.
 \end{equation*}
 
 \noindent
-Let us denote by $\mathcal{H}_{reg}=\{\theta\in \mathcal{H}, 
-\theta_1>\theta_2>\ldots>\theta_n\}$ the set of regular 
+Let us denote by $\mathcal{H}_{reg}=
+\{\theta\in \mathcal{H} \colon
+\theta_1>\theta_2>\ldots>\theta_n\}$ which
+represents the set of regular 
 conjugacy classes of $\U(n)$, namely the ones of maximal 
-dimension in $\U(n)$. We then let $\mathcal{H}_{reg}^0$ denote the subset of $\mathcal{H}_{reg}$ corresponding to the regular conjugacy classes of $\SU(n)$. Namely,
-$$\mathcal{H}_{reg}^0=\left\{\theta\in \mathcal{H} \; \middle| \; 
+dimension in $\U(n)$. Finally, let $\mathcal{H}_{reg}^0$ denote the subset of $\mathcal{H}_{reg}$ corresponding to the regular conjugacy classes of $\SU(n)$. Namely,
+$$\mathcal{H}_{reg}^0=\left\{\theta\in \mathcal{H} \; 
+\colon  \; 
 \theta_1>\theta_2>\ldots>\theta_n \text{ and }\sum_{i=1}^n \theta_i\in\mathbb{N}\right\}.$$
 
 \subsection{Triangular honeycomb} Let $S$ be an oriented surface with 
-boundary (possibly empty) and with a locally flat metric $g$. 
-Consider for example $S=\mathbb{C}$ or 
-$S=\mathbb{C}\setminus\{0\}$. 
+boundary (possibly empty) endowed with
+a flat metric $g$ and with its induced
+volume form $\omega$. 
+Consider, for example, $S=\mathbb{C}$ or 
+$S=\mathbb{C}\setminus\{0\}$
+with their usual metrics. 
 Let us denote by $\mathbb{G}$ the set of non-degenerate 
 geodesics of $S$. 
-For $(x, y) \in S^2$ and $e$ a geodesic from $x$ to $y$, we then set $\partial e=\{x,y\}$ 
+For $x, y \in S$ and $e$ a geodesic from $x$ to $y$, we then set $\partial e=\{x,y\}$ 
 and denote by $\overset{\circ}{e} =e\setminus \{x,y\}$ its interior. 
 Remark that $(S,\mathbb{G})$ is then a graph with an uncountable number of vertices.
 \\
