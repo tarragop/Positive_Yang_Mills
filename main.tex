@@ -16,9 +16,17 @@
 \usepackage{tikz-cd}
 \usepackage{makecell}
 \usepackage{mathtools}
+\usepackage{hyperref}
+
 % Biblio
 \usepackage{bbm}
 \usepackage[maxbibnames=50, style=alphabetic,backend=bibtex]{biblatex}
+
+
+\usepackage{xcolor}
+\definecolor{darkgreen}{RGB}{0,100,0}
+
+
 \renewcommand*{\bibfont}{\small}
 \addbibresource{mybib.bib}
 \usepackage{csquotes}
@@ -273,10 +281,10 @@ graphs with ordered boundary appearing in $\{G(h) \mid h\in\honey_{n,d}\}$.
 \end{figure}
 
 \subsection{ \texorpdfstring{$(g,p)-$}{(g, p)-}honeycombs} Let $g,p\geqslant 0$ be integers and let $S$ be a 
-connected compact Riemann surface of genus $g$ with 
+connected compact orientable surface of genus $g$ with 
 $p$ boundary components $L_1, \ldots, L_{p}$. 
-Let $(M_1\ldots, M_{2g+p-2})$ be a decomposition in pants
-of this Riemann surface. 
+Let $\mathcal{M}=(M_1\ldots, M_{2g+p-2})$ be a decomposition in pants
+of this surface. 
 We build from $\mathcal{M}$ a surface as follows : 
 \begin{itemize}
     \item take $N:=2g+p-2$ oriented equilateral triangles 
@@ -285,7 +293,7 @@ We build from $\mathcal{M}$ a surface as follows :
     \item For each pair of boundary components $\partial_iM^j, 
     \partial_{i'}M^{j'}$ which are identified in the pair of pants 
     decomposition, identify the boundaries $\partial_iT^j$ and 
-    $\partial_{i'}T^{j'}$ in a orientation reversing way. 
+    $\partial_{i'}T^{j'}$ in an orientation reversing way. 
 \end{itemize}
 Then, the resulting surface $\mathcal{T}$ is an oriented surface 
 with $p$ boundaries edges 
@@ -345,11 +353,11 @@ Let us denote by $\mathcal{G}^{(g,p)}_{d}\subset \mathcal{G}^{(g,p)}$ the subset
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{toric_honey_example_3_4_5_6_7_sparse.pdf}
-    \caption{A $(2, 3)$ honeycomb for a Riemann surface with genus 2 and 3 boundaries}
+    \caption{A $(2, 3)$ honeycomb for a surface with genus 2 and 3 boundaries}
     \label{fig:ex_g2_p_3}
 \end{figure}
 
-{\color{green}For $G = (V, E) \in\mathcal{G}^{(p, g)}$, there is a natural parametrization of 
+{\color{darkgreen}For $G = (V, E) \in\mathcal{G}^{(p, g)}$, there is a natural parametrization of 
 $\honey^G$ constructed as follows. For $e\in E$ there exists $1\leq i\leq N$ such that 
 $e\in E_i$. For $h\in\honey^G$, set 
 $$\mathcal{L}[h](e)=L_{T_i}(i(e)),$$ 
@@ -372,7 +380,7 @@ In the sequel, we identify $\honey^G$ with its image through $\mathcal{L}$. }
 
 {\color{blue} 
 The main result of this paper, namely Theorem \ref{th:Z_g_p_0} 
-and Corollary \ref{cor:yang_mills_g_p} involve a volume form on the 
+and Corollary \ref{cor:yang_mills_g_p} involve a particular volume form on the 
 set of $(g,p)$-honeycombs. Theorem \ref{th:volume_form_g_p_honey} asserts 
 the existence of such a volume form, and is proved in Section \ref{sec:proof_of_th_volume_form}. 
 \\
@@ -384,7 +392,7 @@ let us denote by
     p_{R}:F\rightarrow \mathbb{R}^R
 \end{equation}
 the projection of $F$ on $\mathbb{R}^R$. 
-We say that $R$ \textit{parametrizes} $F$ is $p_{R}$ is bijective. For a set $R\subset E$ parametrizing $F$, let us set 
+We say that $R$ \textit{parametrizes} $F$ if $p_{R}$ is bijective. For a set $R\subset E$ parametrizing $F$, let us set 
 \begin{equation}
     \label{eq:volume_forme_first_def}
     \diff \ell_{R} = p_{R}^* \diff \ell_{\mathbb{R}^R}
@@ -415,14 +423,14 @@ $\Vol$.
 \subsection*{Volume of flat connections}
 Let us denote by $M_{g, n}(\alpha_1, \dots, \alpha_p)$ 
 the moduli space of flat $\U(n)$-valued connections 
-on a compact Riemann surface with genus $g$ having $p$ 
+on a compact oriented surface with genus $g$ having $p$ 
 boundary components for which the holonomies around 
 $L_1,\ldots,L_p$ respectively belong to 
 $\mathcal{O}_{\alpha_1},\mathcal{O}_{\alpha_2}\ldots,\mathcal{O}_{\alpha_p}$. Let $c_n$ be a numerical constant and let 
 $\Delta(x)=\prod_{i<j}(x_j-x_i)$ denote the Vandermonde determinant.
 \begin{theorem}[Volume formula for $(g, p)$ partition function]
     \label{th:Z_g_p_0}
-    Let $Z_{g, p, 0}(\alpha_1, \dots, \alpha_p)$ be the volume function for the moduli space of flat connection on a compact Riemann surface 
+    Let $Z_{g, p, 0}(\alpha_1, \dots, \alpha_p)$ be the volume function for the moduli space of flat connection on a compact oriented surface 
     with $p$ boundary components and with genus $g$. 
     Then, for $\alpha_1, \dots, \alpha_p\in\mathcal{H}_{reg}$ such that $\sum_{i=1}^p\vert \alpha_i\vert_1\in \mathbb{N}$, we have
     \begin{equation}
@@ -441,8 +449,9 @@ The formula of Theorem \ref{th:Z_g_p_0} also yields a formula for $\SU(n)$-value
 
 \subsection*{Yang-Mills marginal for disjoint curves}
 Theorem \ref{th:Z_g_p_0} provides an explicit formula 
-for the marginal Yang--Mills partition function of a Riemann surface 
-of genus $g$ with prescribed non-degenerated holonomies 
+for the marginal Yang--Mills partition function of an
+oriented surface 
+of genus $g$ with prescribed non-degenerate holonomies 
 (up to conjugation) on a finite set of disjoint loops. This 
 formula is given in Corollary \ref{cor:yang_mills_g_p} below.
 As it is proven in XXXRefXXX, the partition function 
@@ -450,7 +459,7 @@ only depends on the prescribed conjugacy classes and on the
 areas of each connected components delimited by the loops. 
 \\
 \\
-Let $S$ be a connected compact Riemann surface of genus $g \geqslant 0$
+Let $S$ be a connected compact oriented surface of genus $g \geqslant 0$
 together with $p$ disjoints Jordan curves 
 $\Gamma_1,\ldots,\Gamma_p$ on $S$. For each 
 $\Gamma_i, \,1\leq i\leq p$, let $\alpha_i$ be an element of 
@@ -1800,7 +1809,7 @@ The proof is similar to the one of Proposition \ref{prop:divergence_product}.
 
 Let us now apply the previous formulas to the case of gluing of honeycombs.
 
-Let $\mathcal{T}$ be an oriented surface with boundary obtained by gluing $m$ equilateral triangles $T^1,\ldots,T^m$ along their boundaries, such that $p$ edges $L_1,\ldots,L_{p-1}$ of equilateral triangles are not glued. Each edge $L_j$ has a natural orientation $\ell_j$ coming from the equilateral it belongs to. Then, the structure graph of a honeycomb $h$ on $\mathcal{T}$ such that each $h\cap T^i$ is triangular has $pn$ univalent vertices, $n$ of them being on each boundary component $L_j,\, 1\leq j\leq p$. Denote by $v^i,\,1\leq i\leq n$ the univalent vertices corresponding to the point on $L_{1}$ ranked decreasingly following their $(\ell_1-1)$-coordinate. Let $\mathcal{G}^{(p, g)}$ be the set of structure graphs appearing in $\honey_{\mathcal{T}}$ rooted at $v^1$. For each $1\leq i\leq n$ and $G\in \mathcal{G}_{\mathcal{T}}$, $v^i$ is adjacent to a unique edge $e^i=\{v^i,w^i\}$ of $G$, and we set 
+Let $\mathcal{T}$ be an oriented surface with boundary obtained by gluing $m$ equilateral triangles $T^1,\ldots,T^m$ along their boundaries, such that $p$ edges $L_1,\ldots,L_{p}$ of equilateral triangles are not glued. Each edge $L_j$ has a natural orientation $\ell_j$ coming from the equilateral it belongs to. Then, the structure graph of a honeycomb $h$ on $\mathcal{T}$ such that each $h\cap T^i$ is triangular has $pn$ univalent vertices, $n$ of them being on each boundary component $L_j,\, 1\leq j\leq p$. Denote by $v^i,\,1\leq i\leq n$ the univalent vertices corresponding to the point on $L_{1}$ ranked decreasingly following their $(\ell_1-1)$-coordinate. Let $\mathcal{G}^{(p, g)}$ be the set of structure graphs appearing in $\honey_{\mathcal{T}}$ rooted at $v^1$. For each $1\leq i\leq n$ and $G\in \mathcal{G}_{\mathcal{T}}$, $v^i$ is adjacent to a unique edge $e^i=\{v^i,w^i\}$ of $G$, and we set 
 $$C_{G}(v^i)=C_G(e^i),$$
 where $C_G(e^i)$ is the color map of $G$.
 XXXRoot of the graphsXXX
@@ -2023,8 +2032,9 @@ Since $\mathcal{H}^0$ and $\mathcal{A}$ are both parametrizing conjugacy classes
 \end{equation}
 One has $Jac(\phi(t))=1$ for all $t\in\mathcal{A}$, and thus $\phi$ is volume preserving. One then checks that $\phi^*d\theta=dt$.
 
-\subsubsection{Contraction formula on moduli spaces of flat connections}
-Let $\widehat{\mathcal{M}}$ be a (possibly disconnected) Riemann surface with $(p+2)$ boundary components $L_1,\ldots,L_p$. Let $\mathcal{M}$ be the Riemann surface obtained by gluing $L_{p+1}$ and $L_{p+2}$ in an orientation reversing way and suppose that $\mathcal{M}$ is connected. Then, the following formula holds for the corresponding volume of flat $SU(n)$-connection.
+\subsubsection{Contraction formula on moduli spaces of flat connections} 
+Let $\widehat{\mathcal{M}}$ be a (possibly disconnected) oriented surface with $(p+2)$ boundary components 
+$L_1,\ldots,L_p,L_{p+1}, L_{p+2}$. Let $\mathcal{M}$ be the oriented surface obtained by gluing $L_{p+1}$ and $L_{p+2}$ in an orientation reversing way and suppose that $\mathcal{M}$ is connected. Then, the following formula holds for the corresponding volume of flat $SU(n)$-connection. 
 \begin{theorem}[{\autocite[Prop. 5.4]{Meinrenken_Woodward}}]\label{thm:contraction_formula_connection}
 Suppose that $\alpha_1,\ldots,\alpha_p\in \mathcal{H}_{reg}^0$. If $M(\mathcal{M},\alpha_1,\ldots,\alpha_p)$ contains at least one connection whose stabilizer is $Z(SU(n))$, then
 \begin{align*}
@@ -2144,13 +2154,13 @@ with $c_{g,p}=\frac{c_{g,p-1}c_{0,3}}{n}$.
 \end{proof}
 
 
-\section{Yang-Mills partition function on compact Riemann surfaces}
+\section{Yang-Mills partition function on compact oriented surfaces}
 \label{sec:proof_Z_0_g_p}
 
 The goal of this section is to give an explicit volume formula for the marginal
-Yang--Mills partition function of a Riemann surface of genus $g$ with prescribed non-degenerated holonomies (up to conjugation) on a finite set of disjoint loops.  As it is proven in XXXRefXXX, the corresponding partition function then only depends on the prescribed conjugacy classes and on the areas of each connected components delimites by the loops. 
+Yang--Mills partition function of an oriented surface of genus $g$ with prescribed non-degenerated holonomies (up to conjugation) on a finite set of disjoint loops.  As it is proven in XXXRefXXX, the corresponding partition function then only depends on the prescribed conjugacy classes and on the areas of each connected components delimites by the loops. 
 \begin{definition}
-A disjoint loops configuration $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p)$ is the data of a compact Riemann surface together with $p$ disjoints Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each $\Gamma_i, \,1\leq i\leq p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
+A disjoint loops configuration $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p)$ is the data of a compact oriented surface together with $p$ disjoints Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each $\Gamma_i, \,1\leq i\leq p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
 
 
 A skeleton is the data of a labeled finite tree $T=(V,E)$ such vertices are labeled by $\mathbb{N}\times \mathbb{R}^+$ and edges are labeled by $\mathcal{H}_{reg}$.
