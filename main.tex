@@ -529,6 +529,198 @@ from \autocite{Meinrenken_Woodward}. The full generality of
 Theorem \ref{th:Z_g_p_0} and Corollary \ref{cor:yang_mills_g_p} 
 are then proved in Section \ref{sec:proof_Z_0_g_p}.}
 
+
+\section{Triangular honeycombs as decorated graphs and a canonical measure \\(provisional title)}
+
+
+We would like to see a triangular honeycomb
+as a honeycomb graph endowed
+with a flow (an antisymmetric function on its
+edge set). 
+Let us consider a triangular honeycomb 
+with underlying honeycomb graph $G=(V,E,c)$
+and let us denote $\vec E = \{(a,b) \in V\times V \colon
+\{a,b\} \in E\}$
+its oriented edge set.  The triangular honeycomb
+information of $G$, i.e., the precise
+drawing on the equilateral triangle of size $1$, 
+will be obtained
+once we fix the distance of each
+edge to the side of the triangle parallel to it (the edge type is data or is it somehow determined by some other data?).
+This is a multiple of the height map
+$L:E \to [0,1]$ given in
+Definition \ref{def:triangular_honey}.
+Recalling (TO FIX) that we have
+chosen the function
+$\beta: V_{>1} \to \{-1,1\}$
+that encodes the vertex type,
+we define a map
+$\lambda: \vec E \to \mathbb R$ by
+\[\lambda(a,b) = 
+	\left\{\begin{array}{ll} 
+ L(\{a,b\}) &\mbox{ if } \beta(a)=1 				\\
+	 - L(\{a,b\}) & \mbox{ if } \beta(a) =-1 		
+\end{array}
+\right.\]
+Then, $\lambda$ is antisymmetric and satisfies 
+that, for every $v \in V_{>1}$,
+\begin{equation}
+	\label{eq:DivOfLambda}
+	\sum_{x \sim v} \lambda (v,x) = \beta(v).
+\end{equation}
+We will recall some properties of 
+the \emph{divergence} operator
+used in the previous equation
+and explore the space of solutions
+to define a measure on the space of triangular honeycombs.
+
+\subsection{Canonical measure}
+
+Let us denote by $\Omega^0(G)$ 
+the vector space of real functions 
+on $V$ endowed with the inner product given by
+$\langle f_1, f_2 \rangle = \sum_{x \in V} f_1(x) f_2(x)$.
+The space of flows is the vector space
+$\Omega^1(G)$ of antisymmetric
+real functions $\omega$ on $\vec E$, i.e.,
+the ones
+satisfying $\omega(a,b) = -\omega(b,a)$
+and endowed with the inner product
+$\langle \omega_1,\omega_2 \rangle
+= \sum_{e \in E} \omega_1(e) \omega_2(e) $,
+where we are using that, due to the antisymmetry
+of $\omega_1$ and $\omega_2$, the product
+$\omega_1(e) \omega_2(e)$ does not depend
+on the orientating of $e$
+as long as we choose the same for both arguments.
+The analog of the differential
+of a function is the map
+$d: \Omega^0(G) \to \Omega^1(G)$,
+\[d f (a,b) = f(b) - f(a).\] 
+For $x \in V$ define $\hat x \in \Omega^0(G)$ 
+that takes the value
+ $1$ at $x$ and $0$ at other vertices, and
+for $e \in \vec E$ define
+$\hat e \in \Omega^1(G)$ that takes the value
+$1$ at $e$, $-1$ at the opposite of $e$
+and $0$ at other edges. So, we may evaluate
+$d$ at the basis
+$\{\hat x \}_{x \in V}$ of $\Omega^0(G)$ to obtain
+$d \hat x = -\sum_{e \in \vec E,\underline e = x} \hat e$,
+where $\underline {(a,b)} = a$. This tells
+us that we can write $d$ in terms of 
+$\hat e$ and $\hat x$ as
+\[d = -\sum_{x \in V} 
+\sum_{e \in \vec E, \underline e = x} \hat e \otimes \hat x\]
+by identifying
+$\Omega^0(G)$ with its dual. Its adjoint $d^*$
+would be given by permuting the terms
+\[d^* = -\sum_{x \in V} 
+\sum_{e \in \vec E, \underline e = x}  \hat x \otimes \hat e\]
+or, in a more explicit way, for 
+$\omega \in \Omega^1(G)$,
+\[d^* \omega (x) = - \sum_{e \in \vec E, \underline e=x}
+\omega(e) .\]
+We define $\mathrm {div} = -d^*$ so that 
+	\eqref{eq:DivOfLambda}
+rewrites as
+	$(\pi \circ \mathrm{div}) \lambda = \beta$
+	with $\pi: \Omega^0(V) \to \Omega^0(V_{>1})$
+	being the restriction to $V_{>1}$.
+	Since 
+	$\pi$ is adjoint to the extension by zero operator
+	$i:\Omega^0(V_{>1}) \to \Omega^0(V)$,
+	we know that
+	$\pi \circ \mathrm{div} = (d \circ i)^*$
+	so that
+	\[\mathrm{dim}\big(\mathrm{Ker}(\pi \circ \mathrm{div})
+	\big)
+	=\mathrm{codim}\big(\mathrm{Image}(d \circ i)
+	\big) 
+	= 
+	|E| - \mathrm{dim}\big(\mathrm{Image}(d \circ i)
+	\big). \]
+	Since $d\circ i$ is injective
+	because every vertex of $G$ is connected
+	to a vertex in $V_1$, we can write
+	\[\mathrm{dim}\big(\mathrm{Ker}(\pi \circ \mathrm{div})
+	\big)
+	= 
+	|E| - |V_{>1}|. \]
+	Then 
+	$\{\lambda \in \Omega^1(G):
+	(\pi \circ \mathrm{div}) \lambda = \beta
+	 \}$ has dimension 
+	 $|E| - |V_{>1}|$.
+	 We will be interested in two kind of solution space. The first one would be the plain
+	 \[\mathcal F(\beta)
+	 = 	\{\lambda \in \Omega^1(G):
+	 (\pi \circ \mathrm{div}) \lambda = \beta
+	 \}\]
+	 and for the second one we add boundary conditions.
+	 Let us take a function 
+	 $\gamma: V_1 \to \mathbb R$ and
+	 for every vertex $x \in V_1$ let us denote by
+	 $\vec x$ the unique edge ending at $x$. We define
+	 \[\mathcal F(\beta; \lambda)
+	= 	\{\lambda \in \mathcal F(\beta):
+	\lambda(\vec x) = \gamma(x) \mbox{ for every }
+	x \in V_1
+	\}\]
+	To see that 
+	$\mathcal F(\beta; \lambda)$ can be empty, we
+	remark that
+	$\sum_{v \in V_{>1}} \mathrm{div} \lambda (v)
+	= \sum_{x \in V_1} \lambda(\vec x)$
+	which is reminiscent of
+	Stokes' theorem. But, in fact, this is the only
+	restriction by the next proposition.
+	
+\begin{proposition}
+	Take $\gamma: V_1 \to \mathbb R$. The set
+	$\mathcal F(\beta;\lambda) $ is not empty if and only if
+	\[\sum_{x \in V_1} \gamma(x) 
+	= \sum_{v \in V>1} \beta(v).\]
+	Moreover, if $S \subset E$
+	and  $\Omega^1(S)$ denotes the space of antisymmetric
+	functions on $\vec S \subset \vec E$, the composition
+	\[\varphi_S:\mathcal F(\beta;\lambda) \xrightarrow[]{
+	\mbox{\tiny inclusion}}
+	\Omega^1(G) 
+	\xrightarrow[]{
+		\mbox{\tiny restriction}} \Omega^1(S)\]
+	is a bijection if and only if
+	$(V,E \setminus S)$ is a spanning tree.
+	Finally, in case $\varphi_S$ is a bijection,
+	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\beta;\lambda)}	= \frac{1}{\sqrt{\# \mbox{ Spanning trees of } G}}\,
+	\mathcal Leb_{\Omega^1(S)}.\]
+\end{proposition}
+
+
+If there are no boundary conditions there
+is always a solution. 
+For the next proposition, we say that a subgraph $H$ of
+$G$ is a \emph{forest} of $G$ if $H$
+ is a spanning subgraph (i.e., it has the same vertex set as $G$) and each connected component of $H$
+ is a tree whose vertex set
+contains a unique element of $V_1$.
+
+\begin{proposition}
+	If $S \subset E$
+	and  $\Omega^1(S)$ denotes the space of antisymmetric
+	functions on $\vec S \subset \vec E$, then
+	\[\psi_S:\mathcal F(\beta) \xrightarrow[]{
+		\mbox{\tiny inclusion}}
+	\Omega^1(G) 
+	\xrightarrow[]{
+		\mbox{\tiny restriction}} \Omega^1(S)\]
+	is a bijection if and only if 
+	$(V,E \setminus S)$ is a forest of $G$. 
+	Moreover, in case $\psi_S$ is a bijection,
+	\[(\psi_S)_* \mathcal Leb_{\mathcal F(\beta)}	= \frac{1}{\sqrt{\# \mbox{ Forests of } G}}\,
+	\mathcal Leb_{\Omega^1(S)}.\]
+\end{proposition}
+
 \section{Differential structures, flows and volume}
 \label{Sec:differential_structure}
 
@@ -536,7 +728,7 @@ are then proved in Section \ref{sec:proof_Z_0_g_p}.}
 \label{subsec:differential_structures}
 
 Let $G=(E,V)$ be a graph and set $m = \# V_{>1}$, $m' = \#V$ and $N=\#E$, 
-where $V_{>1}$ denotes the set of vertices having degreeat least two in $G$.
+where $V_{>1}$ denotes the set of vertices having degree at least two in $G$.
 
 \begin{definition}[Differential structure]
     \label{def:diff_structure}
