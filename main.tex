@@ -890,9 +890,15 @@ the condition
 	but its image in $\Omega^1(S)$ would be zero
 	so that $\varphi_S$
 	would not be injective. To show that
-	$(V,E\setminus S)$ is connected
-	we may use a dimension argument which determines
-	the cardinal of $S$. We may say, for
+	$(V,E\setminus S)$ is connected we may notice that if
+	it were a disconnected forest we could find
+	$S' \subset S$ such that
+	$(V,E\setminus S')$ is a spanning tree. But this
+	would imply that the values at $S'$ determine
+	the solution and, thus, determine the
+	values at $S \setminus S'$. Then $\varphi_{S}$
+	could not be surjective. A dimension argument
+	may have also worked by saying, for
 	instance, that we have already proven
 	that $\varphi_S$ is a bijection
 	when $(V,E\setminus S)$ is a spanning tree
@@ -902,7 +908,53 @@ the condition
 	the number of edges in $E \setminus S$ would not
 	be enough for
 	$\varphi_S$ to be surjective.
+	\\
+	\\
+	Now, assuming that $(V,E\setminus S)$
+	is a spanning tree, let us look 
+	for the constant $C>0$ such that
+	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\beta;\gamma)}	= C	\mathcal Leb_{\Omega^1(S)}\]
+	Denoting the dimension of
+	$\mathcal F(0,0)$ by $k = |E|-|V| +1$,
+	we want to study the map $(\varphi_S)_*$ induced
+	on $k$-forms. This is equivalent to looking at
+	the pushforward map on $k$-vectors
+	\[(\varphi_S)_*: \Lambda^k
+	\mathcal F(0;0) \to 
+	\Lambda^k \Omega^1(S),\]
+	taking the dual and inversing the resulting map.
+	The constant $C>0$ would be found
+	by taking normalized
+	vectors $w_1 \in \Lambda^k
+	\mathcal F(0;0) $, $w_2 \in \Lambda^k \Omega^1(S)$ and 
+	solving
+	\[(\varphi_S)_* w_1 = C^{-1} w_2\]
+	or, what is the same,
+	taking $C^{-1} = \langle (\varphi_S)_* w_1 , w_2\rangle $.
+	The vector $w_2$ can be explicitly obtained
+	as $\wedge_{e \in S} \hat e$, where
+	we have
+	chosen an orientation for each edge $e \in E$ 
+	and an order to perform the product.
+	We recall that
+	 $\hat e$
+	takes the value $1$ at $e$ with our chosen orientation,
+	$-1$ if we reverse the orientation and
+	$0$ at all other edges.
 	
+	
+	
+	...
+	Fix a leaf $v_0$
+	of $(V,E\setminus S)$ and consider
+	the family
+	$\{d \hat v \}_{v \in V \setminus \{v_0\}}$,
+	where we recall that
+	$\hat v$ is the function which is $1$ at $v$
+	and $0$ elsewhere.
+	Since $\sum_{v \in V \setminus \{v_0\}}
+	d\hat v + d\hat v_0 = d 1= 0$, this family
+	generates the image of $d$.
 	
 	
 	
