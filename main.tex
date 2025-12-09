@@ -662,23 +662,23 @@ rewrites as
 	 $\gamma: V_1 \to \mathbb R$ and
 	 for every vertex $x \in V_1$ let us denote by
 	 $\vec x$ the unique edge ending at $x$. We define
-	 \[\mathcal F(\beta; \lambda)
+	 \[\mathcal F(\beta; \gamma)
 	= 	\{\lambda \in \mathcal F(\beta):
 	\lambda(\vec x) = \gamma(x) \mbox{ for every }
 	x \in V_1
 	\}.\]
 	To see that 
-	$\mathcal F(\beta; \lambda)$ can be empty, we
+	$\mathcal F(\beta; \gamma)$ can be empty, we
 	remark that
 	$\sum_{v \in V_{>1}} \mathrm{div} \lambda (v)
 	= \sum_{x \in V_1} \lambda(\vec x)$
 	which is reminiscent of
 	Stokes' theorem. But, in fact, this is the only
-	restriction by the next proposition.
+	restriction as seen in the next proposition.
 	
 \begin{proposition} \label{prop:BijectionTrees}
 	Take $\gamma: V_1 \to \mathbb R$. The set
-	$\mathcal F(\beta;\lambda) $ is not empty if and only if
+	$\mathcal F(\beta;\gamma) $ is not empty if and only if
 \begin{equation} \label{eq:ExistenceCondition}
 \sum_{x \in V_1} \gamma(x) 
 	= \sum_{v \in V>1} \beta(v).
@@ -686,15 +686,17 @@ rewrites as
 	Moreover, if $S \subset E$
 	and  $\Omega^1(S)$ denotes the space of antisymmetric
 	functions on $\vec S \subset \vec E$, the composition
-	\[\varphi_S:\mathcal F(\beta;\lambda) \xrightarrow[]{
+	\[\varphi_S:\mathcal F(\beta;\gamma) \xrightarrow[]{
 	\mbox{\tiny inclusion}}
 	\Omega^1(G) 
 	\xrightarrow[]{
 		\mbox{\tiny restriction}} \Omega^1(S)\]
-	is a bijection if and only if
+	is a bijection if and only if $\mathcal F(\beta;\gamma)
+	\neq \emptyset$
+	 and
 	$(V,E \setminus S)$ is a spanning tree.
-	Finally, in case $\varphi_S$ is a bijection,
-	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\beta;\lambda)}	= \frac{1}{\sqrt{\# \mbox{ Spanning trees of } G}}\,
+	In case $\varphi_S$ is a bijection,
+	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\beta;\gamma)}	= \frac{1}{\sqrt{\# \mbox{ Spanning trees of } G}}\,
 	\mathcal Leb_{\Omega^1(S)}.\]
 \end{proposition}
 
@@ -728,24 +730,30 @@ contains a unique element of $V_1$.
 
 We already know that
 the condition
-	$\sum_{x \in V_1} \gamma(x) 
-	= \sum_{v \in V>1} \beta(v)$
+	\eqref{eq:ExistenceCondition}
 	is necessary.
-	Let us show it is enough.
+	Let us show it is sufficient.
 	Consider first the case where
-	$G$ is a tree. To solve
+	$G$ is a \textbf{tree}. To solve
 	$ (\pi \circ \mathrm{div}) \lambda = \beta$
 	we look for
 	the edges where $\lambda$
-	is most easily determined. Those
-	are the ones adjacent to the leaves of
-	$G \setminus V_1$. Take
-	a leaf $x \in V_{>1}$ of $G \setminus V_1$.
-	Since it is not a leaf of $G$, the set $V_{1,x}$
+	is most easily determined by the boundary conditions.
+	Those
+	are the ones with an endpoint whose
+	other edges connect only to leaves
+	or, equivalently, the edges
+	in $G\setminus V_1$ adjacent to leaves
+	of $G\setminus V_1$. Take
+	one such leaf $x \in V_{>1}$ of $G \setminus V_1$
+	and notice that,
+	since $x$ is not a leaf of $G$, the set $V_{1,x}$
 	of vertices in $V_1$ connected to
-	$x$ is non-empty. So, if $e$ denotes
+	$x$ is non-empty. 
+	Let us reduce our task to finding
+	a solution on $G \setminus V_{1,x}$ as follows. If $e$ denotes
 	the edge of $G \setminus V_1$
-	ending at $x$, we must have
+	ending at $x$, a solution should satisfy
 	\[\bigg(\sum_{y \in V_{1,x}}\gamma(y)
 	\bigg) - \lambda(e) 
 	= \beta(x)\]
@@ -756,90 +764,150 @@ the condition
 	\sum_{y \in V_{1,x}}\gamma(y) 
 	$
 	and notice that
-	the condition 
-	$\sum_{x \in V_1} \gamma(x) 
-	= \sum_{v \in V>1} \beta(v)$	
-	is still satisfied for $V_1$
-	the leaves of $G\setminus V_{1,x}$
-	and $V_{>1}$ the complement of $V_1$.
+	\eqref{eq:ExistenceCondition}
+	is satisfied for $G\setminus V_{1,x}$.
 	We may proceed by induction
 	until the tree consists solely of leaves
 	in which case
 	the condition
-	$\sum_{x \in V_1} \gamma(x) 
-	= \sum_{v \in V>1} \beta(v)$
+	\eqref{eq:ExistenceCondition}
 	is precisely the
 	equation 	 
-	$(\pi \circ \mathrm{div}) \lambda = \beta$.
+	$(\pi \circ \mathrm{div}) \lambda = \beta$. By this procedure
+	we have seen that, for a tree, 
+	in case there is a solution, it is unique.
 	
-	For a general graph $G$ we
+	For a \textbf{general graph} $G$ we
 	may take a spanning tree $T$ of $G$
 	(spanning tree of each of its components
 	if $G$ is not connected) and try to solve
 	the equation for $T$. 
-	To achieve this
-	we first notice that each leaf of $G$
-	is a leaf of $T$
-	since $T$ is spanning.
-	Then if $x$ is a leaf of $T$ 
-	that is not a leaf of $G$ we
-	may define $\gamma(x) = -\beta(x)$.
-	Then 
-	\eqref{eq:ExistenceCondition} holds
-	for $T$ and we may
-	find a solution $\lambda$
-	for $ (\pi \circ \mathrm{div}) \lambda 
-	= 	\beta$ on $T$ with boundary conditions
-	given by $\gamma$.	
-	Extending $\lambda$
-	to zero at the edges that are not in 
-	$T$ we get a solution on $G$
-	does not affect
-	the fact that $\lambda$ is a solution
-	at the vertices that are not leaves of $T$.
-	Moreover,
-	at a leaf $x$ of $T$ that is not
-	a leaf of $G$ it is also a solution
-	due to the boundary condition
-	$\gamma(x) = -\beta(x)$.
-	
-	From this procedure we can see
-	that we may choose
+	We may choose
 	the values of $\lambda$
 	arbitrarily
-	at the edges that are not in
-	a spanning tree $T$ of $G$. Indeed,
-	since we want to find a solution on $T$,
-	we may forget
-	the edges that are not in $T$
-	but change
-	$\beta$ at $x$ to
-	$\beta_{\tiny new}(x) =\beta(x) -
-	 \sum_{e \notin T, \underline{e} = x}
-	 \lambda(e)$. Notice that
-	 the sum
-	of $\beta_{\tiny new}(x)$
-	over all vertices $x$
-	that are not leaves of $G$
-	is the same as the sum of $\beta(x)$.
-	This holds because each edge not found
-	in $T$ is not connected to a vertex in $V_1$
+	at the edges that are not in $T$. More precisely,
+	if $S$ is the set of edges not belonging to $T$,
+	we may consider any antisymmetric function
+	$\widetilde \lambda: \vec S \to \mathbb R $
+	and look for a solution
+	$\lambda \in \mathcal F(\beta;\gamma)$
+	satisfying $\lambda|_{\vec S} = \widetilde \lambda$.
+	To 
+	be able to forget the edges in $S$ we change $\beta$ to
+	$\beta_{new}:V_{>1} \to \mathbb R$ given by
+		\[\beta_{\tiny new}(x) =\beta(x) -
+	\sum_{e \in \vec S, \underline{e} = x}
+	\widetilde \lambda(e)\]
+	so that if the divergence of $\lambda$
+	in $T$ at $x$ is
+	$\beta_{new}(x)$, the divergence of the extension
+	by $\widetilde \lambda$
+	of $\lambda$
+	in $G$ at $x$ would be 
+	$\beta(x)$.
+	Notice that the sum of $\beta_{new}(x)$
+	for $x \in V_{>1}$ is the same as the sum of 
+	$\beta(x)$.
+	This holds because each edge in $S$ is not connected to a vertex in $V_1$
 	so that
-	 it appears twice in the sum,
+	it appears twice in the sum,
 	once with each orientation.
-	We find a solution $\lambda$
-	on $T$ by adding, as before,
-	the boundary condition
-	$\gamma(x) = -\beta_{\tiny new}(x)$
-	for $x$ a leaf of $T$ that is not a
-	leaf of $G$ but we extend it by the 
-	values that were fixed outside $T$.
-	The next argument also
-	implies that we may freely choose
-	the values of $\lambda$
-	outside of $T$ but
-	it also implies the final part
-	of the proposition.
+	Since $T$ is spanning, each vertex in $V_1$ 
+	is a leaf of $T$ so that we define
+	$\gamma_{new}(x) = \gamma(x)$
+	for $x \in V_1$.
+	Nevertheless, there may be leaves of $T$ that are not in 
+	$V_1$ which forces us
+	to add boundary conditions.
+	We define $\gamma_{new}(x) = -\beta_{new}(x)$
+	for $x$ a leaf of $T$ which is not a leaf of $G$.
+	Then 
+	\eqref{eq:ExistenceCondition} holds
+	for $T$ and $(\beta_{new};\gamma_{new})$, and we may
+	find a unique solution $\lambda \in \mathcal F(\beta_{new},\gamma_{new})$ on $T$.	
+	We extend $\lambda$ by $\widetilde 
+	\lambda$ and remark that it is a solution in
+	$\mathcal F(\beta,\gamma)$ since
+	at the vertices that are not leaves of $T$
+	the fact of being a solution remains valid
+	because of the definition of
+	$\beta_{new}$ and at
+	 a leaf $x$ of $T$ that is not
+	a leaf of $G$ it is also a solution
+	due to the boundary condition. On the other hand,
+	if $\lambda$ is a solution in $\mathcal F(\beta;\gamma)$
+	its restriction to the directed edge set of $T$
+	is a solution in $\mathcal F(\beta_{new};\gamma_{new})$
+	so that there is only 
+	one solution $\lambda$ in $\mathcal F(\beta;\gamma)$
+	satisfying $\lambda|_{\vec S} = \widetilde \lambda$.
+	Notice that this already
+	shows that $\varphi_S$ is a bijection
+	when $(V,E\setminus S)$ is a spanning tree of $G$.
+	Another intuitive approach that replaces
+	the need to change $\beta$ and $\gamma$ would be 
+	to break each edge in $S$ into two edges to obtain
+	two new leaves, then $\widetilde \lambda$ would
+	become
+	boundary conditions
+	for these new leaves and we may construct,
+	in that way, a new tree containing $T$ where
+	a solution  would be
+	exactly the same as a solution on $G$.
+	\\
+	\\
+	It is clear that if $\varphi_S$ is a bijection
+	then $\mathcal F(\beta;\gamma)$ is not empty
+	because $\Omega^1(S)$ would be empty which
+	is impossible. So, for
+	the rest of the proof we may assume that
+	$\mathcal F(\beta;\gamma)$ is not empty.
+	By taking any $\lambda_0 \in \mathcal F(\beta;\gamma)$, using that
+	$\mathcal F(\beta;\gamma)
+	= \mathcal F(0;0) + \lambda_0$ 
+	and that
+	the map
+	$\mathcal F(\beta;\gamma) \to \Omega^1(S)$
+	is a composition
+	\[\mathcal F(\beta;\gamma)
+	\xrightarrow[]{\tiny \mbox{translation by } - \lambda_0}
+	\mathcal F(0;0)
+		\xrightarrow[]{\varphi_S}
+	\Omega^1(S) 
+		\xrightarrow[]{\tiny \mbox{translation by }  
+			\lambda_0|_{\vec S}}
+	\Omega^1(S),\]
+	we find
+	that it is enough to prove the statements
+	for $\beta=0$ and $\gamma  = 0$.
+	Now, let us show that if $\varphi_S$ is a
+	bijection then $(V,E\setminus S)$ is a spanning tree.
+	If $(V,E\setminus S)$ had a cycle
+	$(v_1,\dots,v_k, v_{k+1})$ with $v_{k+1} = v_1$ we could define
+	$\lambda(v_i,v_{i+1}) = - \lambda(v_{i+1},v_i) =1$
+	for $i \in \{1,\dots,k\}$ and zero elsewhere.
+	Such $\lambda$ would belong to $\mathcal F(0;0)$
+	but its image in $\Omega^1(S)$ would be zero
+	so that $\varphi_S$
+	would not be injective. To show that
+	$(V,E\setminus S)$ is connected
+	we may use a dimension argument which determines
+	the cardinal of $S$. We may say, for
+	instance, that we have already proven
+	that $\varphi_S$ is a bijection
+	when $(V,E\setminus S)$ is a spanning tree
+	so that $\mathrm{dim}(\mathcal F(0;0))
+	=|E| - (|V|-1)$. Then,
+	if $(V,E\setminus S)$ is a disconnected forest
+	the number of edges in $E \setminus S$ would not
+	be enough for
+	$\varphi_S$ to be surjective.
+	
+	
+	
+	
+
+	
 	
 	
 	
