@@ -631,20 +631,30 @@ rewrites as
 	 \[\mathcal F(\beta)
 	 = 	\{\lambda \in \Omega^1(G):
 	 (\pi \circ \mathrm{div}) \lambda = \beta
-	 \}\]
-	 which is always non-empty
-	 as explained in Proposition
-	  \ref{prop:BijectionForests} below.
-	We may calculate its dimension indirectly by using that $\mathcal F(0) = \mathrm{Ker}(\pi \circ \mathrm{div}) = 
-	(\mathrm{Im}(\mathrm{div}^* \circ \pi^*))^\perp$
+	 \}.\]
+	 We can quickly see that
+	$\mathcal F(\beta)$ is always non-empty
+	by noticing that
+	$\mathrm{Im}(\pi \circ \mathrm{div})
+	= \mathrm{Ker}(\mathrm{div}^* \circ \pi^*)^\perp$
 	where $\pi^*$, the adjoint of $\pi$, is
 	the extension by zero operator
-		$i:\Omega^0(V_{>1}) \to \Omega^0(V)$
-		and, by definition,
-		$\mathrm{div}^* = -d$.
-		Notice that $-d\circ i$ is injective
-		because 
-		the kernel of $d$ consists of constant functions. Then, we can write
+	$i: \Omega^0(V_{>1}) \to \Omega^0(V)$
+	and, by definition, $\mathrm{div}^* = -d$.
+	A function $f \in \mathrm{Ker}(d \circ i)$
+	would satisfy that $i(f)$ is constant since
+	$G$ is connected, but 
+	since $i(f)|_{V_1} = 0$
+	and $V_1$ is non-empty, $f$ has to be zero.
+	So, $\mathrm{Im}(\pi\circ \mathrm{div}) = 0^\perp 
+	= \Omega^0(G)$.
+	We may calculate the dimension 
+	of $\mathcal F(\beta)$ by using that $\mathcal F(0) = \mathrm{Ker}(\pi \circ \mathrm{div}) = 
+	(\mathrm{Im}(\mathrm{div}^* \circ \pi^*))^\perp =
+	(\mathrm{Im}(d \circ i))^\perp$.
+	Then, by using that the dimension of 
+	$\mathrm{Im}(d\circ i)$ is
+	 $|V_{>1}|$ because of the injectivity, we can write
 		\[\mathrm{dim}\big(\mathcal F(\beta)
 		\big)
 		= |E| - \mathrm{dim}(\mathrm{Im}(d \circ i)) 
@@ -710,7 +720,7 @@ always have
 	 and
 	$(V,E \setminus S)$ is a spanning tree.
 	In case $\varphi_S$ is a bijection,
-	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\beta;\gamma)}	= \frac{1}{\sqrt{\# \mbox{ Spanning trees of } G}}\,
+	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\beta;\gamma)}	= \big(\hspace{-0.5mm} \sqrt{\# \mbox{ Spanning trees of } G}	\big)\,
 	\mathcal Leb_{\Omega^1(S)}.\]
 \end{proposition}
 
@@ -735,7 +745,9 @@ contains a unique element of $V_1$.
 	is a bijection if and only if 
 	$(V,E \setminus S)$ is a forest of $G$. 
 	Moreover, in case $\psi_S$ is a bijection,
-	\[(\psi_S)_* \mathcal Leb_{\mathcal F(\beta)}	= \frac{1}{\sqrt{\# \mbox{ Forests of } G}}\,
+	\[(\psi_S)_* \mathcal Leb_{\mathcal F(\beta)}	= 
+	\big(\hspace{-0.5mm}\sqrt{\# \mbox{ Forests of } G}
+	\big)\,
 	\mathcal Leb_{\Omega^1(S)}.\]
 \end{proposition}
 
@@ -1036,14 +1048,41 @@ the condition
 	= 
 	\mbox{\# Spanning trees of } G.
 	\]
-	This implies that 
+	This yields that 
 	\[\langle (\varphi_S)_* w_1, w_2 \rangle
-	=\pm \frac{1}{\sqrt{\mbox{\# Spanning trees of } G}}.\]
-	ToDo: Find the mistake in the proof or in the statement.
+	=\pm \frac{1}{\sqrt{\mbox{\# Spanning trees of } G}}\]
+	which implies the final statement of
+	the proposition.
+	
+\end{proof}
 
-	
-	
-	
+\begin{proof}[Proof of Proposition
+	\ref{prop:BijectionForests}]
+	We already know that $\mathcal F(\beta)$ is always
+	non-empty so we could instead work with
+	$\mathcal F(0)$ for the rest of the proof.
+	Let us begin by showing that if
+	$\psi_S$ is a bijection then $(V,E\setminus S)$
+	is a forest of $G$. As in the previous proof, a cycle
+	would produce
+	a non-zero divergenceless flow which would project
+	to zero by $\psi_S$ so $(V,E\setminus S)$
+	cannot have cycles if $\psi_S$ is injective.
+	In the same way, if $(V,E \setminus S)$
+	contained a path
+	$(v_1,\dots,v_k)$ with distinct vertices
+	and $v_1,v_k \in V_1$,
+	we could define
+	$\lambda(v_i,v_{i+1}) = - \lambda(v_{i+1},v_i)
+	=1$ for $i \in \{1,\dots,k-1\}$ and zero elsewhere.
+	The divergence of $\lambda$ would be zero
+	at every vertex except for $v_1$ and $v_k$
+	but since they belong to $V_1$ we still have
+	$\lambda \in \mathcal F(0)$.
+	So, 
+	a connected component of
+	$(V,E\setminus S)$ contains at most one vertex
+	in $V_1$. 
 	
 \end{proof}
 
