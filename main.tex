@@ -546,11 +546,12 @@ information of $G$, i.e., the precise
 drawing on the equilateral triangle of size $1$, 
 will be obtained
 once we fix the distance of each
-edge to the side of the triangle parallel to it (the edge type is data or is it somehow determined by some other data?).
+edge to the side of the triangle parallel to it 
+(\textcolor{blue}{the edge type is data or is it somehow determined by some other data?}).
 This is a multiple of the height map
 $L:E \to [0,1]$ given in
 Definition \ref{def:triangular_honey}.
-Recalling (TO FIX) that we have
+Recalling (\textcolor{blue}{TO FIX}) that we have
 chosen the function
 $\beta: V_{>1} \to \{-1,1\}$
 that encodes the vertex type,
@@ -926,7 +927,7 @@ the condition
 	values at $S \setminus S'$. Then $\varphi_{S}$
 	could not be surjective. 
 	We could have also used a dimension argument
-	to see that $S$ cannot be too small.
+	to see that $S$ cannot be too big.
 %	A dimension argument
 %	may have also worked by saying, for
 %	instance, that we have already proven
@@ -950,7 +951,7 @@ the condition
 	Now, assuming that $(V,E\setminus S)$
 	is a spanning tree, let us look 
 	for the constant $C>0$ such that
-	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\beta;\gamma)}	= C	\mathcal Leb_{\Omega^1(S)}\]
+	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(0;0)}	= C	\mathcal Leb_{\Omega^1(S)}\]
 	Denoting the dimension of
 	$\mathcal F(0;0)$ by $k = |E|-|V| +1$,
 	we want to study the map $(\varphi_S)_*$ induced
@@ -1070,7 +1071,7 @@ the condition
 	cannot have cycles if $\psi_S$ is injective.
 	In the same way, if $(V,E \setminus S)$
 	contained a path
-	$(v_1,\dots,v_k)$ with distinct vertices
+	$(v_1,\dots,v_k)$ with pairwise distinct vertices
 	and $v_1,v_k \in V_1$,
 	we could define
 	$\lambda(v_i,v_{i+1}) = - \lambda(v_{i+1},v_i)
@@ -1081,9 +1082,114 @@ the condition
 	$\lambda \in \mathcal F(0)$.
 	So, 
 	a connected component of
-	$(V,E\setminus S)$ contains at most one vertex
-	in $V_1$. 
-	
+	$(V,E\setminus S)$ cannot contain more
+	than one vertex in $V_1$. 
+	Finally, to show that
+	each connected component of
+	$(V,E\setminus S)$
+	contains exactly one vertex in $V_1$
+	we can use that since
+	$(V,E\setminus S)$ is a forest,
+	its number of edges equals
+	$|V|$
+	minus its number of connected components,
+	hence
+	\[|S| = |E|
+	- |V| + \#\mbox{connected components of }
+	(V,E\setminus S).\]
+	Given that 
+	$\mathrm{dim} (\mathcal F(0)) = 
+	|E| - |V_{>1}| = |E| - |V| + |V_1|$,
+	the number of connected 
+	components of $(V,E\setminus S)$
+	must be less or equal than $|V_1|$
+	for $\psi_S$ to even have a chance
+	of being surjective. Since
+	we know that the map taking 
+	a vertex in $V_1$ to the
+	connected component
+	of $(V,E\setminus S)$ containing it
+	is injective, it must also be surjective
+	over the set of connected components.
+	\\
+	\\
+	Let us show that if $(V,E\setminus S)$
+	is a forest of $G$ then 
+	$\psi_S$ is a bijection
+	in an indirect way
+	that also proves
+	the final statement.
+	As in the proof of Proposition
+	\ref{prop:BijectionTrees}, let us consider the 
+	pushforward map
+	\[(\psi_S)_*: \Lambda^k
+	\mathcal F(0;0) \to 
+	\Lambda^k \Omega^1(S),\]
+	for $k = 	|E| - |V_{>1}| = |S|$ and let us
+	calculate
+	\[
+	\big<  \hspace{-0.5mm} *(\wedge_{v \in 
+	V_{>1}} d \hat v),
+	 \wedge_{e \in S} \hat e \, \big>
+	 = \pm 
+	 \big< \hspace{-0.5mm}  \wedge_{v \in V_{>1}} d \hat v,
+	 \wedge_{e \in E\setminus S} \hat e \, \big>
+	 = \pm\mathrm{det}\langle d \hat v, \hat e \rangle
+	 _{v \in V_{>1}, e \in E\setminus S}.
+	 \]
+	 In the calculation
+	 of the determinant
+	 we sum over
+	 bijections 
+	 $\sigma:E\setminus S \to V_{>1}$
+	 and the only contributions
+	$ \langle d \hat v, \hat e \rangle$
+	arise when 
+	$v$ is an endpoint of $e$.
+	To get a non-zero contribution,
+	if $e$ is
+	 adjacent to
+	 a vertex of $V_{1}$
+	 we have only one choice of vertex
+	 in $V_{>1}$ for $\sigma(e)$.
+	 For the other edges
+	 having $\sigma(e)$ as an endpoint 
+	 we have only one choice,
+	 the other endpoint, as the vertex and 
+	 we can repeat the
+	 argument until $\sigma$
+	 is determined. So, there is only one contribution
+	 which gives
+		\[
+	\big< \hspace{-0.5mm}  *(\wedge_{v \in 
+	V_{>1}} d \hat v),
+	\wedge_{e \in S} \hat e \, \big>
+	= \pm 1.\]
+	This implies that the
+	image of 
+	$*(\wedge_{v \in 
+	V_{>1}} d \hat v)$ by $(\psi_S)_*$
+	is non-zero so that $\psi_S$
+	is a bijection.
+	Since we already know that $\psi_S$
+	is not a bijection when $E\setminus S$
+	is not a forest of $G$, the inner
+	product would be zero in that case.
+	Recall that
+	the constant $C>0$ such that
+	\[(\psi_S)_* \mathcal Leb_{\mathcal F(0)}
+		= C	\mathcal Leb_{\Omega^1(S)}\]
+		is the inverse of 
+		the inner product 
+		$\langle (\psi_S)_* w_1, w_2 \rangle$
+		for $w_1 = 	 \wedge_{e \in S} $ 
+		and $w_2$ the normalized
+		$*(\wedge_{v \in 
+	V_{>1}} d \hat v)$
+	which allows us to conclude that
+	\[\langle (\psi_S)_* w_1, w_2 \rangle
+	=\pm \frac{1}{\sqrt{\mbox{\# Forests of } G}}.
+	\]
 \end{proof}
 
 \section{Differential structures, flows and volume}
