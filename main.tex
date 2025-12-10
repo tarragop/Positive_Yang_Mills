@@ -626,39 +626,32 @@ We define $\mathrm {div} = -d^*$ so that
 rewrites as
 	$(\pi \circ \mathrm{div}) \lambda = \beta$
 	with $\pi: \Omega^0(V) \to \Omega^0(V_{>1})$
-	being the restriction to $V_{>1}$.
-	Since 
-	$\pi$ is adjoint to the extension by zero operator
-	$i:\Omega^0(V_{>1}) \to \Omega^0(V)$,
-	we know that
-	$\pi \circ \mathrm{div} = (d \circ i)^*$
-	so that
-	\[\mathrm{dim}\big(\mathrm{Ker}(\pi \circ \mathrm{div})
-	\big)
-	=\mathrm{codim}\big(\mathrm{Image}(d \circ i)
-	\big) 
-	= 
-	|E| - \mathrm{dim}\big(\mathrm{Image}(d \circ i)
-	\big). \]
-	Since $d\circ i$ is injective
-	because every vertex of $G$ is connected
-	to a vertex in $V_1$, we can write
-	\[\mathrm{dim}\big(\mathrm{Ker}(\pi \circ \mathrm{div})
-	\big)
-	= 
-	|E| - |V_{>1}|. \]
-	Then 
-	$\{\lambda \in \Omega^1(G):
-	(\pi \circ \mathrm{div}) \lambda = \beta
-	 \}$ has dimension 
-	 $|E| - |V_{>1}|$.
+	the restriction map to $V_{>1}$.
 	 We will be interested in two kind of solution space. The first one would be the plain
 	 \[\mathcal F(\beta)
 	 = 	\{\lambda \in \Omega^1(G):
 	 (\pi \circ \mathrm{div}) \lambda = \beta
 	 \}\]
-	 and for the second one we add boundary conditions.
-	 Let us take a function 
+	 which is always non-empty
+	 as explained in Proposition
+	  \ref{prop:BijectionForests} below.
+	We may calculate its dimension indirectly by using that $\mathcal F(0) = \mathrm{Ker}(\pi \circ \mathrm{div}) = 
+	(\mathrm{Im}(\mathrm{div}^* \circ \pi^*))^\perp$
+	where $\pi^*$, the adjoint of $\pi$, is
+	the extension by zero operator
+		$i:\Omega^0(V_{>1}) \to \Omega^0(V)$
+		and, by definition,
+		$\mathrm{div}^* = -d$.
+		Notice that $-d\circ i$ is injective
+		because 
+		the kernel of $d$ consists of constant functions. Then, we can write
+		\[\mathrm{dim}\big(\mathcal F(\beta)
+		\big)
+		= |E| - \mathrm{dim}(\mathrm{Im}(d \circ i)) 
+		=
+		|E| - |V_{>1}|. \]
+	For the second kind of solution space one we add boundary conditions.
+	 Let us take 
 	 $\gamma: V_1 \to \mathbb R$ and
 	 for every vertex $x \in V_1$ let us denote by
 	 $\vec x$ the unique edge ending at $x$. We define
@@ -667,14 +660,35 @@ rewrites as
 	\lambda(\vec x) = \gamma(x) \mbox{ for every }
 	x \in V_1
 	\}.\]
-	To see that 
-	$\mathcal F(\beta; \gamma)$ can be empty, we
-	remark that
+This solution space may be empty since we
+always have
 	$\sum_{v \in V_{>1}} \mathrm{div} \lambda (v)
 	= \sum_{x \in V_1} \lambda(\vec x)$
 	which is reminiscent of
-	Stokes' theorem. But, in fact, this is the only
-	restriction as seen in the next proposition.
+	Stokes' theorem. But this is the only
+	restriction as explained in Proposition \ref{prop:BijectionTrees}. If
+	$\lambda_0 \in \mathcal F(\beta;
+	\gamma)$ we have
+	$\mathcal F(\beta;\gamma) = 
+	\lambda_0 + \mathcal F(0;0)$ and
+	$\mathcal F(0;0)$ is precisely
+	$\mathrm{Ker}(\mathrm{div})$
+	since the boundary conditions can be
+	written as $\mathrm{div}\lambda (x)= 0$
+	for $x \in V_1$. So, if
+	$\mathcal F(\beta;\gamma)$ is non-empty,
+	we can calculate
+	\[\mathrm{dim}(\mathcal F(\beta;\gamma))
+	= \mathrm{dim}(\mathrm{Ker}(\mathrm{div}))
+	= |E| - \mathrm{dim}(\mathrm{Im}(d))
+	= |E| - |V| + 1,\]
+	where we used that $\mathrm{Ker}(d) =
+	\{\mbox{constant functions}\} $
+	 so that
+	$ \mathrm{dim}(\mathrm{Im}(d)) = 
+	\mathrm{dim}(\Omega^0(G)) - 1 = |V|-1$.
+	
+	
 	
 \begin{proposition} \label{prop:BijectionTrees}
 	Take $\gamma: V_1 \to \mathbb R$. The set
@@ -779,8 +793,9 @@ the condition
 	
 	For a \textbf{general graph} $G$ we
 	may take a spanning tree $T$ of $G$
-	(spanning tree of each of its components
-	if $G$ is not connected) and try to solve
+%	(spanning tree of each of its components
+%	if $G$ is not connected) 
+	and try to solve
 	the equation for $T$. 
 	We may choose
 	the values of $\lambda$
@@ -897,17 +912,27 @@ the condition
 	would imply that the values at $S'$ determine
 	the solution and, thus, determine the
 	values at $S \setminus S'$. Then $\varphi_{S}$
-	could not be surjective. A dimension argument
-	may have also worked by saying, for
-	instance, that we have already proven
-	that $\varphi_S$ is a bijection
-	when $(V,E\setminus S)$ is a spanning tree
-	so that $\mathrm{dim}(\mathcal F(0;0))
-	=|E| - (|V|-1)$. Then,
-	if $(V,E\setminus S)$ is a disconnected forest
-	the number of edges in $E \setminus S$ would not
-	be enough for
-	$\varphi_S$ to be surjective.
+	could not be surjective. 
+	We could have also used a dimension argument
+	to see that $S$ cannot be too small.
+%	A dimension argument
+%	may have also worked by saying, for
+%	instance, that we have already proven
+%	that $\varphi_S$ is a bijection
+%	when $(V,E\setminus S)$ is a spanning tree
+%	so that $\mathrm{dim}(\mathcal F(0;0))
+%	=|E| - (|V|-1)$. Then,
+%	if $(V,E\setminus S)$ is a disconnected forest
+%	the number of edges in $E \setminus S$ would not
+%	be enough for
+%	$\varphi_S$ to be surjective. We may also notice
+%	that $\mathcal F(0;0) = \mathrm{ker}(\mathrm{div})$
+%	so that $\mathrm{dim}\, \mathcal F(0;0)
+%	= \mathrm{dim}(\mathrm{ker}(\mathrm{div}))
+%	|E| - \mathrm{dim}(\mathrm{Image}\, d)$
+%	and use that $d$ is almost injective its kernel
+%	being the constant functions since $G$
+%	is connected.
 	\\
 	\\
 	Now, assuming that $(V,E\setminus S)$
@@ -915,7 +940,7 @@ the condition
 	for the constant $C>0$ such that
 	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\beta;\gamma)}	= C	\mathcal Leb_{\Omega^1(S)}\]
 	Denoting the dimension of
-	$\mathcal F(0,0)$ by $k = |E|-|V| +1$,
+	$\mathcal F(0;0)$ by $k = |E|-|V| +1$,
 	we want to study the map $(\varphi_S)_*$ induced
 	on $k$-forms. This is equivalent to looking at
 	the pushforward map on $k$-vectors
@@ -928,9 +953,9 @@ the condition
 	vectors $w_1 \in \Lambda^k
 	\mathcal F(0;0) $, $w_2 \in \Lambda^k \Omega^1(S)$ and 
 	solving
-	\[(\varphi_S)_* w_1 = C^{-1} w_2\]
+	\[(\varphi_S)_* w_1 = \pm C^{-1} w_2\]
 	or, what is the same,
-	taking $C^{-1} = \langle (\varphi_S)_* w_1 , w_2\rangle $.
+	taking $C^{-1} = |\langle (\varphi_S)_* w_1 , w_2\rangle| $.
 	The vector $w_2$ can be explicitly obtained
 	as $\wedge_{e \in S} \hat e$, where
 	we have
@@ -940,24 +965,81 @@ the condition
 	 $\hat e$
 	takes the value $1$ at $e$ with our chosen orientation,
 	$-1$ if we reverse the orientation and
-	$0$ at all other edges.
-	
-	
-	
-	...
-	Fix a leaf $v_0$
-	of $(V,E\setminus S)$ and consider
-	the family
+	$0$ at all other edges. To 
+	explicitly construct $w_1$ is less obvious since
+	we would be dealing with
+	$\mathrm{Ker}(\mathrm{div})$. We
+	could instead use its orthogonal complement
+	$\mathrm{Im}(d)$.
+	By fixing a leaf $v_0$
+	of $(V,E\setminus S)$ we may consider
 	$\{d \hat v \}_{v \in V \setminus \{v_0\}}$,
 	where we recall that
 	$\hat v$ is the function which is $1$ at $v$
 	and $0$ elsewhere.
 	Since $\sum_{v \in V \setminus \{v_0\}}
 	d\hat v + d\hat v_0 = d 1= 0$, this family
-	generates the image of $d$.
-	
-	
-	
+	generates $\mathrm{Im}(d)$. Now,
+	we obtain an element of
+	$\Lambda^k \mathcal F(0;0)$ by taking 
+	$*(\wedge_{v \in V\setminus \{v_0\}} d \hat v)$,
+	where $*$ denotes the Hodge star operator.
+	We have not yet normalized this element nor shown it is non-zero but let us calculate,
+	using that 
+	$ \wedge_{e \in S} \hat e = \pm 
+	* (\wedge_{e \in E\setminus S} \hat e)  $,
+	\[
+	\big<  \hspace{-0.5mm} *(\wedge_{v \in V\setminus \{v_0\}} d \hat v),
+	 \wedge_{e \in S} \hat e \, \big>
+	 = \pm 
+	 \big< \hspace{-0.5mm}  \wedge_{v \in V\setminus \{v_0\}} d \hat v,
+	 \wedge_{e \in E\setminus S} \hat e \, \big>
+	 = \pm\mathrm{det}\langle d \hat v, \hat e \rangle
+	 _{v \in V\setminus \{v_0\}, e \in E\setminus S}.
+	 \]
+	This determinant is a sum
+	over all bijections $\sigma:E \setminus S \to V \setminus \{v_0\} $ of
+	the product $(-1)^\sigma \prod_{e \in E\setminus S} 
+	\langle d \widehat {\sigma(e)}, \hat e \rangle$,
+	where the sign $(-1)^\sigma$ is only defined
+	up to an overall sign. Notice that
+	$\langle d \hat x, \hat e \rangle = \pm 1$ if and only
+	if $x$ is an endpoint of $e$ and, if not,
+	$\langle d \hat x, \hat e \rangle = 0$.
+	So, for a bijection to contribute,
+	the unique edge adjacent to $v_0$ should correspond
+	to the unique other endpoint $v_1$ of
+	this edge. Then, for every other edge adjacent to $v_1$
+	we do not have a choice but to take the endpoint
+	different from $v_1$. If we continue in this way
+	we get that there is only
+	one bijection
+	that contributes and therefore
+	\[
+	\big< \hspace{-0.5mm}  *(\wedge_{v \in V\setminus \{v_0\}} d \hat v),
+	\wedge_{e \in S} \hat e \, \big>
+	= \pm 1.\]
+	This proves in particular that 
+	$*(\wedge_{v \in V\setminus \{v_0\}} d \hat v)$ is not
+	zero so the explicit formula for $w_1$
+	as the normalized $*(\wedge_{v \in V\setminus \{v_0\}} d \hat v)$ works.
+	If $(V,E\setminus S)$ is not a spanning tree of $G$
+	we already know that $\varphi_S$
+	is not a bijection so that the previous inner product
+	is zero. Using that
+	$\{\wedge_{e \in S} \hat e \}_{|S| = k}$ forms an
+	orthonormal basis of
+	$\Omega^1(G)$ we can calculate the norm
+	as the sum of squares of inner products
+	to obtain
+	\[\|*(\wedge_{v \in V\setminus \{v_0\}} d \hat v)\|^2
+	= 
+	\mbox{\# Spanning trees of } G.
+	\]
+	This implies that 
+	\[\langle (\varphi_S)_* w_1, w_2 \rangle
+	=\pm \frac{1}{\sqrt{\mbox{\# Spanning trees of } G}}.\]
+	ToDo: Find the mistake in the proof or in the statement.
 
 	
 	
