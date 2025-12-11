@@ -376,58 +376,16 @@ Proposition \ref{prop:parametrization_triangular_honey_first} that $\mathcal{L}$
 In the sequel, we identify $\honey^G$ with its image through $\mathcal{L}$. }
 
 {\color{green} As a consequence of \eqref{eq:nb_vertices_edges_triangle} below, all graphs of $\mathcal{G}^{(g,p)}$ have the same number $n_e=\frac{3Nn(n+1)}{2}$ of edges and $n_{v}=Nn^2+\frac{(3N+p)n}{2}$ of vertices. Hence, up to identifying edges and vertices of these graph, one can assume that there is a unique set $E^{(g,p)}$ of edges (resp. set $V^{(g,p)}$ of vertices) common to all graphs of $\mathcal{G}^{(g,p)}$ and that the graph structure of $G\in \mathcal{G}^{(g,p)}$ is encoded in the map $\partial:E^{(g,p)}\rightarrow \mathcal{P}(V^{(g,p)})$ which associates to an edge its endpoints.}
-\subsection{Volume formulas}
-
-{\color{blue} 
-The main result of this paper, namely Theorem \ref{th:Z_g_p_0} 
-and Corollary \ref{cor:yang_mills_g_p} involve a particular volume form on the 
-set of $(g,p)$-honeycombs. Theorem \ref{th:volume_form_g_p_honey} asserts 
-the existence of such a volume form, and is proved in Section \ref{sec:proof_of_th_volume_form}. 
-\\
-\\
-Let $E$ be a finite set. For any affine subspace $F\subset \R^E$ for $R \subset E$, 
-let us denote by 
-\begin{equation}
-    \label{eq:def_p_R}
-    p_{R}:F\rightarrow \mathbb{R}^R
-\end{equation}
-the projection of $F$ on $\mathbb{R}^R$. 
-We say that $R$ \textit{parametrizes} $F$ if $p_{R}$ is bijective. For a set $R\subset E$ parametrizing $F$, let us set 
-\begin{equation}
-    \label{eq:volume_forme_first_def}
-    \diff \ell_{R} = p_{R}^* \diff \ell_{\mathbb{R}^R}
-\end{equation}
-the induced measure on $F$, where $\ell_{\mathbb{R}^R}$ is the canonical volume measure on $\mathbb{R}^R$. 
-For any Borel subset $K\subset F$, we then define 
-$$\Vol_R(K)=\int_{K}\diff \ell_{R}=\int_{\mathbb{R}^R}\mathbf{1}_{x\in p_{R}(K)}\diff\ell_{\mathbb{R}^R}(x).$$
-
-\noindent
-Let $g, p$ be non-negative integers such that $p+g \geqslant 2$ and 
-let us define $n_{g,p}=g(n^2-1)+p\frac{n(n-1)}{2}-(n^2-1)$.
-
-
-\begin{theorem}[Volume form on $(g, p)$-honeycombs]
-    \label{th:volume_form_g_p_honey}
-    Let $G \in \mathcal{G}^{(g,p)}_{d}$ be a structure graph and let $\left(\alpha^1, \ldots, \alpha^p \right)\in \R^{np}$.
-    Then, $\dim \left[\honey^G \left( \alpha^1, \ldots, \alpha^p \right)\right] \leqslant n_{g, p}$ and if 
-    equality holds, the volume form $\Vol_R$ does not depend on the choice of the parametrizing 
-    subset $R \subset E^{(g,p)}$ of $\honey^G \left( \alpha^1, \ldots, \alpha^p \right)$.
-\end{theorem}
-
-\noindent
-We denote this volume form on $\honey^G \left( \alpha^1, \ldots, \alpha^p \right)$ by 
-$\Vol$. 
-
-}
-
-\subsection*{Volume of flat connections}
+{\color{blue} La section "Volume formula" n'a plus raison d'être} 
+\subsection{Volume of flat connections}
 Let us denote by $M_{g, n}(\alpha_1, \dots, \alpha_p)$ 
 the moduli space of flat $\U(n)$-valued connections 
 on a compact oriented surface with genus $g$ having $p$ 
 boundary components for which the holonomies around 
 $L_1,\ldots,L_p$ respectively belong to 
-$\mathcal{O}_{\alpha_1},\mathcal{O}_{\alpha_2}\ldots,\mathcal{O}_{\alpha_p}$. Let $c_n$ be a numerical constant and let 
-$\Delta(x)=\prod_{i<j}(x_j-x_i)$ denote the Vandermonde determinant.
+$\mathcal{O}_{\alpha_1},\mathcal{O}_{\alpha_2}\ldots,\mathcal{O}_{\alpha_p}$. For $g,p\geq 0$, Set $d\Vol\in\Omega^{n_{g,p}}(\mathbb{R}^{E^{(g,p)}})$ for the volume form on $n_{g,p}$-dimensional subspaces induced by the canonical Riemannian metric on $\mathbb{R}^{E^{(g,p)}}$. Hence, 
+$$d\Vol=\sum_{1\leq i_1<\ldots<i_{n_{g,p}}<\frac{3Nn(n+1)}{2}}dx_{i_1}\wedge\ldots \wedge dx_{i_{n_{g,p}}}.$$
+In the following statement, we write $\Vol(K)$ for the integration of $d\Vol$ on a $n_{g,p}$-dimensional submanifold and we let $\Delta(x)=\prod_{i<j}(x_j-x_i)$ denote the Vandermonde determinant.
 \begin{theorem}[Volume formula for $(g, p)$ partition function]
     \label{th:Z_g_p_0}
     Let $Z_{g, p, 0}(\alpha_1, \dots, \alpha_p)$ be the volume function for the moduli space of flat connection on a compact oriented surface 
@@ -438,8 +396,8 @@ $\Delta(x)=\prod_{i<j}(x_j-x_i)$ denote the Vandermonde determinant.
         Z_{g, p, 0}(\alpha_1, \dots, \alpha_p) = 
         \frac{c_{0,3}^{2g+p-2}}{n^{2g+p-3}}
         \sum_{\substack{ G \in \mathcal{G}^{(g,p)}}}
-        \Vol \left[ \honey^G(\alpha_1, 
-        \dots, \alpha_p) \right],
+        \frac{\Vol \left[ \honey^G(\alpha_1, 
+        \dots, \alpha_p) \right]}{\sqrt{\# \mbox{ Spanning trees of } G}},
     \end{equation}
    where $c_{0,3}=\frac{2^{(n+1)[2]}(2\pi)^{(n-1)(n-2)}}{n!}$.
 \end{theorem}
@@ -2878,3 +2836,46 @@ Recall that
 \end{document}
 
 
+\subsection{Volume formulas} {\color{blue} Cette section est vouée à disparaître}
+
+{\color{blue} 
+The main result of this paper, namely Theorem \ref{th:Z_g_p_0} 
+and Corollary \ref{cor:yang_mills_g_p} involve a particular volume form on the 
+set of $(g,p)$-honeycombs. Theorem \ref{th:volume_form_g_p_honey} asserts 
+the existence of such a volume form, and is proved in Section \ref{sec:proof_of_th_volume_form}. 
+\\
+\\
+Let $E$ be a finite set. For any affine subspace $F\subset \R^E$ for $R \subset E$, 
+let us denote by 
+\begin{equation}
+    \label{eq:def_p_R}
+    p_{R}:F\rightarrow \mathbb{R}^R
+\end{equation}
+the projection of $F$ on $\mathbb{R}^R$. 
+We say that $R$ \textit{parametrizes} $F$ if $p_{R}$ is bijective. For a set $R\subset E$ parametrizing $F$, let us set 
+\begin{equation}
+    \label{eq:volume_forme_first_def}
+    \diff \ell_{R} = p_{R}^* \diff \ell_{\mathbb{R}^R}
+\end{equation}
+the induced measure on $F$, where $\ell_{\mathbb{R}^R}$ is the canonical volume measure on $\mathbb{R}^R$. 
+For any Borel subset $K\subset F$, we then define 
+$$\Vol_R(K)=\int_{K}\diff \ell_{R}=\int_{\mathbb{R}^R}\mathbf{1}_{x\in p_{R}(K)}\diff\ell_{\mathbb{R}^R}(x).$$
+
+\noindent
+Let $g, p$ be non-negative integers such that $p+g \geqslant 2$ and 
+let us define $n_{g,p}=g(n^2-1)+p\frac{n(n-1)}{2}-(n^2-1)$.
+
+
+\begin{theorem}[Volume form on $(g, p)$-honeycombs]
+    \label{th:volume_form_g_p_honey}
+    Let $G \in \mathcal{G}^{(g,p)}_{d}$ be a structure graph and let $\left(\alpha^1, \ldots, \alpha^p \right)\in \R^{np}$.
+    Then, $\dim \left[\honey^G \left( \alpha^1, \ldots, \alpha^p \right)\right] \leqslant n_{g, p}$ and if 
+    equality holds, the volume form $\Vol_R$ does not depend on the choice of the parametrizing 
+    subset $R \subset E^{(g,p)}$ of $\honey^G \left( \alpha^1, \ldots, \alpha^p \right)$.
+\end{theorem}
+
+\noindent
+We denote this volume form on $\honey^G \left( \alpha^1, \ldots, \alpha^p \right)$ by 
+$\Vol$. 
+
+}
