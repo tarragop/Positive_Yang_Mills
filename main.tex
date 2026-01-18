@@ -61,8 +61,8 @@
 \providecommand{\Vol}{\operatorname{Vol}}
 \providecommand{\honey}{\texttt{\textsc{HONEY}}}
 \providecommand{\dualhive}{\texttt{\textsc{DH}}}
-\providecommand{\indic}{\mathbbm 1}
-
+\providecommand{\indic}{\mathbbm 1}\DeclareMathOperator{\interior}{int}
+\DeclareMathOperator{\Id}{Id}
 
 % Equations, Théorèmes...
 \numberwithin{equation}{section}
@@ -215,10 +215,8 @@ $$\partial T=\bigsqcup_{i\in\{0,1,2\}}\partial_iT \text{ , where }
     \item if $e\in h$, then $e \subset \left\{x+\mathbb{R} \ed^{2\pi i(\ell(e) +1) / 3}\right\} $ 
     for some $\ell(e)\in\{0,1,2\}$ and $x\in T$. 
     The integer $\ell(e)$ is then called the \textit{type} of $e$ 
-    and $L(e)=x_{\ell(e)-1}$ is called the \textit{height} of $e$ 
+    and $L(e)=x_{\ell(e)}$ is called the \textit{height} of $e$ 
     which is independent of the choice of $x$, 
-    {\color{blue} Issue : For a horizaontal edge in triangular honeycomb, $\ell = 2$ 
-    but $x_{\ell(e)-1} = x_1$ is not constant. Should it be $x_{\ell(e)}$ ?}
     \item for $0\leq i\leq 2$, $\#h\cap \partial_i T=n$ and if $e$ 
     is adjacent to a boundary vertex belonging to $\partial_i T$, 
     then either $c(e)=0$ and $\ell(e)=i+1$ or 
@@ -240,7 +238,7 @@ $v^0$ of $G$, corresponding to the univalent vertex on
 $\partial_0T$ whose coordinate $v^1_1$ is maximal. Then, the cyclic counter-clockwise order on the boundary vertices  given by the orientation of $T$ yields an order on the $3n$ boundary vertices $\{v^1,\ldots,v^{3n}\}$, with the vertices $\{v^{i+j},1\leq j\leq n\}$ located on $\partial_iT$.
 \\
 
-In the particular case where all edges have the same color, our definition is the original definition of a generic honeycomb from \autocite{Knutson_Tao_honeycomb}. Remark that, besides the coloring, our definition of triangular honeycombs differs slightly from the original one since we impose vertices to be trivalent inside $int(T)$.  The set of honeycombs in their original definition can then be seen as the closure of the ones from the present manuscript (in the case where all colors are the same).
+In the particular case where all edges have the same color, our definition is the original definition of a generic honeycomb from \autocite{Knutson_Tao_honeycomb}. Remark that, besides the coloring, our definition of triangular honeycombs differs slightly from the original one since we impose vertices to be trivalent inside $\interior(T)$.  The set of honeycombs in their original definition can then be seen as the closure of the ones from the present manuscript (in the case where all colors are the same).
 \\
 \\
 The \textit{boundary}, or the \textit{boundary values}, 
@@ -269,7 +267,7 @@ For any colored graph $G$ with an order on the boundary vertices, let us denote 
     \honey_{n,d}^G({\alpha,\beta,\gamma})
 \end{equation*}
 the set of triangular honeycombs of $\honey_{d, n}(\alpha, \beta, \gamma)$ with canonical graph 
-structure isomorphic to $G$ as colored graph with ordered boundary. 
+structure isomorphic to $G$ as colored graph with ordered boundary. Then, if $\honey_{n,d}^G({\alpha,\beta,\gamma})$ is non-empty,  necessarily the graph $G$ has $3d$ univalent vertices adjacent to edges colored $1$. We then define the color of $G$ as $c(G)=d$.
 Let us denote by $\mathcal{G}_d$ the set of isomorphism classes of colored 
 graphs with ordered boundary appearing in $\{G(h) \mid h\in\honey_{n,d}\}$.
 
@@ -346,8 +344,7 @@ We also denote by $\mathcal{G}^{(p, g)}$ the set of isomorphism classes of
 colored graphs with ordered boundary appearing in $\honey^{(g,p)}$.
 {\color{blue} 
 For $G\in\mathcal{G}^{(g,p)}$, let us set 
-$$c(G)=\frac{1}{3}\sum_{i=1}^N\#\{e\in \partial G_i,\,c(e)=1\}.$$
-By Definition \ref{def:toric_honeycomb} and Definition \ref{def:triangular_honey}, we have that $d\in\mathbb{N}$. 
+$$c(G)=\sum_{i=1}^Nc(G_i).$$
 Let us denote by $\mathcal{G}^{(g,p)}_{d}\subset \mathcal{G}^{(g,p)}$ the subset of graphs $G$ such that $c(G)=d$.}
 
 \begin{figure}[H]
@@ -488,52 +485,24 @@ Theorem \ref{th:Z_g_p_0} and Corollary \ref{cor:yang_mills_g_p}
 are then proved in Section \ref{sec:proof_Z_0_g_p}.}
 
 
-\section{Triangular honeycombs as decorated graphs and a canonical measure \\(provisional title)}
+\section{Graphs, divergence of flows and volume measures}
 
 
-We would like to see a triangular honeycomb
-as a honeycomb graph endowed
+We will see a honeycomb as graph $G$ endowed
 with a flow (an antisymmetric function on its
-edge set). 
-Let us consider a triangular honeycomb 
-with underlying honeycomb graph $G=(V,E,c)$
-and let us denote $\vec E = \{(a,b) \in V\times V \colon
-\{a,b\} \in E\}$
-its oriented edge set.  The triangular honeycomb
+edge set).  The honeycomb
 information of $G$, i.e., the precise
 drawing on the equilateral triangle of size $1$, 
 will be obtained
 once we fix the distance of each
-edge to the side of the triangle parallel to it 
-(\textcolor{blue}{the edge type is data or is it somehow determined by some other data?}).
-This is a multiple of the height map
-$L:E \to [0,1]$ given in
-Definition \ref{def:triangular_honey}.
-Recalling (\textcolor{blue}{TO FIX}) that we have
-chosen the function
-$\beta: V_{>1} \to \{-1,1\}$
-that encodes the vertex type,
-we define a map
-$\lambda: \vec E \to \mathbb R$ by
-\[\lambda(a,b) = 
-	\left\{\begin{array}{ll} 
- L(\{a,b\}) &\mbox{ if } \beta(a)=1 				\\
-	 - L(\{a,b\}) & \mbox{ if } \beta(a) =-1 		
-\end{array}
-\right.\]
-Then, $\lambda$ is antisymmetric and satisfies 
-that, for every $v \in V_{>1}$,
-\begin{equation}
-	\label{eq:DivOfLambda}
-	\sum_{x \sim v} \lambda (v,x) = \beta(v).
-\end{equation}
-We will recall some properties of 
-the \emph{divergence} operator
-used in the previous equation
-and explore the space of solutions
-to define a measure on the space of triangular honeycombs.
+edge to the side of the corresponding triangle parallel to it, which are embodied by the map $L$. Is is thus important to give an explicit expression of the volume measure associated to this distances, which is the main objective of this section.
 
-\subsection{Canonical measure}
+Let us consider a finite graph $G=(V,E)$
+and let us denote $\vec E = \{(a,b) \in V\times V \colon
+\{a,b\} \in E\}$
+its oriented edge set. 
+A function $\omega:\vec{E}\to\mathbb{R}$ is called antisymmetric if 
+$$\omega(a,b)=-\omega(b,a).$$
 
 Let us denote by $\Omega^0(G)$ 
 the vector space of real functions 
@@ -541,10 +510,7 @@ on $V$ endowed with the inner product given by
 $\langle f_1, f_2 \rangle = \sum_{x \in V} f_1(x) f_2(x)$.
 The space of flows is the vector space
 $\Omega^1(G)$ of antisymmetric
-real functions $\omega$ on $\vec E$, i.e.,
-the ones
-satisfying $\omega(a,b) = -\omega(b,a)$
-and endowed with the inner product
+real functions $\omega$ on $\vec E$ endowed with the inner product
 $\langle \omega_1,\omega_2 \rangle
 = \sum_{e \in E} \omega_1(e) \omega_2(e) $,
 where we are using that, due to the antisymmetry
@@ -552,30 +518,45 @@ of $\omega_1$ and $\omega_2$, the product
 $\omega_1(e) \omega_2(e)$ does not depend
 on the orientating of $e$
 as long as we choose the same for both arguments.
-The analog of the differential
+
+For any map $\phi: V\rightarrow \mathbb{R}$, set
+\begin{equation}
+	\label{eq:DivOfLambda}
+	\mathcal{F}(\phi)=\left\{\lambda\in\Omega^1(G),\sum_{x \sim v} \lambda (v,x) = \phi(v)\right\}.
+\end{equation}
+We will recall some properties of 
+the \emph{divergence} operator
+used in the previous equation
+and explore the space of solutions
+to provide a convenient measure on $\mathcal{F}(\phi)$.
+
+\subsection{Canonical measure}
+
+
+The analogue of the differential
 of a function is the map
 $d: \Omega^0(G) \to \Omega^1(G)$,
 \[d f (a,b) = f(b) - f(a).\] 
-For $x \in V$ define $\hat x \in \Omega^0(G)$ 
+For $x \in V$ define $\delta_{x} \in \Omega^0(G)$ 
 that takes the value
  $1$ at $x$ and $0$ at other vertices, and
 for $e \in \vec E$ define
-$\hat e \in \Omega^1(G)$ that takes the value
+$\delta_{e} \in \Omega^1(G)$ that takes the value
 $1$ at $e$, $-1$ at the opposite of $e$
 and $0$ at other edges. So, we may evaluate
 $d$ at the basis
-$\{\hat x \}_{x \in V}$ of $\Omega^0(G)$ to obtain
-$d \hat x = -\sum_{e \in \vec E,\underline e = x} \hat e$,
+$\{\delta_{x} \}_{x \in V}$ of $\Omega^0(G)$ to obtain
+$d \delta_{x} = -\sum_{e \in \vec E,\underline e = x} \delta_{e}$,
 where $\underline {(a,b)} = a$. This tells
 us that we can write $d$ in terms of 
-$\hat e$ and $\hat x$ as
+$\delta_{e}$ and $\delta_{x}$ as
 \[d = -\sum_{x \in V} 
-\sum_{e \in \vec E, \underline e = x} \hat e \otimes \hat x\]
+\sum_{e \in \vec E, \underline e = x} \delta_{e} \otimes \delta_{x}\]
 by identifying
 $\Omega^0(G)$ with its dual. Its adjoint $d^*$
 would be given by permuting the terms
 \[d^* = -\sum_{x \in V} 
-\sum_{e \in \vec E, \underline e = x}  \hat x \otimes \hat e\]
+\sum_{e \in \vec E, \underline e = x}  \delta_{x} \otimes \delta_{e}\]
 or, in a more explicit way, for 
 $\omega \in \Omega^1(G)$,
 \[d^* \omega (x) = - \sum_{e \in \vec E, \underline e=x}
@@ -583,71 +564,27 @@ $\omega \in \Omega^1(G)$,
 We define $\mathrm {div} = -d^*$ so that 
 	\eqref{eq:DivOfLambda}
 rewrites as
-	$(\pi \circ \mathrm{div}) \lambda = \beta$
-	with $\pi: \Omega^0(V) \to \Omega^0(V_{>1})$
-	the restriction map to $V_{>1}$.
-	 We will be interested in two kind of solution space. The first one would be the plain
-	 \[\mathcal F(\beta)
+	$\mathrm{div}\lambda = \phi$, yielding to the reformulation of the corresponding affine space 
+	 \[\mathcal F(\phi)
 	 = 	\{\lambda \in \Omega^1(G):
-	 (\pi \circ \mathrm{div}) \lambda = \beta
+	  \mathrm{div}\lambda = \phi
 	 \}.\]
-	 We can quickly see that
-	$\mathcal F(\beta)$ is always non-empty
-	by noticing that
-	$\mathrm{Im}(\pi \circ \mathrm{div})
-	= \mathrm{Ker}(\mathrm{div}^* \circ \pi^*)^\perp$
-	where $\pi^*$, the adjoint of $\pi$, is
-	the extension by zero operator
-	$i: \Omega^0(V_{>1}) \to \Omega^0(V)$
-	and, by definition, $\mathrm{div}^* = -d$.
-	A function $f \in \mathrm{Ker}(d \circ i)$
-	would satisfy that $i(f)$ is constant since
-	$G$ is connected, but 
-	since $i(f)|_{V_1} = 0$
-	and $V_1$ is non-empty, $f$ has to be zero.
-	So, $\mathrm{Im}(\pi\circ \mathrm{div}) = 0^\perp 
-	= \Omega^0(G)$.
-	We may calculate the dimension 
-	of $\mathcal F(\beta)$ by using that $\mathcal F(0) = \mathrm{Ker}(\pi \circ \mathrm{div}) = 
-	(\mathrm{Im}(\mathrm{div}^* \circ \pi^*))^\perp =
-	(\mathrm{Im}(d \circ i))^\perp$.
-	Then, by using that the dimension of 
-	$\mathrm{Im}(d\circ i)$ is
-	 $|V_{>1}|$ because of the injectivity, we can write
-		\[\mathrm{dim}\big(\mathcal F(\beta)
-		\big)
-		= |E| - \mathrm{dim}(\mathrm{Im}(d \circ i)) 
-		=
-		|E| - |V_{>1}|. \]
-	For the second kind of solution space one we add boundary conditions.
-	 Let us take 
-	 $\gamma: V_1 \to \mathbb R$ and
-	 for every vertex $x \in V_1$ let us denote by
-	 $\vec x$ the unique edge ending at $x$. We define
-	 \[\mathcal F(\beta; \gamma)
-	= 	\{\lambda \in \mathcal F(\beta):
-	\lambda(\vec x) = \gamma(x) \mbox{ for every }
-	x \in V_1
-	\}.\]
-This solution space may be empty since we
-always have
-	$\sum_{v \in V_{>1}} \mathrm{div} \lambda (v)
-	= \sum_{x \in V_1} \lambda(\vec x)$
+	 
+Let us for now assume that $G$ is connected. Remark first that the solution space may be empty since we
+always have, by antisymmetry,
+	$\sum_{v \in V} \mathrm{div} \lambda (v)
+	= 0$
 	which is reminiscent of
 	Stokes' theorem. But this is the only
 	restriction as explained in Proposition \ref{prop:BijectionTrees}. If
-	$\lambda_0 \in \mathcal F(\beta;
-	\gamma)$ we have
-	$\mathcal F(\beta;\gamma) = 
-	\lambda_0 + \mathcal F(0;0)$ and
-	$\mathcal F(0;0)$ is precisely
-	$\mathrm{Ker}(\mathrm{div})$
-	since the boundary conditions can be
-	written as $\mathrm{div}\lambda (x)= 0$
-	for $x \in V_1$. So, if
-	$\mathcal F(\beta;\gamma)$ is non-empty,
+	$\lambda_0 \in \mathcal F(\phi)$ we have
+	$\mathcal F(\phi) = 
+	\lambda_0 + \mathcal F(0)$ and
+	$\mathcal F(0)$ is precisely
+	$\mathrm{Ker}(\mathrm{div})$. So, if
+	$\mathcal F(\phi)$ is non-empty,
 	we can calculate
-	\[\mathrm{dim}(\mathcal F(\beta;\gamma))
+	\[\mathrm{dim}(\mathcal F(\phi))
 	= \mathrm{dim}(\mathrm{Ker}(\mathrm{div}))
 	= |E| - \mathrm{dim}(\mathrm{Im}(d))
 	= |E| - |V| + 1,\]
@@ -658,57 +595,29 @@ always have
 	\mathrm{dim}(\Omega^0(G)) - 1 = |V|-1$.
 	
 	
-	
 \begin{proposition} \label{prop:BijectionTrees}
-	Take $\gamma: V_1 \to \mathbb R$. The set
-	$\mathcal F(\beta;\gamma) $ is not empty if and only if
+	If $G$ is connected, the set
+	$\mathcal F(\phi) $ is not empty if and only if
 \begin{equation} \label{eq:ExistenceCondition}
-\sum_{x \in V_1} \gamma(x) 
-	= \sum_{v \in V>1} \beta(v).
+\sum_{v \in V} \phi(v)=0.
 \end{equation}
 	Moreover, if $S \subset E$
 	and  $\Omega^1(S)$ denotes the space of antisymmetric
 	functions on $\vec S \subset \vec E$, the composition
-	\[\varphi_S:\mathcal F(\beta;\gamma) \xrightarrow[]{
+	\[\varphi_S:\mathcal F(\phi) \xrightarrow[]{
 	\mbox{\tiny inclusion}}
 	\Omega^1(G) 
 	\xrightarrow[]{
 		\mbox{\tiny restriction}} \Omega^1(S)\]
-	is a bijection if and only if $\mathcal F(\beta;\gamma)
+	is a bijection if and only if $\mathcal F(\phi)
 	\neq \emptyset$
 	 and
 	$(V,E \setminus S)$ is a spanning tree.
-	In case $\varphi_S$ is a bijection,
-	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\beta;\gamma)}	= \big(\hspace{-0.5mm} \sqrt{\# \mbox{ Spanning trees of } G}	\big)\,
-	\mathcal Leb_{\Omega^1(S)}.\]
+	In case $\varphi_S$ is a bijection, the matrices of $\varphi_S$ and $\varphi_S^{-1}$ in the bases $\{\hat{e},e\in E\},\{\hat{e},e\in S\}$
+have integer coefficients.	
 \end{proposition}
 
 
-If there are no boundary conditions there
-is always a solution. 
-For the next proposition, we say that a subgraph $H$ of
-$G$ is a \emph{forest} of $G$ if $H$
- is a spanning subgraph (i.e., it has the same vertex set as $G$) and each connected component of $H$
- is a tree whose vertex set
-contains a unique element of $V_1$.
-
-\begin{proposition} \label{prop:BijectionForests}
-	If $S \subset E$
-	and  $\Omega^1(S)$ denotes the space of antisymmetric
-	functions on $\vec S \subset \vec E$, then
-	\[\psi_S:\mathcal F(\beta) \xrightarrow[]{
-		\mbox{\tiny inclusion}}
-	\Omega^1(G) 
-	\xrightarrow[]{
-		\mbox{\tiny restriction}} \Omega^1(S)\]
-	is a bijection if and only if 
-	$(V,E \setminus S)$ is a forest of $G$. 
-	Moreover, in case $\psi_S$ is a bijection,
-	\[(\psi_S)_* \mathcal Leb_{\mathcal F(\beta)}	= 
-	\big(\hspace{-0.5mm}\sqrt{\# \mbox{ Forests of } G}
-	\big)\,
-	\mathcal Leb_{\Omega^1(S)}.\]
-\end{proposition}
 
 \begin{proof}[Proof of Proposition
 \ref{prop:BijectionTrees}]
@@ -720,12 +629,13 @@ the condition
 	Let us show it is sufficient.
 	Consider first the case where
 	$G$ is a \textbf{tree}. To solve
-	$ (\pi \circ \mathrm{div}) \lambda = \beta$
+	$ \mathrm{div} \lambda = \phi$
 	we look for
 	the edges where $\lambda$
-	is most easily determined by the boundary conditions.
-	Those
-	are the ones with an endpoint whose
+	is most easily determined by the boundary conditions. Let us denote by $V_{1}$ the set of leaves of $T$. Then, the divergence condition yields $\lambda(e)=\phi(x)$ if $x\in V_{1}$ and $e$ is the unique edge starting from $x$. 
+	
+	
+	Next, denote by $V_{>1}$ the vertices of $G$ of degree larger than one. Let us consider edges with an endpoint whose
 	other edges connect only to leaves
 	or, equivalently, the edges
 	in $G\setminus V_1$ adjacent to leaves
@@ -734,19 +644,21 @@ the condition
 	and notice that,
 	since $x$ is not a leaf of $G$, the set $V_{1,x}$
 	of vertices in $V_1$ connected to
-	$x$ is non-empty. 
+	$x$ is non-empty.  
 	Let us reduce our task to finding
-	a solution on $G \setminus V_{1,x}$ as follows. If $e$ denotes
+	a solution on $G \setminus V_{1,x}$ as follows.  If $e$ denotes
 	the edge of $G \setminus V_1$
-	ending at $x$, a solution should satisfy
-	\[\bigg(\sum_{y \in V_{1,x}}\gamma(y)
-	\bigg) - \lambda(e) 
-	= \beta(x)\]
+	starting at $x$, using the previous case of $x$ being a leaf yields that a solution should satisfy
+	\[ \phi(x)=\bigg(\sum_{y \in V_{1,x}}\lambda(x,y)
+	\bigg) +\lambda(e) 
+	=-\bigg(\sum_{y \in V_{1,x}}\lambda(y,x)
+	\bigg) +\lambda(e)=-\bigg(\sum_{y \in V_{1,x}}\phi(y)
+	\bigg) +\lambda(e)\]
 	which determines $\lambda$
-	at $e$. Now, we consider the graph 
+	at $e$ as linear combinations of different values $\phi$ with integer coefficients. Now, we consider the graph 
 	$G\setminus V_{1,x} $, define
-	$\gamma(x) =-\beta(x) +
-	\sum_{y \in V_{1,x}}\gamma(y) 
+	$\phi(x) =\left(\phi(x)+
+	\sum_{y \in V_{1,x}}\phi(y)\right) 
 	$
 	and notice that
 	\eqref{eq:ExistenceCondition}
@@ -758,9 +670,9 @@ the condition
 	\eqref{eq:ExistenceCondition}
 	is precisely the
 	equation 	 
-	$(\pi \circ \mathrm{div}) \lambda = \beta$. By this procedure
+	$\mathrm{div}\lambda = \phi$. By this procedure
 	we have seen that, for a tree, 
-	in case there is a solution, it is unique.
+	in case there is a solution, it is unique, and its value at $e\in G$ is a linear combination with integer coefficients of the values $\phi(x)$ for $x\in V$.
 	
 	For a \textbf{general graph} $G$ we
 	may take a spanning tree $T$ of $G$
@@ -776,88 +688,61 @@ the condition
 	we may consider any antisymmetric function
 	$\widetilde \lambda: \vec S \to \mathbb R $
 	and look for a solution
-	$\lambda \in \mathcal F(\beta;\gamma)$
+	$\lambda \in \mathcal F(\phi)$
 	satisfying $\lambda|_{\vec S} = \widetilde \lambda$.
 	To 
-	be able to forget the edges in $S$ we change $\beta$ to
-	$\beta_{new}:V_{>1} \to \mathbb R$ given by
-		\[\beta_{\tiny new}(x) =\beta(x) -
+	be able to forget the edges in $S$ we change $\phi$ to
+	$\phi_{new}:V \to \mathbb R$ given by
+		\[\phi_{\tiny new}(x) =\phi(x) -
 	\sum_{e \in \vec S, \underline{e} = x}
 	\widetilde \lambda(e)\]
 	so that if the divergence of $\lambda$
 	in $T$ at $x$ is
-	$\beta_{new}(x)$, the divergence of the extension
+	$\phi_{new}(x)$, the divergence of the extension
 	by $\widetilde \lambda$
 	of $\lambda$
 	in $G$ at $x$ would be 
-	$\beta(x)$.
-	Notice that the sum of $\beta_{new}(x)$
-	for $x \in V_{>1}$ is the same as the sum of 
-	$\beta(x)$.
-	This holds because each edge in $S$ is not connected to a vertex in $V_1$
-	so that
-	it appears twice in the sum,
-	once with each orientation.
-	Since $T$ is spanning, each vertex in $V_1$ 
-	is a leaf of $T$ so that we define
-	$\gamma_{new}(x) = \gamma(x)$
-	for $x \in V_1$.
-	Nevertheless, there may be leaves of $T$ that are not in 
-	$V_1$ which forces us
-	to add boundary conditions.
-	We define $\gamma_{new}(x) = -\beta_{new}(x)$
-	for $x$ a leaf of $T$ which is not a leaf of $G$.
+	$\phi(x)$.
+	Notice that the sum of $\phi_{new}(x)$
+	for $x \in V$ is the same as the sum of 
+	$\phi(x)$.
+	This holds because each edge in $S$ is appears twice in the sum,
+	once with each orientation, and thus the contribution to the sum cancels due to the antisymmetry.
 	Then 
 	\eqref{eq:ExistenceCondition} holds
-	for $T$ and $(\beta_{new};\gamma_{new})$, and we may
-	find a unique solution $\lambda \in \mathcal F(\beta_{new},\gamma_{new})$ on $T$.	
-	We extend $\lambda$ by $\widetilde 
+	for $T$ and $(\phi_{new};\gamma_{new})$, and we may
+	find a unique solution $\lambda \in \mathcal F(\phi_{new})$ on $T$ such that $\lambda(x)$ is a linear combination with integer coefficients of the values of $\phi_{new}$, and thus also of the values of $\phi$ and $\tilde{\lambda}$.	We extend $\lambda$ by $\widetilde 
 	\lambda$ and remark that it is a solution in
-	$\mathcal F(\beta,\gamma)$ since
-	at the vertices that are not leaves of $T$
-	the fact of being a solution remains valid
-	because of the definition of
-	$\beta_{new}$ and at
-	 a leaf $x$ of $T$ that is not
-	a leaf of $G$ it is also a solution
-	due to the boundary condition. On the other hand,
-	if $\lambda$ is a solution in $\mathcal F(\beta;\gamma)$
+	$\mathcal F(\phi)$. 
+	
+	On the other hand,
+	if $\lambda$ is a solution in $\mathcal F(\phi)$
 	its restriction to the directed edge set of $T$
-	is a solution in $\mathcal F(\beta_{new};\gamma_{new})$
+	is a solution in $\mathcal F(\phi_{new})$
 	so that there is only 
-	one solution $\lambda$ in $\mathcal F(\beta;\gamma)$
+	one solution $\lambda$ in $\mathcal F(\phi)$
 	satisfying $\lambda|_{\vec S} = \widetilde \lambda$.
 	Notice that this already
 	shows that $\varphi_S$ is a bijection
 	when $(V,E\setminus S)$ is a spanning tree of $G$.
-	Another intuitive approach that replaces
-	the need to change $\beta$ and $\gamma$ would be 
-	to break each edge in $S$ into two edges to obtain
-	two new leaves, then $\widetilde \lambda$ would
-	become
-	boundary conditions
-	for these new leaves and we may construct,
-	in that way, a new tree containing $T$ where
-	a solution  would be
-	exactly the same as a solution on $G$.
 	\\
 	\\
 	It is clear that if $\varphi_S$ is a bijection
-	then $\mathcal F(\beta;\gamma)$ is not empty
+	then $\mathcal F(\phi)$ is not empty
 	because $\Omega^1(S)$ would be empty which
 	is impossible. So, for
 	the rest of the proof we may assume that
-	$\mathcal F(\beta;\gamma)$ is not empty.
-	By taking any $\lambda_0 \in \mathcal F(\beta;\gamma)$, using that
-	$\mathcal F(\beta;\gamma)
-	= \mathcal F(0;0) + \lambda_0$ 
+	$\mathcal F(\phi)$ is not empty.
+	By taking any $\lambda_0 \in \mathcal F(\phi)$, using that
+	$\mathcal F(\phi)
+	= \mathcal F(0) $ 
 	and that
 	the map
-	$\mathcal F(\beta;\gamma) \to \Omega^1(S)$
+	$\mathcal F(\phi) \to \Omega^1(S)$
 	is a composition
-	\[\mathcal F(\beta;\gamma)
+	\[\mathcal F(\phi)
 	\xrightarrow[]{\tiny \mbox{translation by } - \lambda_0}
-	\mathcal F(0;0)
+	\mathcal F(0)
 		\xrightarrow[]{\varphi_S}
 	\Omega^1(S) 
 		\xrightarrow[]{\tiny \mbox{translation by }  
@@ -865,14 +750,14 @@ the condition
 	\Omega^1(S),\]
 	we find
 	that it is enough to prove the statements
-	for $\beta=0$ and $\gamma  = 0$.
+	for $\phi=0$.
 	Now, let us show that if $\varphi_S$ is a
 	bijection then $(V,E\setminus S)$ is a spanning tree.
 	If $(V,E\setminus S)$ had a cycle
 	$(v_1,\dots,v_k, v_{k+1})$ with $v_{k+1} = v_1$ we could define
 	$\lambda(v_i,v_{i+1}) = - \lambda(v_{i+1},v_i) =1$
 	for $i \in \{1,\dots,k\}$ and zero elsewhere.
-	Such $\lambda$ would belong to $\mathcal F(0;0)$
+	Such $\lambda$ would belong to $\mathcal F(0)$
 	but its image in $\Omega^1(S)$ would be zero
 	so that $\varphi_S$
 	would not be injective. To show that
@@ -884,8 +769,6 @@ the condition
 	the solution and, thus, determine the
 	values at $S \setminus S'$. Then $\varphi_{S}$
 	could not be surjective. 
-	We could have also used a dimension argument
-	to see that $S$ cannot be too big.
 %	A dimension argument
 %	may have also worked by saying, for
 %	instance, that we have already proven
@@ -904,36 +787,42 @@ the condition
 %	and use that $d$ is almost injective its kernel
 %	being the constant functions since $G$
 %	is connected.
-	\\
-	\\
-	Now, assuming that $(V,E\setminus S)$
+	
+\end{proof}
+\begin{proposition}\label{prop:divergence_volume}
+Suppose that $G$ is connected. If $(V,E\setminus S)$ is a spanning tree, then for all $\phi:V\to\mathbb{R}$ satisfying \eqref{eq:ExistenceCondition},
+\[(\varphi_S)_* \mathcal Leb_{\mathcal F(\phi)}	= \big(\hspace{-0.5mm} \sqrt{\# \mbox{ Spanning trees of } G}	\big)\,
+	\mathcal Leb_{\Omega^1(S)}.\]
+\end{proposition}
+\begin{proof}
+Now, assuming that $(V,E\setminus S)$
 	is a spanning tree, let us look 
 	for the constant $C>0$ such that
-	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(0;0)}	= C	\mathcal Leb_{\Omega^1(S)}\]
+	\[(\varphi_S)_* \mathcal Leb_{\mathcal F(0)}	= C	\mathcal Leb_{\Omega^1(S)}\]
 	Denoting the dimension of
-	$\mathcal F(0;0)$ by $k = |E|-|V| +1$,
+	$\mathcal F(0)$ by $k = |E|-|V| +1$,
 	we want to study the map $(\varphi_S)_*$ induced
 	on $k$-forms. This is equivalent to looking at
 	the pushforward map on $k$-vectors
 	\[(\varphi_S)_*: \Lambda^k
-	\mathcal F(0;0) \to 
+	\mathcal F(0) \to 
 	\Lambda^k \Omega^1(S),\]
-	taking the dual and inversing the resulting map.
+	taking the dual and inverting the resulting map.
 	The constant $C>0$ would be found
 	by taking normalized
 	vectors $w_1 \in \Lambda^k
-	\mathcal F(0;0) $, $w_2 \in \Lambda^k \Omega^1(S)$ and 
+	\mathcal F(0) $, $w_2 \in \Lambda^k \Omega^1(S)$ and 
 	solving
 	\[(\varphi_S)_* w_1 = \pm C^{-1} w_2\]
 	or, what is the same,
 	taking $C^{-1} = |\langle (\varphi_S)_* w_1 , w_2\rangle| $.
 	The vector $w_2$ can be explicitly obtained
-	as $\wedge_{e \in S} \hat e$, where
+	as $\wedge_{e \in S} \delta_{e}$, where
 	we have
 	chosen an orientation for each edge $e \in E$ 
 	and an order to perform the product.
 	We recall that
-	 $\hat e$
+	 $\delta_{e}$
 	takes the value $1$ at $e$ with our chosen orientation,
 	$-1$ if we reverse the orientation and
 	$0$ at all other edges. To 
@@ -944,39 +833,39 @@ the condition
 	$\mathrm{Im}(d)$.
 	By fixing a leaf $v_0$
 	of $(V,E\setminus S)$ we may consider
-	$\{d \hat v \}_{v \in V \setminus \{v_0\}}$,
+	$\{d \delta_{v} \}_{v \in V \setminus \{v_0\}}$,
 	where we recall that
-	$\hat v$ is the function which is $1$ at $v$
+	$\delta_{v}$ is the function which is $1$ at $v$
 	and $0$ elsewhere.
 	Since $\sum_{v \in V \setminus \{v_0\}}
-	d\hat v + d\hat v_0 = d 1= 0$, this family
+	d\delta_{v} + d\delta_{v_0} = d 1= 0$, this family
 	generates $\mathrm{Im}(d)$. Now,
 	we obtain an element of
 	$\Lambda^k \mathcal F(0;0)$ by taking 
-	$*(\wedge_{v \in V\setminus \{v_0\}} d \hat v)$,
+	$*(\wedge_{v \in V\setminus \{v_0\}} d \delta_{v})$,
 	where $*$ denotes the Hodge star operator.
 	We have not yet normalized this element nor shown it is non-zero but let us calculate,
 	using that 
-	$ \wedge_{e \in S} \hat e = \pm 
-	* (\wedge_{e \in E\setminus S} \hat e)  $,
+	$ \wedge_{e \in S} \delta_{e} = \pm 
+	* (\wedge_{e \in E\setminus S} \delta_{e})  $,
 	\[
-	\big<  \hspace{-0.5mm} *(\wedge_{v \in V\setminus \{v_0\}} d \hat v),
-	 \wedge_{e \in S} \hat e \, \big>
+	\big<  \hspace{-0.5mm} *(\wedge_{v \in V\setminus \{v_0\}} d \delta_{v}),
+	 \wedge_{e \in S} \delta_{e} \, \big>
 	 = \pm 
-	 \big< \hspace{-0.5mm}  \wedge_{v \in V\setminus \{v_0\}} d \hat v,
-	 \wedge_{e \in E\setminus S} \hat e \, \big>
-	 = \pm\mathrm{det}\langle d \hat v, \hat e \rangle
+	 \big< \hspace{-0.5mm}  \wedge_{v \in V\setminus \{v_0\}} d \delta_{v},
+	 \wedge_{e \in E\setminus S} \delta_{e} \, \big>
+	 = \pm\mathrm{det}\langle d \delta_{v}, \delta_{e} \rangle
 	 _{v \in V\setminus \{v_0\}, e \in E\setminus S}.
 	 \]
 	This determinant is a sum
 	over all bijections $\sigma:E \setminus S \to V \setminus \{v_0\} $ of
 	the product $(-1)^\sigma \prod_{e \in E\setminus S} 
-	\langle d \widehat {\sigma(e)}, \hat e \rangle$,
+	\langle d \widehat {\sigma(e)}, \delta_{e} \rangle$,
 	where the sign $(-1)^\sigma$ is only defined
 	up to an overall sign. Notice that
-	$\langle d \hat x, \hat e \rangle = \pm 1$ if and only
+	$\langle d \delta_{x}, \delta_{e} \rangle = \pm 1$ if and only
 	if $x$ is an endpoint of $e$ and, if not,
-	$\langle d \hat x, \hat e \rangle = 0$.
+	$\langle d \delta_{x}, \delta_{e} \rangle = 0$.
 	So, for a bijection to contribute,
 	the unique edge adjacent to $v_0$ should correspond
 	to the unique other endpoint $v_1$ of
@@ -987,23 +876,23 @@ the condition
 	one bijection
 	that contributes and therefore
 	\[
-	\big< \hspace{-0.5mm}  *(\wedge_{v \in V\setminus \{v_0\}} d \hat v),
-	\wedge_{e \in S} \hat e \, \big>
+	\big< \hspace{-0.5mm}  *(\wedge_{v \in V\setminus \{v_0\}} d \delta_{v}),
+	\wedge_{e \in S} \delta_{e} \, \big>
 	= \pm 1.\]
 	This proves in particular that 
-	$*(\wedge_{v \in V\setminus \{v_0\}} d \hat v)$ is not
+	$*(\wedge_{v \in V\setminus \{v_0\}} d \delta_{v})$ is not
 	zero so the explicit formula for $w_1$
-	as the normalized $*(\wedge_{v \in V\setminus \{v_0\}} d \hat v)$ works.
+	as the normalized $*(\wedge_{v \in V\setminus \{v_0\}} d \delta_{v})$ works.
 	If $(V,E\setminus S)$ is not a spanning tree of $G$
 	we already know that $\varphi_S$
 	is not a bijection so that the previous inner product
 	is zero. Using that
-	$\{\wedge_{e \in S} \hat e \}_{|S| = k}$ forms an
+	$\{\wedge_{e \in S} \delta_{e} \}_{|S| = k}$ forms an
 	orthonormal basis of
 	$\Omega^1(G)$ we can calculate the norm
 	as the sum of squares of inner products
 	to obtain
-	\[\|*(\wedge_{v \in V\setminus \{v_0\}} d \hat v)\|^2
+	\[\|*(\wedge_{v \in V\setminus \{v_0\}} d \delta_{v})\|^2
 	= 
 	\mbox{\# Spanning trees of } G.
 	\]
@@ -1012,427 +901,91 @@ the condition
 	=\pm \frac{1}{\sqrt{\mbox{\# Spanning trees of } G}}\]
 	which implies the final statement of
 	the proposition.
-	
 \end{proof}
-
-\begin{proof}[Proof of Proposition
-	\ref{prop:BijectionForests}]
-	We already know that $\mathcal F(\beta)$ is always
-	non-empty so we could instead work with
-	$\mathcal F(0)$ for the rest of the proof.
-	Let us begin by showing that if
-	$\psi_S$ is a bijection then $(V,E\setminus S)$
-	is a forest of $G$. As in the previous proof, a cycle
-	would produce
-	a non-zero divergenceless flow which would project
-	to zero by $\psi_S$ so $(V,E\setminus S)$
-	cannot have cycles if $\psi_S$ is injective.
-	In the same way, if $(V,E \setminus S)$
-	contained a path
-	$(v_1,\dots,v_k)$ with pairwise distinct vertices
-	and $v_1,v_k \in V_1$,
-	we could define
-	$\lambda(v_i,v_{i+1}) = - \lambda(v_{i+1},v_i)
-	=1$ for $i \in \{1,\dots,k-1\}$ and zero elsewhere.
-	The divergence of $\lambda$ would be zero
-	at every vertex except for $v_1$ and $v_k$
-	but since they belong to $V_1$ we still have
-	$\lambda \in \mathcal F(0)$.
-	So, 
-	a connected component of
-	$(V,E\setminus S)$ cannot contain more
-	than one vertex in $V_1$. 
-	Finally, to show that
-	each connected component of
-	$(V,E\setminus S)$
-	contains exactly one vertex in $V_1$
-	we can use that since
-	$(V,E\setminus S)$ is a forest,
-	its number of edges equals
-	$|V|$
-	minus its number of connected components,
-	hence
-	\[|S| = |E|
-	- |V| + \#\mbox{connected components of }
-	(V,E\setminus S).\]
-	Given that 
-	$\mathrm{dim} (\mathcal F(0)) = 
-	|E| - |V_{>1}| = |E| - |V| + |V_1|$,
-	the number of connected 
-	components of $(V,E\setminus S)$
-	must be less or equal than $|V_1|$
-	for $\psi_S$ to even have a chance
-	of being surjective. Since
-	we know that the map taking 
-	a vertex in $V_1$ to the
-	connected component
-	of $(V,E\setminus S)$ containing it
-	is injective, it must also be surjective
-	over the set of connected components.
-	\\
-	\\
-	Let us show that if $(V,E\setminus S)$
-	is a forest of $G$ then 
-	$\psi_S$ is a bijection
-	in an indirect way
-	that also proves
-	the final statement.
-	As in the proof of Proposition
-	\ref{prop:BijectionTrees}, let us consider the 
-	pushforward map
-	\[(\psi_S)_*: \Lambda^k
-	\mathcal F(0;0) \to 
-	\Lambda^k \Omega^1(S),\]
-	for $k = 	|E| - |V_{>1}| = |S|$ and let us
-	calculate
-	\[
-	\big<  \hspace{-0.5mm} *(\wedge_{v \in 
-	V_{>1}} d \hat v),
-	 \wedge_{e \in S} \hat e \, \big>
-	 = \pm 
-	 \big< \hspace{-0.5mm}  \wedge_{v \in V_{>1}} d \hat v,
-	 \wedge_{e \in E\setminus S} \hat e \, \big>
-	 = \pm\mathrm{det}\langle d \hat v, \hat e \rangle
-	 _{v \in V_{>1}, e \in E\setminus S}.
-	 \]
-	 In the calculation
-	 of the determinant
-	 we sum over
-	 bijections 
-	 $\sigma:E\setminus S \to V_{>1}$
-	 and the only contributions
-	$ \langle d \hat v, \hat e \rangle$
-	arise when 
-	$v$ is an endpoint of $e$.
-	To get a non-zero contribution,
-	if $e$ is
-	 adjacent to
-	 a vertex of $V_{1}$
-	 we have only one choice of vertex
-	 in $V_{>1}$ for $\sigma(e)$.
-	 For the other edges
-	 having $\sigma(e)$ as an endpoint 
-	 we have only one choice,
-	 the other endpoint, as the vertex and 
-	 we can repeat the
-	 argument until $\sigma$
-	 is determined. So, there is only one contribution
-	 which gives
-		\[
-	\big< \hspace{-0.5mm}  *(\wedge_{v \in 
-	V_{>1}} d \hat v),
-	\wedge_{e \in S} \hat e \, \big>
-	= \pm 1.\]
-	This implies that the
-	image of 
-	$*(\wedge_{v \in 
-	V_{>1}} d \hat v)$ by $(\psi_S)_*$
-	is non-zero so that $\psi_S$
-	is a bijection.
-	Since we already know that $\psi_S$
-	is not a bijection when $E\setminus S$
-	is not a forest of $G$, the inner
-	product would be zero in that case.
-	Recall that
-	the constant $C>0$ such that
-	\[(\psi_S)_* \mathcal Leb_{\mathcal F(0)}
-		= C	\mathcal Leb_{\Omega^1(S)}\]
-		is the inverse of 
-		the inner product 
-		$\langle (\psi_S)_* w_1, w_2 \rangle$
-		for $w_1 = 	 \wedge_{e \in S} $ 
-		and $w_2$ the normalized
-		$*(\wedge_{v \in 
-	V_{>1}} d \hat v)$
-	which allows us to conclude that
-	\[\langle (\psi_S)_* w_1, w_2 \rangle
-	=\pm \frac{1}{\sqrt{\mbox{\# Forests of } G}}.
-	\]
-\end{proof}
-
-\section{Differential structures, flows and volume}
-\label{Sec:differential_structure}
-
-\subsection{Differential structures}
-\label{subsec:differential_structures}
-
-Let $G=(E,V)$ be a graph and set $m = \# V_{>1}$, $m' = \#V$ and $N=\#E$, 
-where $V_{>1}$ denotes the set of vertices having degree at least two in $G$.
-
-\begin{definition}[Differential structure]
-    \label{def:diff_structure}
-    A \textit{differential structure} is a graph $(V,E)$ together with a weight matrix 
-    $A: V_{>1}\times V\rightarrow \{-1,0,1\}$ such that $A(v,v')=0$ if and only if $\{v,v'\}\not\in E$.
-    \\
-    The \textit{boundary} $\partial{G}$ of the differential structure is the set 
-    $ \left\{ \{v,v'\},v\in V_1 \right\} \subset E$, where $V_1 = V \setminus V_{> 1}$.
-    \\
-    A differential structure is \textit{balanced} if there exists a coloring 
-    $c:V_{>1}\rightarrow \{+1,-1\}$ such that 
-    \begin{equation*}
-        \forall (v, v') \in V_{>1}^2: \ A(v,v')c(v)+A(v',v)c(v') = 0 \ .
-    \end{equation*}
-\end{definition} 
+In the following, be set
+\begin{equation}\label{eq:definition_volume_form}
+d\Vol=\frac{1}{\sqrt{\# \mbox{ Spanning trees of } G}} \mathcal Leb_{\mathcal F(\phi)},
+\end{equation}
+so that $(\phi_S)_{*}d\Vol=\mathcal Leb_{\Omega^1(S)}$.
 
 
-\noindent
-Remark that in the above definition, $G$ is not assumed to be connected. 
-Since the edge structure $E$ is already described by $A$, 
-we may simply write $(V, A)$
-for the differential structure given by the graph $(V, E)$ with the weight matrix $A$. 
+\subsection*{Boundary and sieving of graphs}
 
-\begin{definition}[Flow]
-    Given a differential structure $\mathcal{A} = (V, A)$ and a vector $\alpha\in \mathbb{R}^{V_{>1}}$, 
-    a \textit{flow} is a map $L: E\rightarrow \mathbb{R}$ 
- such that for all $v\in V_{>1}$,
-    $$\sum_{v \sim v'}A(v, v')L(\{v,v'\})=\alpha(v) ,$$
-    where the sum is over vertices $v' \in V$ such that $\{v, v' \} \in E$.
-    The \textit{boundary value} of $L$ is $\partial L:=L_{\vert \partial G}$.
+\label{subsec:sieving_contraction}
+For $G$ a finite graph, let us denote by $\partial G$ (resp. $\interior(G)$) the set vertices of $G$ of degree $1$ (resp. degree larger than $1$) and by $\partial E$ the set of edges adjacent to $\partial G$. If $\phi\in \Omega ^0(G)$, we denote by $\partial \phi$ the restriction of $\phi$ to $\partial G$. Likewise, we denote by $\partial \lambda$ the restriction of $\lambda\in \Omega^1(G)$ to $\{(a,b),\{a,b\}\in\partial E\}$. By the previous section, for $R\subset  V$, $\mathcal{F}(\phi)$ is non-empty if and only if 
+$$\sum_{v\in R}\phi(v)=-\sum_{v\in V\setminus R}\phi(v).$$
+
+
+\begin{definition}[Sieving of graphs]\label{def:sieving}
+Let $r\geq 1$. Let $G=(V,E)$ be a finite graph (non necessarily connected) and $W,W'\subset \partial G$ with a bijection $g:W\rightarrow W'$. The sieving of $G$ along $(R_1,R_2)$ is the graph $G_{W*W'}=(\tilde{V},\tilde{E})$ obtained as follows:
+\begin{itemize}
+\item $\tilde{V}$ is the quotient of $V$ by the equivalence relation generated by $(v,g(v))$ for $v\in W$,
+\item $\tilde{E}=\pi(E)$, where $\pi:V\times V\rightarrow \tilde{V}\times \tilde{V}$ is the quotient map.
+\end{itemize}
 \end{definition}
+This construction informally amounts to merge $v$ and $g(v)$ for $v\in W$ and considering the resulting edge structure inferred by $E$. Since $W,W'\subset \partial G$, $\vert \tilde{E}\vert=\vert E\vert$ as long as each connected component of $G$ has a size at least $3$ (which will always by the case in the present paper). There is moreover a canonical bijection between $E$ and $\tilde{E}$. Let us closely look at the behavior of the equation \eqref{eq:DivOfLambda} with respect to the sieving of graphs. 
 
-\noindent
-Let us denote by $\mathcal{H}(\mathcal{A})$ the set of flows on the 
-differential structure $\mathcal{A} = (V, A, \alpha)$, where we added $\alpha$ 
-to the pair $(V, A)$, 
-and $\partial\mathcal{H}(\mathcal{A}) = \{\partial L \mid L\in \mathcal{H}(\mathcal{A})\}$ 
-the possible boundary values of flows on $\mathcal{A}$. 
-For any $g \in \partial \mathcal{H}(\mathcal{A})$, let us denote by 
-$\mathcal{H}(\mathcal{A},g) = \{ L \in \mathcal{H}(\mathcal{A}) \mid \partial L = g \}$ 
-the set of flows on $\mathcal{A}$ having boundary value $g$.
-\\
-\\
-Let $\tilde{A}\in \mathcal{M}_{V_{>1},E}(\mathbb{R})$ defined by $A_{v,e}=A(v,v')$ if $e=\{v,v'\}$. 
-Then, $\mathcal{H}(\mathcal{A}) = \tilde{A}^{-1}(\{\alpha\})$ and 
-$\partial\mathcal{H}(\mathcal{A})= p_{\partial G} \ \left(\tilde{A}^{-1}(\{\alpha\})\right)$ are both 
-affine subspaces of respectively $\mathbb{R}^E$ and $\mathbb{R}^{\partial G}$, 
-where, for a subset $R \subset E$, $p_R$ is the projection from $\R^E$ to $\R^R$.
-
-\subsection{Volume of a differential structure}
-\label{subsec:volume_diff_structure}
-
-If $H$ is a finite dimensional vector space with basis $\mathcal{B}=(e_1,\ldots, e_N)$ 
-and $F \subset H$ 
-is vector subspace of dimension $m$, one says that 
-$R \subset \mathcal{B}$ \textit{generates} $F$ 
-if there exists $P: Vect(R) \rightarrow Vect(R^c) \text{ and } a \in Vect(R^c)$ such that
-$$F=\{v+P(v)+a, v\in Vect(R)\}.$$
-The matrix $M$ of $P$ in the basis $(Vect(R), Vect(R^c))$ is then called the \textit{transition matrix} of $(F, R)$. 
-The set $R$ is call an \textit{integral generating set} if $M\in \mathcal{M}_{m, N-m}(\mathbb{Z})$. 
-Let us define 
+In the following, if $G=(V,E)$ is a finite graph, $V=S_1\sqcup\ldots \sqcup S_r$ is a partition of $V$ and $\phi\in \Omega^0(G)$, we write by abuse of notation $(\phi_{\vert S_1},\ldots,\phi_{\vert S_r})$ instead of $\phi$ to detail the decomposition of $\phi$ along this partition. Moreover, we write $\mathcal{F}_{G}(\phi)$ instead of $\mathcal{F}(\phi)$ to emphasize that the equation \eqref{eq:DivOfLambda} is considered in the graph $G$.
+\begin{proposition}[Product formula]\label{prop:divergence_product}
+Let $G_1=(V_1,E_1),G_2=(V_2,E_2)$ be two connected finite graphs, $W\subset \partial G_1,W'\subset G_2$ and $g:W\rightarrow W'$ a bijection, and set $\tilde{G}=(G_1\cup G_2)_{W*W'}$. Let $\phi\in \Omega^0(\tilde{G})$ be such that $\sum_{v\in \tilde{V}}\phi(v)=0$:
+\begin{enumerate}
+\item $\lambda\in\mathcal{F}_{\tilde{G}}(\phi)$ if and only if $\lambda_{\vert E_1}\in \mathcal{F}_{G_1}(\phi_{\vert V_1\setminus W},(x_w)_{w\in W})$ and $\lambda_{\vert E_2}\in\mathcal{F}_{G_2}(\phi_{\vert V_2\setminus W'},(\phi(\tilde{w})-x_{g^{-1}(w)})_{w\in W'})$ for some $x_w,w\in W$ such that $\sum_{v\in V_1\setminus W}\phi(v)+\sum_{w\in W}x_w=0$.
+\item let $w_0\in W$. For $K_1\subset \Omega^2(G_1), K_2\subset \Omega^{2}(G_2)$,
 \begin{align*}
-    p_R: \ &F \to Vect(R) \\
-    &x =  v + P(v) + a \mapsto v+a_{R} \ ,
-\end{align*} 
-where $a = a_R + a_{R^c}$ with $(a_R, a_{R^c}) \in (Vect(R), Vect(R^c))$,
-which coincides with the projection \eqref{eq:def_p_R} by identifying $Vect(R)$ and $\R^R$.
-Then, the canonical volume form $\diff x$ on $\mathbb{R}^R$ 
-induces a volume form $\Vol_R^F$ on $F$ defined for any Borel subset $K\subset F$ by 
-\begin{equation*}
-    \Vol_R^F(K)=\int_{\mathbb{R}^R}\indic_{p_R^{-1}(x)\in K} \, \diff x \ .
-\end{equation*}
-
-\begin{definition}[Generating subset]
-    \label{def:generating_subset_canonical_vol}
-    A subset $R \subset E$ is called \textit{generating} for a differential structure 
-    $\mathcal{A}$ if $R$ is generating for $\mathcal{H}(\mathcal{A}, g) \subset \mathbb{R}^{E}$ 
-    for all $g\in \partial \mathcal{H}(\mathcal{A})$.
-    \\
-    A differential structure $\mathcal{A}$ is said to \textit{admit a canonical volume form} 
-    if $\Vol_R^{\mathcal{H}(\mathcal{A}, g)}$ is independent of the generating set $R$
-    for all $g\in \partial \mathcal{H}(\mathcal{A})$. 
-    We then write $\Vol$ instead of $\Vol_R^{\mathcal{H}(\mathcal{A}, g)}$ when $\mathcal{A}$ and $g$ are given. 
-\end{definition}
-
-\begin{proposition}[Caracterisation of generating subsets]
-    \label{prop:generating_set}
-    Let $\mathcal{A} = (V, A, \alpha)$ be a balanced differential structure.
-    Then, a subset $R \subset E$ generates $\mathcal{H}(\mathcal{A})$ if and only if 
-    $R^c = E \setminus R$ is a spanning forest of $G$ and each connected component of $R^c$ admits a unique element of $V_1$. 
-    Moreover, in this case, $R$ is an integral generating set.
-\end{proposition}
-
-\noindent
-In particular $\mathcal{H}(\mathcal{A})$ is an affine subspace of $\R^E$ of codimension $\# V_{>1}$.
-% XXXNot true if $L$ is not balanced. For example if $L=A$ and $G$ is not bipartite (3 triangle+ONe extra edge).XXX
-
-\begin{proof}
-    First, let $R\subset E$ be such that $R^c$ is a spanning forest of $G$ and each 
-    connected component admits a unique element of $V_1$. 
-    Let $T_1,\ldots, T_r$ be the connected components of $R^c$ and set $V_1=\{w_1,\ldots,w_r\}$ with $w_i\in T_i$.
-    \\
-    Let $1\leq i\leq r$. Since $G$ is connected, $G_{\vert V_{>1}}$ is connected and thus $G_{\vert (V_{>1}\cup\{w_i\})}$ is connected. 
-    \\
-    Let us root $T_i$ at $w_i$, and then take any labelling $(v_1,\ldots, v_{m})$ 
-    of the vertices of $\bigcup_{1\leq i\leq r}T_i$ distinct from the roots that is decreasing in the 
-    ordering of the trees and in the height of each tree $T_i$ rooted at $w_i$. 
-    Set $v_{m+i}=w_i$. Complete $(v_1,\ldots, v_{m+r})$ into a labeling $(v_1,\ldots,v_{m'})$ of the set $V$. 
-    Likewise, label any edge of $T$ with the same label of its unique neighboring vertex of maximal height, 
-    so that $e_s$ is adjacent to $v_s$ for $1\leq s\leq m$. Complete $(e_1,\ldots,e_m)$ into a labeling $(e_1,\ldots, e_N)$ of $E$. 
-    \\
-    Let $K$ be matrix of $\tilde{A}$ with respect to the basis $(v_1,\ldots,v_{m})$ and $(e_1,\ldots,e_N)$. 
-    Namely, $K \in \mathcal{M}_{m', N}(\mathbb{R})$ and $K_{ij} = A(v_i, v')$ when $e_j=\{v_i,v'\}$. 
-    Hence, 
-    $$\mathcal{H}(\mathcal{A})=\{L\in \mathbb{R}^N \mid KL=\alpha\}.$$
-    By the choice of labels of the vertices and edges of $\bigcup_{1\leq i\leq r}T_i$, any edge $e_i$, $1\leq i\leq m$ 
-    is adjacent to $v_i$ and some $v_j$ for $j>i$. 
-    Hence, the minor $K_1 = K_{ij, \ \substack{1\leq i,j\leq m}}$ is an upper triangular matrix with integers entries and 
-    $\pm 1$ on the diagonal. We deduce that $K_1$ is invertible and $K_1^{-1}\in \mathcal{M}_{m, m}(\mathbb{Z})$.
-    \\
-    In particular, $K$ has rank $m$ and thus $\mathcal{H}(\mathcal{A})$ has codimension $m$. 
-    Let $K_2 = K_{\substack{ij, \ 1\leq i\leq m\\m+1\leq j\leq N}}$. Then,
-    \begin{align*}
-    \mathcal{H}(\mathcal{A})=&\{x\in \mathbb{R}^N, Kx=\alpha\}\\
-    =&\{(x_1,x_2)\in \mathbb{R}^m\times \mathbb{R}^{N-m}, K_1x_1 + K_2x_2=\alpha\}\\
-    =& \{(x_1,x_2)\in \mathbb{R}^m\times \mathbb{R}^{N-m}, x_1 = K_1^{-1}\left(\alpha-K_2x_2\right)\}\\
-    =& \{v+P(v)+a, v\in\{0\}\times\mathbb{R}^m \},
-    \end{align*}
-    with 
-    $$P(0,x_2)=-K_1^{-1}K_2(x_2),\, a = K_1^{-1}\alpha.$$
-    Hence, $T^c$ generates $\mathcal{H}(\mathcal{A})$ and, since 
-    $K_1^{-1}$ and $K_2$ have integer entries, the transition matrix $M$ of $P$ also has integer entries.
-    \\
-    \\
-    Next, let $R\subset E$ be a generating subset of $\mathcal{H}(\mathcal{A})$. 
-    By the first part of the proposition, and since there always exists a spanning forest of 
-    $G$ such that each connected component has a unique element of $V_1$, $\mathcal{H}(\mathcal{A})$ has codimension $m$. 
-    In particular, all generating subsets must have the same cardinal $m'-m$, and therefore $\#R^c=m$. 
-    Let $G_0=(V,R^c)$ be the subgraph of $G$ induced by $R^c$. 
-    \\
-    Assume for the sake of contradiction that $G_0$ has a connected component $J=(V_J,E_J)$, 
-    with $E_J\subset R^c$, which does not include any univalent vertex, 
-    and let $\partial J=\{e_1,\ldots,e_s\}\subset R$ be the edges on the boundary of $J$. 
-    Since $\mathcal{A}$ is balanced, there exists a coloring $c:V_J\rightarrow \{+1,-1\}$ such that for all $v,v'\in V_J$,
-    $$A(v,v')c(v)+A(v',v)c(v')=0 .$$
-    If $f\in\mathcal{H}(\mathcal{A})$, then $\sum_{v'\in V \mid \{v,v'\}\in e}A(v,v')L(\{v,v'\})=\alpha(v)$ for all $v\in V_J$. Hence,
-    \begin{align*}
-    \sum_{v\in V_J}c(v)\alpha(v)=&\sum_{v\in V_J}c(v)\sum_{v'\in V, \{v,v'\}\in e}A(v,v')L(\{v,v'\})\\
-    =&\sum_{v\in V_J, v'\not \in V_J}c(v)A(v,v')L(\{v,v'\})+
-    \sum_{v,v'\in V_J}c(v)A(v,v')L(\{v,v'\})\\
-    =&\sum_{v\in V_J, v'\not \in V_J}c(v)A(v,v')L(\{v,v'\})+
-    \sum_{\{v,v'\}\in E_J}(c(v)A(v,v')+c(v')A(v',v))L(\{v,v'\})\\
-    =&\sum_{v\in V_J, v'\not \in V_J}c(v)A(v,v')L(\{v,v'\}),
-    \end{align*}
-    where we used on the last equality the fact that $\mathcal{A}$ is balanced. 
-    In particular, there is a non-trivial relation between the value of $\{L(e)\}_{e\in\partial J}$ and, 
-    since $\partial J\subset R$, this contradict the fact that $R$ is a generating subset of $\mathcal{H}(\mathcal{A})$.
-    \\
-    Therefore, any connected component of $G_0$ contains at least a univalent vertex.
-    Let $r$ be the number of univalent vertices in $V_1$ and $c$ the number of connected component of $G_0$. 
-    By the previous reasoning, $c\leq r$. However, by Euler's formula,
-    $$\#V-\#R^c\leq c,$$
-    with equality if and only if $G_0$ is a forest. Since $\#R^c=m$ and $\#V=m+r$, we get $r\leq c$. 
-    Hence, $r=c$ and $\mathbb{R}^c$ is a spanning forest. 
-    Moreover, there must be a unique element of $V_{1}$ in each connected component of $G_0$.
-\end{proof}
-
-\noindent
-For any generating set $R$, recall that we denote by $p_R : \mathcal{H}(\mathcal{A})\rightarrow Vect(R)$ 
-the projection on $Vect(R)$ along $Vect(R^c)$. 
-
-\begin{corollary}[Unique volume form]
-    \label{cor:balanced_uniqueness_volume}
-    Let $\mathcal{A}$ be a balanced differential structure. 
-    Then, for any generating set $R,R'$, the maps $p_{R}$ and $p_{R'}$ are bijective and 
-    $$\det(p_Rp_{R'}^{-1}) =1.$$
-\end{corollary}
-
-\begin{proof}
-    Since $R$ generates $\mathcal{H}(\mathcal{A})$ and is adjacent to a unique vertex, 
-    by Proposition \ref{prop:generating_set} there exists a linear map 
-    $M:Vect(R)\rightarrow Vect(R^c)$ and $a\in \mathbb{R}^E$ such that
-    $$\mathcal{H}(\mathcal{A})=\{(v+M(v)+a,v\in Vect(R)\},$$
-    and the matrix of the map $M$ in the canonical bases indexed by $R$ and $R^c$ has integer coefficient. 
-    In particular, $\ker p_R\cap \mathcal{H}(\mathcal{A})=\{0\}$ and thus $p_{R}$ is bijective. 
-    Moreover, writing $a=a_R+a_{R^c}$ with $a_R\in Vect(R)$, $a_{R^c}\in Vect(R^c)$, we get $p_R^{-1}(z)=z+M(z-a_R)+a_{R^c}$.
-    \\
-    Next, if $R'$ is another generating set, 
-    $$p_{R'}p_{R}^{-1}=p_{R'}(z+M(z-a_R)+a_{R^c}).$$
-    Since the matrix of $M$ in the canonical basis has integer entries, so does the matrix of $p_{R'}p_{R}^{-1}$. 
-    The same must hold for $p_{R}p_{R'}^{-1}=(p_{R'}p_{R}^{-1})^{-1}$ and thus 
-    $$\det (p_{R}p_{R'}^{-1})=1.$$
-\end{proof}
-
-\begin{proposition}[Boundary condition for balanced structures]
-    \label{prop:boundary_condition}
-    Let $\mathcal{A}$ be a connected, balanced differential structure. 
-    Then, there exists a linear map $h_{\mathcal{A}}:\mathbb{R}^{\partial G}\rightarrow \mathbb{R} $ 
-    with coefficients in $\{+1,-1\}$ unique up to an overall sign and $ \beta\in\mathbb{R}$ such that 
-    $$\partial \mathcal{H}(\mathcal{A})= h_{\mathcal{A}}^{-1}(\{\beta\}).$$
-\end{proposition}
-
-\noindent
-A vector $g\in \mathbb{R}^{\partial G}$ such that $h_{\mathcal{A}}(g)=\beta$ is called \textit{admissible}.
-
-\begin{proof}
-    Let $\mathcal{A} = (V, A, \alpha)$ be a connected, balanced differential structure. 
-    Let $c:V_{>1}\rightarrow \{-1,+1\}$ be any coloring such that $A(v,v')c(v)+A(v',v)c(v')=0$ for all $v,v'>1$. 
-    Then, if $L\in\mathcal{H}(\mathcal{A})$, 
-\begin{align}
-    \sum_{v\in V_{>1}}c(v)\alpha(v)=&\sum_{v\in V_{>1}}c(v)\sum_{v\sim v'}A(v,v')L(\{v,v'\})\nonumber\\
-    =&\sum_{v'\in V_1,v\in V_{>1}}A(v,v')c(v)L(\{v,v'\})+\sum_{\{v,v'\}\in E,v,v'\in V_{>1}}(c(v)A(v,v')\\
-    &\hspace{3cm}+c(v')A(v,v'))L(\{v,v'\})\nonumber\\
-    =&\sum_{v'\in V_1,v\in V_{>1}}A(v,v')c(v)L(\{v,v'\}),\label{eq:def_h_A}
-    \end{align}
-    where we used on the first equality the definition of a flow and on the third equality the balanced property. 
-    Let us set $\beta=\sum_{v\in V_{>1}}c(v)\alpha(v)$ and $\epsilon(e)=A(v,v')c(v)$ for $e=\{v,v'\}\in \partial G$ 
-    with $v\in V_{>1},v'\in V_{1}$. For $x \in \R^{\partial G}$, define 
-    \begin{equation}
-        \label{eq:def_h_A_2}
-        h_\mathcal{A}(x) \coloneqq \sum_{e\in\partial G}\epsilon(e)L(e) 
-    \end{equation}
-    so that for $L\in\mathcal{H}(\mathcal{A})$, we have $h_{\mathcal{A}}(\partial L)=\beta$.
-    \\
-    For the uniqueness, let $o\in V_{1}$ and $S$ be a spanning tree of $V_{>1}\cup \{o\}$ on $G$ : 
-    such a spanning tree exists because $G$ is connected. 
-    Then, by Proposition \ref{prop:generating_set} $R=S^c$ is a generating subset, so that 
-    $$p_{R}:\mathcal{H}(\mathcal{A})\rightarrow \mathbb{R}^R$$
-    is bijective. In particular, since $\partial G\setminus\{o\}\subset R$, 
-    $p_{\partial G\setminus\{o\}} (\mathcal{H}(\mathcal{A}))=\mathbb{R}^{\partial G\setminus\{o\}}$. 
-    We deduce that $p_{\partial G}(\mathcal{H}(\mathcal{A}))$ has dimension at least $\#\partial G-1$ in 
-    $\mathbb{R}^{\partial G}$. Hence, any $h:\mathbb{R}^{\partial G}\rightarrow \mathbb{R}$ such that 
-    $h\circ p_{\partial G}$ is constant must be a multiple of $h_{\mathcal{A}}$. 
-    With the condition that $h$ has entries $\{+1,-1\}$ on the canonical basis, one must have $h=\pm h_{\mathcal{A}}$.
-\end{proof}
-
-
-\begin{proposition}[Volume form on balanced differential structures]
-    \label{prop:divergence_volume_form}
-    Let $\mathcal{A}$ be a connected, balanced differential structure. 
-    Then, $\mathcal{A}$ admits a canonical volume form.
-    Moreover, $R\subset E$ is a generating set of $\mathcal{A}$ 
-    if and only if $R^c$ is a spanning tree of $G$. 
-    If it is the case, $R$ is an integral generating set.
-\end{proposition}
-
-\begin{proof}
-Suppose that $\mathcal{A}$ is balanced. 
-Suppose that $R$ is a generating set of $\mathcal{H}(\mathcal{A},g)$ for all $g\in h_\mathcal{A}^{-1}(\beta)$, 
-where $\beta \in \R$ is given by Proposition \ref{prop:boundary_condition}.
-Hence, for all subset $J$ of $\partial_G$ of cardinal $\partial_G-1$,
-$$p_{R\cup J}:\mathcal{H}(\mathcal{A})\rightarrow \mathbb{R}^{R\cup J}$$
-is a bijection and thus $R'=R\cup J$ is a generating set of $\mathcal{H}(\mathcal{A})$. 
-Suppose that $S$ is another generating set of $\mathcal{A}$. 
-By the same reasoning, $S'=S\cup J$ is a generating set of $\mathcal{H}(\mathcal{A})$. 
-By Proposition \ref{prop:generating_set}, $S'^c$ is a spanning tree of $V_{>1}\cup J^c$, with $J^c$ being a singleton. 
-Hence, $S^c=S'^c\cup J$ is a spanning tree of $V$.
-\\
-Then, Corollary \ref{cor:balanced_uniqueness_volume} yields that $p_{R'}: \mathcal{H}(\mathcal{A})\rightarrow \mathbb{R}^{R'}$ 
-and $p_{S'}: \mathcal{H}(\mathcal{A}) \rightarrow \mathbb{R}^{S'}$ are bijective and $\vert \det(p_{S'}p_{R'}^{-1})\vert=1$ 
-(beware that $p_{S'}p_{R'}^{-1}$ is affine and $\det$ is the determinant of the linear component). 
-Since $(p_{S'}p_{R'}^{-1})_{\vert \mathbb{R}^J}=Id$, we deduce that $\vert \det(p_{S}p_{R}^{-1})\vert=1$ for all 
-$g\in h_{\mathcal{A}}^{-1}(\beta)$, where $p_{R}:\mathcal{H}(\mathcal{A},g)\rightarrow \mathbb{R}^R$ and 
-$p_{S}:\mathcal{H}(\mathcal{A},g)\rightarrow \mathbb{R}^S$. 
-Hence, for any $g \in \R^{\partial G}$ admissible and $K\subset \mathcal{H}(\mathcal{A},g)$,
-\begin{align*}
-\Vol_R(K) &= \int_{\mathbb{R}^R}\mathbf{1}_{p_R^{-1}(x)\in K} \diff x\\
-&=\int_{\mathbb{R}^{S}}\mathbf{1}_{p_R^{-1}p_{R}p_{S}^{-1}(x)\in K}\vert\det(p_{R}p_{S}^{-1})\vert \diff x\\
-&=\int_{\mathbb{R}^{S}}\mathbf{1}_{p_{S}^{-1}(x)\in K} \diff x = \Vol_{S}(K).
+\Vol_{\tilde{G}}((K_1\times K_2)\cap\mathcal{F}_{\tilde{G}}(\phi))=&\int_{\mathbb{R}^{\vert W\vert-1}}\Vol_{G_1}\left[K_1\cap \mathcal{F}_{G_1}(\phi_{\vert V_1},(x_w)_{w\in W\setminus W_0},y(x)))\right]\\
+&\hspace{2cm}\cdot \Vol_{G_2}\left[K_2\cap \mathcal{F}_{G_2}(\phi_{\vert V_2},(\phi(\tilde{w})-x_w)_{w\in W\setminus \{w_0\}}),\phi(\tilde{w})-y(w))\right]dx,
 \end{align*}
-The volume form $\diff \ell_R = p_R^* \diff x$ is therefore independent of the 
-parametrizing subset $R$ and we call the volume form on $\mathcal{H}(\mathcal{A}, g)$ the 
-form $\diff \ell_R$ for any such $R$. Therefore, $\mathcal{A}$ admits a canonical volume form 
-in the sense of Definition \ref{def:generating_subset_canonical_vol}.
+where $y(w)$ is the unique solution to $\sum_{v\in V_1\setminus W}+\sum_{w\in W\setminus \{w_0\}}x_w+y(w)=0$.
 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+
+(1) Remark that $\lambda\in\mathcal{F}_{\tilde{G}}(\phi)$ if and only if
+$$\sum_{e,\bar{e}=x}\lambda(e)=\phi(x)$$
+for all $x\in \tilde{V}$. 
+
+Let $\lambda\in \mathcal{F}_{\tilde{G}}(\phi)$. Set $\tilde{\phi}(x)=\phi(\tilde{x})$ for $x\in V_1\setminus W$ and, for $w\in W$, $x_w=\lambda(\tilde{e})$ where $\tilde{e}$ is the unique edge of $\tilde{G}$ starting from $\tilde{w}$ and ending on $V_1$ (recall that $W_1\subset \partial G_1$). Then, since $\lambda\in \mathcal{F}_{\tilde{G}}(\phi)$, on has 
+$$\lambda_{\vert E_1}\in \mathcal{F}(\phi_{V_1\setminus W_1},(x_w)_{w\in W_1}).$$
+ By the divergence condition, one must have 
+$$\sum_{v\in V_1}\phi(v)+\sum_{w\in W_1}x_w=0.$$
+Similarly, $\lambda_{\vert E_2}\in \mathcal{F}(\phi_{V_2\setminus W'},(y_w)_{w\in W_2})$ with $y_w=\lambda(e)$, where $e$ is the unique edge of $\tilde{E}$ starting from $w$ and ending on $V_2$. By using the divergence condition on $\tilde{w}=\{w,g(w)\}$ for $w\in W$, one has $\phi(\tilde{w})=x_w+y_{g(w)}$, and thus 
+$$y_{g(w)}=\phi(\tilde{w})-x_w.$$
+Reciprocally, one check that if $\lambda\in \Omega^1(\tilde{G})$ is such that $\lambda_{\vert E_1}\in \mathcal{F}(\phi_{V_1\setminus W_1},(x_w)_{w\in W_1})$ and $\lambda_{\vert E_2}\in \mathcal{F}(\phi_{V_2\setminus W'},(\phi(\tilde{w})-x_{g^{-1}(w)})_{w\in W_1})$, then $\lambda\in \mathcal{F}(\tilde{\phi})$.
+
+(3) Set $s+1=\vert W\vert=\vert W'\vert$ and write $W=\{w_0,\ldots,w_s\}$. Let $e_i$ be the edge of $E_1$ adjacent to $w_i$. Let $T_i$ be a spanning tree of $G_i$ for $i\in \{1,2\}$. Since each edge $\tilde{w},w\in W$ is bivalent in $\tilde{G}$, removing the edges $e_j$, $1\leq j\leq s$ from $T_1\cup T_2$ yields a spanning tree $T$ of $\tilde{G}$. By Proposition \ref{prop:BijectionTrees} applied to $S=T^c$, the restriction map $\phi_{S}$ is a bijection from $\mathcal{F}(\phi)$ to $\Omega_1(S)$. Moreover, by Proposition \ref{prop:divergence_volume_form}, $(\varphi_S)_*d\Vol=\mathcal Leb_{\Omega^1(S)}$. Let us write $S_i=E_{i}\setminus T_i$ and $R=\{e_1,\ldots,e_{s}\}$. Then, 
+$$T^c=[E_{1}\setminus  T_1]\cup [E_2\setminus T_2]\cup R=S_1\cup S_2\cup R.$$
+Let $K_1\subset \mathbb{R}^{E_1}$ and $K_2\subset \mathbb{R}^{E_2}$. Then, for $(t_1,t_2,x)\in\mathbb{R}^{S_1}\times \mathbb{R}^{S_2}\times \mathbb{R}^{s-1}$, 
+$\varphi_{T^c}^{-1}(t_1,t_2,x)\in\mathcal{F}(\phi)$. By the previous statement, this is equivalent to the fact that $\varphi_{E_1}(\varphi_{T^c}^{-1}(t_1,t_2,x))\in\mathcal{F}(\phi_{\vert V_1\setminus W},(x_w)_{w\in R},y)$ where $y$ is the unique solution to $\sum_{v\in V_1\setminus R}\phi(v)+\sum_{w\in R}x_w+y=0$, and $\varphi_{E_2}(\varphi_{T^c}^{-1}(t_1,t_2,x))\in\mathcal{F}(\phi_{\vert V_2\setminus W'},(\phi(\tilde{w})-x_{w}))_{w\in R},\phi(w_0)-y)$. Let $\varphi^x_{S_1}$ be the projection from $\mathcal{F}(\phi_{\vert V_1\setminus W},(x_w)_{w\in R},y))$ to $\Omega^2(S_1)$ and $\varphi^x_{S_2}$ be the projection from $\mathcal{F}(\phi_{\vert V_2\setminus W'},(\phi(\tilde{w})-x_{w}))_{w\in R},\phi(w_0)-y)$ to $\Omega^2(S_2)$. Since $E_i\setminus S_i$ is a spanning tree of $G_i$, each map $\varphi^x_{S_i}$ is bijective. Moreover, if $\varphi_{E_1}(\varphi_{T^c}^{-1}(t_1,t_2,x))\in\mathcal{F}(\phi_{\vert V_1\setminus W},(x_w)_{w\in R},y)$, since then $\varphi^x_{S_1}\circ\varphi_{E_1}(\varphi_{T^c}^{-1}(t_1,t_2,x))$ is well-defined and equal to $t_1$, we have 
+$$\varphi_{E_1}(\varphi_{T^c}^{-1}(t_1,t_2,x))=(\varphi^x_{S_1})^{-1}(t_1).$$
+Likewise, if $\varphi_{E_2}(\varphi_{T^c}^{-1}(t_1,t_2,x))\in\mathcal{F}(\phi_{\vert V_2\setminus W'},(\phi(\tilde{w})-x_{w}))_{w\in R},\phi(w_0)-y)$, then
+$$\varphi_{E_2}(\varphi_{T^c}^{-1}(t_1,t_2,x))=  (\varphi^x_{S_1})^{-1}(t_2).$$ 
+Hence,
+$\varphi_{T^c}^{-1}(t_1,t_2,x)\in K_1\times K_2\cap \mathcal{F}(\phi)$ if and only 
+$(\varphi^x_{S_1})^{-1}(t_1)\in K_1$ and $(\varphi^x_{S_1})^{-1}(t_2)\in K_2$. 
+
+
+Hence,
+\begin{align*}
+Vol(K_1\times K_2\cap\mathcal{F}(\phi))=&\int_{\mathbb{R}^{S_1}\times \mathbb{R}^{S_2}\times \mathbb{R}^{s}}\mathbf{1}_{\varphi_{T^c}^{-1}(t_1,t_2,x)\in K_1\times K_2}dt_1dt_2dx\\
+=&\int_{\mathbb{R}^s}\left(\int_{\mathbb{R}^{S_1}\times \mathbb{R}^{S_2}}\mathbf{1}_{(\varphi_{S_1}^x)^{-1}(t_1)\in K_1}\mathbf{1}_{(\varphi_{S_2}^x)^{-1}(t_2)\in K_2}dt_1dt_2\right)dx\\
+=&\int_{\mathbb{R}^{s}}\left(\int_{\mathbb{R}^{S_1}}\mathbf{1}_{(\varphi_{S_1}^x)^{-1}(t_1)\in K_1}dt_1\right)\cdot\left( \int_{\mathbb{R}^{S_2}}\mathbf{1}_{(\varphi_{S_2}^x)^{-1}(t_2)\in K_2}dt_2\right)dx\\
+=&\int_{\mathbb{R}^{s}}\Vol\left[K_1\cap \mathcal{F}(\phi_{\vert V_1\setminus W},(x_w)_{w\in R},y)\right]\\
+&\hspace{3cm}\cdot \Vol\left[K_2\cap\mathcal{F}(\phi_{\vert V_2\setminus W'},(\phi(\tilde{w})-x_{w}))_{w\in R},\phi(w_0)-y)\right]dx.
+\end{align*}
+
+
+\end{proof}
+
+There exists a similar formula when a gra
+\begin{proposition}[Contraction formula]\label{prop:divergence_contraction}
+Let $G=(V,E)$ be a connected finite graph, $W,W'\subset \partial G$ with $W\cap W'=\emptyset$ and $g:W\rightarrow W'$ a bijection and set $G_{W*W'}=(\tilde{V},\tilde{E})$. Then, for $\phi\in \Omega^0(G_{W*W'})$ such that $\sum_{v\in \tilde{V}}\phi(v)=0$ and $K\subset \Omega^1(\tilde{G})$,
+\begin{align*}
+Vol(K\cap\mathcal{F}_{\tilde{G}}(\phi))=&\int_{\mathbb{R}^{\vert W\vert-1}}\Vol\left[K\cap \mathcal{F}_{G}(\phi_{\vert V\setminus (W\cup W')},(x_w)_{w\in W},(\phi(\tilde{w})-x_{g^{-1}(w')})_{w\in W'})\right]dx.
+\end{align*}
+\end{proposition}
+\begin{proof}
+The proof is similar to the one of Proposition \ref{prop:divergence_product}.
 \end{proof}
 
 
@@ -1460,7 +1013,7 @@ for the three-holed sphere in Section \ref{subsec:main_th_three_holed_sphere}.
 \label{subsec:parametrization_honeycombs}
 
 The goal of this section is to view triangular honeycombs 
-as particular differential structure. 
+as flows on a graph with prescribed divergence. 
 Proposition \ref{prop:divergence_volume_form} then yields a volume form on the set of 
 flows on triangular honeycombs. 
 {\color{blue} Recall that for $d \geqslant 0$, $\mathcal{G}_d$ denotes 
@@ -1474,21 +1027,21 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
 \begin{lemma}[Boundary determine type and colors]
     \label{lem:types_colors_determined_by_boundaries}
     Let $G\in\mathcal{G}_d$ and let $h\in \honey^G$. Then, the type $\ell^h:E\rightarrow \{0,1,2\}$ 
-    and colors $c^h:E\rightarrow \{0,1,3\}$ are independent of $h$.
+    and color $c^h:E\rightarrow \{0,1,3\}$ are independent of $h$.
 \end{lemma}
 
 \begin{proof}
-    Remark that such label and color map are defined for any honeycomb $h\subset T$ such 
+    Remark that such label and color maps are defined for any honeycomb $h\subset T$ such 
     that any geodesic $e\subset h$ is contained in some ray $\{x+\mathbb{R}e^{2(\ell+1)i}\}$ 
     for some $\ell\in\{0,1,2\}$. 
     Let us called such honeycomb admissible and let us prove by induction on the number $M$ 
     of inner vertices the following : 
     \textit{for any admissible honeycomb $h$, the induced label and color map on $G[h]$ 
-    only depends on the type and color map of the boundary edges and on the cyclic order on the boundary vertices}.
+    only depends on the type and color map of the boundary edges and on the order on the boundary vertices}.
     \\
     \\
-    If $M=1$, then all edges of $G[h]$ is a boundary edge, and the assertion holds. 
-    Let $M>1$. Suppose that there is $v\in V_{>1}$ which is adjacent to two boundary edges 
+    If $M=1$, then all edges of $G[h]$ are boundary edges, and the assertion holds. 
+    Let $M>1$. Suppose that there is $v\in \interior (G)$ which is adjacent to two boundary edges 
     $e_1=\{v,v_1\},e_2=\{v,v_2\}$ and one non boundary edge $e$. 
     Then, the type $e$ is uniquely determined by the relation $\{\ell(e),\ell(e_1),\ell(e_2)\}=\{0,1,2\}$ 
     and the value of $\ell(e_1)$ and $\ell(e_2)$. 
@@ -1541,61 +1094,64 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
     and thus of $G$ are known. 
 \end{proof}
 
-\begin{lemma}[Triangular honeycombs are balanced differential structures]
-    \label{lem:honey_balanced_diff}
-    For $G\in\mathcal{G}_d$, the pair $\mathcal{A}^G=(G, A^G)$ is a balanced differential structure.
-\end{lemma}
-
-\begin{proof}
-    {\color{blue} Since $A^G$ is the adjency matrix of $G$, the pair $(G, A^G)$ 
-    is a differential structure. Let us show that it is balanced.}
-    Suppose that $G\in \mathcal{G}_d$ and let $v\in V_{>1}$. 
+Let us provide a description of honeycombs with structure graph $G$ in terms of flows. Suppose that $G\in \mathcal{G}_d$. 
     By the condition (1) Definition \ref{def:triangular_honey}, 
     $G$ has only vertices of degree $1$ or $3$ and thus $v$ has three adjacent 
-    edges $e_\ell,\, \ell\in \{0,1,2\}$. By (2) of Definition \ref{def:toric_honeycomb}, 
+    edges $e_\ell,\, \ell\in \{0,1,2\}$.  Dy $\interior(G)$ the set of vertices of degrees $3$ and let $v\in\interior(G)$. By (2) of Definition \ref{def:toric_honeycomb}, 
     the angle between two successive edges at $v$ is $2\pi/3$ and by (2) of Definition \ref{def:triangular_honey}, 
     each edge is oriented along $e^{2(\ell+1)i\pi/3}$ for some $\ell\in\{0,1,2\}$. 
-    Hence, there exists a sign $c(v)\in\{-1,+1\}$ such that, up to a relabeling, 
-    $e_\ell \subset \left\{v+c(v)\ed^{2(\ell+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$.
+    Hence, there exists a sign $s(v)\in\{-1,+1\}$ such that, up to a relabeling, 
+    $e_\ell \subset \left\{v+s(v)\ed^{2(\ell+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$. Since any univalent vertex $v\in\partial G$ is connected to a trivalent vertex, such a $s(v)\in \{-1,1\}$ exists in fact for any $v\in V$.
     \\
     \\
-    Let $v,v'\in V_{>1}$ be such that $e=\{v,v'\}$. 
+    Let $v,v'\in   V$ be such that $e=\{v,v'\}$. 
     By the previous reasoning, there exist $\ell,\ell'$ such that 
-    $e\subset \left\{v+c(v)\ed^{2(\ell+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$ and 
-    $e\subset \left\{v'+c(v')\ed^{2(\ell'+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$. 
-    Necessarily, $\ell=\ell'$ and $c(v)=-c(v')$ so that 
-    $$A(v,v')c(v)+A(v',v)c(v')=0.$$
-    Hence, the differential structure $(G,A^G)$ is balanced.
-\end{proof}
+    $e\subset \left\{v+s(v)\ed^{2\ell i\pi/3} \mathbb{R}_{\geq 0} \right\}$ and 
+    $e\subset \left\{v'+s(v')\ed^{2\ell'i\pi/3} \mathbb{R}_{\geq 0} \right\}$.  
+    Necessarily, $\ell=\ell'$ and $s(v)=-s(v')$. In particular, the map $s:v\mapsto s(v)$ only depends on the value of $s$ on the boundary $\partial G$. Since $s(v)$ for $v\in \partial G$ is given by the type and thus the color of the unique adjacent edge, see Definition \ref{def:triangular_honey}.(3), we deduce by Lemma \ref{lem:types_colors_determined_by_boundaries} that $s$ only depend on $G$.  In the following definition, recall the definition of the height of an edge in Definition \ref{def:triangular_honey}.
+    
+ \begin{definition}[Flow of a honeycomb]
+    \label{def:flow_honeycomb}
+    The \textit{flow} of a honeycomb 
+    $h\in\honey_{n,d}^G$ is the map $\mathcal{L}[h] \in \Omega^1(G)$   which to an oriented edge $(v,v')$ with $s(v)=1$ and $s(v')=-1$  associates the height of the non-oriented edge, that is, $\mathcal{L}[h](v,v') = L(\{v,v'\})$.
+\end{definition}
+
 
 \noindent
+If $v\in \interior(G)$, $v$ corresponds to a point if $T$ and thus its coordinates $(v_1,v_2,v_3)$ satisfies $v_1+v_2+v_3=1$. If $e_1,e_2,e_3$ are the three edges adjacent to $v$, we thus have by definition of $L(e_i),1\leq i\leq 3$ (see Definition \ref{def:triangular_honey}(2))
+$$L(e_1)+L(e_2)+L(e_3)=1.$$
+Hence, considering now oriented edges yields 
+\begin{equation}\label{eq:honeycomb_divergence_1}
+\sum_{v\sim v'}\mathcal{L}[h](v,v')=s(v)
+\end{equation}
+for $v\in \interior(G)$.
 
-{\color{blue} 
 \noindent
 Let $\alpha, \beta, \gamma \in \mathcal{H}_{reg}$ and let $G\in\mathcal{G}_d$. 
 Recall that for a structure graph $G$, its boundary 
-$\partial G = \left\{ \{v, v'\} \mid v \in V_1 \right\}$ consist of edges having a 
-vertex of degree one. Since by Definition \ref{def:triangular_honey}, $V_1 \subset \partial T$, 
-we may write $\partial G = \left( e_1, \dots, e_{3n} \right)$, where for $0 \leqslant l \leqslant 2$
+$\partial E = \left\{ \{v, v'\} \mid v \in \partial V \right\}$ consists of edges having a 
+vertex of degree one. Since by Definition \ref{def:triangular_honey}, $\partial G \subset \partial T$, 
+we may write $\partial E = \left( e_1, \dots, e_{3n} \right)$, where for $0 \leqslant l \leqslant 2$
 and $1 \leqslant i \leqslant n$, the edge
-$e_{\ell \, n + i}$ is adjacent to $v^{\ell + i}$ on $\partial_\ell T$.
+$e_{\ell \, n + i}$ is adjacent to $v^{\ell n+ i}$ on $\partial_\ell T$.
 Let us denote by 
 $g^{\alpha,\beta,\gamma} \in \mathbb{R}^{\partial G}$ the boundary condition
 given by 
-$$ g^{\alpha,\beta,\gamma}_{\ell n+i} = g^{\alpha,\beta,\gamma}(e_{\ell n+i}) =
+$$ g^{\alpha,\beta,\gamma}_{\ell n+i}=\alpha_i-c(e_{\ell n+i})=
 \left\lbrace 
 \begin{aligned} 
     &\alpha_i&\text{if }c(e_{\ell n+i})=0 \\ 
-    &1-\alpha_i&\text{if }c(e_{\ell n+i})=1
+    &\alpha_i-1&\text{if }c(e_{\ell n+i})=1
 \end{aligned} \right. $$
 for $\ell = 0$ and $1\leq i\leq n$ and replacing $\alpha_i$ by $\beta_i$ (resp. $\gamma_i$) 
-when $\ell = 1$ (resp. $\ell = 2$). We write 
+when $\ell = 1$ (resp. $\ell = 2$). Remark that for $v\in \partial G$, $s(v)=1$ if and only if $c(e)=1$, where $e$ is the unique edge adjacent to $v$, see for example Figure \ref{fig:boundary_toric_honey}. Hence, the boundary condition translates into the condition 
 \begin{equation}
-    \label{eq:def_H_A_alpha_beta_gamma}
-    \mathcal{H}(\mathcal{A},\alpha,\beta,\gamma) \coloneqq 
-    \mathcal{H}(\mathcal{A},g^{\alpha,\beta,\gamma}) \ .
+    \label{eq:honeycomb_divergence_2}\mathcal{L}[h](v_{\ell n+i},v')=g^{\alpha,\beta,\gamma}_{\ell n+i},
 \end{equation}
-}
+where $v'$ is the unique vertex of $V$ adjacent to $v_{\ell n+i}$. Hence, setting $\phi_{\alpha,\beta,\gamma}(v)=s(v)$ for $v\in \interior(G)$ and $\phi_{\alpha,\beta,\gamma}(v_{\ell n+i})=g^{\alpha,\beta,\gamma}_{\ell n+i}$ for $v^{\ell n+i}\in \partial G$, \eqref{eq:honeycomb_divergence_1} and \eqref{eq:honeycomb_divergence_2} yields that 
+$$\mathcal{L}(h)\in \mathcal{F}_{G}(\phi_{\alpha,\beta,\gamma})$$
+for $h\in \honey_{n,d}^G(\alpha,\beta,\gamma)$.
+ 
 % \\
 % {\color{blue} Let $\alpha,\beta,\gamma \in \mathcal{H}_{reg}$ and let $G \in \mathcal{G}_d$. Let us define 
 % \begin{equation}
@@ -1606,24 +1162,20 @@ when $\ell = 1$ (resp. $\ell = 2$). We write
 % in $\partial h$ for $h \in \honey^G_{n, d}(\alpha, \beta, \gamma)$
 % }
 
-\begin{definition}[Flow of a honeycomb]
-    \label{def:flow_honeycomb}
-    The \textit{flow} of a honeycomb 
-    $h\in\honey_{n,d}^G$ is the map $L[h] \in \R^E$  
-    which to an edge associates its height, that is, for $e \in E$, $L[h](e) = L(e)$.
-\end{definition}
+
 
 \begin{proposition}[Honeycomb injection]
     \label{prop:parametrization_triangular_honey_first}
     Let $d\geq 0$ and $G\in \mathcal{G}_d$. 
     The map $\mathcal{L}: h\rightarrow L[h]$ {\color{blue} (changed $L$ to $\mathcal{L}$ 
-    since $L$ is for edge height)} is an injective map from $\honey^G$ to $\mathbb{R}^E$ and 
+    since $L$ is for edge height)} is an injective map from $\honey^G$ to $\Omega^1(G)$ and 
     $$\mathcal{L} \left(\honey_{n,d}^G(\alpha,\beta,\gamma)\right) 
-    \subset \mathcal{H}(\mathcal{A}^G, \alpha,\beta,\gamma)  \ .$$
+    \subset  \mathcal{F}_{G}(\phi_{\alpha,\beta,\gamma}) \ .$$
 \end{proposition}
 
 \begin{proof}
-Let $h_1,h_2\in \honey^G$ such that $\mathcal{L}[h_1] = \mathcal{L}[h_2]$. 
+The fact that $\mathcal{L} \left(\honey_{n,d}^G(\alpha,\beta,\gamma)\right) 
+    \subset  \mathcal{F}_{G}(\phi_{\alpha,\beta,\gamma})$ is given by the previous discussion and remains to prove the injectivity of the map. Let $h_1,h_2\in \honey^G$ such that $\mathcal{L}[h_1] = \mathcal{L}[h_2]$. 
 Since $G=(V,E)$ is isomorphic to the canonical graph structure of both $h_1$ and $h_2$, 
 there are two isomorphisms $i_i:G\rightarrow (V^i,\mathcal{E}^i)$, $i\in\{1,2\}$, 
 where $\mathcal{E}^i$ is the set of geodesics associated to $h_i$ 
@@ -1649,7 +1201,7 @@ same boundary $\partial_\ell$ of $T$ and their $(\ell+1)-$coordinates are
 Hence, $\iota_1(v) = \iota_2(v)$.
 \\
 \\
-Suppose that $v\in V_{>1}$. By Definition \ref{def:triangular_honey}, $v$ is a trivalent vertex 
+Suppose that $v\in \interior(G)$. By Definition \ref{def:triangular_honey}, $v$ is a trivalent vertex 
 and they are three edges $e^0,e^1,e^2$ adjacent to $v$. 
 Moreover, by Lemma \ref{lem:types_colors_determined_by_boundaries}, 
 the type and color of $e^i$ is given by the graph structure and the type 
@@ -1657,8 +1209,6 @@ and color of the boundary edges.
 Suppose without loss of generality that for $1 \leqslant i \leqslant 2$, $\ell(e^i)=i$. Then,
 $$\iota_1(v)=(L(e^0),L(e^1),L(e^2))=\iota_2(v).$$
 We deduce that $V^1=\iota_1(V) = \iota_2(V)=V^2$ and thus $h_1=h_2$. 
-{\color{blue} One can moreover check that $h \in \honey_{n,d}^G(\alpha,\beta,\gamma)$, 
-we have that $\mathcal{L}(h)_{\vert \partial G} = g^{\alpha,\beta,\gamma}$ which proves the inclusion.} 
 \end{proof}
 
 
@@ -1801,7 +1351,7 @@ of $T$ as follows.
 \begin{enumerate}
 \item For each $v\in V^{\Gamma}$ :
 \begin{itemize}
-\item if $v\in V_{>1}^{\Gamma}$, then $v$ is adjacent to three edges 
+\item if $v\in \interior(G)^{\Gamma}$, then $v$ is adjacent to three edges 
 $(e^0,e^1,e^2) \in E_\Gamma^3$ with $e^\ell$ of type $\ell$. 
 We then set $x_v= \left(L(e^0),L(e^1),L(e^2)\right) \in T$,
 \item if $v\in V_{1}^{\Gamma}$ and $v$ is adjacent to an 
@@ -1918,8 +1468,8 @@ Set $x^i:=x_{v_i}$ and $y^i=x_{v'_i}$ for $i=1,2$. Since $x^1_2=L(e^2_1)$ and $y
     \item The \textit{reduced graph of C} is the graph $\Gamma^C=(V^C,E^C)$ 
     defined by:
     \begin{itemize}
-    \item $V^C=V_{>1}^C\cup V_1^C$, where $V_{>1}^C = 
-    V^{\Gamma} \setminus \{u\in V_{\Gamma} \mid {\color{blue} \exists ?}
+    \item $V^C=\interior(G)^C\cup V_1^C$, where $\interior(G)^C = 
+    V^{\Gamma} \setminus \{u\in V_{\Gamma} \mid \exists 
     (u,v)\in E_{\Gamma}, C(\{u,v\})=m\}$ and $V_{1}^C=V_1^{\Gamma}$,
     \item $E^C=\{ \gamma = \{x,y\} \mid \{x,y\}\text{ is a maximal chain of }C\}.$
     \end{itemize}
@@ -1956,7 +1506,7 @@ Let $C$ be a color map and $H \in \dualhive(\alpha,\beta,\gamma)$.
 {\color{blue} For any $\hat{e} \in E^C$, }
 We set $\hat{\Phi}[H](\hat{e})=\bigcup_{e\in \hat{e}}\Phi[H](e)$ and
 $$p_C(H)=\bigcup_{e\in E^C}\hat{\Phi}[H](\hat{e})=\bigcup_{e\in E}\Phi[H](e).$$
-
+XXX Attention : conflit avec les projections sur les coordonnées...XXX
 \begin{lemma}[Reduced graph gives geodesics]
     Let $C$ be a color map of a dual hive $H$.
     Then, the set $ \left\{\hat{\Phi}[H](\hat{e}) \mid \hat{e}\in E^C \right\}$ 
@@ -1980,10 +1530,9 @@ $$p_C(H)=\bigcup_{e\in E^C}\hat{\Phi}[H](\hat{e})=\bigcup_{e\in E}\Phi[H](e).$$
 
 \noindent
 {\color{blue} For $G\in\mathcal{G}_d$, recall that 
-$\mathcal{H}(\mathcal{A},\alpha,\beta,\gamma)$ has been defined 
-by \eqref{eq:def_H_A_alpha_beta_gamma} 
+$\phi_{\alpha,\beta,\gamma}:V\rightarrow \mathbb{R}$ has been defined before Proposition \ref{prop:parametrization_triangular_honey_first}
 in Section \ref{subsec:parametrization_honeycombs} and 
-that the map $\mathcal{L}: \honey_{n,d}^{G} \to \R^E$ 
+that the map $\mathcal{L}: \honey_{n,d}^{G} \to \Omega^1(G)$ 
 has been defined in Definition \ref{def:flow_honeycomb}.}
 
 \begin{proposition}[Dual hives as honeycombs]
@@ -1993,9 +1542,9 @@ has been defined in Definition \ref{def:flow_honeycomb}.}
     $\dualhive^C(\alpha,\beta,\gamma)$ to 
     $\honey_{n,d}^{G^C}(\alpha,\beta,\gamma)$ such that the map 
     $ \mathcal{L} \circ p_C: \dualhive^C(\alpha,\beta,\gamma) 
-    \rightarrow \mathbb{R}^{E^C}$ 
+    \rightarrow \Omega^1(G^C)$ 
     is the restriction of an affine map with integer coefficients from 
-    $\mathbb{R}^{E_{n,d}}$ to $\mathcal{H}(\mathcal{A},\alpha,\beta,\gamma)$.
+    $\mathbb{R}^{E_{n,d}}$ to $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma})$.
 \end{proposition}
 \begin{proof}
 Let us first prove that for $H \in \dualhive^C(\alpha,\beta,\gamma)$, 
@@ -2038,10 +1587,10 @@ In the second case, $x$ is univalent and belongs to $\partial T$ by construction
 \item Condition (2) is a direct consequence of Lemma \ref{lem:hive_honey_1},
 \item  Let $x$ be the $i$-th boundary point of $p_{C}(H)$ on $\partial_0T$, so that $x_0=0$. 
 If $i\leq d$, then $x=x_{v_{\tilde{e}}}$ for the edge $\tilde{e}\in \partial^{(2,0)}$ such that $L(\tilde{e})=1-\beta_i$ 
-and $c(e)=1$. Since $\tilde{e}$ is of type $2$, $x_1=L(\tilde{e})=1-\beta_i$, and thus 
-$$x_2=1-(1-\beta_i)=\beta_i.$$
+and $c(e)=1$. Since $\tilde{e}$ is of type $2$, $x_2=L(\tilde{e})=1-\beta_i$, and thus 
+$$x_1=1-(1-\beta_i)=\beta_i.$$
 If $d+1\leq i\leq n$, then $\tilde{e}\in\partial^{(2,0)}$, $L(\tilde{e})=\beta_i$ and $c(e)=0$. 
-Moreover, $\tilde{e}$ is of type $1$ and thus $x_2=L(\tilde{e})=\beta_i$. 
+Moreover, $\tilde{e}$ is of type $1$ and thus $x_1=L(\tilde{e})=\beta_i$. 
 {\color{blue} The cases of other boundaries are similar.}
 \end{enumerate}
 Therefore, $p_{C}(H)$ is a triangular honeycomb such that 
@@ -2049,15 +1598,14 @@ $p_C(H)\in \honey_{n,d}^{G^C}(\alpha,\beta,\gamma)$.
 \\
 \\
 {\color{blue} Let us now check that $ \mathcal{L} \circ p_C: \dualhive^C(\alpha,\beta,\gamma) 
-    \rightarrow \mathbb{R}^{E^C}$ is the restriction of an affine map with integer coefficients.}
-Let $\hat{e}=\{v,v'\}\in E^C$ of type $\ell$, and suppose without loss of generality that $v_{\ell}<v'_{\ell}$. 
+    \rightarrow \Omega^1(G^C)$ is the restriction of an affine map with integer coefficients.}
+Let $\hat{e}=\{v,v'\}\in E^C$ of type $\ell$ with $s(v)=1$ and $s(v')=-1$, and suppose without loss of generality that $v_{\ell}<v'_{\ell}$. 
 Let $\mathcal{E}(\hat{e})=\{v,w\}$ be the unique edge of the maximal chain $\hat{e}$ adjacent to $v$. 
 Then, $\mathcal{E}(\hat{e})$ is of type $\ell$ and 
-$L(\hat{\Phi}(\hat{e}))=(x_v)_{\ell-1}=L(\mathcal{E}(\hat{e}))$. 
+$L(\hat{\Phi}(\hat{e}))=(x_v)_{\ell}=L(\mathcal{E}(\hat{e}))$. 
 {\color{blue} $\mathcal{L}[p_c[H]](\hat{\Phi}[H](\hat{e})) = (x_v)_{\ell} = L(\mathcal{E}(\hat{e}))$ ?}
-Hence, $\mathcal{L} \circ p_{C}$ is the restriction of the linear map from $\mathbb{R}^{E_{n,d}}$ to $\mathbb{R}^{E^C}$ 
-mapping $(x(e))_{e\in E_{n,d}}$ to $(x(\mathcal{E}(\hat{e})))_{\hat{e}\in E^C}$. 
-Remark that this map has integer coefficients in the canonical bases of both vector spaces.
+Hence, $\mathcal{L} \circ p_{C}$ is the restriction of the linear map from $\mathbb{R}^{E_{n,d}}$ to $\Omega^1(G^C)$ 
+mapping $(x(e))_{e\in E_{n,d}}$ to $\sum_{\hat{e}\in E^C}x(\mathcal{E}(\hat{e}))\delta_{\vec{e}}$, where for $e=\{v,v'\}\in E^C$ with $s(v)=1$ and $s(v')=-1$, $\vec{e}=(v,v')$. Remark that this map has integer coefficients in the canonical bases of both vector spaces.
 \\
 \\
 Finally, since $h\in \honey_{n,d}^G(\alpha,\beta,\gamma)$ is uniquely determined by $(L(e))_{e\in G}$ by Proposition \ref{prop:parametrization_triangular_honey_first}, 
@@ -2162,7 +1710,7 @@ Putting together Lemma \ref{lem:hive_honey_final} with Lemma \ref{lem:honey_hive
     There is a partition 
     $$\honey_{n,d}=\bigsqcup_{C\text{ color map}}\honey_{n,d}^{\Gamma^C},$$
     such that, for each color map $C$, the map $p_{C}$ is a bijection and $( \mathcal{L} \circ p_{C})^{-1}$ 
-    is the restriction of a linear map from $\mathcal{H}(\mathcal{A}^C,\alpha,\beta,\gamma)$ to 
+    is the restriction of a linear map from $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma})$ to 
     $\mathbb{R}^{E_{n,d}}$ whose matrix in the canonical bases has integer coefficients.
 \end{proposition}
 \begin{proof}
@@ -2191,21 +1739,21 @@ $$(v_0,v_1,v_2)=(h(e_0),h(e_1),h(e_2)),$$
 where $e_\ell$ is the edge of type $\ell$ adjacent to $v$ in $\Gamma_{d,n}$ 
 (even if $e_\ell\not\in E^C$). For $e=\{v,w\},e'=\{v',w'\}\in E^C$ of same type, 
 introduce the cover relation $e<e'$ when, up to a transposition, 
-$\{w,v'\}$ is an edge of $E^C$ of type $\ell+1$ and $v'_{\ell-1}>w_{\ell-1}$.
+$\{w,v'\}$ is an edge of $E^C$ of type $\ell+1$ and $v'_{\ell-1}>w_{\ell-1}$. This cover relation translates into a cover relation in $\vec{E}^C$ by saying that $(v,w)<(v',w')$ is and only if $\{v,w\}<\{v',w'\}$ in the former sense.
 
-\begin{corollary}[Parametrization of labels]
+\begin{corollary}[Parametrization of labels]\label{cor:paramietrization_label}
     For a color map $C$ and $\Gamma^C\in \mathcal{G}_d$,
     $$\mathcal{L} \left(\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma) \right) 
-    = \mathcal{H}(\mathcal{A}^C,\alpha,\beta,\gamma)\cap K^C,$$
-    where $K^C\subset \mathbb{R}^{E^C}$ is the cone defined as 
-    $$K^C = \left\{(L(e))_{e\in E^C} \mid L(e)<L(e')\,\text{ if }e<e'\right\}.$$ 
+    = \mathcal{F}_{\Gamma^C}(\phi_{\alpha,\beta,\gamma})\cap K^C,$$
+    where $K^C\subset \Omega^1(G^C)$ is the cone defined as 
+    $$K^C = \left\{(\omega \in \Omega^1(G^C) \mid \vert \omega(e)\vert<\vert \omega(e')\vert\,\text{ if }e<e'\, e,e'\in\vec{E}^C\right\}.$$ 
 \end{corollary}
 
 \begin{proof}
     By Proposition \ref{prop:honey_hive}, $\mathcal{L} \left(\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma) \right) 
-    = \Phi^{-1} \left(\dualhive^C(\alpha,\beta,\gamma)\right)$, with, for $H\in\mathbb{R}^{E_{n,d}}$, 
-    $$\Phi[L](e)=\left\lbrace\begin{aligned} L(\hat{e})&\text{ if }e\in \hat{e}, c(e)\not=m\\
-    1-L(\hat{e_1})-L(\hat{e_2})&\text{ if }c(e)=m, \,(e_1,e_2,e)\text{ triangular face of }H_{n,d}\end{aligned}\right..$$
+    = \Phi^{-1} \left(\dualhive^C(\alpha,\beta,\gamma)\right)$, with, for $\omega\in \Omega^1(G)$ and $e\in E_{n,d}$, 
+    $$\Phi[\omega](e)=\left\lbrace\begin{aligned} \vert \omega(\vec{\hat{e}})\vert&\text{ if }e\in \hat{e}, c(e)\not=m\\
+    1-\vert \omega(\vec{\hat{e_1}})\vert-\vert \omega(\vec{\hat{e_2}})\vert&\text{ if }c(e)=m,\,e_1\in\hat{e}_1,e_2\in\hat{e}_2 ,\,(e_1,e_2,e)\text{ triangular face of }H_{n,d}\end{aligned}\right..$$
 
     \noindent
     Then, remark that $\dualhive^C(\alpha,\beta,\gamma) = \mathcal{H}^C(\alpha,\beta,\gamma) \cap \mathcal{K}_{<},$ 
@@ -2217,7 +1765,7 @@ $\{w,v'\}$ is an edge of $E^C$ of type $\ell+1$ and $v'_{\ell-1}>w_{\ell-1}$.
     $$\mathcal{L}\left(\honey_{n,d}^{G^C}(\alpha,\beta,\gamma)\right) = 
     \Phi^{-1} \left(\mathcal{H}^C(\alpha,\beta,\gamma) \cap \mathcal{K}_{\leq} \right)
     =\Phi^{-1}\left(\mathcal{H}^C(\alpha,\beta,\gamma)\right) \cap \Phi^{-1}\left(\mathcal{K}_{<}\right).$$
-    One then checks that $\Phi^{-1}(\mathcal{H}(\alpha,\beta,\gamma))=\mathcal{H}(\mathcal{A}^C,\alpha,\beta,\gamma)$ 
+    One then checks that $\Phi^{-1}(\mathcal{H}^C(\alpha,\beta,\gamma))=\mathcal{F}_{G^C}(\alpha,\beta,\gamma)$ 
     and $\Phi^{-1}(\mathcal{K}_{<})=K^C$. XXXTo detail ? {\color{blue} It think it is heavy to detail 
     and it is straightforward to check the translation of conditions and on boundaries.}XXX
 \end{proof}
@@ -2238,8 +1786,9 @@ $$M_{0, 3}(\alpha,\beta,\gamma) =
 where $\SU(n)$ acts diagonally by conjugation on each factor. 
 Its volume has been computed in \autocite{françois2024positiveformulaproductconjugacy} using two equivalent 
 models named \textit{toric hives} and \textit{dual hives}. 
-Using the results of this section, we present a reformulation of this results in terms of triangular honeycombs.
-
+Using the results of this section, we present a reformulation of this results in terms of triangular honeycombs. In the following, 
+$$\Vol(\left[\honey_{n,d}^G(\alpha,\beta,\widetilde{\gamma})\right]):=\Vol(\mathcal{L}\left[\honey_{n,d}^G(\alpha,\beta,\widetilde{\gamma})\right]),$$
+where $\mathcal{L}$ is the map from $\honey_{n,d}^G(\alpha,\beta,\widetilde{\gamma})$ to $\mathcal{F}(\phi_{\alpha,\beta,\gamma})$ defined in Definition \ref{def:flow_honeycomb} and $d\Vol$ is the volume form defined in \eqref{eq:def_volume}.
 \begin{theorem}[Volume of flat $\U(n)$-connections on the sphere]
     \label{th:volume_flat_connection_0_3}
     Let $n\geq 3$ and consider the canonical volume form on $\U(n)$. 
@@ -2286,36 +1835,34 @@ $$Z_{0, 3}(\alpha,\beta,\gamma) =
 \end{enumerate}
 
 \begin{proof}[Proof of Theorem \ref{th:volume_flat_connection_0_3}] 
-Let $C$ be a color map. By Proposition \ref{prop:divergence_volume_form} and Lemma \ref{lem:honey_balanced_diff}, 
-there exists an integral generating set of $\mathcal{H}(\mathcal{A}^C,\alpha,\beta,\gamma)$. 
-Denote by $i_{R}:\mathbb{E}^R\rightarrow \mathbb{R}^{E^C}$ the corresponding map, which has thus affine with integer 
-coefficients in the canonical basis and is a bijection from $\mathbb{E}^R$ to $\mathcal{H}(\mathcal{A}^C,\alpha,\beta,\gamma)$. 
-Since, by Proposition \ref{prop:honey_hive}, $\Phi^C:\mathbb{R}^{E^C}\rightarrow \mathbb{E}^{E_{n,d}}$ is an affine integral map 
-and a bijection from $\mathcal{H}(\mathcal{A}^C,\alpha,\beta,\gamma)$ to $\dualhive^C
+Let $C$ be a color map. By Proposition \ref{prop:BijectionTrees}, there exists a set $R$ such the restriction map $\varphi_{R}:\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))\rightarrow \Omega^1(S)$
+ is a bijection with integral coefficient in the canonical bases. 
+Denote by $i_{R}:\Omega^1(R)\rightarrow \Omega^1(G)$ the corresponding inverse map, which has thus affine with integer 
+coefficients in the canonical basis and is a bijection from $\Omega^1(R)$ to $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))$. 
+Since, by Proposition \ref{prop:honey_hive} and Corollary \ref{cor:paramietrization_label}, $\Phi^C:\Omega^1(G^C)\rightarrow \mathbb{E}^{E_{n,d}}$ is an affine integral map 
+and a bijection from $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))\cap K^C$ to $\dualhive^C
 (\alpha,\beta,\gamma)$ and by (1) above, $Rot[C\rightarrow C_0]$ is an integral isomorphism from $\dualhive^C(\alpha,\beta,\gamma)$ 
 to $\dualhive^{C_0}(\alpha,\beta,\gamma)$. We deduce that 
-$$p_{S}\circ Rot[C\rightarrow C_0]\circ \Phi^C\circ i_R: \R^R \rightarrow \R^S$$
+$$p_{S}\circ Rot[C\rightarrow C_0]\circ \Phi^C\circ i_R: \Omega^1(R) \rightarrow \R^S$$
 is an integral isomorphism. 
 Likewise, since by (2) above $i_S:\mathbb{R}^S\rightarrow \dualhive^{C_0}(\alpha,\beta,\gamma)$ 
 is an integral affine isomorphism and $\mathcal{L} \circ p_{C_0}$ is an integral affine isomorphism from 
-$\dualhive^{C_0}(\alpha,\beta,\gamma)$ to $\mathcal{H}(\mathcal{A}^{C_0},\alpha,\beta,\gamma)$,
+$\dualhive^{C_0}(\alpha,\beta,\gamma)$ to $\mathcal{F}_{G^{C_0}}(\phi_{\alpha,\beta,\gamma})$,
 $$ \left(p_{S}\circ Rot[C\rightarrow C_0]\circ \Phi^C\circ i_R \right)^{-1} 
-= p_{R}\circ L\circ p_{C_0}\circ Rot[C_0\rightarrow C] \circ i_S:\mathbb{R}^S\rightarrow \mathbb{R}^R$$
+= \varphi_{R}\circ L\circ p_{C_0}\circ Rot[C_0\rightarrow C] \circ i_S:\mathbb{R}^S\rightarrow \Omega^1(R)$$
 is an integral isomorphism. We deduce that 
 % $\left\vert\det Mat_{R,S}(p_{S}\circ Rot[C\rightarrow C_0]\circ \Phi^C\circ i_R)\right\vert=1$. 
-{\color{blue} its determinant as a isomorphism from $\R^R$ to $\R^S$ has modulus one.}
+{\color{blue} its determinant as an isomorphism from $\Omega^1(R)$ to $\R^S$ has modulus one.}
 Hence,
 \begin{align*}
 \Vol_S\left[Rot[C\rightarrow C_0] \left(\dualhive^C(\alpha,\beta,\gamma)\right) \right] = 
-& \Vol\left[u\in\mathbb{R}^S,Rot[C_0\rightarrow C]\circ i_{S}(u)\in \left(\dualhive^C(\alpha,\beta,\gamma)\right) \right]
+& Leb\left[u\in\mathbb{R}^S,Rot[C_0\rightarrow C]\circ i_{S}(u)\in \left(\dualhive^C(\alpha,\beta,\gamma)\right) \right]
 \\
-=& \Vol\left[u\in\mathbb{R}^S,p_{R}\circ L\circ p_{C_0}\circ Rot[C_0\rightarrow C]\circ i_{S}(u)\in p_R \left(\honey_{n,d}^C(\alpha,\beta,\gamma)\right) \right]\\
-=& \Vol\left[z\in\mathbb{R}^R,z\in p_R\left(\honey_{n,d}^C(\alpha,\beta,\gamma)\right) \right]\\
-=& \Vol_{R} \left[\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma)\right].
+=& Leb\left[u\in\mathbb{R}^S,\varphi_{R}\circ \mathcal{L}\circ p_{C}\circ Rot[C_0\rightarrow C]\circ i_{S}(u)\in \varphi_R \left(\honey_{n,d}^C(\alpha,\beta,\gamma)\right) \right]\\
+=& Leb\left[z\in\Omega^1(R),z\in \varphi_R\left(\honey_{n,d}^C(\alpha,\beta,\gamma)\right) \right]\\
+=& \Vol \left[\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma)\right],
 \end{align*}
-By Proposition \ref{prop:divergence_volume_form} and Lemma \ref{lem:honey_balanced_diff}, 
-$\Vol_{R}$ is independent of the generating set $R$ and is equal to the volume form on 
-$\mathcal{H}(\mathcal{A}^G,\alpha,\beta,\gamma)$. Hence, by (3),
+where we used Proposition \ref{prop:divergence_volume} on the last equality. Hence, by (3),
 \begin{align*}
 Z_{0, 3}(\alpha,\beta,\gamma) = &
     \frac{2^{(n+1) [2]}(2\pi)^{(n-1)(n-2)}} 
@@ -2337,123 +1884,36 @@ where we used on the last equality that any graph of $\mathcal{G}_d$ is a graph 
 
 
 
-\section{Sieving of differential structures}
-\label{sec:sieving}
-
-\subsection{Sieving and contraction}
-\label{subsec:sieving_contraction}
-
-\begin{definition}[Sieving of differential structures]\label{def:sieving}
-Let $\mathcal{A}=(V,A,\alpha)$ be a differential structure and $\vec{v}=(v_1,\ldots,v_r)\subset V_1,\vec{w}=(w_1,\ldots,w_r)\subset V_1$ two family of univalent vertices of same cardinal $r\geq 1$. For any sequence $\vec{h}=((\epsilon_1,\lambda_1),\ldots,(\epsilon_r,\lambda_r))\in(\{-1,+1\}\times \mathbb{R})^r$, the sieving of $\mathcal{A}$ along ${\vec{v},\vec{w},\vec{h}}$ is the differential structure $(\tilde{G},\tilde{A})$ and the set of flows defined as follows :
-\begin{itemize}
-\item $\tilde{G}=(\tilde{V},\tilde{E})$ is the quotient of $(V,E)$ by the relation $v_i=w_i$, $1\leq i\leq r$,
-\item $\tilde{A}_{\vert V_{>1}}=A$ (up to adding the columns corresponding to $w_i$ to the ones of $v_i$), and for $1\leq i\leq r$ and $v,w$ such that $\{v,v_i\},\{w,w_i\}\in E$,
-$$\tilde{A}(v_i,v)=1,A(v_i,w)=\epsilon_i.$$
-\item the flow on $\tilde{\mathcal{A}}$ are taken with respect to a vector $\tilde{\alpha}\in \mathbb{R}^{\tilde{V}_{>1}}$ with $\tilde{\alpha}_v=\alpha_v$ if $v\in V_{>1}$ and $\tilde{\alpha}_{v_i}=\lambda_i$ for $1\leq i\leq n$.
-\end{itemize}
-\end{definition}
-
-\begin{proposition}[Product formula]\label{prop:divergence_product}
-Let $\mathcal{A}_1,\mathcal{A}_2$ be two connected differential structures, $W\subset V_1^1,W'\subset V_1^2$ of same cardinality $s$. There exists a vector $\epsilon\in \{-1,+1\}^s$, unique up to an overall sign, such that the sieving $\tilde{A}$ of $\mathcal{A}_1\cup\mathcal{A}_1$ along $W,W',(\epsilon,\vec{\lambda})$ for any $\vec{\lambda}\in  \mathbb{R}^s$ is balanced. Then, for such a choice of $\epsilon$,
-\begin{enumerate}
-\item $h_{\tilde{A}}(\tilde{g})=h_{\mathcal{A}_1}(\tilde{g}_1,0,\ldots,0)+h_{\mathcal{A}_2}(\tilde{g}_2,0,\ldots,0)$ and $\tilde{\beta}=\beta_1+\beta_2-\sum_{i=1}^sc_1(u_i)A^1(u_i,v_i)\lambda_i$,
-\item $L\in\mathcal{H}(\mathcal{A},\tilde{g})$ if and only if $p_{E_1}(L)\in \mathcal{H}(\mathcal{A}_2,(\tilde{g}_1,x_1,\ldots,x_s))$ and $p_{E_2}(L)\in\mathcal{H}(\mathcal{A}_2,(\tilde{g}_1,(\epsilon_ix_i-\lambda_i))$ for some $x_1,\ldots,x_s$ such that $h_{\mathcal{A}_1}=(\tilde{g}_1,x_1,\ldots,x_s)=\beta_1$.
-\item for $g$ such that $h_{\tilde{\mathcal{A}}}(g)=\tilde{\beta}$ and $K_1\subset \mathbb{R}^{E_1}, K_2\subset \mathbb{R}^{E_2}$,
-\begin{align*}
-Vol((K_1\times K_2)\cap\mathcal{H}(\mathcal{A},g))=&\int_{\mathbb{R}^{s-1}}\Vol\left[K_1\cap \mathcal{H}(\mathcal{A}_1,(g_1,x_1,\ldots,x_{s-1},y(x)))\right]\\
-&\hspace{3cm}\cdot \Vol\left[K_2\cap \mathcal{H}(\mathcal{A}_2,(g_2,\epsilon_1x_1-\lambda_1,\ldots,\epsilon_sy-\lambda_s))\right]dx,
-\end{align*}
-where $y(x)$ is the unique solution to the equation $h_{\mathcal{A}_1}(\tilde{g}_1,x_1,\ldots,x_{s-1},y)=\beta_1$.
-
-\end{enumerate}
-\end{proposition}
-\begin{proof}
-Let $c_1:V\rightarrow \{-1,+1\}$ and $c_2:V'\rightarrow \{-1,+1\}$ such that the balance property is satisfied for $c$ (resp. $c'$) in $\mathcal{A}_1$ (resp. $\mathcal{A}_2$). Note first that if $\tilde{\mathcal{A}}$ is balanced with $c:V_{>1}\rightarrow \{+1,-1\}$, that $\mathcal{A}_1$ (resp. $\mathcal{A}_2$) is balanced with $c_1:=c_{\vert \mathcal{A}_1}$ (resp. $c_2:=c_{\vert \mathcal{A}_2}$).For $1\leq i\leq s$, let $v_i\in V_{>1}^{\mathcal{A}}\setminus (V_{>1}^{\mathcal{A}_1}\cup V_{>1}^{\mathcal{A}_2})$. Then, for $\mathcal{A}$ to be balanced, one needs
-$$c_1(v)A^1(v,v_i)+c(v)=0, \quad c_2(w)A^2(w,v_i)+\epsilon_ic(v)=0,$$
-so that $c(v)=-c_1(v)A^1(v,v_i)$ and $\epsilon_i=-\frac{c_2(w)A^2(w,v_i)}{c_1(v)A^1(v,v_i)}$. Reciprocally, one checks that setting $ \epsilon_i=-\frac{c_2(w)A^2(w,v_i)}{c_1(v)A^1(v,v_i)}$ for $1\leq i\leq s$ yields a balanced coloring. Since $c_1$ and $c_2$ are unique up to an overall change of sign,the same holds for $\epsilon=(\epsilon_1,\ldots,\epsilon_s\}$.
-
-(1) Remark first that $\partial G=(\partial G_1\cup \partial G_2)\setminus (W\cup W')$. In the sequel, we write $z\in\mathbb{R}^{\partial G_1}$ as $(\tilde{z},z_{w_1},\ldots,z_{w_s})$ with $\tilde{z}\in \mathbb{R}^{\partial G_1\setminus W}$, and the same for $\mathbb{R}^{\partial G_2}$.  Suppose that $L\in\mathcal{H}(\mathcal{A})$. Then, $L_{\vert G_1}\in\mathcal{H}(\mathcal{A}_1)$ and $L_{\vert G_2}\in\mathcal{H}(\mathcal{A}_2)$. Hence, writing $L_{\vert G_1}=(\tilde{g}_1,z_{w_1},\ldots,z_{w_s})$, one must have 
-$$h_{\mathcal{A}_1}(\tilde{g}_1,z_{w_1},\ldots,z_{w_s})=\beta_1.$$
-Similarly, writing $L_{\vert G_2}=(\tilde{g}_2,z_{w'_1},\ldots,z_{w'_s})$, one must have
-$$h_{\mathcal{A}_2}(\tilde{g}_2,z_{w'_1},\ldots,z_{w'_s})=\beta_2.$$
-By the flow condition on each $i,1\leq i\leq s$, and $u_i\sim v_i$, $u_i\in V^1$, $u'_i\sim v_i$, $u'_i\in V^2$, $z_{w_{i}}=\lambda_i-A(u_i,v_i)z_{w'_i}=c(v_i)-\epsilon_iz_{w'_i}$. Hence, using the formula \eqref{eq:def_h_A}andthe fact that $\mathcal{A}$ is balanced,
-\begin{align*}
-h_{\mathcal{A}_1}(\tilde{g}_1,0,\ldots,0)+h_{\mathcal{A}_2}(\tilde{g}_2,0,\ldots,0)=&\beta_1+\beta_2-\sum_{i=1}^sA(u_i,v_i)c(u_i)z_{w_i}-\sum_{i=1}^sA(u_i',v_i)c(u_i')z_{w'_i}\\
-=&\beta_1+\beta_2+\sum_{i=1}^sA(v_i,u_i)c(v_i)z_{w_i}+\sum_{i=1}^sA(v_i,u'_i)c(v_i)z_{w'_i}\\
-=&\beta_1+\beta_2+\sum_{i=1}^sc(v_i)\lambda_i,
-\end{align*}
-where we used on the last equality that $A(v_i,u_i)z_{w_i}+A(v_i,u'_i)z_{w'_i}=\lambda_i$ by the flow equation. Hence, setting $h(\tilde{g})=h_{\mathcal{A}_1}(\tilde{g}_1,0,\ldots,0)+h_{\mathcal{A}_2}(\tilde{g}_2,0,\ldots,0)$ and $\tilde{\beta}=\beta_1+\beta_2++\sum_{i=1}^sc(v_i)\lambda_i$ yields that $L\in\mathcal{H}(\mathcal{A})$ implies $h(L_{\partial G})=\tilde{\beta}$. By the uniqueness of such a map given by Proposition \ref{prop:boundary_condition}, $h_{\mathcal{A}}=h$.
-
-(2) Remark that $L\in\mathcal{A}$ if and only if $L$ satisfies each flow equation, which is equivalent to 
-\begin{itemize}
-\item $p_{E_1}(L)\in\mathcal{A}_1$ and $p_{E_2}(L)\in\mathcal{A}_2$,
-\item and $L_{w_i}+\epsilon_iL_{w'i}=\lambda_i$ for $1\leq i\leq s$.
-\end{itemize}
-The result is then deduced by Proposition \ref{prop:boundary_condition}.
-
-(3)Let $T_i$ be a spanning tree of $V_{>1}^i$ in $G_i$ for $i\in \{1,2\}$. Then, adding the edges $w_j$, $1\leq j\leq s$ to $T_1\cup T_2$ yields a spanning tree of $V_{>1}$ and thus $T=\partial G\cup T_1\cup T_2\cup \{w_s\}$ is a spanning tree of $G$. By Proposition \ref{prop:divergence_volume_form} $T^c$ is a generating set of $\mathcal{A}$. Let us write $R_i=E_{i}\setminus (\partial G_i\cup T_i)$ and $\tilde{W}=\{w_1,\ldots,w_{s-1}\}$. Then, 
-$$T^c=[E_{1}\setminus (\partial G_1\cup T_1)]\cup [E_2\setminus (\partial G_2\cup T_2)]\cup W=R_1\cup R_2\cup W.$$
- Let $g$ such that $h_{\mathcal{A}}(g)=\tilde{\beta}$ and write $g=(g_1,g_2)$ where $g_1=g_{\vert \partial G_1\setminus W}$ and $g_2=g_{\vert \partial G_2\setminus W}$. Let $K_1\subset \mathbb{R}^{E_1}$ and $K_2\subset \mathbb{R}^{E_2}$. Then, for $(t_1,t_2,x)\in\mathbb{R}^{R_1}\times \mathbb{R}^{R_2}\times \mathbb{R}^{s-1}$, 
-$p_{T^c}^{-1}(t_1,t_2,x)\in\mathcal{H}(\mathcal{A},g)$. In particular, by the previous statement, $p_{E_1}(p_{T^c}^{-1}(t_1,t_2,x))\in\mathcal{H}(\mathcal{A}_1,(g_1,x_1,\ldots,x_{s-1},y)$ where $y$ is the unique solution to $h_{\mathcal{A}_1}(g_1,x_1,\ldots,x_{s-1},y)=\beta_1$. Similarly, $p_{E_2}(p_{T^c}^{-1}(t_1,t_2,x))\in\mathcal{H}(\mathcal{A}_2,(g_2,\epsilon_1x_1-\lambda_1,\ldots,x_{s-1},\epsilon_sy-\lambda_s)$. Hence,
-$p_{T^c}^{-1}(t_1,t_2,x)\in K_1\times K_2\cap \mathcal{H}(\mathcal{A},g)$ if and only $p_{E_1}p_{T^c}^{-1}(t_1,t_2,x)\in K_1\cap\mathcal{H}(\mathcal{A}_1,(g_1,x_1,\ldots,x_{s-1},y)$ and $p_{E_2}p_{T^c}^{-1}(t_1,t_2,x)\in K_2\cap\mathcal{H}(\mathcal{A}_2,(g_2,\epsilon_1x_1-\lambda_1,\ldots,x_{s-1},\epsilon_sy-\lambda_s)$. 
-
-
-Next, since $T_i$is a spanning tree of $V_{>1}^i$, $\partial G_i\cup T_i$ is a spanning tree of $G_i$ and thus $E_{i}\setminus (\partial G_i\cup T_i)$ is a generating set of $\mathcal{A}_i$. Introduce for $x\in\mathbb{R}^{s-1}$ the map $p_{R_1}^x:\mathcal{H}(\mathcal{A}_1,x_1,\ldots,x_{s-1},y)\rightarrow \mathbb{R}^{\mathbb{R}_1}$ and $p_{R_2}^x:\mathcal{H}(\mathcal{A}_2,\epsilon_1x_1-\lambda_1,\ldots,\epsilon_sy-\lambda_s)\rightarrow \mathbb{R}^{\mathbb{R}_2}$. Then, since $R_i$ is generating for $\mathcal{A}_i$, $p_{E_i}p_{R_1\cup R_2\cup W}^{-1}(t_1,t_2,x)\in K_i$ if and only if $(p_{R_i}^x)^{-1}(t_i)\in K_i\cap \mathcal{H}(\mathcal{A},\eta_i(x))$, where $\eta_1(x)=(x_1,\ldots,y)$ and $\eta_2(x)=(\epsilon_1x_1-\lambda_1,\ldots,\epsilon_sy-\lambda_s)$. Hence,
-\begin{align*}
-Vol(K_1\times K_2\cap\mathcal{H}(\mathcal{A},g))=&\int_{\mathbb{R}^{R_1}\times \mathbb{R}^{R_2}\times \mathbb{R}^{s-1}}\mathbf{1}_{p_{T^c}^{-1}(t_1,t_2,x)\in K_1\times K_2}dt_1dt_2dx\\
-=&\int_{\mathbb{R}^{R_1}\times \mathbb{R}^{R_2}\times \mathbb{R}^{s-1}}\mathbf{1}_{(p_{R_1}^x)^{-1}(t_1)\in K_1}\mathbf{1}_{(p_{R_2}^x)^{-1}(t_2)\in K_2}dt_1dt_2dx\\
-=&\int_{\mathbb{R}^{s-1}}\left(\int_{\mathbb{R}^{R_1}}\mathbf{1}_{(p_{R_1}^x)^{-1}(t_1)\in K_1}dt_1\right)\cdot\left( \int_{\mathbb{R}^{R_2}}\mathbf{1}_{(p_{R_2}^x)^{-1}(t_2)\in K_2}dt_2\right)dx\\
-=&\int_{\mathbb{R}^{s-1}}\Vol\left[K_1\cap \mathcal{H}(\mathcal{A}_1,(g_1,x_1,\ldots,x_{s-1},y))\right]\\
-&\hspace{3cm}\cdot \Vol\left[K_2\cap \mathcal{H}(\mathcal{A}_2,(g_2,\epsilon_1x_1-\lambda_1,\ldots,\epsilon_sy-\lambda_s))\right]dx.
-\end{align*}
-
-
-\end{proof}
-
-
-\begin{proposition}[Contraction formula]\label{prop:divergence_contraction}
-Let $\mathcal{A}$ be a connected differential structure, $W,W'\subset V_1$ of same cardinality $s$ with $W\cap W'=\emptyset$. There exists a vector $\epsilon\in \{-1,+1\}^s$, unique up to an overall sign, such that the sieving $\tilde{A}$ of $\mathcal{A}$ along $W,W',(\epsilon,\vec{\lambda})$ for any $\vec{\lambda}\in \times \mathbb{R}^s$ is balanced. Then, for such a choice of $\epsilon$,
-\begin{enumerate}
-\item $h_{\tilde{\mathcal{A}}}(\tilde{g})=h_{\mathcal{A}}(\tilde{g},0,\ldots,0)$ and $\tilde{\beta}=\beta-\sum_{i=1}^sc_1(u_i)A^1(u_i,v_i)\lambda_i$,
-\item for $g$ such that $h_{\tilde{\mathcal{A}}}(g)=\tilde{\beta}$ and $K\subset \mathbb{R}^{E}$,
-\begin{align*}
-Vol(K\cap\mathcal{H}(\tilde{\mathcal{A}},g))=&\int_{\mathbb{R}^{s-1}}\Vol\left[K_1\cap \mathcal{H}(\mathcal{A}_1,(g_1,x_1,\ldots,x_{s-1},y(x),\epsilon_1x_1-\lambda_1,\ldots,\epsilon_sy(x)-\lambda_s))\right]dx,
-\end{align*}
-where $y(x)$ is the unique solution to the equation $h_{\mathcal{A}}x_1,\ldots,x_{s-1},y_1(x),\epsilon_1x_1-\lambda_1,\ldots,\epsilon_sy-\lambda_s)=\beta_1$.
-\end{enumerate}
-\end{proposition}
-\begin{proof}
-The proof is similar to the one of Proposition \ref{prop:divergence_product}.
-\end{proof}
-
-\subsection{Application to honeycombs}
+\section{Sieving of honeycombs}
 \label{subsec:sieving_honeycombs}
 
-Let us now apply the previous formulas to the case of gluing of honeycombs.
+Let $\mathcal{T}$ be an oriented surface with boundary obtained by gluing $m$ equilateral triangles $T^1,\ldots,T^m$ along their boundaries, such that $p$ edges $L_1,\ldots,L_{p}$ of equilateral triangles are not glued.  Each edge $L_j$ has a natural orientation $\ell_j$ coming from the equilateral it belongs to. Suppose that $h$ is a honeycomb on $\mathcal{T}$ such that each $h\cap \mathcal{T}^i$ is triangular. Then, the structure graph $\hat{G}[h]$ of $h$ as defined after Definition \ref{def:toric_honeycomb} has $pn$ univalent vertices, $n$ of them being on each boundary component $L_j,\, 1\leq j\leq p$, and $\frac{(3m-p)n}{2}$ bivalent vertices, $n$ of them being on a the boundary of a common triangle while being in the interior of the surface. 
 
-Let $\mathcal{T}$ be an oriented surface with boundary obtained by gluing $m$ equilateral triangles $T^1,\ldots,T^m$ along their boundaries, such that $p$ edges $L_1,\ldots,L_{p}$ of equilateral triangles are not glued. Each edge $L_j$ has a natural orientation $\ell_j$ coming from the equilateral it belongs to. Then, the structure graph of a honeycomb $h$ on $\mathcal{T}$ such that each $h\cap T^i$ is triangular has $pn$ univalent vertices, $n$ of them being on each boundary component $L_j,\, 1\leq j\leq p$. Denote by $v^i,\,1\leq i\leq n$ the univalent vertices corresponding to the point on $L_{1}$ ranked decreasingly following their $(\ell_1-1)$-coordinate. Let $\mathcal{G}^{(p, g)}$ be the set of structure graphs appearing in $\honey_{\mathcal{T}}$ rooted at $v^1$. For each $1\leq i\leq n$ and $G\in \mathcal{G}_{\mathcal{T}}$, $v^i$ is adjacent to a unique edge $e^i=\{v^i,w^i\}$ of $G$, and we set 
-$$C_{G}(v^i)=C_G(e^i),$$
-where $C_G(e^i)$ is the color map of $G$.
-XXXRoot of the graphsXXX
+ Denote by $v^j_m,\,1\leq m\leq n$ the univalent vertices corresponding to the point on $L_{j}$ ranked decreasingly following their $(\ell_j+1)$-coordinate. Let $\mathcal{G}^{(p, g)}$ be the set of structure graphs appearing in $\honey_{\mathcal{T}}$ rooted at $v^1_1$.
+
+Let us introduce some notations. First, for $1\leq j\leq p$, let $s_j,\ell_j$be such that $L_j=\partial_{\ell_j}T^{s_j}$. Then, set $N(\mathcal{T})=\frac{3m-p}{2}$ and denote by $B_{1},\ldots,B_{N(\mathcal{T})}$ the segment of $\mathcal{T}$ corresponding to boundary of triangles pasted together. Each $B_j$ is then adjacent to two triangle $T^{r^{(1)}_j}$ and $T^{r^{(2)}_j}$ and there exists $\ell^{(1)}_j,\ell^{(2)}_j$ such that $B_j=\partial_{\ell^{(1)}_j}T^{r^{(1)}_j}=\partial_{\ell^{(2)}_j}T^{r^{(2)}_j}$.
+
+
+XXXConflict of notation i with injection edge/geodesicXXX
 \begin{lemma}\label{lem:product_gluing}
-There is an injective map $t:\mathcal{G}_{\mathcal{T}'}\rightarrow \mathcal{G}_{\mathcal{T}}\times \mathcal{G}$ such that the map 
-$$i:\left\lbrace\begin{aligned}&\honey_{\mathcal{T}'}&\rightarrow&\{(h^1,h^2)\in\honey_{T^{m+1}}\times \honey_{\mathcal{T}},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}\\
-&h&\mapsto&(h\cap T^{m+1},h\cap \mathcal{T})\end{aligned}\right.$$
-is bijective and restricts for each $G\in\mathcal{G}_{\mathcal{T}}$ and $(G_1,G_2)=t(G)$ to a bijection 
-$$i:\honey_{\mathcal{T}'}^G\rightarrow \{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}.$$
+There is an injective map $t:\mathcal{G}_{\mathcal{T}}\rightarrow \mathcal{G}^m$ such that the map 
+$$i:\left\lbrace\begin{aligned}&\honey_{\mathcal{T}'}&\rightarrow&\{(h^1,\ldots,h^m)\in\honey_{T^{1}}\times\ldots\times \honey_{T^m},h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j},1\leq j\leq N(\mathcal{T})\}\\
+&h&\mapsto&(h\cap T^{i})_{1\leq i\leq m}\end{aligned}\right.$$
+is bijective and restricts for each $G\in\mathcal{G}_{\mathcal{T}}$ and $(G_1,\ldots,G_m)=t(G)$ to a bijection 
+$$i:\honey_{\mathcal{T}}^G\rightarrow \{(h^1,\ldots,h^m)\in\honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m},h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j},1\leq j\leq N(\mathcal{T})\}.$$
 \end{lemma}
 \begin{proof}
-Assume without loss of generality that $L_p$ belongs to $T^m$ and let $T^{m+1}$ is another oriented equilateral triangle and let $\mathcal{T}'$ be the surface obtained by gluing $T^{m+1}$ to $T^m$ along $\partial_0T^{m+1}$ and $L^1$. 
+The proof is done by induction on $m$. The result holds for $m=1$. Suppose the result true for $m\geq 1$, and let $\mathcal{T}$ be a surface obtained by pasting $m$ triangles $T^1,\ldots,T^m$ along some boundaries and that $L_1,\ldots,L_p$ are the boundary which have not been pasted together, with $m\geq 1$. Assume without loss of generality that $L_p$ belongs to $T^m$ and let $T^{m+1}$ is another oriented equilateral triangle and let $\mathcal{T}'$ be the surface obtained by gluing $T^{m+1}$ to $T^m$ along $\partial_0T^{m+1}$ and $L^1$. 
 
 Let $h$ be a honeycomb in $\mathcal{T}'$ with structure graph $G\in\mathcal{G}_{\mathcal{T}'}$. The restriction $(h\cap T^{m+1},h\cap \mathcal{T})$ yields a pair of honeycomb on  $T^{m+1}$ and $\mathcal{T}$ such that $(h\cap \mathcal{T})_{\vert L_p}=(h\cap T^{m+1})_{\vert \partial_0T^{m+1}}$. 
 
 Moreover, the structure graph $G_1$ of $h\cap T^{m+1}$ and $G_2$ of $h\cap \mathcal{T}$ only depend on $G$ : indeed, by construction of the structure graph $G$, $G_1$ corresponds to all the edge that can be reached from the boundaries $\partial_1T^{m+1}$ and $\partial_2T^{m+1}$ by avoiding bivalent vertices.
 
-Hence, there is a map $t:\mathcal{G}_{\mathcal{T}'}\mapsto \mathcal{G}_{\mathcal{T}}\times \mathcal{G}$ and a map
-$$i:\honey_{\mathcal{T}'}\rightarrow \honey_{\mathcal{T}}\times\honey_{n}$$
-such that, for $G\in\mathcal{G}_{\mathcal{T}'}$ with $t(G)=(G_1,G_2)$, 
-$$i(\honey_{\mathcal{T}'}^G)\subset\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}.$$
-If $h,h'\in \honey_{\mathcal{T}'}$ are such that $i(h)=i(h')=(h^1,h^2)$, then
+Hence, there is a map $\tilde{t}:\mathcal{G}_{\mathcal{T}'}\mapsto \mathcal{G}_{\mathcal{T}}\times \mathcal{G}$ and a map
+$$\tilde{i}:\honey_{\mathcal{T}'}\rightarrow \honey_{\mathcal{T}}\times\honey_{n}$$
+such that, for $G\in\mathcal{G}_{\mathcal{T}'}$ with $\tilde{t}(G)=(G_1,G_2)$, 
+$$\tilde{i}(\honey_{\mathcal{T}'}^G)\subset\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}.$$
+If $h,h'\in \honey_{\mathcal{T}'}$ are such that $\tilde{i}(h)=\tilde{i}(h')=(h^1,h^2)$, then
 $$h=h^1\cup h^2=h'$$
 Hence, the map $i$ is injective. 
 
@@ -2464,11 +1924,28 @@ Reciprocally, let $(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}
 \end{itemize}
 In any case, the angle from $e$ to $e'$ is either $0$ if $c(e)=c(e')$, in which case $e\cup e'$ is again a geodesic colored $c(e)$, or $2\pi/3$ (resp. $4\pi/3$) if $c(e)=0$ and $c(e')=1$ (resp. $c(e)=1$ and $c(e')=0$). In the latter case, Condition (2) of Definition \ref{def:toric_honeycomb} is satisfied. Hence, the set 
 $$h=h_1\cup h_2$$ 
-defines a honeycomb on $\mathcal{T}'$. Moreover, the structure graph $G$ of $h$ is obtained as follows : $V^G=(V^{G_1}\cup V^{G_2})/\langle v_i^1=v_i^2\rangle$ and $E^G=E^{G_1}\cup E^{G_2}$.
-In particular, the map $t:\mathcal{G}_{\mathcal{T}'}\rightarrow \mathcal{G}_{\mathcal{T}}\times \mathcal{G}$ is injective, and each map 
-$$i:\honey_{\mathcal{T}'}^G\rightarrow\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}.$$
+defines a honeycomb on $\mathcal{T}'$. Moreover, the structure graph $G$ of $h$ is obtained as follows : $V^G=(V^{G_1}\cup V^{G_2})/\langle v_i=w_i, 1\leq i\leq n\rangle$, where $w_1,\ldots,w_n$ are the $n$ first boundary vertices of $G_2$ (recall that $G_2$ is a colored graph with an order on the boundary vertices), and $E^G=E^{G_1}\cup E^{G_2}$.
+In particular, the map $\tilde{t}:\mathcal{G}_{\mathcal{T}'}\rightarrow \mathcal{G}_{\mathcal{T}}\times \mathcal{G}$ is injective, and each restricted map 
+$$\tilde{i}:\honey_{\mathcal{T}'}^G\rightarrow\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}.$$
 is bijective. 
+
+Let $t_m,i_m$ be the maps given by induction on $\mathcal{G}_{\mathcal{T}}$ and $\honey_{\mathcal{T}}$. Then, the maps $(t_m\times \Id_{\mathcal{G}})\circ \tilde{t}$ and $(i_m\times \Id_{\honey_n})\circ \tilde{i}$ are the bijection of the statement of the lemma.
 \end{proof}
+Remark from the construction of the reciprocal of $t$ in the latter proof that the injective map $t_{\mathcal{T}}:\mathcal{G}_{\mathcal{T}}\rightarrow \mathcal{G}^m$ such that $t(G)=(G_1,\ldots,G_m)$ satisfies 
+$$G=\left(\bigcup_{i=1}^mG_i\right)_{S*S'},$$ 
+in the sense of Definition \ref{def:sieving}, where $S,S'\subset \bigcup_{i=1}^m\partial G_i$ are the vertices which are pasted together. 
+
+In Section \ref{subsec:parametrization_honeycombs}, we defined for each $G_i=(V_i,E_i)\in \mathcal{G}_{d_i}$ a map $s:V_i\rightarrow \{-1,1\}$ such that for each edge $\{v,v'\}\in E_i$, $s(v)s(v')=-1$. Denote by $\interior_3(G)$ the set of vertices of degree $3$ of $G$. By the previous definition of $G$ in terms of the graphs $G_i$ and the fact that all vertices of $\interior(G_i)$ have degree $3$, 
+$$\interior_3(G)=\bigsqcup_{1\leq i\leq m}\interior(G_i).$$
+We can thus paste together the maps $s$ defined on each $G_i$ to get a map 
+$$s:\interior_3(G)\setminus \{-1,1\}.$$
+
+\begin{definition}\label{def:map_L_arbitrary_honeycomb}
+For $G=(V,E)\in\mathcal{G}_{\mathcal{T}}$, the label map $\mathcal{L}:\honey_{\mathcal{T}}^G\rightarrow \Omega^1(G)$ is the map such that for $(v,v')\in\vec{E}$ with $v\in \interior_3(G)$, 
+$$L[h](v,v')=s(v)L(i(e)),$$
+where $i(e)$ is the injection from Lemma \ref{lem:product_gluing} and $L$ is the coordinate map defined in Definition \ref{def:triangular_honey}.(2).
+\end{definition}
+Remark that each edge $e$ of $G$ is then adjacent to at least one trivalent vertex, and if $e=\{v,v'\}$ with $v,v'\in \interior_3(G)$, then necessarily there exists $1\leq i\leq m$ such that $v,v'\in V_i$, and therefore $s(v)s(v')=-1$, so that the latter definition is a well-defined map from $\honey^G_{\mathcal{T}}$ to $\Omega^1(G)$.
 
 \begin{figure}[H]
     \centering
@@ -2478,69 +1955,91 @@ is bijective.
     Here, $d < d'$ which can be read from the orientation of line segments.}
     \label{fig:common_boundary} 
 \end{figure}
-\begin{definition}
-For $G=(V,E)\in\mathcal{G}_{\mathcal{T}}$, the label map $L:\honey_{\mathcal{T}}^G\rightarrow \mathbb{R}^E$ is the map such that 
-$$L[h](e)=L(i(e)),$$
-where $i(e)$ is the injection from
-\end{definition}
 
+
+
+
+Let $\gamma^{(1)},\ldots,\gamma^{(p)}\in\mathcal{H}_{reg}$, and recall that $\honey_{\mathcal{T}}^G(\gamma^{(1)},\ldots,\gamma^{(p)})$ denotes the set of honeycomb $h$ on $\mathcal{T}$ such that 
+$$(v^j_s)_{\ell_j}=\gamma^{(j)}_s.$$
+Let us defined $\phi:V\rightarrow\mathbb{R}$
+with 
+$$\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v)=\left\lbrace\begin{aligned}
+&s(v)&\text{ if }& \deg v=3\\
+&1-c(v,v')-c(v,v'')&\text{ if }& \deg v=2, v\sim v', v\sim v'', v'\not=v''\\
+&\gamma^{(j)}_s-\delta_{c(v,v')=1}&\text{ if }&v=v^j_s, v\sim v'
+\end{aligned}\right..$$
+Remark that 
+$$\sum_{v\in V}\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v)=\sum_{j=1}^p\sum_{i=1}^n\gamma_s^{(j)}+\sum_{i=1}^m\left(\sum_{v\in \interior(G_i)}s(v)-\sum_{v\in\partial G_i, v\sim v'}c(v,v')\right).$$
 \begin{lemma}\label{lem:differential_gluing_honey}
-For any $G\in\mathcal{G}_{\mathcal{T}}$, there exists a balanced differential structure $\mathcal{A}_G$ on $G$ and an open cone $K_{G}$ such that $H^G=\mathcal{H}(\mathcal{A}^G)\cap K_{G}$. Moreover, if $G\in \mathcal{G}_{\mathcal{T}'}$ and $t(G)=(G_1,G_2)$, then 
-$$H^G=\mathcal{H}(\mathcal{A}^{G_1}*_{\partial_0 G_1,\partial_0G_2,\epsilon,\lambda}\mathcal{A}^{G_2})\cap K_{G_1}\cap K_{G_2},$$
-where $\epsilon_i=1$ and $\lambda_i=0$ (resp. $\epsilon_i=-1$ and $\lambda_i=1$) if $C_{G}(v^i)\not=C_{G'}(v'^i)$ (resp. $C_{G}(v_i)=C_{G}(v'^i)$).
+For any $G\in\mathcal{G}_{\mathcal{T}}$, $\mathcal{L}$ is injective and for $\gamma^{(1)},\ldots,\gamma^{(p)}\in\mathcal{H}_{reg}$, 
+$$\mathcal{L}(\honey_{\mathcal{T}}^G(\gamma^{(1)},\ldots,\gamma^{(p)}))=\mathcal{F}_{G}(\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}})\cap (K_{G_1}\times \dots\times K_{G_m}),$$
+where we write $t(G)=(G_1,\ldots,G_m)$ and $\Omega^1(G)$ is identified with $\prod_{i=1}^m\Omega^1(G_i)$. 
 \end{lemma}
+We then write 
+$$K_{G}=K_{G_1}\times \dots\times K_{G_m}.$$
+
 \begin{proof}
-We will prove a stronger version of the first statement by induction on $m$, using the second statement. Let us denote $(P_m)$ the property :
-\begin{center}
-$(P_m)$ For all $\mathcal{T}$ obtained by gluing $m$ triangle along $m-1$ boundaries and $G\in\mathcal{G}_{\mathcal{T}}$, $H^G=\mathcal{H}(\mathcal{A}^G)\cap K_{G}$ with $\mathcal{A}^G$ a balanced differential structure such that for $e=\{v,v'\}\in \partial G$ with $v\in V_{>1}$, $c(v)=1$ (resp. $c(v)=1$) if $C(e)=1$ (resp. $C(e)=-1$).
-\end{center}
-By Lemma \ref{lem:honey_balanced_diff}, $(P_1)$ is true. Now assume that $P_m$ is true and let $\mathcal{T}'$ be obtained by gluing a $m+1$ triangles along $m$ boundaries. Without loss of generality, let us asume that $\mathcal{T}'$ is obtained by gluing a triangle $T^{m+1}$ to $\mathcal{T}$, where $\mathcal{T}$ is a gluing of $m$ triangles. Let $G\in\mathcal{G}_{\mathcal{T}'}$. Then, by Lemma \ref{lem:product_gluing}, there exists $G_1\in\mathcal{G}$ and $\mathcal{G}_2\in \mathcal{G}_{\mathcal{T}}$ such that the map $i:h\mapsto(h\cap T^{m+1},h\cap \mathcal{T})$ yields a bijection from $\honey_{\mathcal{T}'}^G$ to $\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}$. 
+Let $G\in\mathcal{G}_T$. First, by iterating Lemma \ref{lem:product_gluing} on all the glued boundaries, there is a bijection 
+$$i:\
+\honey_{\mathcal{T}}^G\rightarrow\{(h^1,\ldots,h^m)\in\honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m},h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j},1\leq j\leq N(\mathcal{T})\}.$$
+Next, since $G=(V,E)$ with $V=\bigcup_{i=1}^mV_i/\langle \partial_{\ell_j}G^{r_j}=\vec{\partial}_{\ell'_j}G^{r'_j},1\leq j\leq N(\mathcal{T})$ and $E$ is the image of $\bigcup_{i=1}^m E_i$ in this quotient. Since any element of $\bigcup_{i=1}^m E_i$ has at most one endpoint in $\bigcup_{j=1}^{N(\mathcal{T})}\vec{\partial}_{\ell_j}G^{r_j}\cup\vec{\partial}_{\ell'_j}G^{r'_j}$, there is thus a canonical identification $\Omega^1(G)=\prod_{j=1}^m\Omega(G^j)$. Moreover, by the definition of $\mathcal{L}:\honey_G^{\mathcal{T}}\to \Omega^1(G)$ from Definition \ref{def:map_L_arbitrary_honeycomb}, for $h\in \honey_G^{\mathcal{T}}$
+$$\mathcal{L}(h)=\prod_{i=1}^m\mathcal{L}_{\vert T_i}(h_{\vert T_i})=\left(\prod_{i=1}^m\mathcal{L}_{\vert T_i}\right)(i(h))$$
+under the previous identification. The injectivity of $i$ together with the injectivity of each map $\mathcal{L}_{\vert T_i}$ from Proposition \ref{prop:parametrization_triangular_honey_first} yields the injectivity of $\mathcal{L}$.
 
-Let $1\leq i\leq n$ and let $e_i^1=(x,w_i^1)\in \partial_0G(h\cap T^{m+1})$ and $e_i^2=(x,w_i^2)\in \partial_{L_p}G(h\cap \mathcal{T})$ be the boundary edges corresponding to the boundary point $x\in h^1_{\vert \partial_0T^{m+1} }\cap h^2_{\vert L_p}$. Since $e_i^1\in T^{m+1}$ and $e_i^2\in T^{m}$, by Definition \ref{def:triangular_honey}, $x_0=L(e_i^1)$ (resp. $1-L(e_i^1)$) if $c(e_i^1)=0$ (resp. $c(e_i^1)=1$) and $x_0=1-L(e_i^2)$ (resp. $L(e_i^2)$) if $c(e_i^2)=0$ (resp. $c(e_i)=2)$) XXXTo explain !XXX. Hence, the condition $h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}$ is equivalent to $L(e_i^1)=L(e_i^2)$ if $c(e_i^1)\not=c(e_i^2)$ and $L(e_i^1)=1-L(e_i^2)$ if $c(e_i^2)=c(e_i^2)$. Set $\epsilon_i=+1$ (resp. $\epsilon_i=-1$) and $\lambda_i=1$ (resp. $\lambda_i=0$) if $c(e_i^1)=c(e_i^2)$ (resp. $c(e_i^1\not=c(e_i^2)$).
+It remains to describe the image of $\mathcal{L}\left(\honey_{\mathcal{T}}^G(\gamma^{(1)},\ldots,\gamma^{(p)})\right)$. By Lemma \ref{lem:product_gluing} and the previous reasoning, this amounts to describe the image throught $\prod_{i=1}^m\mathcal{L}_{\vert T_i}$ of the set
+$$\left\lbrace (h^1,\ldots,h^m)\in\honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m},h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j},1\leq j\leq N(\mathcal{T}),h^{s_j}_{\vert L_j}=\gamma^{(j)}, 1\leq j\leq p\}\right\rbrace.$$
+Let us first describe how the condition $\partial_{\ell_j}h^{s_j}=\gamma^{(j)}$ for $1\leq j\leq p$ translates through $\mathcal{L}$. Let $v^j_m\in \partial_{\ell_j}G_{s_j}$ and $x\in \partial_{\ell_j}h^{s_j}$ the point such that $i(x)=v^j_m$.  Since $h^{s_j}\in \honey_{G_{s_j}}$, like in Section \ref{subsec:parametrization_honeycombs}, the condition $x_{\ell_j}=\gamma^{(j)}_m$ is equivalent to the condition 
+$$\mathcal{L}[h](v^j_m,v)=
+\gamma^{(j)}_m-c(v^j_m,v)=0 ,$$
+where $v$ is the unique element of $V_{s_{j}}$ such that $v\sim v^j_m$.
 
-Since $E^G=E^{G_1}\cup E^{G_2}$, there is a canonical isomorphism $\mathbb{R}^{E^G}=\mathbb{R}^{E^{G_1}}\times \mathbb{R}^{E^{G_2}}$ and the isomorphism $i$ with the latter reasoning yields  
-$$H^G=\{(L_1,L_2)\in H^{G_1}\times H^{G_2}, L(e_i^1)+\epsilon_iL(e_i^2)=\lambda_i, 1\leq i\leq n\}.$$
-By induction hypothesis, $H^{G_i}=\mathcal{H}(\mathcal{A}^{G_i})\cap K_{G_i}$ for $1\leq i\leq 2$, with $\mathcal{A}^{G_i}$ a balanced structure. First by definition \ref{def:sieving},
-$$H^G=\mathcal{H}(\mathcal{A}^{G_1}*_{\partial_0G_1,\partial_0G_2,\epsilon,\lambda}\mathcal{A}^{G_2})\cap K_{G_1}\cap K_{G_2}.$$
-Then, by induction, the balanced structure on $\mathcal{A}^{G_i}$ is such that $e_i^j$ is adjacent to a vertex $w_i^j$ with $c(w_i^j)=1$ if $c(e_i^j)=1$ and $c(w_i^j)=-1$ if $c(e_i^j)=0$. Then, the choice of $\epsilon$ guarantees that $\mathcal{A}^{G_1}*_{\partial_0G_1,\partial_0G_2,\epsilon,\lambda}\mathcal{A}^{G_2}$ is again balanced by setting $c(v_i)=+1$ if $c(e_i^1)=1$ and $c(v_i)=-1$ if $c(e_i^1)=0$. Since the coloring of other vertices of $V^{G_1}$ and $V^{G_2}$ have not been chance, $(P_{m+1})$ holds.
+Let us now consider the condition $h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j}$. Let $v\in \partial_{\ell^{(1)}_j}G_{r^{(1)}	j}$ and $v'\in \partial_{\ell^{(2)}_j}G_{r^{(2)}	j}$ such that $v\sim v'$ in $G$, and let $x=i_{T^{r^{(1)}_j}}(v), x'=i_{T^{r^{(2)}_j}}(v')$ the corresponding image in $h_{\vert T^{r^{(1)}_j}}$ and $h_{\vert T^{r^{(2)}_j}}$. Using that the edges of both triangles are identified in the order-reversing way, the condition $h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j}$ implies that 
+$$x_{\ell^{(1)}_j-1}=1-x'_{\ell^{(2)}_j-1}.$$
+ Let $w\in V_{r^{(1)}}$ and $w'\in V_{r^{(2)}}$ such that $v\sim_{G_{r^{(1)}}}w$ and $v'\sim_{G_{r^{(2)}}}w'$. Then, following \eqref{eq:honeycomb_divergence_2}, the previous equality condition is equivalent to $\mathcal{L}[h^{r^{(1)}}](v,w)+c(v,w)=1-\mathcal{L}[h^{r^{(1)}}](v,w)-c(v',w')$, which yields by definition of $\mathcal{L}$,
+ $$\mathcal{L}[h](\bar{v},w)+\mathcal{L}[h](\bar{v},w')=1-c(v,w)-c(v',w')=1-c(\bar{v},w)-c(\bar{v},w')).$$
 \end{proof}
 
 In order to state the volume formula for honeycombs, introduce for $r\in[0,1[$ the notation 
 $$\mathcal{H}_{reg}^{r}=\left\{\gamma\in\mathcal{H}_{reg},\sum_{i=1}^n\gamma_i=r\mod \mathbb{Z}\right\}.$$
 This set is a union of affine polytopes of $\mathcal{H}_{reg}$ of dimension $n-1$, and one can check that the volume $d_Ju$ on each affine polytope induced by the projection on $\mathbb{R}^J$ is independent of $J$ for any $J\subset\{1,\ldots,n\}$ of cardinal $n-1$. We simply denote by $du$ this volume form.
 
+
+
 \begin{proposition}
     \label{prop:formula_gluing_honey}
-Suppose that $\mathcal{T}'$ is obtained by gluing $\mathcal{T}$ and $T^{m+1}$ along the boundaries $L_p$ and $\partial_0 T^{m+1}$. Then, for all $G\in \mathcal{T}'$, $\honey_{\mathcal{T}'}^{t(G,G')}$ admits a volume form with, for $\gamma^1,\ldots,\gamma^{p+1}\in \mathcal{H}_{reg}$ with $\sum_{i=1}^{p+1}\vert \gamma_i\vert\in \mathbb{N}$,
+Suppose that $\mathcal{T}'$ is obtained by gluing $\mathcal{T}$ and $T^{m+1}$ along the boundaries $L_p$ and $\partial_0 T^{m+1}$. Then, for all $G\in \mathcal{T}'$ and $\gamma^1,\ldots,\gamma^{p+1}\in \mathcal{H}_{reg}$ with $\sum_{i=1}^{p+1}\vert \gamma_i\vert\in \mathbb{N}$,
 \begin{align*}
-\sum_{G\in\mathcal{G}_{\mathcal{T}}}&Vol(\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p+1}))\\
-=&\int_{\mathcal{H}_{reg}^{\theta} }\sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}}Vol(\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))Vol(\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))d u,
+\sum_{G\in\mathcal{G}_{\mathcal{T}}}&Vol(\mathcal{L}\left[\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p+1})\right])\\
+=&\int_{\mathcal{H}_{reg}^{\theta} }\sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}}Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))\right]Vol(\mathcal{L}\left[\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))\right]d u,
 \end{align*}
 where $\tilde{u}=(1-u_n,\ldots,1-u_1)$ and $\theta=-\sum_{i=1}^{p-1}\vert \gamma^i\vert\mod \mathbb{Z}$.
 \end{proposition}
 \begin{proof}
-First, building $\mathcal{T}$ by successive gluing of equilateral triangles and using recursively Lemma \ref{lem:differential_gluing_honey} together with Proposition \ref{prop:divergence_product} (1) yields that $\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u)$ is non-empty if and only if $\sum_{i=1}^{p-1}\sum_{j=1}^n\gamma^i_{j}+\sum_{j=1}^nu_j=m$ for some $m\in\mathbb{N}$ only depending on $\mathcal{T}$. Hence, if  this condition boils down to $u\in\mathcal{H}_{reg}^\theta$ with $\theta-\sum_{i=1}^{p-1}\vert \gamma^i\vert\mod \mathbb{Z}$. 
+Remark that 
+$$\sum_{v\in V}\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v)=\sum_{j=1}^p\sum_{i=1}^n\gamma_s^{(j)}+\sum_{i=1}^m\left(\sum_{v\in \interior(G_i)}s(v)-\sum_{v\in\partial G_i, v\sim v'}c(v,v')\right).$$
+Hence, in order for $\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}$ to yields a non-empty set $\mathcal{F}_{G}(\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}})$, by Proposition \ref{prop:BijectionTrees} it is necessary that $\sum_{i=1}^p\vert\gamma^{(i)}\vert\in \mathbb{N}$. Hence, $\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u)$ is non-empty if and only if $u\in\mathcal{H}_{reg}^\theta$ with $\theta-\sum_{i=1}^{p-1}\vert \gamma^i\vert\mod \mathbb{Z}$. 
 
 Next, for $(G_1,G_2)\in\mathcal{G}_{T}\times \mathcal{G}_{\mathcal{T}}$, by Proposition \ref{prop:divergence_product} and Lemma \ref{lem:differential_gluing_honey},
 \begin{align}
-\int_{\mathcal{H}_{reg}^\theta }&Vol(\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))Vol(\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))d u\nonumber\\
-=&Vol(K_{G_1}\cap K_{G_2}\cap \mathcal{H}(\mathcal{A}^{G_1}*_{\partial_0G_1,\partial_0G_2,\epsilon,\lambda}\mathcal{A}^{G_2}, \gamma^1,\ldots,\gamma^{p+1}))\nonumber\\
-=&Vol((L_1,L_2)\in H^{G_1}\times H^{G_2},h^{L_1}_{\partial_0T}=h^{L_2}_{\partial_0\mathcal{T}}, h^{L_1}_{\partial_iT}=\gamma^{i}, h^{L_2}_{\partial_{i-2}\mathcal{T}}=\gamma^{i},1\leq i\leq p+1).\label{eq:product_formula_volume}
+\int_{\mathcal{H}_{reg}^\theta }&Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))\right]Vol(\mathcal{L}\left[\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))\right]d u\nonumber\\
+=&Vol(K_{G_1}\times K_{G_2}\cap \mathcal{F}_{G}(\phi_{\gamma^{(1)},\ldots,\gamma^{(p+1)}}))\nonumber\\
+=&Vol(\{\mathcal{L}[h_1],\mathcal{L}[h_2]), (h_1,h_2)\in\honey_{T}^{G_1}\times \honey^{G_2}_{\mathcal{T}} ,h^{1}_{\partial_0T}=h^{2}_{\partial_0\mathcal{T}},\nonumber\\
+&\hspace{6cm} h^{1}_{\partial_iT}=\gamma^{(i)}, h^{2}_{\partial_{i-2}\mathcal{T}}=\gamma^{(i)},1\leq i\leq p+1).\label{eq:product_formula_volume}
 \end{align}
-In particular, since $\{(L_1,L_2)\in H^{G_1}\times H^{G_2},h^{L_1}_{\partial_0T}=h^{L_2}_{\partial_0\mathcal{T}}\}$ is in bijection with $\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}$,  the latter volume is non-zero if and only if $(G_1,G_2)=t(G)$ for some $G\in \mathcal{G}_{\mathcal{T}'}$. Hence, applying again \eqref{eq:product_formula_volume} yields 
+By Lemma \ref{lem:product_gluing},  the latter volume is non-zero if and only if $(G_1,G_2)=t(G)$ for some $G\in \mathcal{G}_{\mathcal{T}'}$. Hence, applying again \eqref{eq:product_formula_volume} yields 
 \begin{align*}
-\sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}}\int_{\mathcal{H}_{reg}^\theta }&Vol(\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))Vol(\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))d u\\
-=&\sum_{G\in\mathcal{G}_{\mathcal{T}'}, t(G)=(G_1,G_2)}\int_{\mathcal{H}_{reg}^\theta }Vol(\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))Vol(\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))d u\\
-=&\sum_{G\in\mathcal{G}_{\mathcal{T}'}}Vol(\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p+1})),
+\sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}}&\int_{\mathcal{H}_{reg}^\theta }Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))\right]Vol(\mathcal{L}\left[\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))\right]d u\\
+=&\sum_{G\in\mathcal{G}_{\mathcal{T}'}, t(G)=(G_1,G_2)}\int_{\mathcal{H}_{reg}^\theta }Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))\right]Vol(\mathcal{L}\left[\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))\right]d u\\
+=&\sum_{G\in\mathcal{G}_{\mathcal{T}'}}Vol(\mathcal{L}\left[\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p+1})\right]),
 \end{align*}
 where we applied Proposition \ref{prop:divergence_product} and Lemma \ref{lem:differential_gluing_honey} in the last equality.
 \end{proof}
-A similar reasoning yields the following proposition.
+A similar reasoning using Proposition \ref{prop:divergence_contraction} yields the following proposition.
 \begin{proposition}
     \label{prop:formula_contracting_honey}
-Suppose that $\mathcal{T}'$ is obtained by gluing two boundaries of $\mathcal{T}$. Then, for each $(G\in \mathcal{G}_{\mathcal{T}'}$, $\honey_{\mathcal{T}'}^{G}$ admits a volume form with, for $\gamma^1,\ldots,\gamma^{p-2}\in \mathcal{H}_{reg}$ with $\sum_{i=1}^{p-2}\vert \gamma^i\vert\in\mathbb{Z}$,
+Suppose that $\mathcal{T}'$ is obtained by gluing two boundaries of $\mathcal{T}$. Then, for each $G\in \mathcal{G}_{\mathcal{T}'}$, $\honey_{\mathcal{T}'}^{G}$ admits a volume form with, for $\gamma^1,\ldots,\gamma^{p-2}\in \mathcal{H}_{reg}$ with $\sum_{i=1}^{p-2}\vert \gamma^i\vert\in\mathbb{Z}$,
 \begin{align*}
-\sum_{G\in\mathcal{G}_{\mathcal{T}}}&Vol(\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p-2}))=\int_{\mathcal{H}_{reg} }\sum_{G\in\mathcal{G}_{T}}Vol(\honey_{\mathcal{T}}^{G}(\gamma^1,\ldots,\gamma^{p-2},u,\tilde{u}))d u,
+\sum_{G\in\mathcal{G}_{\mathcal{T}}}&Vol(\mathcal{L}\left[\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p-2})\right])=\int_{\mathcal{H}_{reg} }\sum_{G\in\mathcal{G}_{T}}Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G}(\gamma^1,\ldots,\gamma^{p-2},u,\tilde{u})\right])d u,
 \end{align*}
 where $\tilde{u}=(1-u_n,\ldots,1-u_1)$.
 \end{proposition}
@@ -2617,15 +2116,6 @@ A_G\cap \left(K_G + v_G(\alpha^1,\ldots,\alpha^p)\right) .$$
         where $d'' = d + d' \geqslant 0$.
         \item \textbf{Proof of (2)} By induction, this is a direct consequence of Lemma \ref{lem:differential_gluing_honey}.
     \end{itemize}
-\end{proof}
-
-\begin{proof}[Proof of Theorem \ref{th:volume_form_g_p_honey}]
-By Lemma \ref{lem:differential_gluing_honey}, $H^G=A_{G}\cap K_{G}$, where $A_G=\mathcal{H}(\mathcal{A}^G)$ and $\mathcal{A}_G$ is a balanced differential structure. Hence, the volume form $d\ell_{R}$ on $A_{G}$ is independent of the parametrizing set $R\subset E$ by Proposition \ref{prop:divergence_volume_form}. Hence, by Proposition \ref{prop:parametrization_honey}, 
-we can unambiguously define for $G \in \mathcal{G}^{(g,p)}_{d}$ and $(\alpha^1, \ldots, \alpha^p) \in \R^{np}$
-\begin{equation}\label{eq:def_volume}
- \Vol_G(\honey^G(\alpha^1, \ldots, \alpha^p)):=Vol_{R}\left(A_G\cap \left(K_G + v_G(\alpha^1,\ldots,\alpha^p)\right)\right),
- \end{equation}
-where $R\subset E$ is any set parametrizing $A_G$ therefore proving Theorem \ref{th:volume_form_g_p_honey}.
 \end{proof}
 
 
@@ -2879,3 +2369,450 @@ We denote this volume form on $\honey^G \left( \alpha^1, \ldots, \alpha^p \right
 $\Vol$. 
 
 }
+
+If there are no boundary conditions there
+is always a solution. 
+For the next proposition, we say that a subgraph $H$ of
+$G$ is a \emph{forest} of $G$ if $H$
+ is a spanning subgraph (i.e., it has the same vertex set as $G$) and each connected component of $H$
+ is a tree whose vertex set
+contains a unique element of $V_1$.
+
+\begin{proposition} \label{prop:BijectionForests}
+	If $S \subset E$
+	and  $\Omega^1(S)$ denotes the space of antisymmetric
+	functions on $\vec S \subset \vec E$, then
+	\[\psi_S:\mathcal F(\beta) \xrightarrow[]{
+		\mbox{\tiny inclusion}}
+	\Omega^1(G) 
+	\xrightarrow[]{
+		\mbox{\tiny restriction}} \Omega^1(S)\]
+	is a bijection if and only if 
+	$(V,E \setminus S)$ is a forest of $G$. 
+	Moreover, in case $\psi_S$ is a bijection,
+	\[(\psi_S)_* \mathcal Leb_{\mathcal F(\beta)}	= 
+	\big(\hspace{-0.5mm}\sqrt{\# \mbox{ Forests of } G}
+	\big)\,
+	\mathcal Leb_{\Omega^1(S)}.\]
+\end{proposition}
+
+\begin{proof}[Proof of Proposition
+	\ref{prop:BijectionForests}]
+	We already know that $\mathcal F(\beta)$ is always
+	non-empty so we could instead work with
+	$\mathcal F(0)$ for the rest of the proof.
+	Let us begin by showing that if
+	$\psi_S$ is a bijection then $(V,E\setminus S)$
+	is a forest of $G$. As in the previous proof, a cycle
+	would produce
+	a non-zero divergenceless flow which would project
+	to zero by $\psi_S$ so $(V,E\setminus S)$
+	cannot have cycles if $\psi_S$ is injective.
+	In the same way, if $(V,E \setminus S)$
+	contained a path
+	$(v_1,\dots,v_k)$ with pairwise distinct vertices
+	and $v_1,v_k \in V_1$,
+	we could define
+	$\lambda(v_i,v_{i+1}) = - \lambda(v_{i+1},v_i)
+	=1$ for $i \in \{1,\dots,k-1\}$ and zero elsewhere.
+	The divergence of $\lambda$ would be zero
+	at every vertex except for $v_1$ and $v_k$
+	but since they belong to $V_1$ we still have
+	$\lambda \in \mathcal F(0)$.
+	So, 
+	a connected component of
+	$(V,E\setminus S)$ cannot contain more
+	than one vertex in $V_1$. 
+	Finally, to show that
+	each connected component of
+	$(V,E\setminus S)$
+	contains exactly one vertex in $V_1$
+	we can use that since
+	$(V,E\setminus S)$ is a forest,
+	its number of edges equals
+	$|V|$
+	minus its number of connected components,
+	hence
+	\[|S| = |E|
+	- |V| + \#\mbox{connected components of }
+	(V,E\setminus S).\]
+	Given that 
+	$\mathrm{dim} (\mathcal F(0)) = 
+	|E| - |\interior(G)| = |E| - |V| + |V_1|$,
+	the number of connected 
+	components of $(V,E\setminus S)$
+	must be less or equal than $|V_1|$
+	for $\psi_S$ to even have a chance
+	of being surjective. Since
+	we know that the map taking 
+	a vertex in $V_1$ to the
+	connected component
+	of $(V,E\setminus S)$ containing it
+	is injective, it must also be surjective
+	over the set of connected components.
+	\\
+	\\
+	Let us show that if $(V,E\setminus S)$
+	is a forest of $G$ then 
+	$\psi_S$ is a bijection
+	in an indirect way
+	that also proves
+	the final statement.
+	As in the proof of Proposition
+	\ref{prop:BijectionTrees}, let us consider the 
+	pushforward map
+	\[(\psi_S)_*: \Lambda^k
+	\mathcal F(0;0) \to 
+	\Lambda^k \Omega^1(S),\]
+	for $k = 	|E| - |\interior(G)| = |S|$ and let us
+	calculate
+	\[
+	\big<  \hspace{-0.5mm} *(\wedge_{v \in 
+	\interior(G)} d \delta_{v}),
+	 \wedge_{e \in S} \hat e \, \big>
+	 = \pm 
+	 \big< \hspace{-0.5mm}  \wedge_{v \in \interior(G)} d \delta_{v},
+	 \wedge_{e \in E\setminus S} \hat e \, \big>
+	 = \pm\mathrm{det}\langle d \delta_{v}, \hat e \rangle
+	 _{v \in \interior(G), e \in E\setminus S}.
+	 \]
+	 In the calculation
+	 of the determinant
+	 we sum over
+	 bijections 
+	 $\sigma:E\setminus S \to \interior(G)$
+	 and the only contributions
+	$ \langle d \delta_{v}, \hat e \rangle$
+	arise when 
+	$v$ is an endpoint of $e$.
+	To get a non-zero contribution,
+	if $e$ is
+	 adjacent to
+	 a vertex of $V_{1}$
+	 we have only one choice of vertex
+	 in $\interior(G)$ for $\sigma(e)$.
+	 For the other edges
+	 having $\sigma(e)$ as an endpoint 
+	 we have only one choice,
+	 the other endpoint, as the vertex and 
+	 we can repeat the
+	 argument until $\sigma$
+	 is determined. So, there is only one contribution
+	 which gives
+		\[
+	\big< \hspace{-0.5mm}  *(\wedge_{v \in 
+	\interior(G)} d \delta_{v}),
+	\wedge_{e \in S} \hat e \, \big>
+	= \pm 1.\]
+	This implies that the
+	image of 
+	$*(\wedge_{v \in 
+	\interior(G)} d \delta_{v})$ by $(\psi_S)_*$
+	is non-zero so that $\psi_S$
+	is a bijection.
+	Since we already know that $\psi_S$
+	is not a bijection when $E\setminus S$
+	is not a forest of $G$, the inner
+	product would be zero in that case.
+	Recall that
+	the constant $C>0$ such that
+	\[(\psi_S)_* \mathcal Leb_{\mathcal F(0)}
+		= C	\mathcal Leb_{\Omega^1(S)}\]
+		is the inverse of 
+		the inner product 
+		$\langle (\psi_S)_* w_1, w_2 \rangle$
+		for $w_1 = 	 \wedge_{e \in S} $ 
+		and $w_2$ the normalized
+		$*(\wedge_{v \in 
+	\interior(G)} d \delta_{v})$
+	which allows us to conclude that
+	\[\langle (\psi_S)_* w_1, w_2 \rangle
+	=\pm \frac{1}{\sqrt{\mbox{\# Forests of } G}}.
+	\]
+\end{proof}
+
+\section{Differential structures, flows and volume}
+\label{Sec:differential_structure}
+
+\subsection{Differential structures}
+\label{subsec:differential_structures}
+
+Let $G=(E,V)$ be a graph and set $m = \# \interior(G)$, $m' = \#V$ and $N=\#E$, 
+where $\interior(G)$ denotes the set of vertices having degree at least two in $G$.
+
+\begin{definition}[Differential structure]
+    \label{def:diff_structure}
+    A \textit{differential structure} is a graph $(V,E)$ together with a weight matrix 
+    $A: \interior(G)\times V\rightarrow \{-1,0,1\}$ such that $A(v,v')=0$ if and only if $\{v,v'\}\not\in E$.
+    \\
+    The \textit{boundary} $\partial{G}$ of the differential structure is the set 
+    $ \left\{ \{v,v'\},v\in V_1 \right\} \subset E$, where $V_1 = V \setminus V_{> 1}$.
+    \\
+    A differential structure is \textit{balanced} if there exists a coloring 
+    $c:\interior(G)\rightarrow \{+1,-1\}$ such that 
+    \begin{equation*}
+        \forall (v, v') \in \interior(G)^2: \ A(v,v')s(v)+A(v',v)s(v') = 0 \ .
+    \end{equation*}
+\end{definition} 
+
+
+\noindent
+Remark that in the above definition, $G$ is not assumed to be connected. 
+Since the edge structure $E$ is already described by $A$, 
+we may simply write $(V, A)$
+for the differential structure given by the graph $(V, E)$ with the weight matrix $A$. 
+
+\begin{definition}[Flow]
+    Given a differential structure $\mathcal{A} = (V, A)$ and a vector $\alpha\in \mathbb{R}^{\interior(G)}$, 
+    a \textit{flow} is a map $L: E\rightarrow \mathbb{R}$ 
+ such that for all $v\in \interior(G)$,
+    $$\sum_{v \sim v'}A(v, v')L(\{v,v'\})=\alpha(v) ,$$
+    where the sum is over vertices $v' \in V$ such that $\{v, v' \} \in E$.
+    The \textit{boundary value} of $L$ is $\partial L:=L_{\vert \partial G}$.
+\end{definition}
+
+\noindent
+Let us denote by $\mathcal{H}(\mathcal{A})$ the set of flows on the 
+differential structure $\mathcal{A} = (V, A, \alpha)$, where we added $\alpha$ 
+to the pair $(V, A)$, 
+and $\partial\mathcal{H}(\mathcal{A}) = \{\partial L \mid L\in \mathcal{H}(\mathcal{A})\}$ 
+the possible boundary values of flows on $\mathcal{A}$. 
+For any $g \in \partial \mathcal{H}(\mathcal{A})$, let us denote by 
+$\mathcal{H}(\mathcal{A},g) = \{ L \in \mathcal{H}(\mathcal{A}) \mid \partial L = g \}$ 
+the set of flows on $\mathcal{A}$ having boundary value $g$.
+\\
+\\
+Let $\tilde{A}\in \mathcal{M}_{\interior(G),E}(\mathbb{R})$ defined by $A_{v,e}=A(v,v')$ if $e=\{v,v'\}$. 
+Then, $\mathcal{H}(\mathcal{A}) = \tilde{A}^{-1}(\{\alpha\})$ and 
+$\partial\mathcal{H}(\mathcal{A})= p_{\partial G} \ \left(\tilde{A}^{-1}(\{\alpha\})\right)$ are both 
+affine subspaces of respectively $\mathbb{R}^E$ and $\mathbb{R}^{\partial G}$, 
+where, for a subset $R \subset E$, $p_R$ is the projection from $\R^E$ to $\R^R$.
+
+\subsection{Volume of a differential structure}
+\label{subsec:volume_diff_structure}
+
+If $H$ is a finite dimensional vector space with basis $\mathcal{B}=(e_1,\ldots, e_N)$ 
+and $F \subset H$ 
+is vector subspace of dimension $m$, one says that 
+$R \subset \mathcal{B}$ \textit{generates} $F$ 
+if there exists $P: Vect(R) \rightarrow Vect(R^c) \text{ and } a \in Vect(R^c)$ such that
+$$F=\{v+P(v)+a, v\in Vect(R)\}.$$
+The matrix $M$ of $P$ in the basis $(Vect(R), Vect(R^c))$ is then called the \textit{transition matrix} of $(F, R)$. 
+The set $R$ is call an \textit{integral generating set} if $M\in \mathcal{M}_{m, N-m}(\mathbb{Z})$. 
+Let us define 
+\begin{align*}
+    p_R: \ &F \to Vect(R) \\
+    &x =  v + P(v) + a \mapsto v+a_{R} \ ,
+\end{align*} 
+where $a = a_R + a_{R^c}$ with $(a_R, a_{R^c}) \in (Vect(R), Vect(R^c))$,
+which coincides with the projection \eqref{eq:def_p_R} by identifying $Vect(R)$ and $\R^R$.
+Then, the canonical volume form $\diff x$ on $\mathbb{R}^R$ 
+induces a volume form $\Vol_R^F$ on $F$ defined for any Borel subset $K\subset F$ by 
+\begin{equation*}
+    \Vol_R^F(K)=\int_{\mathbb{R}^R}\indic_{p_R^{-1}(x)\in K} \, \diff x \ .
+\end{equation*}
+
+\begin{definition}[Generating subset]
+    \label{def:generating_subset_canonical_vol}
+    A subset $R \subset E$ is called \textit{generating} for a differential structure 
+    $\mathcal{A}$ if $R$ is generating for $\mathcal{H}(\mathcal{A}, g) \subset \mathbb{R}^{E}$ 
+    for all $g\in \partial \mathcal{H}(\mathcal{A})$.
+    \\
+    A differential structure $\mathcal{A}$ is said to \textit{admit a canonical volume form} 
+    if $\Vol_R^{\mathcal{H}(\mathcal{A}, g)}$ is independent of the generating set $R$
+    for all $g\in \partial \mathcal{H}(\mathcal{A})$. 
+    We then write $\Vol$ instead of $\Vol_R^{\mathcal{H}(\mathcal{A}, g)}$ when $\mathcal{A}$ and $g$ are given. 
+\end{definition}
+
+\begin{proposition}[Caracterisation of generating subsets]
+    \label{prop:generating_set}
+    Let $\mathcal{A} = (V, A, \alpha)$ be a balanced differential structure.
+    Then, a subset $R \subset E$ generates $\mathcal{H}(\mathcal{A})$ if and only if 
+    $R^c = E \setminus R$ is a spanning forest of $G$ and each connected component of $R^c$ admits a unique element of $V_1$. 
+    Moreover, in this case, $R$ is an integral generating set.
+\end{proposition}
+
+\noindent
+In particular $\mathcal{H}(\mathcal{A})$ is an affine subspace of $\R^E$ of codimension $\# \interior(G)$.
+% XXXNot true if $L$ is not balanced. For example if $L=A$ and $G$ is not bipartite (3 triangle+ONe extra edge).XXX
+
+\begin{proof}
+    First, let $R\subset E$ be such that $R^c$ is a spanning forest of $G$ and each 
+    connected component admits a unique element of $V_1$. 
+    Let $T_1,\ldots, T_r$ be the connected components of $R^c$ and set $V_1=\{w_1,\ldots,w_r\}$ with $w_i\in T_i$.
+    \\
+    Let $1\leq i\leq r$. Since $G$ is connected, $G_{\vert \interior(G)}$ is connected and thus $G_{\vert (\interior(G)\cup\{w_i\})}$ is connected. 
+    \\
+    Let us root $T_i$ at $w_i$, and then take any labelling $(v_1,\ldots, v_{m})$ 
+    of the vertices of $\bigcup_{1\leq i\leq r}T_i$ distinct from the roots that is decreasing in the 
+    ordering of the trees and in the height of each tree $T_i$ rooted at $w_i$. 
+    Set $v_{m+i}=w_i$. Complete $(v_1,\ldots, v_{m+r})$ into a labeling $(v_1,\ldots,v_{m'})$ of the set $V$. 
+    Likewise, label any edge of $T$ with the same label of its unique neighboring vertex of maximal height, 
+    so that $e_s$ is adjacent to $v_s$ for $1\leq s\leq m$. Complete $(e_1,\ldots,e_m)$ into a labeling $(e_1,\ldots, e_N)$ of $E$. 
+    \\
+    Let $K$ be matrix of $\tilde{A}$ with respect to the basis $(v_1,\ldots,v_{m})$ and $(e_1,\ldots,e_N)$. 
+    Namely, $K \in \mathcal{M}_{m', N}(\mathbb{R})$ and $K_{ij} = A(v_i, v')$ when $e_j=\{v_i,v'\}$. 
+    Hence, 
+    $$\mathcal{H}(\mathcal{A})=\{L\in \mathbb{R}^N \mid KL=\alpha\}.$$
+    By the choice of labels of the vertices and edges of $\bigcup_{1\leq i\leq r}T_i$, any edge $e_i$, $1\leq i\leq m$ 
+    is adjacent to $v_i$ and some $v_j$ for $j>i$. 
+    Hence, the minor $K_1 = K_{ij, \ \substack{1\leq i,j\leq m}}$ is an upper triangular matrix with integers entries and 
+    $\pm 1$ on the diagonal. We deduce that $K_1$ is invertible and $K_1^{-1}\in \mathcal{M}_{m, m}(\mathbb{Z})$.
+    \\
+    In particular, $K$ has rank $m$ and thus $\mathcal{H}(\mathcal{A})$ has codimension $m$. 
+    Let $K_2 = K_{\substack{ij, \ 1\leq i\leq m\\m+1\leq j\leq N}}$. Then,
+    \begin{align*}
+    \mathcal{H}(\mathcal{A})=&\{x\in \mathbb{R}^N, Kx=\alpha\}\\
+    =&\{(x_1,x_2)\in \mathbb{R}^m\times \mathbb{R}^{N-m}, K_1x_1 + K_2x_2=\alpha\}\\
+    =& \{(x_1,x_2)\in \mathbb{R}^m\times \mathbb{R}^{N-m}, x_1 = K_1^{-1}\left(\alpha-K_2x_2\right)\}\\
+    =& \{v+P(v)+a, v\in\{0\}\times\mathbb{R}^m \},
+    \end{align*}
+    with 
+    $$P(0,x_2)=-K_1^{-1}K_2(x_2),\, a = K_1^{-1}\alpha.$$
+    Hence, $T^c$ generates $\mathcal{H}(\mathcal{A})$ and, since 
+    $K_1^{-1}$ and $K_2$ have integer entries, the transition matrix $M$ of $P$ also has integer entries.
+    \\
+    \\
+    Next, let $R\subset E$ be a generating subset of $\mathcal{H}(\mathcal{A})$. 
+    By the first part of the proposition, and since there always exists a spanning forest of 
+    $G$ such that each connected component has a unique element of $V_1$, $\mathcal{H}(\mathcal{A})$ has codimension $m$. 
+    In particular, all generating subsets must have the same cardinal $m'-m$, and therefore $\#R^c=m$. 
+    Let $G_0=(V,R^c)$ be the subgraph of $G$ induced by $R^c$. 
+    \\
+    Assume for the sake of contradiction that $G_0$ has a connected component $J=(V_J,E_J)$, 
+    with $E_J\subset R^c$, which does not include any univalent vertex, 
+    and let $\partial J=\{e_1,\ldots,e_s\}\subset R$ be the edges on the boundary of $J$. 
+    Since $\mathcal{A}$ is balanced, there exists a coloring $c:V_J\rightarrow \{+1,-1\}$ such that for all $v,v'\in V_J$,
+    $$A(v,v')s(v)+A(v',v)s(v')=0 .$$
+    If $f\in\mathcal{H}(\mathcal{A})$, then $\sum_{v'\in V \mid \{v,v'\}\in e}A(v,v')L(\{v,v'\})=\alpha(v)$ for all $v\in V_J$. Hence,
+    \begin{align*}
+    \sum_{v\in V_J}s(v)\alpha(v)=&\sum_{v\in V_J}s(v)\sum_{v'\in V, \{v,v'\}\in e}A(v,v')L(\{v,v'\})\\
+    =&\sum_{v\in V_J, v'\not \in V_J}s(v)A(v,v')L(\{v,v'\})+
+    \sum_{v,v'\in V_J}s(v)A(v,v')L(\{v,v'\})\\
+    =&\sum_{v\in V_J, v'\not \in V_J}s(v)A(v,v')L(\{v,v'\})+
+    \sum_{\{v,v'\}\in E_J}(s(v)A(v,v')+s(v')A(v',v))L(\{v,v'\})\\
+    =&\sum_{v\in V_J, v'\not \in V_J}s(v)A(v,v')L(\{v,v'\}),
+    \end{align*}
+    where we used on the last equality the fact that $\mathcal{A}$ is balanced. 
+    In particular, there is a non-trivial relation between the value of $\{L(e)\}_{e\in\partial J}$ and, 
+    since $\partial J\subset R$, this contradict the fact that $R$ is a generating subset of $\mathcal{H}(\mathcal{A})$.
+    \\
+    Therefore, any connected component of $G_0$ contains at least a univalent vertex.
+    Let $r$ be the number of univalent vertices in $V_1$ and $c$ the number of connected component of $G_0$. 
+    By the previous reasoning, $c\leq r$. However, by Euler's formula,
+    $$\#V-\#R^c\leq c,$$
+    with equality if and only if $G_0$ is a forest. Since $\#R^c=m$ and $\#V=m+r$, we get $r\leq c$. 
+    Hence, $r=c$ and $\mathbb{R}^c$ is a spanning forest. 
+    Moreover, there must be a unique element of $V_{1}$ in each connected component of $G_0$.
+\end{proof}
+
+\noindent
+For any generating set $R$, recall that we denote by $p_R : \mathcal{H}(\mathcal{A})\rightarrow Vect(R)$ 
+the projection on $Vect(R)$ along $Vect(R^c)$. 
+
+\begin{corollary}[Unique volume form]
+    \label{cor:balanced_uniqueness_volume}
+    Let $\mathcal{A}$ be a balanced differential structure. 
+    Then, for any generating set $R,R'$, the maps $p_{R}$ and $p_{R'}$ are bijective and 
+    $$\det(p_Rp_{R'}^{-1}) =1.$$
+\end{corollary}
+
+\begin{proof}
+    Since $R$ generates $\mathcal{H}(\mathcal{A})$ and is adjacent to a unique vertex, 
+    by Proposition \ref{prop:generating_set} there exists a linear map 
+    $M:Vect(R)\rightarrow Vect(R^c)$ and $a\in \mathbb{R}^E$ such that
+    $$\mathcal{H}(\mathcal{A})=\{(v+M(v)+a,v\in Vect(R)\},$$
+    and the matrix of the map $M$ in the canonical bases indexed by $R$ and $R^c$ has integer coefficient. 
+    In particular, $\ker p_R\cap \mathcal{H}(\mathcal{A})=\{0\}$ and thus $p_{R}$ is bijective. 
+    Moreover, writing $a=a_R+a_{R^c}$ with $a_R\in Vect(R)$, $a_{R^c}\in Vect(R^c)$, we get $p_R^{-1}(z)=z+M(z-a_R)+a_{R^c}$.
+    \\
+    Next, if $R'$ is another generating set, 
+    $$p_{R'}p_{R}^{-1}=p_{R'}(z+M(z-a_R)+a_{R^c}).$$
+    Since the matrix of $M$ in the canonical basis has integer entries, so does the matrix of $p_{R'}p_{R}^{-1}$. 
+    The same must hold for $p_{R}p_{R'}^{-1}=(p_{R'}p_{R}^{-1})^{-1}$ and thus 
+    $$\det (p_{R}p_{R'}^{-1})=1.$$
+\end{proof}
+
+\begin{proposition}[Boundary condition for balanced structures]
+    \label{prop:boundary_condition}
+    Let $\mathcal{A}$ be a connected, balanced differential structure. 
+    Then, there exists a linear map $h_{\mathcal{A}}:\mathbb{R}^{\partial G}\rightarrow \mathbb{R} $ 
+    with coefficients in $\{+1,-1\}$ unique up to an overall sign and $ \beta\in\mathbb{R}$ such that 
+    $$\partial \mathcal{H}(\mathcal{A})= h_{\mathcal{A}}^{-1}(\{\beta\}).$$
+\end{proposition}
+
+\noindent
+A vector $g\in \mathbb{R}^{\partial G}$ such that $h_{\mathcal{A}}(g)=\beta$ is called \textit{admissible}.
+
+\begin{proof}
+    Let $\mathcal{A} = (V, A, \alpha)$ be a connected, balanced differential structure. 
+    Let $c:\interior(G)\rightarrow \{-1,+1\}$ be any coloring such that $A(v,v')s(v)+A(v',v)s(v')=0$ for all $v,v'>1$. 
+    Then, if $L\in\mathcal{H}(\mathcal{A})$, 
+\begin{align}
+    \sum_{v\in \interior(G)}s(v)\alpha(v)=&\sum_{v\in \interior(G)}s(v)\sum_{v\sim v'}A(v,v')L(\{v,v'\})\nonumber\\
+    =&\sum_{v'\in V_1,v\in \interior(G)}A(v,v')s(v)L(\{v,v'\})+\sum_{\{v,v'\}\in E,v,v'\in \interior(G)}(s(v)A(v,v')\\
+    &\hspace{3cm}+s(v')A(v,v'))L(\{v,v'\})\nonumber\\
+    =&\sum_{v'\in V_1,v\in \interior(G)}A(v,v')s(v)L(\{v,v'\}),\label{eq:def_h_A}
+    \end{align}
+    where we used on the first equality the definition of a flow and on the third equality the balanced property. 
+    Let us set $\beta=\sum_{v\in \interior(G)}s(v)\alpha(v)$ and $\epsilon(e)=A(v,v')s(v)$ for $e=\{v,v'\}\in \partial G$ 
+    with $v\in \interior(G),v'\in V_{1}$. For $x \in \R^{\partial G}$, define 
+    \begin{equation}
+        \label{eq:def_h_A_2}
+        h_\mathcal{A}(x) \coloneqq \sum_{e\in\partial G}\epsilon(e)L(e) 
+    \end{equation}
+    so that for $L\in\mathcal{H}(\mathcal{A})$, we have $h_{\mathcal{A}}(\partial L)=\beta$.
+    \\
+    For the uniqueness, let $o\in V_{1}$ and $S$ be a spanning tree of $\interior(G)\cup \{o\}$ on $G$ : 
+    such a spanning tree exists because $G$ is connected. 
+    Then, by Proposition \ref{prop:generating_set} $R=S^c$ is a generating subset, so that 
+    $$p_{R}:\mathcal{H}(\mathcal{A})\rightarrow \mathbb{R}^R$$
+    is bijective. In particular, since $\partial G\setminus\{o\}\subset R$, 
+    $p_{\partial G\setminus\{o\}} (\mathcal{H}(\mathcal{A}))=\mathbb{R}^{\partial G\setminus\{o\}}$. 
+    We deduce that $p_{\partial G}(\mathcal{H}(\mathcal{A}))$ has dimension at least $\#\partial G-1$ in 
+    $\mathbb{R}^{\partial G}$. Hence, any $h:\mathbb{R}^{\partial G}\rightarrow \mathbb{R}$ such that 
+    $h\circ p_{\partial G}$ is constant must be a multiple of $h_{\mathcal{A}}$. 
+    With the condition that $h$ has entries $\{+1,-1\}$ on the canonical basis, one must have $h=\pm h_{\mathcal{A}}$.
+\end{proof}
+
+
+\begin{proposition}[Volume form on balanced differential structures]
+    \label{prop:divergence_volume_form}
+    Let $\mathcal{A}$ be a connected, balanced differential structure. 
+    Then, $\mathcal{A}$ admits a canonical volume form.
+    Moreover, $R\subset E$ is a generating set of $\mathcal{A}$ 
+    if and only if $R^c$ is a spanning tree of $G$. 
+    If it is the case, $R$ is an integral generating set.
+\end{proposition}
+
+\begin{proof}
+Suppose that $\mathcal{A}$ is balanced. 
+Suppose that $R$ is a generating set of $\mathcal{H}(\mathcal{A},g)$ for all $g\in h_\mathcal{A}^{-1}(\beta)$, 
+where $\beta \in \R$ is given by Proposition \ref{prop:boundary_condition}.
+Hence, for all subset $J$ of $\partial_G$ of cardinal $\partial_G-1$,
+$$p_{R\cup J}:\mathcal{H}(\mathcal{A})\rightarrow \mathbb{R}^{R\cup J}$$
+is a bijection and thus $R'=R\cup J$ is a generating set of $\mathcal{H}(\mathcal{A})$. 
+Suppose that $S$ is another generating set of $\mathcal{A}$. 
+By the same reasoning, $S'=S\cup J$ is a generating set of $\mathcal{H}(\mathcal{A})$. 
+By Proposition \ref{prop:generating_set}, $S'^c$ is a spanning tree of $\interior(G)\cup J^c$, with $J^c$ being a singleton. 
+Hence, $S^c=S'^c\cup J$ is a spanning tree of $V$.
+\\
+Then, Corollary \ref{cor:balanced_uniqueness_volume} yields that $p_{R'}: \mathcal{H}(\mathcal{A})\rightarrow \mathbb{R}^{R'}$ 
+and $p_{S'}: \mathcal{H}(\mathcal{A}) \rightarrow \mathbb{R}^{S'}$ are bijective and $\vert \det(p_{S'}p_{R'}^{-1})\vert=1$ 
+(beware that $p_{S'}p_{R'}^{-1}$ is affine and $\det$ is the determinant of the linear component). 
+Since $(p_{S'}p_{R'}^{-1})_{\vert \mathbb{R}^J}=Id$, we deduce that $\vert \det(p_{S}p_{R}^{-1})\vert=1$ for all 
+$g\in h_{\mathcal{A}}^{-1}(\beta)$, where $p_{R}:\mathcal{H}(\mathcal{A},g)\rightarrow \mathbb{R}^R$ and 
+$p_{S}:\mathcal{H}(\mathcal{A},g)\rightarrow \mathbb{R}^S$. 
+Hence, for any $g \in \R^{\partial G}$ admissible and $K\subset \mathcal{H}(\mathcal{A},g)$,
+\begin{align*}
+\Vol_R(K) &= \int_{\mathbb{R}^R}\mathbf{1}_{p_R^{-1}(x)\in K} \diff x\\
+&=\int_{\mathbb{R}^{S}}\mathbf{1}_{p_R^{-1}p_{R}p_{S}^{-1}(x)\in K}\vert\det(p_{R}p_{S}^{-1})\vert \diff x\\
+&=\int_{\mathbb{R}^{S}}\mathbf{1}_{p_{S}^{-1}(x)\in K} \diff x = \Vol_{S}(K).
+\end{align*}
+The volume form $\diff \ell_R = p_R^* \diff x$ is therefore independent of the 
+parametrizing subset $R$ and we call the volume form on $\mathcal{H}(\mathcal{A}, g)$ the 
+form $\diff \ell_R$ for any such $R$. Therefore, $\mathcal{A}$ admits a canonical volume form 
+in the sense of Definition \ref{def:generating_subset_canonical_vol}.
+
+\end{proof}
+
