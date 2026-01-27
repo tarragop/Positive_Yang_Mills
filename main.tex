@@ -1129,7 +1129,7 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
 
 \begin{proof}
     Remark that such label and color maps are defined for any honeycomb $h\subset T$ such 
-    that any geodesic $e\subset h$ is contained in some ray $\{x+\mathbb{R}e^{2(\ell+1)i}\}$ 
+    that any geodesic $e\subset h$ is contained in some ray $\{x+\mathbb{R}e^{2(\ell+1)i \pi/3}\}$ 
     for some $\ell\in\{0,1,2\}$. 
     Let us call such a honeycomb \textit{admissible} and let us prove by 
     induction on the number $M$ 
@@ -1360,8 +1360,67 @@ Each edge $e$ of $H_{d,n}$ written  $e=(v,v - e^{2\pi i\ell/3})$ with $\ell\in\{
 labeled $(\ell(e),h(e))\in\{0,1,2\}\times \{0,\ldots,n+d\}$ with 
 \begin{equation}
     \label{eq:def_type_height_dual_hive}
-    \ell(e)=\ell \text{ and } h(e)= v_{\ell}.
+    \ell(e)=\ell \text{ and } h(e)= v_{\ell} \ .
 \end{equation}
+
+\noindent
+Table \ref{tab:edge_types} below shows the different edge types for dual hives 
+and honeycombs, dual to each other. 
+
+\begin{table}[ht]
+    \centering
+\begin{tabular}{c | c | c}
+    Type $\ell$ & $e = \left(v, v - e^{2\pi i\ell/3}\right) \in E_{n, d}$ 
+    & $e \subset x + \ed^{2i \pi (\ell+1)/3} \in \honey_{n, d}$ \\
+\hline
+0 &
+\begin{tikzpicture}[scale=1.5, baseline=(current bounding box.center)]
+    \node at (0,0) {$\bullet$};
+    \node[right] at (0,0) {$v$};
+    \node at (-1,0) {$\bullet$};
+  \draw[black] (0,0) -- ++(-1,0);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=1.5, baseline=(current bounding box.center)]
+  \draw[black, thin] (0,0) -- ++(-0.5,{sqrt(3)/2});
+  \node at (0,0) {$\bullet$};
+  \node at (-0.5,{sqrt(3)/2}) {$\bullet$};
+\end{tikzpicture}
+\\
+\hline
+1 &
+\begin{tikzpicture}[scale=1.5, baseline=(current bounding box.center)]
+    \draw[black, thin] (0,0) -- ++(-0.5,{sqrt(3)/2});
+  \node at (0,0) {$\bullet$};
+  \node[left] at (-0.5,{sqrt(3)/2}) {$v$};
+  \node at (-0.5,{sqrt(3)/2}) {$\bullet$};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=1.5, baseline=(current bounding box.center)]
+    \draw[black, thin] (0,0) -- ++(0.5,{sqrt(3)/2});
+  \node at (0,0) {$\bullet$};
+  \node at (0.5,{sqrt(3)/2}) {$\bullet$};
+\end{tikzpicture}
+\\
+\hline
+2 &
+\begin{tikzpicture}[scale=1.5, baseline=(current bounding box.center)]
+    \draw[black, thin] (0,0) -- ++(0.5,{sqrt(3)/2});
+  \node at (0,0) {$\bullet$};
+  \node[left] at (0,0) {$v$};
+  \node at (0.5,{sqrt(3)/2}) {$\bullet$};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=1.5, baseline=(current bounding box.center)]
+      \node at (0,0) {$\bullet$};
+    \node at (-1,0) {$\bullet$};
+  \draw[black] (0,0) -- ++(-1,0);
+\end{tikzpicture}
+\end{tabular}
+\vspace{0.2cm}
+\caption{Edge types in dual hives and honeycombs.}
+\label{tab:edge_types}
+\end{table}
 
 
 \begin{definition}[Color map]
@@ -1453,7 +1512,7 @@ affine subspace induced by the equalities coming from (2)(a), (2)(b)(i) and (2)(
 \begin{definition}[$\Gamma_{d, n}$ graph]
     Let $n \geqslant d$ be two integers. 
     The \textit{dual graph} $\Gamma_{d, n} = 
-    (V_\Gamma, E_\Gamma)$ of $H_{d, n}$ is the following graph :
+    (V^\Gamma, E^\Gamma)$ of $H_{d, n}$ is the following graph :
     \begin{itemize}
     \item there is one vertex $v_f$ for each triangular 
     face $f$ of $H_{d,n}$ and one vertex $v_{\tilde{e}}$ 
@@ -1499,8 +1558,11 @@ where $\delta_{i, j} = 1 $ if $i=j$ and $0$ otherwise.
 \item Then, we set 
 $$\mathcal{S}(H) = \left\{[x_v,x_{v'}] \mid e=\{v,v'\} \in E^\Gamma \right\} .$$
 \end{enumerate}
-Let us denote by $\Phi(e) = [x_v,x_{v'}]$ the geodesic 
-associated to $e=\{v,v'\} \in E^\Gamma$.  
+For $e=\{v,v'\} \in E^\Gamma$, let us denote its associated geodesic by 
+\begin{equation}
+    \label{eq:def_Phi}
+    \Phi(e) = [x_v,x_{v'}] \ .
+\end{equation}
 As shown below, the collection of geodesics 
 $\mathcal{S}(H)$ is almost the edge set of the canonical 
 structure graph of a honeycomb.
@@ -1645,7 +1707,7 @@ In the sequel, we denote by $\partial G^C$
 the set of edges adjacent to a univalent vertex of $G^C$. 
 Following Definition \ref{def:limit_dual_hive} and Definition \ref{def:skeleton}, 
 we introduce a partial order $\leq$ on $E^C$ by completing the relation 
-$$e\leq e'$$
+$e\leq e'$
 if there exists an edge $\tilde{e}\in E_{d,n}$ 
 (resp. $\tilde{e}'\in E_{d,n}$) dual to an edge in the equivalence class of 
 $e$ (resp. $e'$) and such that $\tilde{e},\tilde{e}'$ are of same type, 
@@ -1743,7 +1805,7 @@ In the second case, $x$ is univalent and belongs to $\partial T$ by construction
 If $i\leq d$, then $x=x_{v_{\tilde{e}}}$ for the edge $\tilde{e}\in \partial^{(2,0)}$ 
 such that $L(\tilde{e})=1-\beta_i$ 
 and $c(e)=1$. Since $\tilde{e}$ is of type $2$, $x_2=L(\tilde{e})=1-\beta_i$, and thus 
-$$x_1=1-(1-\beta_i)=\beta_i \ .$$
+$x_1=1-(1-\beta_i)=\beta_i \ .$
 If $d+1\leq i\leq n$, then $\tilde{e}\in\partial^{(1,1)}$, $L(\tilde{e})=\beta_i$ and $c(e)=0$. 
 Moreover, $\tilde{e}$ is of type $1$ and thus $x_1=L(\tilde{e})=\beta_i$. 
 The cases of other boundaries are similar.
@@ -1783,7 +1845,7 @@ Hence, $\mathcal{L} \circ \rho_{C}(H_1)\not = \mathcal{L} \circ \rho_{C}(H_2)$,
 and $\rho_{C}$ is injective. 
 \end{proof}
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{toric_honey_example_triangle.pdf}
      \caption{The triangular honeycomb corresponding to the dual hive of 
@@ -1795,145 +1857,198 @@ and $\rho_{C}$ is injective.
 \subsection{From triangular honeycomb to dual hive}
 \label{subsec:from_honey_to_dual_hive}
 
-Let $h\in \honey_{d,n}(\alpha,\beta,\gamma)$ be a triangular honeycomb with graph structure $G = (V^G, E^G) \in \mathcal{G}_d$. 
-We construct a colored and labeled graph $(\tilde{G},\tilde{c},\tilde{L})$ and a map 
-$\tilde{\Phi} : E^{\hat{G}} \rightarrow \mathcal{P}(T)$ as follows : 
+Let $h\in \honey_{d,n}(\alpha,\beta,\gamma)$ be a triangular honeycomb with 
+graph structure $G = (V^G, E^G) \in \mathcal{G}_d$. 
+We construct a graph $\tilde{G} = (\tilde{V}, \tilde{E})$ with color and label 
+$(\tilde{c},\tilde{L})$ and a map 
+$\tilde{\Phi} : \tilde{E} \rightarrow \mathcal{P}(T)$ as follows : 
 \begin{enumerate}
-\item first consider an intermediate augmentation {\color{blue} $\hat{G} = \left( V^{\hat{G}}, E^{\hat{G} }\right)$} of $G$, 
-where $V^{\hat{G}}$ {\color{blue} (is the subset of $\Phi(G)$ : what is $\Phi(G)$ ? is it the injection $\iota$ 
-of $G$ into $T$ ? Otherwise $\Phi$ has only been defined in the previous section for dual hives) } consists 
-{\color{blue} of vertices $V^G$ of $G$ together with} 
+\item first consider an intermediate augmentation 
+$\hat{G} = \left( \hat{V}, \hat{E} \right)$ of $G$, 
+where $\hat{V}$ consists of vertices $V^G$ of $G$ together with 
 the points which are not locally a one-dimensional variety. 
-For $x, y\in V^{\hat{G}}$, we have an edge $\{x,y\}\in E^{\hat{G}}$ if and only if{\color{blue} 
-($[x,y]\subset\Phi(e)$ for some $e\in E^G$) $[x,y] \subset \iota(e)$ for some $e\in h$} and 
-$]x,y[ \, \cap \, V^{\hat{G}}=\emptyset$. Then, set $\tilde{c}(\{x,y\})=c(e)$ and $\tilde{L}(\{x,y\})=L(e)$ if 
-{\color{blue}($]x,y[\subset \Phi(e)$) $]x,y[\subset e$}. 
-Moreover, one sets $\tilde{\Phi}(\{x,y\})=[x,y]$ for such {\color{blue} $\{x,y\}\in E^{\hat{G}}$}.
+For $x, y\in \hat{V}$, we have an edge $\{x,y\}\in \hat{E}$ if and only if 
+$[x,y] \subset e$ for some $e\in h$ and 
+$]x,y[ \, \cap \, \hat{V}=\emptyset$. Then, set $\tilde{c}(\{x,y\})=c(e)$ 
+and $\tilde{L}(\{x,y\})=L(e) = x_{\ell(e)}$ if $]x,y[\subset e$. 
+For $\{x,y\}\in \hat{E}$, one sets $\tilde{\Phi}(\{x,y\})=[x,y] \in \mathcal{P}(T)$.
 \\
-\item A vertex $v \in V^{\hat{G}}$ is of degree either $1$ or $3$ if it comes from a vertex of $G$ or of degree $4$ 
-if it comes from a non-empty intersection {\color{blue} ($\Phi(e)\cap \Phi(e')$) $\iota(e) \cap \iota(e')$} for $e,e'\in E^G$. 
-In the latter case, the four edges $\left\{ \left\{v,x_i^\pm\right\}, i=0,1 \right\}$ adjacent to $v$ in $\hat{G}$ are such that 
+\item A vertex $v \in \hat{V}$ is of degree either $1$ or $3$ if it comes from a 
+vertex of $G$ or of degree $4$ 
+if it comes from a non-empty intersection $\iota(e) \cap \iota(e')$ for $e,e'\in E^G$. 
+In the latter case, the four edges $\left\{ \left\{v,x_i^\pm\right\}, i=0,1 \right\}$ 
+adjacent to $v$ in $\hat{G}$ are such that 
 $\{v,x^\pm_i\}$ is colored $i$ and of type $\ell-i$ for some $\ell\in\{0,1,2\}$. 
 In particular, the angle $\widehat{x_0^\epsilon vx_1^\epsilon}=2\pi/3$ for $\epsilon\in\{-,+\}$. 
-Replace $v$ by two vertices $v^+,v^-$, add an edge $e$ {\color{blue} to $E^{\hat{G}}$} with color $m$, 
-type $\ell$ and label $1-L(\{v,x^{\pm}_0\})-L(\{v,x^\pm_1\})$ 
-between $v^+$ and $v^-$. Set {\color{blue} ($\tilde{\Phi}(m)=\{v\}$) $\tilde{\Phi}(e) = \{ v \}$}. Replace each edge $\{v,x_i^\pm\}$ by $\{v^\pm,x_i^\pm\}$, keeping the same label and color. 
-Repeat the operation successively for each vertex of degree $4$. XXXFigureXXX
+Replace $v$ by two vertices $v^+,v^-$, add an edge $e$ to $\hat{E}$ with color $m$, 
+type $\ell+1$ and label $1-L(\{v,x^{\pm}_0\})-L(\{v,x^\pm_1\})$ 
+between $v^+$ and $v^-$. Set $\tilde{\Phi}(e) = \{ v \}$. 
+Replace each edge $\{v,x_i^\pm\}$ by $\{v^\pm,x_i^\pm\}$, keeping the same label and color. 
+Repeat the operation successively for each vertex of degree $4$. 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=1]{images/m_edge.pdf}
+    \caption{The augmentation of a vertex $v$ of degree $4$ to two vertices $v^\pm$ 
+    of degree $3$ linked by an edge of type $\ell+1=1$. 
+    The configuration is the one on the bottom right of Figure \ref{fig:ex_triangular_honey}.}
+    \label{fig:m_edge}
+\end{figure}
 \end{enumerate}
 
 \noindent
-The resulting augmentation $\tilde{G}$ of $G$ has univalent and trivalent vertices, 
+The resulting augmentation $\tilde{G} = (\tilde{V}, \tilde{E})$ of $G$ has univalent and trivalent vertices, 
 each of the latter being adjacent to one edge of each type $\ell\in\{0,1,2\}$. 
 Remark moreover that $\bigcup_{e\in \tilde{E}}e=\bigcup_{e\in E}e:=\Lambda$. 
-Hence, a connected region of $\mathbb{C}\setminus \Lambda$ is a polygon with angle either $2\pi/3$ or $\pi/3$. 
-In the latter case, the vertex $v$ of $G$ is a vertex of degree $4$ which has been replaced by two vertices of degree $3$ 
-and an edge in $\tilde{G}$. Hence, any bounded region of $\mathbb{C}\setminus \Lambda$ is bounded by $6$ edges of $\tilde{G}$.
+Hence, a connected region of $\mathbb{C}\setminus \Lambda$ is a polygon with 
+angle either $2\pi/3$ or $\pi/3$. 
+In the latter case, the vertex $v$ of $G$ is a vertex of degree $4$ which has 
+been replaced by two vertices of degree $3$ 
+and an edge in $\tilde{G}$ as in Figure \ref{fig:m_edge}.
+Hence, any bounded region of $\mathbb{C}\setminus \Lambda$ is bounded by $6$ edges of $\tilde{G}$.
 \\
-Therefore, the dual of $\tilde{G}$ is a graph $\tilde{H}$ with only triangular faces and inner vertices of degree $6$. 
+Therefore, the dual of $\tilde{G}$ is a graph $\tilde{H}$ with only triangular faces 
+and inner vertices of degree $6$. 
 In particular, $\tilde{H}$ is isomorphic to a subgraph of the triangular grid. 
-Let us define the type (resp. color, resp. label) of an edge $e$ of $\tilde{H}$ as the same as the one his dual. 
-In particular, each triangular face is bordered by three edges $(e^0,e^1,e^2)$, with $e^\ell$ of type $\ell$ and such that 
+Let us define the type (resp. color, resp. label) of an edge $e$ of $\tilde{H}$ 
+as the same as the one his dual. 
+In particular, each triangular face is bordered by three edges $(e^0,e^1,e^2)$, 
+with $e^\ell$ of type $\ell$ and such that 
 $L(e^0)+L(e^1)+L(e^2)=1$. Since the types of the boundary edges is 
-$$(\underset{n-d}{\underbrace{0,\ldots,0}},\underset{d}{\underbrace{2,\ldots,2}},\underset{n-d}{\underbrace{1,\ldots,1}}, 
-\underset{d}{\underbrace{0,\ldots,0}},\underset{n-d}{\underbrace{2,\ldots,2}},\underset{d}{\underbrace{1,\ldots,1}}) \ ,$$
-$\tilde{H}$ is actually isomorphic to $H_{d,n}$. For $e\in E_{d,n}$, set $C(e) = \tilde{c} (\tilde{e})$ and $L(e)= \tilde{L}(\tilde{e})$
+$$(\underset{n-d}{\underbrace{0,\ldots,0}},\underset{d}{\underbrace{2,\ldots,2}}, 
+\underset{n-d}{\underbrace{1,\ldots,1}}, 
+\underset{d}{\underbrace{0,\ldots,0}},\underset{n-d}{\underbrace{2,\ldots,2}}, 
+\underset{d}{\underbrace{1,\ldots,1}}) \ ,$$
+$\tilde{H}$ is actually isomorphic to $H_{d,n}$. For $e\in E_{d,n}$, set 
+$C(e) = \tilde{c} (\tilde{e})$ and $L(e)= \tilde{L}(\tilde{e})$
 
 \begin{lemma}[Honeycomb to dual hive]
     \label{lem:honey_hive_final}
-The pair $H=(C,L)$ is a dual hive and $p_{C}(H)=h$.
+The pair $H=(C,L)$ is a dual hive and $\rho_{C}(H)=h$.
 \end{lemma}
 \begin{proof}
-It is straightforward to check that the maps $C(e)=\tilde{c}(\tilde{e})$, $L(e)=\tilde{L}(\tilde{e})$ 
+It is straightforward to check that the maps $C(e)=\tilde{c}(\tilde{e})$, 
+$L(e)=\tilde{L}(\tilde{e})$ 
 satisfy the properties (1), (2)(a), (2)(b)(i) and (c) of Definition \ref{def:limit_dual_hive}. 
 \\
 To verify (2)(b)(ii), let $\tilde{e},\tilde{e}'$ be opposite edges of type $\ell$ of a lozenge of 
-$H_{d,n}$ with middle edge $\tilde{f}$ of type $\ell+1$ not colored $m$ and denote by $e,e',f$ their dual edges in $E^{\tilde{G}}$. 
-Suppose that $h(\tilde{e})>h(\tilde{e}')$, {\color{blue} where $h$ has been defined in \eqref{eq:def_type_height_dual_hive}. 
+$H_{d,n}$ with middle edge $\tilde{f}$ of type $\ell+1$ not colored $m$ and denote 
+by $e,e',f$ their dual edges in $E^{\tilde{G}}$. 
+Suppose that $h(\tilde{e})>h(\tilde{e}')$, where $h$ has been defined in 
+\eqref{eq:def_type_height_dual_hive}. 
 We want to show that $L(\tilde{e}) = \tilde{L}(e) > L(\tilde{e}') = \tilde{L}(e')$. From the 
 definition above, $\tilde{L}(e) = L(e)$ where for $e \in E^G$, $L(e) = x_{\ell}$ 
-has been defined in Definition \ref{def:triangular_honey}. Moreover, from Definition \ref{def:limit_dual_hive}, 
-$h(\tilde{e}) = v_\ell$ where $e = (v, v - \ed^{2 \pi i \ell / 3})$. Since $x_\ell = v_\ell$, one 
-derives that $x_\ell > x_{\ell}'$ as desired. }. 
-{\color{red} Then, there is an injective path $(e_0=e,e_1=f,e_{2}=e',\ldots,e_r)$ on $\tilde{G}$ from $e$ to 
-$\partial^{(\ell+1,\ell+1)}\cup \partial^{(\ell,\ell+1)}$. 
-This corresponds on $h$ to a sequence of geodesics $(e_i)_{0\leq i\leq r}$ along which the $\ell-1$-coordinate is decreasing. 
-Since $f$ is not colored $m$, the $\ell-1$-coordinate is strictly decreasing along $f$, and thus $L(\tilde{e}')<L(e)$. }
-Hence, $H\in \dualhive^C(\alpha,\beta,\gamma)$.
+has been defined in Definition \ref{def:triangular_honey}. We thus need to show that 
+$x_{\ell} > x'_{\ell}$. Since $f \in E^{\tilde{G}}$ is of type $\ell + 1$, we have 
+that $f \subset x + \R\ed^{2i \pi (\ell+2)/3}$ in $T$. 
+The geodesic $f$ cannot be reduced to a point 
+as the honeycomb is non-degenerated and for otherwise condition $(2)$ of 
+Definition \ref{def:toric_honeycomb} would not be satisfied. Therefore, the 
+coordinate $\ell$ is strictly decreasing between edges $e$ and $e'$ so 
+that $x_{\ell} > x'_{\ell}$. Hence, $H\in \dualhive^C(\alpha,\beta,\gamma)$.
 \\
-Remark that a triangular honeycomb $h$ is uniquely determined by its image $\mathcal{S}=\bigcup_{e\in h}e$, 
-since then the elements of $h$ are all the geodesics of $\mathcal{S}$ whose endpoints are univalent or trivalent vertices. 
-Hence, to check that $p_C(H)=h$, it suffices to show that $\bigcup_{e\in E^\Gamma} \Phi[H](e)=\bigcup_{e\in h} e$. 
-This is directly implied by the construction of $\tilde{\Phi}$ at the beginning of the section, since 
-$$\bigcup_{e\in E^\Gamma}\Phi[H](e)=\bigcup_{e\in E^{\hat{G}}}\tilde{\Phi}(e) 
-{\color{red} \ =\bigcup_{e\in G}\Phi(e)} {\color{blue} \ = \bigcup_{e\in G}\iota(e)} =\bigcup_{e\in h}e.$$
+Remark that a triangular honeycomb $h$ is uniquely determined by its image 
+$\mathcal{S}=\bigcup_{e\in h}e$, 
+since then the elements of $h$ are all the geodesics of $\mathcal{S}$ whose 
+endpoints are univalent or trivalent vertices. 
+Recall that for $e = \{v, v'\} \in E^\Gamma$, $\Phi(e) = [x_v, x_{v'}]$.
+Hence, to check that $\rho_C(H)=h$, it suffices to 
+show that $\bigcup_{e\in E^\Gamma} \Phi(e)=\bigcup_{e\in h} e$. 
+This is implied by the construction of $\tilde{\Phi}$ 
+at the beginning of the section, since 
+$$\bigcup_{e\in E^\Gamma}\Phi(e) = \bigcup_{e\in \tilde{E}}\tilde{\Phi}(e) 
+= \bigcup_{ \{v, v'\} \in \tilde{E}} [x_v, x_{v'}]  = \bigcup_{e\in h}e \ .$$
 \end{proof}
 
 \noindent
-Putting together Lemma \ref{lem:hive_honey_final} with Lemma \ref{lem:honey_hive_final} yields the following equivalence.
+Putting together Lemma \ref{lem:hive_honey_final} with Lemma \ref{lem:honey_hive_final} 
+yields the following decomposition.
 
 \begin{proposition}[Color map indexing]
     \label{prop:honey_hive}
     There is a partition 
-    $$\honey_{n,d}=\bigsqcup_{C\text{ color map}}\honey_{n,d}^{\Gamma^C},$$
-    such that, for each color map $C$, the map $p_{C}$ is a bijection and $( \mathcal{L} \circ p_{C})^{-1}$ 
+    $$\honey_{n,d}=\bigsqcup_{C\text{ color map}}\honey_{n,d}^{G^C} \ ,$$
+    such that, for each color map $C$, the map $\rho_{C}$ is a bijection and 
+    $( \mathcal{L} \circ \rho_{C})^{-1}$ 
     is the restriction of a linear map from $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma})$ to 
     $\mathbb{R}^{E_{n,d}}$ whose matrix in the canonical bases has integer coefficients.
 \end{proposition}
 \begin{proof}
-    By Lemma \ref{lem:hive_honey_final}, the map $p_C:\dualhive^C(\alpha,\beta,\gamma) \rightarrow \honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma)$ is injective. \\
-    Let $h\in\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma)$. 
-    Then, by Lemma \ref{lem:honey_hive_final}, there exists $C'$ a color map and $H\in \dualhive^{C'}(\alpha,\beta,\gamma)$ such that $p_{C'}(H)=h$. 
-    Hence, $h\in \honey_{n,d}^{\Gamma^{C'}}(\alpha,\beta,\gamma)$. Since the map $C\mapsto \Gamma^C$ is injective, $C=C'$ and $H\in \dualhive^{C}(\alpha,\beta,\gamma)$. 
-    Therefore, $p_{C}$ is a bijection and $\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma)\cap \honey_{n,d}^{\Gamma^{C'}}(\alpha,\beta,\gamma)=\emptyset$ for $C\not=C'$.
-    \\
-    If $h\in \honey_{n,d}$, by Lemma \ref{lem:honey_hive_final} there exists $C$ such that $h\in \honey^{\Gamma_C}_{n,d}$. Therefore,
-    $$\honey_{n,d}=\bigsqcup_{C\text{ color map}}\honey_{n,d}^{\Gamma^C}.$$
+    By Lemma \ref{lem:hive_honey_final}, 
+    the map $\rho_C:\dualhive^C(\alpha,\beta,\gamma) \rightarrow 
+    \honey_{n,d}^{G^C}(\alpha,\beta,\gamma)$ is injective. \\
+    Let $h\in\honey_{n,d}^{G^C}(\alpha,\beta,\gamma)$ be a honeycomb. 
+    Then, by Lemma \ref{lem:honey_hive_final}, 
+    there exists $C'$ a color map and $H\in \dualhive^{C'}(\alpha,\beta,\gamma)$ 
+    such that $\rho_{C'}(H)=h$. 
+    Hence, $h\in \honey_{n,d}^{G^{C'}}(\alpha,\beta,\gamma)$. 
+    Since the map $C\mapsto G^C$ is injective, $C=C'$ and $H\in \dualhive^{C}(\alpha,\beta,\gamma)$. 
+    Therefore, $p_{C}$ is a bijection and 
+    $\honey_{n,d}^{G^C}(\alpha,\beta,\gamma)\cap \honey_{n,d}^{G^{C'}}(\alpha,\beta,\gamma)=\emptyset$ for $C\not=C'$. 
+    Therefore,
+    $$\honey_{n,d}=\bigsqcup_{C\text{ color map}}\honey_{n,d}^{G^C} \ .$$
     \noindent
-    Finally, for a color map $C$, the map $p_C^{-1}$ is then obtained as follows : 
-    each geodesic $e$ of $h$ of type $\ell$ corresponds to a maximal chain $\hat{e}$ of type $\ell$ of $\Gamma_{n,d}$ 
-    with respect to $C$. Hence, for all edge $f\in \hat{e}$ of type $\ell$, one has $p_C^{-1}[h](f)=L(e)$. 
-    Then, for any edge $f\in E_{n,d}$ colored $m$, one has $p_C^{-1}[h](f)=1-p_C^{-1}[h](f_1)-p_C^{-1}[h](f_2)$, 
+    Finally, for a color map $C$, the map $\rho_C^{-1}$ is then obtained as follows : 
+    each geodesic $e \in h$ of type $\ell$ corresponds to a maximal chain $\hat{e}$ 
+    of type $\ell$ of $\Gamma_{n,d}$ 
+    with respect to $C$. Hence, for all edge $f\in \hat{e}$ of type $\ell$, one has 
+    $\rho_C^{-1}[h](f)=L(e)$. 
+    Then, for any edge $f\in E_{n,d}$ colored $m$, one has $\rho_C^{-1}[h](f) = 
+    1-\rho_C^{-1}[h](f_1)-\rho_C^{-1}[h](f_2)$, 
     where $f_1$ and $f_2$ are the two other edges of a triangular face bordered by $f$. 
-    Hence, the matrix of the map $(\mathcal{L}\circ p_{C})^{-1}$ has integer coordinates in the canonical bases.
+    Hence, the matrix of the map $(\mathcal{L}\circ \rho_{C})^{-1}$ has integer coordinates in the canonical bases.
 \end{proof}
 
 \noindent
-From the Proposition \ref{prop:honey_hive}, any $G\in\mathcal{G}_d$ is of the form $G=G^C$ {\color{blue} $G=\Gamma^C$ ? } 
-for some color map $C$. 
-Since $V^C\subset V^\Gamma$, any vertex $v$ of $\Gamma^C$ inherits the coordinates of $\Gamma$ by setting 
-$$(v_0,v_1,v_2)=(h(e_0),h(e_1),h(e_2)),$$ 
+From the Proposition \ref{prop:honey_hive}, any $G\in\mathcal{G}_d$ 
+is of the form $G=G^C$ for some color map $C$. 
+Since $V^C\subset V^\Gamma$, any vertex $v$ of $G^C$ inherits the coordinates of 
+$\Gamma$ by setting 
+$$(v_0,v_1,v_2)=(h(e_0),h(e_1),h(e_2)) \ ,$$ 
 where $e_\ell$ is the edge of type $\ell$ adjacent to $v$ in $\Gamma_{d,n}$ 
 (even if $e_\ell\not\in E^C$). For $e=\{v,w\},e'=\{v',w'\}\in E^C$ of same type, 
 introduce the cover relation $e<e'$ when, up to a transposition, 
-$\{w,v'\}$ is an edge of $E^C$ of type $\ell+1$ and $v'_{\ell-1}>w_{\ell-1}$. This cover relation translates into a cover relation in $\vec{E}^C$ by saying that $(v,w)<(v',w')$ is and only if $\{v,w\}<\{v',w'\}$ in the former sense.
+$\{w,v'\}$ is an edge of $E^C$ of type $\ell+1$ and $v'_{\ell-1}>w_{\ell-1}$. 
+This cover relation translates into a cover relation in $\vec{E}^C$ by saying 
+that $(v,w)<(v',w')$ is and only if $\{v,w\}<\{v',w'\}$ in the former sense.
 
-\begin{corollary}[Parametrization of labels]\label{cor:paramietrization_label}
-    For a color map $C$ and $\Gamma^C\in \mathcal{G}_d$,
-    $$\mathcal{L} \left(\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma) \right) 
-    = \mathcal{F}_{\Gamma^C}(\phi_{\alpha,\beta,\gamma})\cap K^C,$$
+\begin{corollary}[Parametrization of labels]
+    \label{cor:paramietrization_label}
+    For a color map $C$ and $G^C\in \mathcal{G}_d$,
+    $$\mathcal{L} \left(\honey_{n,d}^{G^C}(\alpha,\beta,\gamma) \right) 
+    = \mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma})\cap K^C \ ,$$
     where $K^C\subset \Omega^1(G^C)$ is the cone defined as 
-    $$K^C = \left\{(\omega \in \Omega^1(G^C) \mid \vert \omega(e)\vert<\vert \omega(e')\vert\,\text{ if }e<e'\, e,e'\in\vec{E}^C\right\}.$$ 
+    $$K^C = \left\{\omega \in \Omega^1(G^C) \mid 
+    \vert \omega(e)\vert<\vert \omega(e')\vert\,\text{ if } e<e' \right\}.$$ 
 \end{corollary}
 
 \begin{proof}
-    By Proposition \ref{prop:honey_hive}, $\mathcal{L} \left(\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma) \right) 
-    = \Phi^{-1} \left(\dualhive^C(\alpha,\beta,\gamma)\right)$, with, for $\omega\in \Omega^1(G)$ and $e\in E_{n,d}$, 
-    $$\Phi[\omega](e)=\left\lbrace\begin{aligned} \vert \omega(\vec{\hat{e}})\vert&\text{ if }e\in \hat{e}, c(e)\not=m\\
-    1-\vert \omega(\vec{\hat{e_1}})\vert-\vert \omega(\vec{\hat{e_2}})\vert&\text{ if }c(e)=m,\,e_1\in\hat{e}_1,e_2\in\hat{e}_2 ,\,(e_1,e_2,e)\text{ triangular face of }H_{n,d}\end{aligned}\right..$$
+    Let us define $\Psi: \Omega^1(G) \to \R^{E_{n, d}}$ by 
+    $$\Psi[\omega](e)=\left\lbrace\begin{aligned} \vert \omega(\vec{\hat{e}})\vert 
+        \quad &\text{ if }e\in \hat{e}, c(e)\not=m\\
+    1-\vert \omega(\vec{\hat{e_1}})\vert-\vert \omega(\vec{\hat{e_2}})\vert 
+    \quad &\text{ if }c(e)=m,\,e_1\in\hat{e}_1,e_2\in\hat{e}_2 ,\,(e_1,e_2,e) 
+    \text{ triangular face of }H_{n,d}\end{aligned}\right..$$
+    By Proposition \ref{prop:honey_hive}, we have that  
+    $\mathcal{L} \left(\honey_{n,d}^{G^C}(\alpha,\beta,\gamma) \right) 
+    = \Psi^{-1} \left(\dualhive^C(\alpha,\beta,\gamma)\right)$.
 
     \noindent
-    Then, remark that $\dualhive^C(\alpha,\beta,\gamma) = \mathcal{H}^C(\alpha,\beta,\gamma) \cap \mathcal{K}_{<},$ 
-    where $\mathcal{H}^C(\alpha,\beta,\gamma)\subset \mathbb{R}^{E_{n,d}}$ is the vector subspace determined by the conditions 
-    (2)(a), (2)(b)(i) and (2)(c) of Definition \ref{def:limit_dual_hive} and $\mathcal{K}_{<}$ is the cone given by 
+    Then, remark that $\dualhive^C(\alpha,\beta,\gamma) 
+    = \mathcal{H}^C(\alpha,\beta,\gamma) \cap \mathcal{K}_{<},$ 
+    where $\mathcal{H}^C(\alpha,\beta,\gamma)\subset \mathbb{R}^{E_{n,d}}$ 
+    is the vector subspace determined by the conditions 
+    (2)(a), (2)(b)(i) and (2)(c) of Definition \ref{def:limit_dual_hive} 
+    and $\mathcal{K}_{<}$ is the cone given by 
     $$\mathcal{K}_{<} = \left\{(H(e))_{e\in E_{n,d}} \mid L(e)< L(e')\text{ if } e ,\,e' 
     \text{ satisfy condition (2)(b)(ii) of Definition \ref{def:limit_dual_hive}} \right\}.$$
     Hence, 
     $$\mathcal{L}\left(\honey_{n,d}^{G^C}(\alpha,\beta,\gamma)\right) = 
-    \Phi^{-1} \left(\mathcal{H}^C(\alpha,\beta,\gamma) \cap \mathcal{K}_{\leq} \right)
-    =\Phi^{-1}\left(\mathcal{H}^C(\alpha,\beta,\gamma)\right) \cap \Phi^{-1}\left(\mathcal{K}_{<}\right).$$
-    One then checks that $\Phi^{-1}(\mathcal{H}^C(\alpha,\beta,\gamma))=\mathcal{F}_{G^C}(\alpha,\beta,\gamma)$ 
-    and $\Phi^{-1}(\mathcal{K}_{<})=K^C$. XXXTo detail ? {\color{blue} It think it is heavy to detail 
-    and it is straightforward to check the translation of conditions and on boundaries.}XXX
+    \Psi^{-1} \left(\mathcal{H}^C(\alpha,\beta,\gamma) \cap \mathcal{K}_{\leq} \right)
+    =\Psi^{-1}\left(\mathcal{H}^C(\alpha,\beta,\gamma)\right) \cap 
+    \Psi^{-1}\left(\mathcal{K}_{<}\right).$$
+    One then checks that $\Psi^{-1}(\mathcal{H}^C(\alpha,\beta,\gamma)) = 
+    \mathcal{F}_{G^C}(\alpha,\beta,\gamma)$ 
+    and $\Psi^{-1}(\mathcal{K}_{<})=K^C$. 
 \end{proof}
 
 
@@ -1941,8 +2056,9 @@ $\{w,v'\}$ is an edge of $E^C$ of type $\ell+1$ and $v'_{\ell-1}>w_{\ell-1}$. Th
 
 \subsection{Volume of flat connections}
 \label{subsec:main_th_three_holed_sphere}
-We can now combine the results of \autocite{françois2024positiveformulaproductconjugacy} with the ones of the previous section to yields the following formula. 
-Let us denote by $\Sigma_0^3$ the sphere with three generic marked points removed. 
+We can now combine the results of \autocite{françois2024positiveformulaproductconjugacy} 
+with the ones of the previous section to yields the following formula. 
+Let us denote by $\Sigma_0^3$ the Riemann sphere with three generic marked points removed. 
 In the specific case of 
 the punctured sphere, this moduli space can be 
 alternatively described as 
