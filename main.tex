@@ -59,6 +59,7 @@
 \providecommand{\U}{\mathrm U}
 \providecommand{\SU}{\mathrm {SU}}
 \providecommand{\Vol}{\operatorname{Vol}}
+\providecommand{\Leb}{\operatorname{Leb}}
 \providecommand{\honey}{\texttt{\textsc{HONEY}}}
 \providecommand{\dualhive}{\texttt{\textsc{DH}}}
 \providecommand{\indic}{\mathbbm 1}\DeclareMathOperator{\interior}{int}
@@ -230,15 +231,24 @@ $$\partial T=\bigsqcup_{i\in\{0,1,2\}}\partial_iT \text{ , where }
 
 \noindent
 A triangular honeycomb 
-has always $n^2+3n$ vertices and $\frac{3n(n+1)}{2}$ edges, see \eqref{eq:nb_vertices_edges_triangle}.
+has always $n^2+3n$ vertices and $\frac{3n(n+1)}{2}$ edges, 
+see \eqref{eq:nb_vertices_edges_triangle}.
 This definition implies that $G(h)$ has only trivalent 
 vertices in $\overset{\circ} T$. Moreover, the condition on 
 the boundaries yields a natural choice of root 
 $v^0$ of $G$, corresponding to the univalent vertex on 
-$\partial_0T$ whose coordinate $v^1_1$ is maximal. Then, the cyclic counter-clockwise order on the boundary vertices  given by the orientation of $T$ yields an order on the $3n$ boundary vertices $\{v^1,\ldots,v^{3n}\}$, with the vertices $\{v^{i+j},1\leq j\leq n\}$ located on $\partial_iT$.
+$\partial_0T$ whose coordinate $v^1_1$ is maximal. 
+Then, the cyclic counter-clockwise order on the boundary vertices 
+given by the orientation of $T$ yields an order on the $3n$ boundary vertices 
+$\{v^1,\ldots,v^{3n}\}$, with the vertices $\{v^{ni+j},1\leq j\leq n\}$ located on $\partial_iT$.
 \\
-
-In the particular case where all edges have the same color, our definition is the original definition of a generic honeycomb from \autocite{Knutson_Tao_honeycomb}. Remark that, besides the coloring, our definition of triangular honeycombs differs slightly from the original one since we impose vertices to be trivalent inside $\interior(T)$.  The set of honeycombs in their original definition can then be seen as the closure of the ones from the present manuscript (in the case where all colors are the same).
+In the particular case where all edges have the same color, 
+our definition is the original definition of a generic honeycomb 
+from \autocite{Knutson_Tao_honeycomb}. Remark that, besides the coloring, 
+our definition of triangular honeycombs differs slightly from the original 
+one since we impose vertices to be trivalent inside $\interior(T)$. 
+The set of honeycombs in their original definition can then be seen as the closure 
+of the ones from the present manuscript (in the case where all colors are the same).
 \\
 \\
 The \textit{boundary}, or the \textit{boundary values}, 
@@ -252,13 +262,14 @@ is the $3n$ tuple
 \end{equation*}
 where $(\alpha^i_n\leq \dots\leq \alpha^i_1)$ is the ordered 
 tuple of the $i+1$-coordinates of boundary points of 
-$h$ on $\partial_iT$. Hence, $\alpha^i_j=v^{i+j}_{i+1}$ for $0\leq i\leq 2$ and $1\leq j\leq n$.
+$h$ on $\partial_iT$. Hence, 
+$\alpha^i_j=v^{ni+j}_{i+1}$ for $0\leq i\leq 2$ and $1\leq j\leq n$.
 \\
 \\
 For $\alpha,\beta,\gamma\in \mathcal{H}_{reg}$ let us 
 denote by $\honey_{d, n}(\alpha, \beta, \gamma)$ 
 the set of triangular honeycombs $h$ having boundary 
-values $ \partial h = (\alpha, \beta, \gamma)$, 
+values $ \partial h = (\beta, \alpha, \gamma)$, 
 see Figure \ref{fig:boundary_toric_honey}, and such that 
 there are $d$ edges colored $1$ meeting one (and thus each) 
 boundary component of $T$. 
@@ -907,7 +918,8 @@ Now, assuming that $(V,E\setminus S)$
 
 \noindent
 In the following, be set
-\begin{equation}\label{eq:definition_volume_form}
+\begin{equation} 
+    \label{eq:definition_volume_form}
 d\Vol=\frac{1}{\sqrt{\# \mbox{ Spanning trees of } G}} \mathcal Leb_{\mathcal F(\phi)} \ ,
 \end{equation}
 so that $(\phi_S)_{*}d\Vol=\mathcal Leb_{\Omega^1(S)}$.
@@ -1274,10 +1286,11 @@ $$ g^{\alpha,\beta,\gamma}_{\ell n+i} \coloneqq g^{\alpha,\beta,\gamma}(e_{\ell 
 = 
 \left\lbrace 
 \begin{aligned} 
-    &\alpha_i&\text{if }c(e_{\ell n+i})=0 \\ 
-    &1-\alpha_i&\text{if }c(e_{\ell n+i})=1
+    &\beta_i&\text{if }c(e_{\ell n+i})=0 \\ 
+    &1-\beta_i&\text{if }c(e_{\ell n+i})=1
 \end{aligned} \right . $$
-for $\ell = 0$ and $1\leq i\leq n$ and replacing $\alpha_i$ by $\beta_i$ (resp. $\gamma_i$) 
+for $\ell = 0$ and $1\leq i\leq n$ and replacing 
+$\beta_i$ by $\alpha_i$ (resp. $\gamma_i$) 
 when $\ell = 1$ (resp. $\ell = 2$). Remark that for $v\in \partial G$, $s(v)=1$ 
 if and only if $c(e)=1$, where $e$ is the unique edge adjacent to $v$, 
 see for example Figure \ref{fig:boundary_toric_honey}. 
@@ -1983,7 +1996,8 @@ yields the following decomposition.
     Hence, $h\in \honey_{n,d}^{G^{C'}}(\alpha,\beta,\gamma)$. 
     Since the map $C\mapsto G^C$ is injective, $C=C'$ and $H\in \dualhive^{C}(\alpha,\beta,\gamma)$. 
     Therefore, $p_{C}$ is a bijection and 
-    $\honey_{n,d}^{G^C}(\alpha,\beta,\gamma)\cap \honey_{n,d}^{G^{C'}}(\alpha,\beta,\gamma)=\emptyset$ for $C\not=C'$. 
+    $\honey_{n,d}^{G^C}(\alpha,\beta,\gamma)\cap \honey_{n,d}^{G^{C'}}(\alpha,\beta,\gamma) 
+    =\emptyset$ for $C\not=C'$. 
     Therefore,
     $$\honey_{n,d}=\bigsqcup_{C\text{ color map}}\honey_{n,d}^{G^C} \ .$$
     \noindent
@@ -1995,7 +2009,8 @@ yields the following decomposition.
     Then, for any edge $f\in E_{n,d}$ colored $m$, one has $\rho_C^{-1}[h](f) = 
     1-\rho_C^{-1}[h](f_1)-\rho_C^{-1}[h](f_2)$, 
     where $f_1$ and $f_2$ are the two other edges of a triangular face bordered by $f$. 
-    Hence, the matrix of the map $(\mathcal{L}\circ \rho_{C})^{-1}$ has integer coordinates in the canonical bases.
+    Hence, the matrix of the map $(\mathcal{L}\circ \rho_{C})^{-1}$ has integer 
+    coordinates in the canonical bases.
 \end{proof}
 
 \noindent
@@ -2056,111 +2071,126 @@ that $(v,w)<(v',w')$ is and only if $\{v,w\}<\{v',w'\}$ in the former sense.
 
 \subsection{Volume of flat connections}
 \label{subsec:main_th_three_holed_sphere}
+
 We can now combine the results of \autocite{françois2024positiveformulaproductconjugacy} 
-with the ones of the previous section to yields the following formula. 
+with the ones of the previous section to prove Theorem \ref{th:Z_g_p_0} in the 
+case of the three holed-sphere, that is, for $(g, p) = (0, 3)$.
 Let us denote by $\Sigma_0^3$ the Riemann sphere with three generic marked points removed. 
-In the specific case of 
-the punctured sphere, this moduli space can be 
-alternatively described as 
+The moduli space of flat $\SU(n)$ connections can be described as 
 $$M_{0, 3}(\alpha,\beta,\gamma) = 
 \{(U_1,U_2,U_3)\in \mathcal{O}_{\alpha} \times 
-\mathcal{O}_{\beta}\times \mathcal{O}_{\gamma} \mid U_1U_2U_3=Id_{\SU(n)}\}/\SU(n),$$
+\mathcal{O}_{\beta}\times \mathcal{O}_{\gamma} \mid U_1U_2U_3=Id_{\SU(n)}\}/\SU(n) \ ,$$
 where $\SU(n)$ acts diagonally by conjugation on each factor. 
-Its volume has been computed in \autocite{françois2024positiveformulaproductconjugacy} using two equivalent 
+Its volume has been computed in \autocite{françois2024positiveformulaproductconjugacy} 
+using two equivalent 
 models named \textit{toric hives} and \textit{dual hives}. 
-Using the results of this section, we present a reformulation of this results in terms of triangular honeycombs. In the following, 
-$$\Vol(\left[\honey_{n,d}^G(\alpha,\beta,\widetilde{\gamma})\right]):=\Vol(\mathcal{L}\left[\honey_{n,d}^G(\alpha,\beta,\widetilde{\gamma})\right]),$$
-where $\mathcal{L}$ is the map from $\honey_{n,d}^G(\alpha,\beta,\widetilde{\gamma})$ to $\mathcal{F}(\phi_{\alpha,\beta,\gamma})$ defined in Definition \ref{def:flow_honeycomb} and $d\Vol$ is the volume form defined in \eqref{eq:def_volume}.
-\begin{theorem}[Volume of flat $\U(n)$-connections on the sphere]
+Using the results of this section, we present a reformulation of this results 
+in terms of triangular honeycombs. For $G \in \mathcal{G}_d$, let us set  
+$$\Vol\left[\honey_{n,d}^G(\alpha,\beta,\gamma)\right] \coloneqq 
+\Vol \left[ \mathcal{L}( \honey_{n,d}^G(\alpha,\beta,\gamma)) \right] \ ,$$
+where $\mathcal{L} : \honey_{n,d}^G(\alpha,\beta,\gamma) \to 
+\mathcal{F}_G(\phi_{\alpha,\beta,\gamma})$ was defined in Definition 
+\ref{def:flow_honeycomb} and $\Vol$ is the volume form defined 
+in \eqref{eq:definition_volume_form}.
+
+\begin{theorem}[Volume of flat $\U(n)$-connections on the three-holed sphere]
     \label{th:volume_flat_connection_0_3}
     Let $n\geq 3$ and consider the canonical volume form on $\U(n)$. 
-    For $\alpha,\beta,\gamma\in \mathcal{H}_{reg}$, 
-    then 
+    Then, for $\alpha,\beta,\gamma\in \mathcal{H}_{reg}$, 
     \begin{equation*}
         Z_{0, 3}(\alpha,\beta,\gamma) \coloneqq 
         \Vol \left[ M_{0, 3}(\alpha,\beta,\gamma) \right] \not=0 
     \end{equation*}
-    {\color{blue} (Should we say which volume of the space $\mathcal{M}$ ? Symplectic structure + reference maybe)}
     only if $\sum_{i=1}^n\alpha_i+\sum_{i=1}^n\beta_i+\sum_{i=1}^n\gamma_i=n+d$ 
-    for some $d\in\mathbb{N}$, in which case
+    for some $d\in\mathbb{N}$, in which case, 
+    if $\widetilde{\gamma}=(1-\gamma_n,\ldots,1-\gamma_1)$,
     \begin{equation*}
         Z_{0, 3}(\alpha,\beta,\gamma) = 
         \frac{2^{(n+1) [2]}(2\pi)^{(n-1)(n-2)}} 
-        {n!} 
+        {n! \Delta(\alpha) \Delta(\beta) \Delta(\gamma)} 
         \sum_{G\in\mathcal{G}_d} 
-        \Vol \left[\honey_{n,d}^G(\alpha,\beta,\widetilde{\gamma})\right] ,
+        \Vol \left[\honey_{n,d}^G(\alpha,\beta,\widetilde{\gamma})\right] \ ,
     \end{equation*}
-    where $\widetilde{\gamma}=(1-\gamma_n,\ldots,1-\gamma_1)$ and $\Vol$ denotes the volume 
-    from Proposition \ref{prop:divergence_volume_form} for $\honey_{n,d}^G$.
+    where for $\alpha \in \mathcal{H}_{reg}$, $\Delta(\alpha) 
+    = 2^{n(n-1)/2} \prod_{i < j} \sin (\pi(\alpha_i - \alpha_j))$.
 \end{theorem}
 
 \noindent
-XXXAttention Erreur Corollaire 2.6 {\color{blue} For the Vandermondes ?}XXX
-Before proving this theorem, let us recall three results from \autocite{françois2024positiveformulaproductconjugacy}. 
+Before proving this theorem, let us recall three results 
+from \autocite{françois2024positiveformulaproductconjugacy}. 
 \begin{enumerate}
-\item For any pair $(C,C')$ of color maps, there exists a linear isomorphism $Rot[C\rightarrow C']$ 
-from $\dualhive^C(\alpha,\beta,\gamma)$ to $\dualhive^{C'}(\alpha,\beta,\gamma)$ with integer coefficients 
-on the canonical bases and such that $Rot[C\rightarrow C]=Id$ and $Rot[C\rightarrow C']^{-1}=Rot[C'\rightarrow C]$,
-{\color{blue} The map was well-defined for relaxed dual hives without ineq condition }
-\item there exists a color map $C_0$ and a subset $S\subset E_{n,d}$ 
-such that $S$ is an integral generating set of $\dualhive^{C_0}(\alpha,\beta,\gamma)$, 
-{\color{blue} it might be misleading as we did not show that $\dualhive^{C_0}(\alpha,\beta,\gamma)$ 
-is a diff structure. Maybe we could only say $p_S: \dualhive^{C_0}(\alpha,\beta,\gamma) \to \R^S$ 
-integral isomorphism ? }
-\item 
+\item For any pair $(C,C')$ of color maps, there exists a linear 
+isomorphism $Rot[C\rightarrow C']$ 
+from $\dualhive^C(\alpha,\beta,\gamma)$ to 
+$\dualhive^{C'}(\alpha,\beta,\gamma)$ with integer coefficients 
+on the canonical bases and such that 
+$Rot[C\rightarrow C]=Id$ and $Rot[C\rightarrow C']^{-1}=Rot[C'\rightarrow C]$.
+\item There exists a color map $C_0$ and a subset $S\subset E_{n,d}$ 
+such that $p_S: \dualhive^{C_0}(\alpha,\beta,\gamma) \to \R^S$ which to a label map 
+$L: E_{n, d} \to \R$ associates $(L(e))_{e \in S}$ is an integral isomorphism. 
+\item We have the formula 
 $$Z_{0, 3}(\alpha,\beta,\gamma) = 
     \frac{2^{(n+1) [2]}(2\pi)^{(n-1)(n-2)}} 
-    {n!} 
+    {n! \Delta(\alpha) \Delta(\beta) \Delta(\gamma)} 
     \sum_{C} 
     \Vol_S\left[Rot[C\rightarrow C_0] \left(\dualhive^C(\alpha,\beta,\gamma)\right) \right],$$
-    where the sum is over color maps $C: E_{n, d} \to \{0, 1, 3, m\}$.
+    where the sum is over color maps $C: E_{n, d} \to \{0, 1, 3, m\}$ 
+    and where $\Vol_S$ is the Lebesgue measure of dimension $|S|$.
 \end{enumerate}
 
 \begin{proof}[Proof of Theorem \ref{th:volume_flat_connection_0_3}] 
-Let $C$ be a color map. By Proposition \ref{prop:BijectionTrees}, there exists a set $R$ such the restriction map $\varphi_{R}:\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))\rightarrow \Omega^1(S)$
+Let $C$ be a color map. By Proposition \ref{prop:BijectionTrees}, 
+there exists a set $R \subset E$ such the restriction map $\varphi_{R} : 
+\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))\rightarrow \Omega^1(R)$
  is a bijection with integral coefficient in the canonical bases. 
-Denote by $i_{R}:\Omega^1(R)\rightarrow \Omega^1(G)$ the corresponding inverse map, which has thus affine with integer 
-coefficients in the canonical basis and is a bijection from $\Omega^1(R)$ to $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))$. 
-Since, by Proposition \ref{prop:honey_hive} and Corollary \ref{cor:paramietrization_label}, $\Phi^C:\Omega^1(G^C)\rightarrow \mathbb{E}^{E_{n,d}}$ is an affine integral map 
+Denote by $i_{R}:\Omega^1(R)\rightarrow \Omega^1(G)$ the corresponding inverse map, 
+which has thus affine with integer coefficients in the canonical basis 
+and is a bijection from $\Omega^1(R)$ to $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma})$. 
+Since, by Proposition \ref{prop:honey_hive} and Corollary \ref{cor:paramietrization_label}, 
+$\Psi^C:\Omega^1(G^C)\rightarrow \mathbb{E}^{E_{n,d}}$ is an affine integral map 
 and a bijection from $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))\cap K^C$ to $\dualhive^C
 (\alpha,\beta,\gamma)$ and by (1) above, $Rot[C\rightarrow C_0]$ is an integral isomorphism from $\dualhive^C(\alpha,\beta,\gamma)$ 
 to $\dualhive^{C_0}(\alpha,\beta,\gamma)$. We deduce that 
-$$p_{S}\circ Rot[C\rightarrow C_0]\circ \Phi^C\circ i_R: \Omega^1(R) \rightarrow \R^S$$
+$$p_{S}\circ Rot[C\rightarrow C_0]\circ \Psi^C\circ i_R: \Omega^1(R) \rightarrow \R^S$$
 is an integral isomorphism. 
-Likewise, since by (2) above $i_S:\mathbb{R}^S\rightarrow \dualhive^{C_0}(\alpha,\beta,\gamma)$ 
-is an integral affine isomorphism and $\mathcal{L} \circ p_{C_0}$ is an integral affine isomorphism from 
-$\dualhive^{C_0}(\alpha,\beta,\gamma)$ to $\mathcal{F}_{G^{C_0}}(\phi_{\alpha,\beta,\gamma})$,
-$$ \left(p_{S}\circ Rot[C\rightarrow C_0]\circ \Phi^C\circ i_R \right)^{-1} 
-= \varphi_{R}\circ L\circ p_{C_0}\circ Rot[C_0\rightarrow C] \circ i_S:\mathbb{R}^S\rightarrow \Omega^1(R)$$
-is an integral isomorphism. We deduce that 
-% $\left\vert\det Mat_{R,S}(p_{S}\circ Rot[C\rightarrow C_0]\circ \Phi^C\circ i_R)\right\vert=1$. 
-{\color{blue} its determinant as an isomorphism from $\Omega^1(R)$ to $\R^S$ has modulus one.}
+Likewise, since by (2) above $p_S^{-1}:\mathbb{R}^S\rightarrow 
+\dualhive^{C_0}(\alpha,\beta,\gamma)$ 
+is an integral affine isomorphism and $\mathcal{L} \circ \rho_{C}$ is an 
+integral affine isomorphism from 
+$\dualhive^{C}(\alpha,\beta,\gamma)$ to $\mathcal{F}_{G^{C}}(\phi_{\alpha,\beta,\gamma})$,
+$$ F \coloneqq \left(p_{S}\circ Rot[C\rightarrow C_0]\circ \Psi^C\circ i_R \right)^{-1} 
+= \varphi_{R}\circ (\mathcal{L} \circ \rho_{C}) 
+\circ Rot[C_0\rightarrow C] \circ p_S^{-1}: \mathbb{R}^S\rightarrow \Omega^1(R)$$
+is an integral isomorphism. We deduce that  
+its determinant as an isomorphism from $\Omega^1(R)$ to $\R^S$ has modulus one.
 Hence,
 \begin{align*}
 \Vol_S\left[Rot[C\rightarrow C_0] \left(\dualhive^C(\alpha,\beta,\gamma)\right) \right] = 
-& Leb\left[u\in\mathbb{R}^S,Rot[C_0\rightarrow C]\circ i_{S}(u)\in \left(\dualhive^C(\alpha,\beta,\gamma)\right) \right]
+& \Leb \left[u\in\mathbb{R}^S \mid Rot[C_0\rightarrow C]\circ p_{S}^{-1}(u) 
+\in \dualhive^C(\alpha,\beta,\gamma) \right]
 \\
-=& Leb\left[u\in\mathbb{R}^S,\varphi_{R}\circ \mathcal{L}\circ p_{C}\circ Rot[C_0\rightarrow C]\circ i_{S}(u)\in \varphi_R \left(\honey_{n,d}^C(\alpha,\beta,\gamma)\right) \right]\\
-=& Leb\left[z\in\Omega^1(R),z\in \varphi_R\left(\honey_{n,d}^C(\alpha,\beta,\gamma)\right) \right]\\
-=& \Vol \left[\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma)\right],
+=& \Leb\left[u\in\mathbb{R}^S \mid F(u) 
+\in \varphi_R \left(\honey_{n,d}^C(\alpha,\beta,\gamma)\right) \right]\\
+=& \Leb\left[z\in\Omega^1(R) \mid z\in \varphi_R\left(\honey_{n,d}^C(\alpha,\beta,\gamma)\right) \right]\\
+=& \Vol \left[\honey_{n,d}^{G^C}(\alpha,\beta,\gamma)\right],
 \end{align*}
 where we used Proposition \ref{prop:divergence_volume} on the last equality. Hence, by (3),
 \begin{align*}
-Z_{0, 3}(\alpha,\beta,\gamma) = &
+Z_{0, 3}(\alpha,\beta,\gamma) &=
     \frac{2^{(n+1) [2]}(2\pi)^{(n-1)(n-2)}} 
-    {n!} 
+    {n! \Delta(\alpha) \Delta(\beta) \Delta(\gamma)} 
     \sum_{C:E_{n,d}\rightarrow \{0,1,3,m\} \text{ color map}} 
      \Vol_S\left[Rot[C\rightarrow C_0] \left(\dualhive^C(\alpha,\beta,\gamma)\right) \right]\\
-    =&\frac{2^{(n+1) [2]}(2\pi)^{(n-1)(n-2)}} 
-    {n!} 
+    &=\frac{2^{(n+1) [2]}(2\pi)^{(n-1)(n-2)}} 
+    {n! \Delta(\alpha) \Delta(\beta) \Delta(\gamma)} 
     \sum_{C:E_{n,d}\rightarrow \{0,1,3,m\} \text{ color map}} 
     \Vol \left[\honey_{n,d}^{\Gamma^C}(\alpha,\beta,\gamma)\right]\\
-    =&\frac{2^{(n+1) [2]}(2\pi)^{(n-1)(n-2)}} 
-    {n!} 
+    &=\frac{2^{(n+1) [2]}(2\pi)^{(n-1)(n-2)}} 
+    {n! \Delta(\alpha) \Delta(\beta) \Delta(\gamma)} 
     \sum_{G\in\mathcal{G}_d} 
     \Vol\left[\honey_{n,d}^{G}(\alpha,\beta,\gamma)\right],
 \end{align*}
-where we used on the last equality that any graph of $\mathcal{G}_d$ is a graph $G^C$ for some color map $C$ by Proposition \ref{prop:honey_hive}.
+where we used Proposition \ref{prop:honey_hive} for the last equality.
 \end{proof}
 
 
