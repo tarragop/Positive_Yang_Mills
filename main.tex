@@ -254,12 +254,13 @@ of the ones from the present manuscript (in the case where all colors are the sa
 The \textit{boundary}, or the \textit{boundary values}, 
 of a honeycomb $h$ of size $n \geqslant 3$ 
 is the $3n$ tuple 
-\begin{equation*}
+\begin{equation}
+    \label{eq:boundary_honeycomb_order}
     \partial h \coloneqq 
     \left((\alpha^0_n \leq \dots\leq  \alpha^0_1), 
     (\alpha^1_n\leq \dots\leq \alpha^1_1), 
     ( \alpha^2_n\leq \dots\leq \alpha^2_1)\right),
-\end{equation*}
+\end{equation}
 where $(\alpha^i_n\leq \dots\leq \alpha^i_1)$ is the ordered 
 tuple of the $i+1$-coordinates of boundary points of 
 $h$ on $\partial_iT$. Hence, 
@@ -998,7 +999,9 @@ K_2\subset \Omega^{1}(G_2)$,
 &\int_{\mathbb{R}^{\vert W\vert-1}}\Vol_{G_1}\left[K_1\cap \mathcal{F}_{G_1}(\phi_{\vert V_1},(x_w)_{w\in W\setminus W_0},y(x)))\right]\\
 &\hspace{1.1cm}\cdot \Vol_{G_2}\left[K_2\cap \mathcal{F}_{G_2}(\phi_{\vert V_2},(\phi(\tilde{w})-x_w)_{w\in W\setminus \{w_0\}}),\phi(\tilde{w})-y(w))\right]dx,
 \end{align*}
-where $y(w)$ is the unique solution to $\sum_{v\in V_1\setminus W}+\sum_{w\in W\setminus \{w_0\}}x_w+y(w)=0$.
+where $y(w)$ is the unique solution to 
+$\sum_{v\in V_1\setminus W} \phi(v) + 
+\sum_{w\in W\setminus \{w_0\}}x_w+y(w)=0$.
 \end{enumerate}
 
 \end{proposition}
@@ -1287,7 +1290,7 @@ $$ g^{\alpha,\beta,\gamma}_{\ell n+i} \coloneqq g^{\alpha,\beta,\gamma}(e_{\ell 
 \left\lbrace 
 \begin{aligned} 
     &\beta_i&\text{if }c(e_{\ell n+i})=0 \\ 
-    &1-\beta_i&\text{if }c(e_{\ell n+i})=1
+    &\beta_i-1&\text{if }c(e_{\ell n+i})=1
 \end{aligned} \right . $$
 for $\ell = 0$ and $1\leq i\leq n$ and replacing 
 $\beta_i$ by $\alpha_i$ (resp. $\gamma_i$) 
@@ -2199,65 +2202,186 @@ where we used Proposition \ref{prop:honey_hive} for the last equality.
 \section{Sieving of honeycombs}
 \label{subsec:sieving_honeycombs}
 
-Let $\mathcal{T}$ be an oriented surface with boundary obtained by gluing $m$ equilateral triangles $T^1,\ldots,T^m$ along their boundaries, such that $p$ edges $L_1,\ldots,L_{p}$ of equilateral triangles are not glued.  Each edge $L_j$ has a natural orientation $\ell_j$ coming from the equilateral it belongs to. Suppose that $h$ is a honeycomb on $\mathcal{T}$ such that each $h\cap \mathcal{T}^i$ is triangular. Then, the structure graph $\hat{G}[h]$ of $h$ as defined after Definition \ref{def:toric_honeycomb} has $pn$ univalent vertices, $n$ of them being on each boundary component $L_j,\, 1\leq j\leq p$, and $\frac{(3m-p)n}{2}$ bivalent vertices, $n$ of them being on a the boundary of a common triangle while being in the interior of the surface. 
+Let $\mathcal{T}$ be an oriented surface with boundary obtained 
+by gluing $m$ equilateral triangles $T^1,\ldots,T^m$ along their boundaries, 
+such that $p$ edges $L_1,\ldots,L_{p}$ of the equilateral triangles are not glued. 
+Each edge $L_j$ has a natural orientation $\ell_j$ coming from the equilateral it belongs to. 
+Suppose that $h$ is a honeycomb on the surface $\mathcal{T}$ such that each 
+$h\cap \mathcal{T}^i$ is triangular. 
+Then, the structure graph $\hat{G}[h]$ of $h$, as defined after 
+Definition \ref{def:toric_honeycomb}, has $pn$ univalent vertices, 
+$n$ of them being on each boundary component 
+$L_j,\, 1\leq j\leq p$, and $\frac{(3m-p)n}{2}$ bivalent vertices, 
+$n$ of them being on a the boundary of a common triangle while being 
+in the interior of the surface. 
+\\
+\\
+Let us introduce some notations. 
+First, for $1\leq j\leq p$, let $1 \leqslant s_j \leqslant m $ and 
+$ 0 \leqslant \ell_j \leqslant 2$ 
+be such that $L_j=\partial_{\ell_j}T^{s_j}$. 
+For $1 \leqslant j \leqslant p$, let us denote by $(v^j_m)_{1\leq m\leq n}$ 
+the univalent boundary vertices on $L_{j}$ ranked decreasingly with respect to 
+their $(\ell_j+1)$-coordinate. 
+Let $\mathcal{G}_\mathcal{T}$ be the set of structure graphs appearing in 
+$\honey_{\mathcal{T}}$ rooted at $v^1_1$, and $\mathcal{G}$ the case where $m=1$ 
+of a single triangle as in Section \ref{sec:three_holed_sphere}.
+Then, set $N(\mathcal{T})=\frac{3m-p}{2}$ and denote 
+by $B_{1},\ldots,B_{N(\mathcal{T})}$ the segments of $\mathcal{T}$ 
+corresponding to boundary of triangles identified together. 
+Each $B_j$ is then adjacent to two triangles $T^{r^{(1)}_j}$ and $T^{r^{(2)}_j}$ 
+and there exists $\ell^{(1)}_j,\ell^{(2)}_j$ such that 
+$B_j=\partial_{\ell^{(1)}_j}T^{r^{(1)}_j}=\partial_{\ell^{(2)}_j}T^{r^{(2)}_j}$.
 
- Denote by $v^j_m,\,1\leq m\leq n$ the univalent vertices corresponding to the point on $L_{j}$ ranked decreasingly following their $(\ell_j+1)$-coordinate. Let $\mathcal{G}^{(p, g)}$ be the set of structure graphs appearing in $\honey_{\mathcal{T}}$ rooted at $v^1_1$.
-
-Let us introduce some notations. First, for $1\leq j\leq p$, let $s_j,\ell_j$be such that $L_j=\partial_{\ell_j}T^{s_j}$. Then, set $N(\mathcal{T})=\frac{3m-p}{2}$ and denote by $B_{1},\ldots,B_{N(\mathcal{T})}$ the segment of $\mathcal{T}$ corresponding to boundary of triangles pasted together. Each $B_j$ is then adjacent to two triangle $T^{r^{(1)}_j}$ and $T^{r^{(2)}_j}$ and there exists $\ell^{(1)}_j,\ell^{(2)}_j$ such that $B_j=\partial_{\ell^{(1)}_j}T^{r^{(1)}_j}=\partial_{\ell^{(2)}_j}T^{r^{(2)}_j}$.
-
-
-XXXConflict of notation i with injection edge/geodesicXXX
-\begin{lemma}\label{lem:product_gluing}
-There is an injective map $t:\mathcal{G}_{\mathcal{T}}\rightarrow \mathcal{G}^m$ such that the map 
-$$i:\left\lbrace\begin{aligned}&\honey_{\mathcal{T}'}&\rightarrow&\{(h^1,\ldots,h^m)\in\honey_{T^{1}}\times\ldots\times \honey_{T^m},h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j},1\leq j\leq N(\mathcal{T})\}\\
-&h&\mapsto&(h\cap T^{i})_{1\leq i\leq m}\end{aligned}\right.$$
-is bijective and restricts for each $G\in\mathcal{G}_{\mathcal{T}}$ and $(G_1,\ldots,G_m)=t(G)$ to a bijection 
-$$i:\honey_{\mathcal{T}}^G\rightarrow \{(h^1,\ldots,h^m)\in\honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m},h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j},1\leq j\leq N(\mathcal{T})\}.$$
+\begin{lemma}[Honeycomb decomposition]
+    \label{lem:product_gluing}
+There is an injective map $t:\mathcal{G}_{\mathcal{T}} \rightarrow \mathcal{G}^m$ such that the map 
+$$i: \left\lbrace \begin{aligned}  
+    & \honey_{\mathcal{T}}&\rightarrow& \left\{(h^1,\ldots,h^m) \in 
+    \honey_{T^{1}}\times\ldots\times \honey_{T^m} \mid h^{r_j^{(1)}}_{\vert B_j } = 
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leq j\leq N(\mathcal{T}) \right\}\\
+    & h &\mapsto&(h\cap T^{i})_{1\leq i\leq m}\end{aligned} \right.$$
+is bijective and restricts for each $G\in\mathcal{G}_{\mathcal{T}}$ 
+and $(G_1,\ldots,G_m)=t(G)$ to a bijection 
+$$i:\honey_{\mathcal{T}}^G\rightarrow \left\{(h^1,\ldots,h^m) \in 
+\honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} \mid h^{r_j^{(1)}}_{\vert B_j } = 
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leq j\leq N(\mathcal{T}) \right\}.$$
 \end{lemma}
 \begin{proof}
-The proof is done by induction on $m$. The result holds for $m=1$. Suppose the result true for $m\geq 1$, and let $\mathcal{T}$ be a surface obtained by pasting $m$ triangles $T^1,\ldots,T^m$ along some boundaries and that $L_1,\ldots,L_p$ are the boundary which have not been pasted together, with $m\geq 1$. Assume without loss of generality that $L_p$ belongs to $T^m$ and let $T^{m+1}$ is another oriented equilateral triangle and let $\mathcal{T}'$ be the surface obtained by gluing $T^{m+1}$ to $T^m$ along $\partial_0T^{m+1}$ and $L^1$. 
-
-Let $h$ be a honeycomb in $\mathcal{T}'$ with structure graph $G\in\mathcal{G}_{\mathcal{T}'}$. The restriction $(h\cap T^{m+1},h\cap \mathcal{T})$ yields a pair of honeycomb on  $T^{m+1}$ and $\mathcal{T}$ such that $(h\cap \mathcal{T})_{\vert L_p}=(h\cap T^{m+1})_{\vert \partial_0T^{m+1}}$. 
-
-Moreover, the structure graph $G_1$ of $h\cap T^{m+1}$ and $G_2$ of $h\cap \mathcal{T}$ only depend on $G$ : indeed, by construction of the structure graph $G$, $G_1$ corresponds to all the edge that can be reached from the boundaries $\partial_1T^{m+1}$ and $\partial_2T^{m+1}$ by avoiding bivalent vertices.
-
-Hence, there is a map $\tilde{t}:\mathcal{G}_{\mathcal{T}'}\mapsto \mathcal{G}_{\mathcal{T}}\times \mathcal{G}$ and a map
-$$\tilde{i}:\honey_{\mathcal{T}'}\rightarrow \honey_{\mathcal{T}}\times\honey_{n}$$
-such that, for $G\in\mathcal{G}_{\mathcal{T}'}$ with $\tilde{t}(G)=(G_1,G_2)$, 
-$$\tilde{i}(\honey_{\mathcal{T}'}^G)\subset\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}.$$
-If $h,h'\in \honey_{\mathcal{T}'}$ are such that $\tilde{i}(h)=\tilde{i}(h')=(h^1,h^2)$, then
-$$h=h^1\cup h^2=h'$$
-Hence, the map $i$ is injective. 
-
-Reciprocally, let $(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2}$ be such that $h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}$. Suppose without loss of generality that $T^{m+1}=\{-r+se^{2\pi i/3},\,0\leq r,s\leq 1, r+s\leq 1\}$ and that $\partial_0T^{m+1}=\{se^{2\pi i/3}\}=L_p$, so that $T^{m}=\{re^{\pi i/3}+se^{2\pi i/3},\,0\leq r,s\leq 1, r+s\leq 1\}$. Let $x\in h^1_{\partial_0T^{m+1}}=h^{2}_{\vert L_p}$. Then, by Condition (3) of Definition \ref{def:triangular_honey} (see Figure \ref{fig:common_boundary}): 
+The proof is done by induction on $m$. The result holds for $m=1$. 
+Suppose the result true for $m\geq 1$, and let $\mathcal{T}$ be a surface 
+obtained by pasting $m$ triangles $T^1,\ldots,T^{m}$ 
+along some boundaries and that $L_1,\ldots,L_p$ 
+are the boundary which have not been pasted together. 
+Assume without loss of generality that $L_p$ belongs to $T^m$ and 
+let $T^{m+1}$ be another oriented equilateral triangle. Let $\mathcal{T}'$ 
+be the surface obtained by gluing $T^{m+1}$ to $T^m$ along $\partial_0 T^{m+1}$ and $L_p$. 
+\\
+\\
+Let $h$ be a honeycomb on $\mathcal{T}'$ with structure graph 
+$G\in\mathcal{G}_{\mathcal{T}'}$. The restriction $ i(h) = (h\cap T^{m+1},h\cap \mathcal{T})$ 
+yields a pair of honeycomb on  $T^{m+1}$ and $\mathcal{T}$ such that 
+$(h\cap \mathcal{T})_{\vert L_p}=(h\cap T^{m+1})_{\vert \partial_0T^{m+1}}$. 
+Moreover, the structure graphs $G_1$ of $h\cap T^{m+1}$ and 
+$G_2$ of $h\cap \mathcal{T}$ only depend on $G$. 
+Indeed, by construction of the structure graph $G$, $G_1$ 
+corresponds to all the edge that can be reached 
+from the boundaries 
+$\partial_1T^{m+1}$ and $\partial_2T^{m+1}$ 
+by avoiding bivalent vertices.
+Hence, the map
+$i : \honey_{\mathcal{T}'} \rightarrow \honey_{\mathcal{T}^{m+1}} 
+\times \honey_\mathcal{T}$
+and the map 
+\begin{align*}
+    \tilde{t}: \mathcal{G}_{\mathcal{T}'} &\rightarrow
+\mathcal{G} \times \mathcal{G}_\mathcal{T} \\
+    G & \mapsto (G_1, G_2)
+\end{align*}
+are such that for each $G\in\mathcal{G}_{\mathcal{T}'}$,
+$$ i \left(\honey_{\mathcal{T}'}^G \right) \subset 
+\left\{ (h^1,h^2)\in\honey_{T^{m+1}}^{G_1} \times 
+\honey_{\mathcal{T}}^{G_2} \mid 
+h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p} \right\}.$$
+If $h,h'\in \honey_{\mathcal{T}'}$ are such that 
+$i(h)=i(h')=(h^1,h^2)$, then $h=h^1\cup h^2=h'$ so that 
+$i$ is injective. 
+\\
+\\
+Reciprocally, let $(h^1,h^2)\in\honey_{T^{m+1}}^{G_1} 
+\times \honey_{\mathcal{T}}^{G_2}$ be such that 
+$h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}$. 
+Suppose without loss of generality that 
+$T^{m+1}=\{-r+se^{2\pi i/3},\,0\leq r,s\leq 1, r+s\leq 1\}$ and that 
+$\partial_0T^{m+1}=\{se^{2\pi i/3}\}=L_p$, so that 
+$T^{m}=\{re^{\pi i/3}+se^{2\pi i/3},\,0\leq r,s\leq 1, r+s\leq 1\}$. 
+Let $x\in h^1_{\partial_0T^{m+1}}=h^{2}_{\vert L_p}$. 
+Then, by Condition (3) of Definition \ref{def:triangular_honey} 
+(see Figure \ref{fig:common_boundary}): 
 \begin{itemize}
-\item a geodesic $e$ of $h^1$ arriving at $\partial_0T^{m+1}$ at $x$ is either colored $c(e)=0$ and included in $x+\mathbb{R}_{>0}e^{-2\pi i/3}$ or colored $c(e)=1$ and included in $x+\mathbb{R}_{<0}$. 
-\item a geodesic $e'$ of $h^2$ arriving at $\partial_0T^{m+1})L_p$ at $x$ is either colored $c(e)=0$ and included in $x+\mathbb{R}_{<0}e^{-2\pi i/3}$ or colored $c(e)=1$ and included in $x+\mathbb{R}_{>0}$.
+\item a geodesic $e$ of $h^1$ arriving at 
+$\partial_0T^{m+1}$ at $x$ is either colored 
+$c(e)=0$ and included in $x+\mathbb{R}_{>0}e^{-2\pi i/3}$ 
+or colored $c(e)=1$ and included in $x+\mathbb{R}_{<0}$. 
+\item A geodesic $e'$ of $h^2$ arriving at 
+$L_p$ at $x$ is either colored $c(e)=0$ 
+and included in $x+\mathbb{R}_{<0}e^{-2\pi i/3}$ 
+or colored $c(e)=1$ and included in $x+\mathbb{R}_{>0}$.
 \end{itemize}
-In any case, the angle from $e$ to $e'$ is either $0$ if $c(e)=c(e')$, in which case $e\cup e'$ is again a geodesic colored $c(e)$, or $2\pi/3$ (resp. $4\pi/3$) if $c(e)=0$ and $c(e')=1$ (resp. $c(e)=1$ and $c(e')=0$). In the latter case, Condition (2) of Definition \ref{def:toric_honeycomb} is satisfied. Hence, the set 
+In any case, the angle from $e$ to $e'$ is either 
+$0$ if $c(e)=c(e')$, in which case $e\cup e'$ is again a 
+geodesic colored $c(e)$, or $2\pi/3$ (resp. $4\pi/3$) 
+if $c(e)=0$ and $c(e')=1$ (resp. $c(e)=1$ and $c(e')=0$). 
+In the latter case, Condition (2) from Definition 
+\ref{def:toric_honeycomb} is satisfied. 
+Hence, the set of geodesics
 $$h=h_1\cup h_2$$ 
-defines a honeycomb on $\mathcal{T}'$. Moreover, the structure graph $G$ of $h$ is obtained as follows : $V^G=(V^{G_1}\cup V^{G_2})/\langle v_i=w_i, 1\leq i\leq n\rangle$, where $w_1,\ldots,w_n$ are the $n$ first boundary vertices of $G_2$ (recall that $G_2$ is a colored graph with an order on the boundary vertices), and $E^G=E^{G_1}\cup E^{G_2}$.
-In particular, the map $\tilde{t}:\mathcal{G}_{\mathcal{T}'}\rightarrow \mathcal{G}_{\mathcal{T}}\times \mathcal{G}$ is injective, and each restricted map 
-$$\tilde{i}:\honey_{\mathcal{T}'}^G\rightarrow\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times \honey_{\mathcal{T}}^{G_2},h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}\}.$$
+defines a honeycomb on $\mathcal{T}'$. 
+Moreover, the structure graph $G = (V^G, E^G)$ of $h$ is obtained 
+by setting 
+\begin{equation*}
+    V^G=(V^{G_1}\cup V^{G_2})/\langle v_i=w_i, 1\leq i\leq n\rangle \ ,
+\end{equation*}
+where $v_1,\ldots, v_n$ and $w_1, \dots, w_n$ are the boundary vertices 
+of $G_1$ and $G_2$ corresponding to points on $\partial_0T^{m+1}$ and $L_p$ 
+respectively. The edge set of $G$ is $E^G=E^{G_1}\cup E^{G_2}$.
+In particular, the map $\tilde{t}:\mathcal{G}_{\mathcal{T}'} 
+\rightarrow \mathcal{G} \times \mathcal{G}_{\mathcal{T}} $ 
+is injective, and each restricted map 
+$$i:\honey_{\mathcal{T}'}^G\rightarrow 
+\left\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times 
+\honey_{\mathcal{T}}^{G_2} \mid h^1_{\vert \partial_0T^{m+1} } = 
+h^2_{\vert L_p} \right\}.$$
 is bijective. 
-
-Let $t_m,i_m$ be the maps given by induction on $\mathcal{G}_{\mathcal{T}}$ and $\honey_{\mathcal{T}}$. Then, the maps $(t_m\times \Id_{\mathcal{G}})\circ \tilde{t}$ and $(i_m\times \Id_{\honey_n})\circ \tilde{i}$ are the bijection of the statement of the lemma.
+Let $t_m,i_m$ be the maps given by induction on 
+$\mathcal{G}_{\mathcal{T}}$ and $\honey_{\mathcal{T}}$. 
+Then, the maps $(t_m\times \Id_{\mathcal{G}})\circ t$ 
+and $(i_m\times \Id_{\honey_n})\circ i$ 
+are the bijections of the statement of the lemma.
 \end{proof}
-Remark from the construction of the reciprocal of $t$ in the latter proof that the injective map $t_{\mathcal{T}}:\mathcal{G}_{\mathcal{T}}\rightarrow \mathcal{G}^m$ such that $t(G)=(G_1,\ldots,G_m)$ satisfies 
-$$G=\left(\bigcup_{i=1}^mG_i\right)_{S*S'},$$ 
-in the sense of Definition \ref{def:sieving}, where $S,S'\subset \bigcup_{i=1}^m\partial G_i$ are the vertices which are pasted together. 
 
-In Section \ref{subsec:parametrization_honeycombs}, we defined for each $G_i=(V_i,E_i)\in \mathcal{G}_{d_i}$ a map $s:V_i\rightarrow \{-1,1\}$ such that for each edge $\{v,v'\}\in E_i$, $s(v)s(v')=-1$. Denote by $\interior_3(G)$ the set of vertices of degree $3$ of $G$. By the previous definition of $G$ in terms of the graphs $G_i$ and the fact that all vertices of $\interior(G_i)$ have degree $3$, 
-$$\interior_3(G)=\bigsqcup_{1\leq i\leq m}\interior(G_i).$$
-We can thus paste together the maps $s$ defined on each $G_i$ to get a map 
-$$s:\interior_3(G)\setminus \{-1,1\}.$$
+\noindent
+Remark from the construction of the reciprocal of $t$ 
+in the latter proof that the injective map 
+$t_{\mathcal{T}}:\mathcal{G}_{\mathcal{T}}\rightarrow 
+\mathcal{G}^m$ such that $t(G)=(G_1,\ldots,G_m)$ satisfies 
+$$G=\left(\bigcup_{i=1}^mG_i\right)_{S*S'}$$ 
+in the sense of Definition \ref{def:sieving}, 
+where $S,S'\subset \bigcup_{i=1}^m\partial G_i$ are the vertices 
+which are identified together. 
+\\
+\\
+In Section \ref{subsec:parametrization_honeycombs}, 
+we defined for each $G_i=(V_i,E_i)\in \mathcal{G}_{d_i}$ 
+a map $s_i:V_i\rightarrow \{-1,1\}$ such that for each edge 
+$\{v,v'\}\in E_i$, $s_i(v)s_i(v')=-1$. 
+Let us denote by $\interior_3(G)$ the set of vertices of degree 
+$3$ of $G$. By the construction of $G$ in terms of 
+the graphs $G_i$ and the fact that all vertices of 
+$\interior(G_i)$ have degree $3$, 
+$$\interior_3(G)=\bigsqcup_{1\leq i\leq m}\interior(G_i) \ .$$
+We can therefore extend the maps $s_i$ defined on each 
+$G_i$ to a map $s:\interior_3(G) \to \{-1,1\}$.
 
-\begin{definition}\label{def:map_L_arbitrary_honeycomb}
-For $G=(V,E)\in\mathcal{G}_{\mathcal{T}}$, the label map $\mathcal{L}:\honey_{\mathcal{T}}^G\rightarrow \Omega^1(G)$ is the map such that for $(v,v')\in\vec{E}$ with $v\in \interior_3(G)$, 
-$$L[h](v,v')=s(v)L(i(e)),$$
-where $i(e)$ is the injection from Lemma \ref{lem:product_gluing} and $L$ is the coordinate map defined in Definition \ref{def:triangular_honey}.(2).
+\begin{definition}[Label map of a honeycomb]
+    \label{def:map_L_arbitrary_honeycomb}
+Let $G=(V,E)\in\mathcal{G}_{\mathcal{T}}$ be a structure graph. 
+The \textit{label map} $\mathcal{L}:\honey_{\mathcal{T}}^G 
+\rightarrow \Omega^1(G)$ is defined by setting, 
+for $(v,v') \in \vec{E}$ with $v\in \interior_3(G)$, 
+$$\mathcal{L}[h](v,v')=s(v)L(i(e)) \ ,$$
+where $i(e)$ is the injection from Lemma 
+\ref{lem:product_gluing} and $L$ is the coordinate 
+map defined in Definition \ref{def:triangular_honey}. (2).
 \end{definition}
-Remark that each edge $e$ of $G$ is then adjacent to at least one trivalent vertex, and if $e=\{v,v'\}$ with $v,v'\in \interior_3(G)$, then necessarily there exists $1\leq i\leq m$ such that $v,v'\in V_i$, and therefore $s(v)s(v')=-1$, so that the latter definition is a well-defined map from $\honey^G_{\mathcal{T}}$ to $\Omega^1(G)$.
+
+\noindent
+Remark that each edge $e \in E$ of $G$ is adjacent to at 
+least one trivalent vertex, and if $e=\{v,v'\}$ with 
+$v,v'\in \interior_3(G)$, then necessarily there exists 
+$1\leq i\leq m$ such that $v,v'\in V_i$. 
+Therefore $s(v)s(v')=-1$, so that $\mathcal{L}[h] \in \Omega^1(G)$ 
+and $\mathcal{L}$ is a well-defined map from $\honey^G_{\mathcal{T}}$ to $\Omega^1(G)$.
 
 \begin{figure}[H]
     \centering
@@ -2268,171 +2392,318 @@ Remark that each edge $e$ of $G$ is then adjacent to at least one trivalent vert
     \label{fig:common_boundary} 
 \end{figure}
 
-
-
-
-Let $\gamma^{(1)},\ldots,\gamma^{(p)}\in\mathcal{H}_{reg}$, and recall that $\honey_{\mathcal{T}}^G(\gamma^{(1)},\ldots,\gamma^{(p)})$ denotes the set of honeycomb $h$ on $\mathcal{T}$ such that 
+\noindent
+Let $\gamma^{(1)},\ldots,\gamma^{(p)}\in\mathcal{H}_{reg}$, 
+and recall that $\honey_{\mathcal{T}}^G(\gamma^{(1)}, \ldots,\gamma^{(p)})$ 
+denotes the set of honeycombs $h$ on $\mathcal{T}$ having boundary condition 
 $$(v^j_s)_{\ell_j}=\gamma^{(j)}_s.$$
-Let us defined $\phi:V\rightarrow\mathbb{R}$
-with 
-$$\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v)=\left\lbrace\begin{aligned}
-&s(v)&\text{ if }& \deg v=3\\
-&1-c(v,v')-c(v,v'')&\text{ if }& \deg v=2, v\sim v', v\sim v'', v'\not=v''\\
-&\gamma^{(j)}_s-\delta_{c(v,v')=1}&\text{ if }&v=v^j_s, v\sim v'
-\end{aligned}\right..$$
-Remark that 
-$$\sum_{v\in V}\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v)=\sum_{j=1}^p\sum_{i=1}^n\gamma_s^{(j)}+\sum_{i=1}^m\left(\sum_{v\in \interior(G_i)}s(v)-\sum_{v\in\partial G_i, v\sim v'}c(v,v')\right).$$
-\begin{lemma}\label{lem:differential_gluing_honey}
-For any $G\in\mathcal{G}_{\mathcal{T}}$, $\mathcal{L}$ is injective and for $\gamma^{(1)},\ldots,\gamma^{(p)}\in\mathcal{H}_{reg}$, 
-$$\mathcal{L}(\honey_{\mathcal{T}}^G(\gamma^{(1)},\ldots,\gamma^{(p)}))=\mathcal{F}_{G}(\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}})\cap (K_{G_1}\times \dots\times K_{G_m}),$$
-where we write $t(G)=(G_1,\ldots,G_m)$ and $\Omega^1(G)$ is identified with $\prod_{i=1}^m\Omega^1(G_i)$. 
+Let us define $\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}: 
+V\rightarrow\mathbb{R}$ by 
+\begin{equation}
+    \label{eq:def_phi_p}
+    \phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v)=\left\lbrace\begin{aligned}
+    &s(v)&\text{ if }& \deg v=3\\
+    &1-c(v,v')-c(v,v'')&\text{ if } 
+    & \deg v=2, v\sim v', v\sim v'', v'\not=v''\\
+    &\gamma^{(j)}_s &\text{ if } & v=v^j_s, v\sim v'  \text{ and } c(v,v')=0 \\
+    &\gamma^{(j)}_s - 1 & \text{ if } & v=v^j_s, v\sim v' \text{ and } c(v,v')=1
+    \end{aligned} \right..
+\end{equation}
+% Remark that 
+% $$\sum_{v\in V}\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v) 
+% = \sum_{j=1}^p\sum_{i=1}^n\gamma_s^{(j)}+\sum_{i=1}^m 
+% \left(\sum_{v\in \interior(G_i)}s(v) - 
+% \sum_{v\in\partial G_i, v\sim v'}c(v,v')\right).$$
+
+
+\begin{lemma}[Flow of honeycomb]
+    \label{lem:differential_gluing_honey}
+    For any $G\in\mathcal{G}_{\mathcal{T}}$, $\mathcal{L}$ 
+    is injective and for $\gamma^{(1)},\ldots,\gamma^{(p)} 
+    \in\mathcal{H}_{reg}$, 
+    $$\mathcal{L}(\honey_{\mathcal{T}}^G(\gamma^{(1)}, 
+    \ldots,\gamma^{(p)})) = 
+    \mathcal{F}_{G}(\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}) 
+    \cap (K_{G_1}\times \dots\times K_{G_m}) \ ,$$
+    where $t(G)=(G_1,\ldots,G_m)$ and where $\Omega^1(G)$ 
+    is identified with $\prod_{i=1}^m\Omega^1(G_i)$. 
 \end{lemma}
-We then write 
-$$K_{G}=K_{G_1}\times \dots\times K_{G_m}.$$
+
+\noindent
+We then write $K_{G}=K_{G_1}\times \dots\times K_{G_m}$.
 
 \begin{proof}
-Let $G\in\mathcal{G}_T$. First, by iterating Lemma \ref{lem:product_gluing} on all the glued boundaries, there is a bijection 
-$$i:\
-\honey_{\mathcal{T}}^G\rightarrow\{(h^1,\ldots,h^m)\in\honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m},h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j},1\leq j\leq N(\mathcal{T})\}.$$
-Next, since $G=(V,E)$ with $V=\bigcup_{i=1}^mV_i/\langle \partial_{\ell_j}G^{r_j}=\vec{\partial}_{\ell'_j}G^{r'_j},1\leq j\leq N(\mathcal{T})$ and $E$ is the image of $\bigcup_{i=1}^m E_i$ in this quotient. Since any element of $\bigcup_{i=1}^m E_i$ has at most one endpoint in $\bigcup_{j=1}^{N(\mathcal{T})}\vec{\partial}_{\ell_j}G^{r_j}\cup\vec{\partial}_{\ell'_j}G^{r'_j}$, there is thus a canonical identification $\Omega^1(G)=\prod_{j=1}^m\Omega(G^j)$. Moreover, by the definition of $\mathcal{L}:\honey_G^{\mathcal{T}}\to \Omega^1(G)$ from Definition \ref{def:map_L_arbitrary_honeycomb}, for $h\in \honey_G^{\mathcal{T}}$
-$$\mathcal{L}(h)=\prod_{i=1}^m\mathcal{L}_{\vert T_i}(h_{\vert T_i})=\left(\prod_{i=1}^m\mathcal{L}_{\vert T_i}\right)(i(h))$$
-under the previous identification. The injectivity of $i$ together with the injectivity of each map $\mathcal{L}_{\vert T_i}$ from Proposition \ref{prop:parametrization_triangular_honey_first} yields the injectivity of $\mathcal{L}$.
-
-It remains to describe the image of $\mathcal{L}\left(\honey_{\mathcal{T}}^G(\gamma^{(1)},\ldots,\gamma^{(p)})\right)$. By Lemma \ref{lem:product_gluing} and the previous reasoning, this amounts to describe the image throught $\prod_{i=1}^m\mathcal{L}_{\vert T_i}$ of the set
-$$\left\lbrace (h^1,\ldots,h^m)\in\honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m},h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j},1\leq j\leq N(\mathcal{T}),h^{s_j}_{\vert L_j}=\gamma^{(j)}, 1\leq j\leq p\}\right\rbrace.$$
-Let us first describe how the condition $\partial_{\ell_j}h^{s_j}=\gamma^{(j)}$ for $1\leq j\leq p$ translates through $\mathcal{L}$. Let $v^j_m\in \partial_{\ell_j}G_{s_j}$ and $x\in \partial_{\ell_j}h^{s_j}$ the point such that $i(x)=v^j_m$.  Since $h^{s_j}\in \honey_{G_{s_j}}$, like in Section \ref{subsec:parametrization_honeycombs}, the condition $x_{\ell_j}=\gamma^{(j)}_m$ is equivalent to the condition 
-$$\mathcal{L}[h](v^j_m,v)=
-\gamma^{(j)}_m-c(v^j_m,v)=0 ,$$
-where $v$ is the unique element of $V_{s_{j}}$ such that $v\sim v^j_m$.
-
-Let us now consider the condition $h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j}$. Let $v\in \partial_{\ell^{(1)}_j}G_{r^{(1)}	j}$ and $v'\in \partial_{\ell^{(2)}_j}G_{r^{(2)}	j}$ such that $v\sim v'$ in $G$, and let $x=i_{T^{r^{(1)}_j}}(v), x'=i_{T^{r^{(2)}_j}}(v')$ the corresponding image in $h_{\vert T^{r^{(1)}_j}}$ and $h_{\vert T^{r^{(2)}_j}}$. Using that the edges of both triangles are identified in the order-reversing way, the condition $h^{r_j}_{\vert B_j }=h^{r'_j}_{\vert B_j}$ implies that 
-$$x_{\ell^{(1)}_j-1}=1-x'_{\ell^{(2)}_j-1}.$$
- Let $w\in V_{r^{(1)}}$ and $w'\in V_{r^{(2)}}$ such that $v\sim_{G_{r^{(1)}}}w$ and $v'\sim_{G_{r^{(2)}}}w'$. Then, following \eqref{eq:honeycomb_divergence_2}, the previous equality condition is equivalent to $\mathcal{L}[h^{r^{(1)}}](v,w)+c(v,w)=1-\mathcal{L}[h^{r^{(1)}}](v,w)-c(v',w')$, which yields by definition of $\mathcal{L}$,
- $$\mathcal{L}[h](\bar{v},w)+\mathcal{L}[h](\bar{v},w')=1-c(v,w)-c(v',w')=1-c(\bar{v},w)-c(\bar{v},w')).$$
+    Let $G = (V, E)\in\mathcal{G}_T$. 
+    First, by Lemma \ref{lem:product_gluing}, there is a bijection 
+    $$i:\honey_{\mathcal{T}}^G\rightarrow \left\{(h^1,\ldots,h^m) \in 
+    \honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} 
+    \mid h^{r_j^{(1)}}_{\vert B_j } = 
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leq j\leq N(\mathcal{T}) \right\}.$$
+    Next, recall that  
+    $$V=\bigcup_{i=1}^mV_i \, / \left\langle 
+    \partial_{\ell_j}G^{r_j^{(1)}}=\partial_{\ell'_j}G^{r_j^{(2)}} 
+    , 1\leq j\leq N(\mathcal{T}) \right\rangle$$ 
+    and that $E$ is the image of $\bigcup_{i=1}^m E_i$ 
+    in this quotient. 
+    Since any element of $\bigcup_{i=1}^m E_i$ has at 
+    most one endpoint in $\bigcup_{j=1}^{N(\mathcal{T})} 
+    \partial_{\ell_j}G^{r_j^{(1)}} \cup \partial_{\ell'_j}G^{r_j^{(2)}}$, 
+    there is a canonical identification 
+    $\Omega^1(G)=\prod_{j=1}^m\Omega(G^j)$. 
+    Moreover, by the definition of $\mathcal{L}: 
+    \honey_G^{\mathcal{T}}\to \Omega^1(G)$ from 
+    Definition \ref{def:map_L_arbitrary_honeycomb}, 
+    for $h\in \honey_G^{\mathcal{T}}$
+    $$\mathcal{L}[h]=\prod_{i=1}^m\mathcal{L}_{\vert T_i}[h_{\vert T_i}]=\left(\prod_{i=1}^m\mathcal{L}_{\vert T_i}\right)(i(h))$$
+    under the previous identification. 
+    The injectivity of $i$ together with the injectivity of 
+    each map $\mathcal{L}_{\vert T_i}$ from 
+    Proposition \ref{prop:parametrization_triangular_honey_first} 
+    yield the injectivity of $\mathcal{L}$.
+    \\
+    \\
+    It remains to describe the image 
+    $\mathcal{L}\left(\honey_{\mathcal{T}}^G
+    (\gamma^{(1)},\ldots,\gamma^{(p)})\right)$. 
+    By Lemma \ref{lem:product_gluing} and the previous reasoning, 
+    this amounts to describe the image throught 
+    $\prod_{i=1}^m\mathcal{L}_{\vert T_i}$ of the set
+    $$\left\{(h^1,\ldots,h^m) \in 
+    \honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} 
+    \mid h^{r_j^{(1)}}_{\vert B_j } = 
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leq j\leq N(\mathcal{T}) \right\}.$$
+    Let us first describe how the condition 
+    $\partial_{\ell_j}h^{s_j}=\gamma^{(j)}$ for 
+    $1\leq j\leq p$ translates through $\mathcal{L}$. 
+    Let $v^j_m\in \partial_{\ell_j}G_{s_j}$ and 
+    $x\in \partial_{\ell_j}h^{s_j}$ the point such that 
+    $\iota(v^j_m) = x$. Since $h^{s_j}\in \honey_{G_{s_j}}$, 
+    like in Section \ref{subsec:parametrization_honeycombs}, 
+    the condition $x_{\ell_j}=\gamma^{(j)}_m$ is equivalent 
+    to the condition 
+    $$\mathcal{L}[h](v^j_m,v)=
+    \gamma^{(j)}_m-c(v^j_m,v) = \phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v) \ ,$$
+    where $v$ is the unique element of $V_{s_{j}}$ 
+    such that $v\sim v^j_m$.
+    \\
+    \\
+    Let us now consider the condition $h^{r_j^{(1)}}_{\vert B_j } = 
+    h^{r_j^{(2)}}_{\vert B_j}$. 
+    Let $v\in \partial_{\ell^{(1)}_j}G_{r^{(1)}_j}$ 
+    and $v'\in \partial_{\ell^{(2)}_j}G_{r^{(2)}_j}$ 
+    such that $v\sim v'$ in $G$, and let 
+    $x=\iota_{T^{r^{(1)}_j}}(v), x'=\iota_{T^{r^{(2)}_j}}(v')$ 
+    the corresponding image in $h_{\vert T^{r^{(1)}_j}}$ 
+    and $h_{\vert T^{r^{(2)}_j}}$. 
+    Using that the edges of both triangles are identified in 
+    the order-reversing way, the condition 
+    $h^{r_j^{(1)}}_{\vert B_j } = 
+    h^{r_j^{(2)}}_{\vert B_j}$ implies that 
+    $$x_{\ell^{(1)}_j-1}=1-x'_{\ell^{(2)}_j-1} \ .$$
+    Let $w\in V_{r^{(1)}}$ and $w'\in V_{r^{(2)}}$ 
+    such that $v\sim_{G_{r^{(1)}}}w$ and $v'\sim_{G_{r^{(2)}}}w'$. 
+    Then, following \eqref{eq:honeycomb_divergence_2}, 
+    the previous equality is equivalent to 
+    $\mathcal{L}[h^{r^{(1)}}](v,w)+c(v,w) = 
+    1-\mathcal{L}[h^{r^{(1)}}](v,w)-c(v',w')$, 
+    which yields
+    $$\mathcal{L}[h](\bar{v},w)+\mathcal{L}[h](\bar{v},w') = 
+    1-c(v,w)-c(v',w')= \phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v) \ .$$
 \end{proof}
 
-In order to state the volume formula for honeycombs, introduce for $r\in[0,1[$ the notation 
-$$\mathcal{H}_{reg}^{r}=\left\{\gamma\in\mathcal{H}_{reg},\sum_{i=1}^n\gamma_i=r\mod \mathbb{Z}\right\}.$$
-This set is a union of affine polytopes of $\mathcal{H}_{reg}$ of dimension $n-1$, and one can check that the volume $d_Ju$ on each affine polytope induced by the projection on $\mathbb{R}^J$ is independent of $J$ for any $J\subset\{1,\ldots,n\}$ of cardinal $n-1$. We simply denote by $du$ this volume form.
-
+\noindent
+In order to state the volume formula for $(g,p)$ honeycombs, 
+let us introduce for $r\in[0,1)$ the notation 
+$$\mathcal{H}_{reg}^{r} = \left\{\gamma\in\mathcal{H}_{reg} \mid 
+\sum_{i=1}^n\gamma_i=r\mod \mathbb{Z}\right\}.$$
+This set is a union of affine polytopes of $\mathcal{H}_{reg}$ 
+of dimension $n-1$, and one can check that the volume $d_Ju$ 
+on each affine polytope induced by the projection on $\mathbb{R}^J$ 
+is independent of $J$ for any $J\subset\{1,\ldots,n\}$ of 
+cardinal $n-1$. We simply denote by $\diff u$ this volume form.
 
 
 \begin{proposition}
     \label{prop:formula_gluing_honey}
-Suppose that $\mathcal{T}'$ is obtained by gluing $\mathcal{T}$ and $T^{m+1}$ along the boundaries $L_p$ and $\partial_0 T^{m+1}$. Then, for all $G\in \mathcal{T}'$ and $\gamma^1,\ldots,\gamma^{p+1}\in \mathcal{H}_{reg}$ with $\sum_{i=1}^{p+1}\vert \gamma_i\vert\in \mathbb{N}$,
-\begin{align*}
-\sum_{G\in\mathcal{G}_{\mathcal{T}}}&Vol(\mathcal{L}\left[\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p+1})\right])\\
-=&\int_{\mathcal{H}_{reg}^{\theta} }\sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}}Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))\right]Vol(\mathcal{L}\left[\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))\right]d u,
-\end{align*}
-where $\tilde{u}=(1-u_n,\ldots,1-u_1)$ and $\theta=-\sum_{i=1}^{p-1}\vert \gamma^i\vert\mod \mathbb{Z}$.
+    Suppose that $\mathcal{T}'$ is obtained by 
+    gluing $\mathcal{T}$ and $T^{m+1}$ along the boundaries 
+    $L_p$ and $\partial_0 T^{m+1}$. 
+    Then, for all $G\in \mathcal{T}'$ and 
+    $\gamma^1,\ldots,\gamma^{p+1}\in \mathcal{H}_{reg}$ such that 
+    $\sum_{i=1}^{p+1}\vert \gamma_i\vert\in \mathbb{N}$,
+    \begin{align*}
+    \sum_{G\in\mathcal{G}_{\mathcal{T}}} & 
+    \Vol \left[ \mathcal{L}\left(\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p+1})\right) \right]\\
+    =& \int_{\mathcal{H}_{reg}^{\theta} } 
+    \sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}} 
+    \Vol \left[ \mathcal{L}\left(\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u)\right) \right] 
+    \Vol \left[ \mathcal{L}\left(\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1})\right) \right] \diff u,
+    \end{align*}
+    where $\tilde{u}=(1-u_n,\ldots,1-u_1)$ and $\theta=-\sum_{i=1}^{p-1}\vert \gamma^i\vert\mod \mathbb{Z}$.
 \end{proposition}
-\begin{proof}
-Remark that 
-$$\sum_{v\in V}\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v)=\sum_{j=1}^p\sum_{i=1}^n\gamma_s^{(j)}+\sum_{i=1}^m\left(\sum_{v\in \interior(G_i)}s(v)-\sum_{v\in\partial G_i, v\sim v'}c(v,v')\right).$$
-Hence, in order for $\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}$ to yields a non-empty set $\mathcal{F}_{G}(\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}})$, by Proposition \ref{prop:BijectionTrees} it is necessary that $\sum_{i=1}^p\vert\gamma^{(i)}\vert\in \mathbb{N}$. Hence, $\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u)$ is non-empty if and only if $u\in\mathcal{H}_{reg}^\theta$ with $\theta-\sum_{i=1}^{p-1}\vert \gamma^i\vert\mod \mathbb{Z}$. 
 
-Next, for $(G_1,G_2)\in\mathcal{G}_{T}\times \mathcal{G}_{\mathcal{T}}$, by Proposition \ref{prop:divergence_product} and Lemma \ref{lem:differential_gluing_honey},
-\begin{align}
-\int_{\mathcal{H}_{reg}^\theta }&Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))\right]Vol(\mathcal{L}\left[\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))\right]d u\nonumber\\
-=&Vol(K_{G_1}\times K_{G_2}\cap \mathcal{F}_{G}(\phi_{\gamma^{(1)},\ldots,\gamma^{(p+1)}}))\nonumber\\
-=&Vol(\{\mathcal{L}[h_1],\mathcal{L}[h_2]), (h_1,h_2)\in\honey_{T}^{G_1}\times \honey^{G_2}_{\mathcal{T}} ,h^{1}_{\partial_0T}=h^{2}_{\partial_0\mathcal{T}},\nonumber\\
-&\hspace{6cm} h^{1}_{\partial_iT}=\gamma^{(i)}, h^{2}_{\partial_{i-2}\mathcal{T}}=\gamma^{(i)},1\leq i\leq p+1).\label{eq:product_formula_volume}
-\end{align}
-By Lemma \ref{lem:product_gluing},  the latter volume is non-zero if and only if $(G_1,G_2)=t(G)$ for some $G\in \mathcal{G}_{\mathcal{T}'}$. Hence, applying again \eqref{eq:product_formula_volume} yields 
+\begin{proof}
+Remark that from \eqref{eq:def_phi_p},
+$$\sum_{v\in V}\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v) = 
+\sum_{j=1}^p\sum_{i=1}^n\gamma_s^{(j)}+\sum_{i=1}^m 
+\left(\sum_{v\in \interior(G_i)}s(v)-\sum_{v\in\partial G_i, v\sim v'} 
+c(v,v')\right).$$
+Hence, in order for $\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}$ 
+to yields a non-empty set $\mathcal{F}_{G}(\phi_{\gamma^{(1)}, 
+\ldots,\gamma^{(p)}})$, 
+by Proposition \ref{prop:BijectionTrees} it is necessary that 
+$\sum_{i=1}^p\vert\gamma^{(i)}\vert\in \mathbb{N}$. 
+Hence, $\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u)$ 
+is non-empty if and only if $u\in\mathcal{H}_{reg}^\theta$ with 
+$\theta-\sum_{i=1}^{p-1}\vert \gamma^i\vert\mod \mathbb{Z}$. 
+% Next, 
+% for $(G_1,G_2)\in\mathcal{G}_{T}\times 
+% \mathcal{G}_{\mathcal{T}}$, we have that $G = (G_1 \cup G_2)_{S_1 * S_2}$, 
+% where $S_1 \subset \partial G_1$ and $S_2 \subset \partial G_2$ are 
+% the vertices identified together on $L_p$ and $\partial_0 T^{m+1}$. 
+Using Proposition \ref{prop:divergence_product} (2) gives
 \begin{align*}
-\sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}}&\int_{\mathcal{H}_{reg}^\theta }Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))\right]Vol(\mathcal{L}\left[\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))\right]d u\\
-=&\sum_{G\in\mathcal{G}_{\mathcal{T}'}, t(G)=(G_1,G_2)}\int_{\mathcal{H}_{reg}^\theta }Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u))\right]Vol(\mathcal{L}\left[\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1}))\right]d u\\
-=&\sum_{G\in\mathcal{G}_{\mathcal{T}'}}Vol(\mathcal{L}\left[\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p+1})\right]),
+\int_{\mathcal{H}_{reg}^{\theta} } 
+    & \Vol \left[ \mathcal{L}\left(\honey_{\mathcal{T}}^{G_2}
+    (\gamma^1,\ldots,\gamma^{p-1},u)\right) \right] 
+    \Vol \left[ \mathcal{L}\left(\honey^{G_1} 
+    (\tilde{u},\gamma^p,\gamma^{p+1})\right) \right] \diff u \\
+&= \Vol\left[(K_{G_1}\times K_{G_2})\cap 
+\mathcal{F}_{(G_1 \cup G_2)_{S_1 * S_2}} 
+\left(\phi_{\gamma^{(1)},\ldots,\gamma^{(p+1)}}\right)\right] \ .
+% &= ±Vol(\{\mathcal{L}[h_1],\mathcal{L}[h_2]), (h_1,h_2)\in\honey_{T}^{G_1}\times 
+% \honey^{G_2}_{\mathcal{T}} ,h^{1}_{\partial_0T}=h^{2}_{\partial_0\mathcal{T}},\nonumber\\
+% & \hspace{6cm} h^{1}_{\partial_iT}=\gamma^{(i)}, h^{2}_{\partial_{i-2}\mathcal{T}} 
+% =\gamma^{(i)},1\leq i\leq p+1).\label{eq:product_formula_volume}
 \end{align*}
-where we applied Proposition \ref{prop:divergence_product} and Lemma \ref{lem:differential_gluing_honey} in the last equality.
+By Lemma \ref{lem:product_gluing} and Lemma \ref{lem:differential_gluing_honey}, 
+the latter volume is non-zero only if 
+$(G_1,G_2)=t(G)$ where $G = (G_1 \cup G_2)_{S_1 * S_2} \in \mathcal{G}_{\mathcal{T}'}$ 
+and where $S_1 \subset \partial G_1$ and $S_2 \subset \partial G_2$ are 
+the vertices identified together on $L_p$ and $\partial_0 T^{m+1}$. In 
+this case, it is equal to 
+\begin{equation*}
+    \indic_{t(G) = (G_1, G_2)} \Vol \left[\mathcal{L}\left( \honey_{\mathcal{T}}^G \left(\gamma^{(1)}, 
+    \ldots,\gamma^{(p+1)}\right) \right) \right] \ .
+\end{equation*}
+Therefore, 
+\begin{align*}
+\sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}} 
+&\int_{\mathcal{H}_{reg}^{\theta} } 
+     \Vol \left[ \mathcal{L}\left(\honey_{\mathcal{T}}^{G_2}
+    (\gamma^1,\ldots,\gamma^{p-1},u)\right) \right] 
+    \Vol \left[ \mathcal{L}\left(\honey^{G_1} 
+    \left(\tilde{u},\gamma^p,\gamma^{p+1}\right)\right) \right] \diff u\\
+= \sum_{G\in\mathcal{G}_{\mathcal{T}'}, t(G)=(G_1,G_2)} 
+&\int_{\mathcal{H}_{reg}^{\theta} } 
+     \Vol \left[ \mathcal{L}\left(\honey_{\mathcal{T}}^{G_2}
+    \left(\gamma^1,\ldots,\gamma^{p-1},u\right) \right) \right] 
+    \Vol \left[ \mathcal{L}\left(\honey^{G_1} 
+    \left(\tilde{u},\gamma^p,\gamma^{p+1} \right)\right) \right] \diff u \\
+&= \sum_{G\in\mathcal{G}_{\mathcal{T}'}} 
+\Vol \left[\mathcal{L}\left( \honey_{\mathcal{T}}^G \left(\gamma^{(1)}, 
+    \ldots,\gamma^{(p+1)}\right) \right) \right] \ .
+\end{align*}
 \end{proof}
-A similar reasoning using Proposition \ref{prop:divergence_contraction} yields the following proposition.
+
+\noindent
+A similar reasoning using Proposition \ref{prop:divergence_contraction} 
+yields the following proposition.
 \begin{proposition}
     \label{prop:formula_contracting_honey}
-Suppose that $\mathcal{T}'$ is obtained by gluing two boundaries of $\mathcal{T}$. Then, for each $G\in \mathcal{G}_{\mathcal{T}'}$, $\honey_{\mathcal{T}'}^{G}$ admits a volume form with, for $\gamma^1,\ldots,\gamma^{p-2}\in \mathcal{H}_{reg}$ with $\sum_{i=1}^{p-2}\vert \gamma^i\vert\in\mathbb{Z}$,
+Suppose that $\mathcal{T}'$ is obtained by gluing two boundaries of $\mathcal{T}$. 
+Then, for each $G\in \mathcal{G}_{\mathcal{T}'}$, $\honey_{\mathcal{T}'}^{G}$ admits 
+a volume form with, for $\gamma^1,\ldots,\gamma^{p-2}\in \mathcal{H}_{reg}$ 
+with $\sum_{i=1}^{p-2}\vert \gamma^i\vert\in\mathbb{Z}$,
 \begin{align*}
-\sum_{G\in\mathcal{G}_{\mathcal{T}}}&Vol(\mathcal{L}\left[\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p-2})\right])=\int_{\mathcal{H}_{reg} }\sum_{G\in\mathcal{G}_{T}}Vol(\mathcal{L}\left[\honey_{\mathcal{T}}^{G}(\gamma^1,\ldots,\gamma^{p-2},u,\tilde{u})\right])d u,
+\sum_{G\in\mathcal{G}_{\mathcal{T}'}} 
+\Vol \left[\mathcal{L}\left(\honey_{\mathcal{T}'}^G \left(\gamma^{(1)}, 
+    \ldots,\gamma^{(p-2)}\right)\right)\right] = 
+    \int_{\mathcal{H}_{reg}} 
+    \sum_{G\in\mathcal{G}_{T}} 
+    \Vol \left[\mathcal{L}\left(\honey_{\mathcal{T}}^G\left(\gamma^{(1)}, 
+    \ldots,\gamma^{(p-2)}, u , \tilde{u}\right)\right)\right] \diff u \ .
 \end{align*}
-where $\tilde{u}=(1-u_n,\ldots,1-u_1)$.
 \end{proposition}
 
 
-\subsection{Proof of Theorem \ref{th:volume_form_g_p_honey}}
-\label{sec:proof_of_th_volume_form}
+% \subsection{Proof of Theorem \ref{th:volume_form_g_p_honey}}
+% \label{sec:proof_of_th_volume_form}
 
-\noindent
-The goal of this section is to prove Theorem \ref{th:volume_form_g_p_honey}. 
-Let $\mathcal{T}$ be a triangulated surface as constructed previously 
-and recall that $\mathcal{G}^{(p, g)}$ denotes the set of isomorphism classes of
-graph structure appearing in $(g,p)-$honeycombs. 
-
-
-\begin{proposition}[Parametrization of $(g,p)$-honeycomb]
-    \label{prop:parametrization_honey}
-    {\color{blue} Let $p, g \geqslant 0$ be integers such that 
-    $p+g \geqslant 2$ and set $n_{g,p}=g(n^2-1)+p\frac{n(n-1)}{2}-(n^2-1)$. For any $d\geq 0$ and
-    $G \in \mathcal{G}^{(g,p)}_{d}$,
-\begin{enumerate}
-\item $\partial \honey^G\subset  Z_d \coloneqq 
-    \left\{ (z^1,\ldots,z^p)\subset \mathbb{R}^{np } \; \middle| \; 
-    \sum_{i=1}^p\sum_{i=1}^{n} z^i_j = (1-g)n + d \right\}$
-    \item  There exists a cone $K_G \subset \mathbb{R}^E$ of 
-full dimension, a vector subspace $A_G$ of 
-dimension $n_{g,p}$ of $\mathbb{R}^E$ and an affine map 
-$v_G: Z_d \rightarrow \mathbb{R}^E$ such that 
-$$ \honey^G \left(\alpha^1,\ldots,\alpha^p\right) = 
-A_G\cap \left(K_G + v_G(\alpha^1,\ldots,\alpha^p)\right) .$$
-\end{enumerate} }
-\end{proposition}   
-
-\noindent
-
-\begin{proof}[Proof of Proposition \ref{prop:parametrization_honey}]
-    Let us fix integers $p, g, d \geqslant 0$ such that 
-    as above and let $G \in \mathcal{G}^{(g,p)}_{d}$ be a graph structure.
-    \begin{itemize}
-        \item \textbf{Proof of (1)}
-        We prove the result by induction on $p+g \geqslant 2$. 
-        For $p + g = 2$, one must have $p=1$ and $g=1$, that is, a one-holed torus. 
-        Boundary conditions are given by $(\alpha^1, \alpha, \widetilde{\alpha})$ 
-        for some $(\alpha^1, \alpha) \in \R^{2n}$ and $d \geqslant 0$ such that 
-        $\alpha^1 + \alpha + \widetilde{\alpha} = n + d$. 
-        Since $\widetilde{\alpha} = n - \alpha$, one gets $\alpha^1 = d$ as desired.
-        \\
-        Let us fix $p+g \geqslant 2$ and let us first 
-        compute boundary conditions for a $(p+1, g)$ 
-        honeycomb, by gluing a $(g, p)$ honeycomb to a $(0, 3)$ 
-        one on a common boundary $\alpha \in \R^n$. 
-        For the two honeycombs, we have the boundary conditions 
-        \begin{equation*}
-            \sum_{j=1}^{p-1} \alpha^j + \alpha = (1-g)n + d \;\text{ and }\; 
-            \widetilde{\alpha} + \alpha^{p+1} + \alpha^{p+2} = n + d'
-        \end{equation*}
-        for some $d, d' \geqslant 0$. Thus, one gets 
-        \begin{equation*}
-            \sum_{j=1}^{p+1} \alpha^j = (1-g)n + d''
-        \end{equation*}
-        where $d'' = d + d' \geqslant 0$. The case of a $(g+1, p)$ honeycomb, 
-        can be obtained by gluing a $(g, p)$ honeycomb with a $(1, 1)$ honecomb 
-        along $\alpha \in \R^n$. 
-        In this case, we have 
-        \begin{equation*}
-            \sum_{j=1}^{p-1} \alpha^j + \alpha = (1-g)n + d 
-            \; \text{ and } \; \widetilde{\alpha} = d' 
-        \end{equation*}
-        for some $d, d' \geqslant 0$, where we have used the induction formula for 
-        $(g, p) = (1, 1)$ for the second equality. This yields
-        \begin{equation*}
-            \sum_{j=1}^{p} \alpha^j = (1-(g+1))n + d''
-        \end{equation*}
-        where $d'' = d + d' \geqslant 0$.
-        \item \textbf{Proof of (2)} By induction, this is a direct consequence of Lemma \ref{lem:differential_gluing_honey}.
-    \end{itemize}
-\end{proof}
+% \noindent
+% The goal of this section is to prove Theorem \ref{th:volume_form_g_p_honey}. 
+% Let $\mathcal{T}$ be a triangulated surface as constructed previously 
+% and recall that $\mathcal{G}^{(p, g)}$ denotes the set of isomorphism classes of
+% graph structure appearing in $(g,p)-$honeycombs. 
 
 
+% \begin{proposition}[Parametrization of $(g,p)$-honeycomb]
+%     \label{prop:parametrization_honey}
+%     {\color{blue} Let $p, g \geqslant 0$ be integers such that 
+%     $p+g \geqslant 2$ and set $n_{g,p}=g(n^2-1)+p\frac{n(n-1)}{2}-(n^2-1)$. For any $d\geq 0$ and
+%     $G \in \mathcal{G}^{(g,p)}_{d}$,
+% \begin{enumerate}
+% \item $\partial \honey^G\subset  Z_d \coloneqq 
+%     \left\{ (z^1,\ldots,z^p)\subset \mathbb{R}^{np } \; \middle| \; 
+%     \sum_{i=1}^p\sum_{i=1}^{n} z^i_j = (1-g)n + d \right\}$
+%     \item  There exists a cone $K_G \subset \mathbb{R}^E$ of 
+% full dimension, a vector subspace $A_G$ of 
+% dimension $n_{g,p}$ of $\mathbb{R}^E$ and an affine map 
+% $v_G: Z_d \rightarrow \mathbb{R}^E$ such that 
+% $$ \honey^G \left(\alpha^1,\ldots,\alpha^p\right) = 
+% A_G\cap \left(K_G + v_G(\alpha^1,\ldots,\alpha^p)\right) .$$
+% \end{enumerate} }
+% \end{proposition}   
 
-\section{Volume of flat $\U(n)$-connections on a compact surface}
+% \noindent
+
+% \begin{proof}[Proof of Proposition \ref{prop:parametrization_honey}]
+%     Let us fix integers $p, g, d \geqslant 0$ such that 
+%     as above and let $G \in \mathcal{G}^{(g,p)}_{d}$ be a graph structure.
+%     \begin{itemize}
+%         \item \textbf{Proof of (1)}
+%         We prove the result by induction on $p+g \geqslant 2$. 
+%         For $p + g = 2$, one must have $p=1$ and $g=1$, that is, a one-holed torus. 
+%         Boundary conditions are given by $(\alpha^1, \alpha, \widetilde{\alpha})$ 
+%         for some $(\alpha^1, \alpha) \in \R^{2n}$ and $d \geqslant 0$ such that 
+%         $\alpha^1 + \alpha + \widetilde{\alpha} = n + d$. 
+%         Since $\widetilde{\alpha} = n - \alpha$, one gets $\alpha^1 = d$ as desired.
+%         \\
+%         Let us fix $p+g \geqslant 2$ and let us first 
+%         compute boundary conditions for a $(p+1, g)$ 
+%         honeycomb, by gluing a $(g, p)$ honeycomb to a $(0, 3)$ 
+%         one on a common boundary $\alpha \in \R^n$. 
+%         For the two honeycombs, we have the boundary conditions 
+%         \begin{equation*}
+%             \sum_{j=1}^{p-1} \alpha^j + \alpha = (1-g)n + d \;\text{ and }\; 
+%             \widetilde{\alpha} + \alpha^{p+1} + \alpha^{p+2} = n + d'
+%         \end{equation*}
+%         for some $d, d' \geqslant 0$. Thus, one gets 
+%         \begin{equation*}
+%             \sum_{j=1}^{p+1} \alpha^j = (1-g)n + d''
+%         \end{equation*}
+%         where $d'' = d + d' \geqslant 0$. The case of a $(g+1, p)$ honeycomb, 
+%         can be obtained by gluing a $(g, p)$ honeycomb with a $(1, 1)$ honecomb 
+%         along $\alpha \in \R^n$. 
+%         In this case, we have 
+%         \begin{equation*}
+%             \sum_{j=1}^{p-1} \alpha^j + \alpha = (1-g)n + d 
+%             \; \text{ and } \; \widetilde{\alpha} = d' 
+%         \end{equation*}
+%         for some $d, d' \geqslant 0$, where we have used the induction formula for 
+%         $(g, p) = (1, 1)$ for the second equality. This yields
+%         \begin{equation*}
+%             \sum_{j=1}^{p} \alpha^j = (1-(g+1))n + d''
+%         \end{equation*}
+%         where $d'' = d + d' \geqslant 0$.
+%         \item \textbf{Proof of (2)} By induction, this is a direct consequence of Lemma \ref{lem:differential_gluing_honey}.
+%     \end{itemize}
+% \end{proof}
+
+
+
+\section{Proof of Theorem \ref{th:Z_g_p_0} : 
+volume of flat $\U(n)$-connections on a compact surface}
 \label{sec:p_toric_honeycombs}
 
 \noindent
@@ -2441,7 +2712,8 @@ volume expression for the volume $M_{g,n}(\alpha_1,\ldots,\alpha_p)$ of flat $SU
 
 \subsection{Parametrizations of conjugacy classes and volume form} 
 
-There is however another parametrization which is more standard and given by 
+Let us consider the standard parametrization of conjugacy classes in $\U(n)$ 
+given by
 $$\mathcal{A}=\{t_1\geq\ldots\geq t_n,\,\sum_{i=1}^nt_i=0, t_1-t_n\leq 1\}.$$
 The set $\mathcal{A}$ is called an alcove of type $A_{n-1}$. Remark that $\mathcal{A}$ is a polytope of dimension $n-1$ in $\mathbb{R}^n$, and for any $R\subset \{1,\ldots,n\}$ of cardinal $n-1$, the projection $p_{R}:\mathcal{A}\rightarrow \mathbb{R}^R$ yields a non-zero volume form $p_{R}^{*}d\ell_{\mathbb{R}^R}$ on $\mathcal{A}$. This volume form is again independent of $R$ and denoted by $dt$ in the sequel. Choosing for example $R=\{1,\ldots n-1\}$, we have
 \begin{align*}
