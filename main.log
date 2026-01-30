@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.5.10)  30 JAN 2026 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.5.10)  30 JAN 2026 15:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -985,364 +985,350 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--278
 
  []
 
-<images/boundary_conditions_honey.pdf, id=116, 394.39346pt x 321.66374pt>
+<images/boundary_conditions_honey.pdf, id=124, 394.39346pt x 321.66374pt>
 File: images/boundary_conditions_honey.pdf Graphic file (type pdf)
 <use images/boundary_conditions_honey.pdf>
 Package pdftex.def Info: images/boundary_conditions_honey.pdf  used on input line 288.
 (pdftex.def)             Requested size: 236.6379pt x 192.99973pt.
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 341--351
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 341--351
+Underfull \hbox (badness 10000) in paragraph at lines 341--361
 
  []
 
 [3 </Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/boundary_conditions_honey.pdf>]
-<toric_honey_example_3_4_5_6_7_sparse.pdf, id=192, 1388.55959pt x 1159.87932pt>
+<toric_honey_example_3_4_5_6_7_sparse.pdf, id=201, 1388.55959pt x 1159.87932pt>
 File: toric_honey_example_3_4_5_6_7_sparse.pdf Graphic file (type pdf)
 <use toric_honey_example_3_4_5_6_7_sparse.pdf>
-Package pdftex.def Info: toric_honey_example_3_4_5_6_7_sparse.pdf  used on input line 364.
+Package pdftex.def Info: toric_honey_example_3_4_5_6_7_sparse.pdf  used on input line 367.
 (pdftex.def)             Requested size: 483.69687pt x 404.03473pt.
- [4 </Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/toric_honey_example_3_4_5_6_7_sparse.pdf>]
 
-LaTeX Warning: Reference `eq:nb_vertices_edges_triangle' on page 5 undefined on input line 387.
 
+LaTeX Warning: Reference `eq:nb_vertices_edges_triangle' on page 4 undefined on input line 393.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--402
+
+ []
+
+[4 </Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/toric_honey_example_3_4_5_6_7_sparse.pdf>]
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 409.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 429.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--436
-
- []
-
-[5]
-
-LaTeX Warning: Reference `Sec:differential_structure' on page 6 undefined on input line 467.
-
-
-LaTeX Warning: Reference `subsec:differential_structures' on page 6 undefined on input line 471.
-
-
-LaTeX Warning: Reference `subsec:volume_diff_structure' on page 6 undefined on input line 473.
-
-
-LaTeX Warning: Reference `sec:proof_of_th_volume_form' on page 6 undefined on input line 487.
-
-
-LaTeX Warning: Reference `th:volume_form_g_p_honey' on page 6 undefined on input line 489.
-
-
-LaTeX Warning: Reference `sec:sieving' on page 6 undefined on input line 494.
-
-[6]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 709.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 731--756
+Underfull \hbox (badness 10000) in paragraph at lines 438--456
 
  []
+
+[5] [6]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 733.
 
 [7]
+Underfull \hbox (badness 10000) in paragraph at lines 755--780
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 757.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 757.
+ []
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 762.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 781.
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 762.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 781.
 
 
-Overfull \hbox (3.8788pt too wide) in paragraph at lines 873--892
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 786.
+
+
+Overfull \hbox (3.8788pt too wide) in paragraph at lines 897--916
 \OT1/cmr/m/n/10.95 This de-ter-mi-nant is a sum over all bi-jec-tions $\OML/cmm/m/it/10.95 ^^[ \OT1/cmr/m/n/10.95 : \OML/cmm/m/it/10.95 E \OMS/cmsy/m/n/10.95 n \OML/cmm/m/it/10.95 S \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95 V \OMS/cmsy/m/n/10.95 n f\OML/cmm/m/it/10.95 v[]\OMS/cmsy/m/n/10.95 g$ \OT1/cmr/m/n/10.95 of the prod-uct $(\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 1)[] [][]\OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 d[]; ^^N[]\OMS/cmsy/m/n/10.95 i$\OT1/cmr/m/n/10.95 ,
  []
 
 [8]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 1018.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 1043.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [9]
-Underfull \hbox (badness 10000) in paragraph at lines 1025--1051
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1076
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1025--1051
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1076
 
  []
 
 [10]
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 1140.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 1165.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1146--1184
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1146--1184
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1209
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1217--1239
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1264
 
  []
 
 [11]
-<images/labels_s_s_prime.pdf, id=320, 147.0815pt x 109.67374pt>
+<images/labels_s_s_prime.pdf, id=334, 147.0815pt x 109.67374pt>
 File: images/labels_s_s_prime.pdf Graphic file (type pdf)
 <use images/labels_s_s_prime.pdf>
-Package pdftex.def Info: images/labels_s_s_prime.pdf  used on input line 1242.
+Package pdftex.def Info: images/labels_s_s_prime.pdf  used on input line 1267.
 (pdftex.def)             Requested size: 147.08113pt x 109.67345pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 1316.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 1341.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 1317.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 1342.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1322--1345
+Underfull \hbox (badness 10000) in paragraph at lines 1347--1370
 
  []
 
 [12 </Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/labels_s_s_prime.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1349--1360
+Underfull \hbox (badness 10000) in paragraph at lines 1374--1385
 
  []
 
 [13]
-<images/boundary_limit_hive.pdf, id=401, 359.99797pt x 307.014pt>
+<images/boundary_limit_hive.pdf, id=410, 359.99797pt x 307.014pt>
 File: images/boundary_limit_hive.pdf Graphic file (type pdf)
 <use images/boundary_limit_hive.pdf>
-Package pdftex.def Info: images/boundary_limit_hive.pdf  used on input line 1500.
+Package pdftex.def Info: images/boundary_limit_hive.pdf  used on input line 1525.
 (pdftex.def)             Requested size: 217.66211pt x 185.62926pt.
 
-Underfull \hbox (badness 1424) in paragraph at lines 1501--1501
+Underfull \hbox (badness 1424) in paragraph at lines 1526--1526
 \OT1/cmr/m/sc/10.95 Figure 4.[]\OT1/cmr/m/n/10.95 Boundary con-di-
  []
 
-<images/dual_hive_example.pdf, id=402, 182.38239pt x 166.40268pt>
+<images/dual_hive_example.pdf, id=411, 182.38239pt x 166.40268pt>
 File: images/dual_hive_example.pdf Graphic file (type pdf)
 <use images/dual_hive_example.pdf>
-Package pdftex.def Info: images/dual_hive_example.pdf  used on input line 1507.
+Package pdftex.def Info: images/dual_hive_example.pdf  used on input line 1532.
 (pdftex.def)             Requested size: 217.66211pt x 198.598pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1543--1558
+Underfull \hbox (badness 10000) in paragraph at lines 1568--1583
 
  []
 
 [14 </Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/boundary_limit_hive.pdf> </Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/dual_hive_example.pdf>] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 1681--1696
+Underfull \hbox (badness 10000) in paragraph at lines 1706--1721
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1709--1736
+Underfull \hbox (badness 10000) in paragraph at lines 1734--1761
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1709--1736
+Underfull \hbox (badness 10000) in paragraph at lines 1734--1761
 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 1770.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 1795.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 1771.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 1796.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 1772.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 1797.
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 1829--1862
+Underfull \hbox (badness 10000) in paragraph at lines 1854--1887
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1829--1862
+Underfull \hbox (badness 10000) in paragraph at lines 1854--1887
 
  []
 
-<toric_honey_example_triangle.pdf, id=493, 741.47816pt x 600.47139pt>
+<toric_honey_example_triangle.pdf, id=506, 741.47816pt x 600.47139pt>
 File: toric_honey_example_triangle.pdf Graphic file (type pdf)
 <use toric_honey_example_triangle.pdf>
-Package pdftex.def Info: toric_honey_example_triangle.pdf  used on input line 1866.
+Package pdftex.def Info: toric_honey_example_triangle.pdf  used on input line 1891.
 (pdftex.def)             Requested size: 483.69687pt x 391.7128pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1882--1892
+Underfull \hbox (badness 10000) in paragraph at lines 1907--1917
 
  []
 
-<images/m_edge.pdf, id=495, 378.03937pt x 140.00305pt>
+<images/m_edge.pdf, id=508, 378.03937pt x 140.00305pt>
 File: images/m_edge.pdf Graphic file (type pdf)
 <use images/m_edge.pdf>
-Package pdftex.def Info: images/m_edge.pdf  used on input line 1906.
+Package pdftex.def Info: images/m_edge.pdf  used on input line 1931.
 (pdftex.def)             Requested size: 378.03844pt x 140.0027pt.
 [17] [18 </Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/toric_honey_example_triangle.pdf> </Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/m_edge.pdf>]
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 1985.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2010.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 1985.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2010.
 
 [19]
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2035.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2060.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2115.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2140.
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 2205--2235
+Underfull \hbox (badness 10000) in paragraph at lines 2228--2258
 
  []
 
 [21]
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2240.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2263.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2241.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2264.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2241.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2264.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2246.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2269.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2247.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2270.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2247.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2270.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2251--2276
+Underfull \hbox (badness 10000) in paragraph at lines 2274--2299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2285--2301
+Underfull \hbox (badness 10000) in paragraph at lines 2308--2324
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 2348--2362
+Underfull \hbox (badness 10000) in paragraph at lines 2371--2385
 
  []
 
-<images/common_boundary.pdf, id=616, 573.84187pt x 329.63048pt>
+<images/common_boundary.pdf, id=631, 573.84187pt x 329.63048pt>
 File: images/common_boundary.pdf Graphic file (type pdf)
 <use images/common_boundary.pdf>
-Package pdftex.def Info: images/common_boundary.pdf  used on input line 2388.
+Package pdftex.def Info: images/common_boundary.pdf  used on input line 2411.
 (pdftex.def)             Requested size: 344.30777pt x 197.7798pt.
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2424.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2447.
 
 [23 </Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/common_boundary.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 2457--2471
+Underfull \hbox (badness 10000) in paragraph at lines 2480--2494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2485--2502
+Underfull \hbox (badness 10000) in paragraph at lines 2508--2525
 
  []
 
 [24]
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2541.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2564.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2541.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2564.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2541.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2564.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2541.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2564.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2541.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2564.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2541.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2564.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2615.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2638.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2626.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2649.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2626.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2649.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2626.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2649.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/scit' undefined
-(Font)              using `OT1/cmtt/m/sc' instead on input line 2626.
+(Font)              using `OT1/cmtt/m/sc' instead on input line 2649.
 
 
-Overfull \hbox (1.1783pt too wide) detected at line 2626
+Overfull \hbox (1.1783pt too wide) detected at line 2649
 []
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2706.
+(hyperref)                removing `math shift' on input line 2729.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2706.
+(hyperref)                removing `math shift' on input line 2729.
+
+
+Overfull \hbox (17.41447pt too wide) in paragraph at lines 2738--2740
+ []\OT1/cmr/bx/n/10.95 Parametrizations of con-ju-gacy classes and vol-ume form.[][] \OT1/cmr/m/n/10.95 Let us con-sider the stan-dard parametriza-
+ []
 
 [25] [26]
 
-LaTeX Warning: Reference `subsec:(g,p)_honey' on page 27 undefined on input line 2796.
+LaTeX Warning: Reference `subsec:(g,p)_honey' on page 27 undefined on input line 2825.
 
 [27] [28]
-Overfull \hbox (12.5523pt too wide) in paragraph at lines 2891--2894
+Overfull \hbox (12.5523pt too wide) in paragraph at lines 2920--2923
 [][]\OT1/cmr/bx/n/10.95 Theorem 6.4 \OT1/cmr/m/n/10.95 (Vol-ume for-mula for Yang-Mills par-ti-tion func-tion)\OT1/cmr/bx/n/10.95 . []\OT1/cmr/m/it/10.95 Let $\OML/cmm/m/it/10.95 p; g \U/msa/m/n/10.95 > \OT1/cmr/m/n/10.95 0$ \OT1/cmr/m/it/10.95 be in-te-gers, $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 []; [] ; []\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 2
  []
 
@@ -1351,24 +1337,24 @@ Overfull \hbox (12.5523pt too wide) in paragraph at lines 2891--2894
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E5A82ED62B5E21CA3277FD3B8E579232;5143.
+(rerunfilecheck)             Checksum: 14D2F1199A06A9E0CF312306F4096850;5693.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  33381 strings out of 478268
- 637565 string characters out of 5846347
- 1141292 words of memory out of 5000000
- 50751 multiletter control sequences out of 15000+600000
+ 637556 string characters out of 5846347
+ 1140557 words of memory out of 5000000
+ 50750 multiletter control sequences out of 15000+600000
  485557 words of font info for 97 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 84i,15n,85p,1946b,1931s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,15n,85p,1946b,1929s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/francois/Library/texlive/2022/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtcsc10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.pdf (29 pages, 630385 bytes).
+Output written on /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.pdf (29 pages, 630808 bytes).
 PDF statistics:
- 857 PDF objects out of 1000 (max. 8388607)
- 707 compressed objects within 8 object streams
- 142 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 873 PDF objects out of 1000 (max. 8388607)
+ 723 compressed objects within 8 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 
