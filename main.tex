@@ -62,7 +62,8 @@
 \providecommand{\Leb}{\operatorname{Leb}}
 \providecommand{\honey}{\texttt{\textsc{HONEY}}}
 \providecommand{\dualhive}{\texttt{\textsc{DH}}}
-\providecommand{\indic}{\mathbbm 1}\DeclareMathOperator{\interior}{int}
+\providecommand{\indic}{\mathbbm 1} 
+\DeclareMathOperator{\interior}{int}
 \DeclareMathOperator{\Id}{Id}
 
 % Equations, Théorèmes...
@@ -369,38 +370,42 @@ the subset of graphs $G$ such that $c(G)=d$.
     \label{fig:ex_g2_p_3}
 \end{figure}
 
-{\color{blue} 
 \noindent
 For $G = (V, E) \in\mathcal{G}^{(p, g)}$, there is a natural parametrization of 
-$\honey^G$ constructed as follows. For $e\in E$ there exists $1\leq i\leq N$ such that 
-$e\in E_i$. For $h\in\honey^G$, set 
-$$\mathcal{L}[h](e)=L_{T_i}(i(e)),$$ 
+$\honey^G$ constructed as follows. For any edge $e\in E$, there exists $1\leq i\leq N$ such that 
+$e\in E_i$. For $h\in\honey^G$, let us set 
+$$P[h](e)=L_{T_i}(i(e)) \ ,$$ 
 where $L_{\vert T_i}$ is the height map defined on $T_i$ from 
 Definition \ref{def:triangular_honey} and $i:E\rightarrow \mathbb{G}$ is the injection from 
-Definition \ref{def:toric_honeycomb} such that $h\cap T_i=\bigcup_{e\in E_i}i(e)$. Then, introduce the map
-$$\mathcal{L}: \honey^{G}\rightarrow \mathbb{R}^{E}$$
-sending $h\in \honey^{G}$ to $(\mathcal{L}(e))_{e\in E}$. 
+Definition \ref{def:toric_honeycomb} such that $h\cap T_i=\bigcup_{e\in E_i}i(e)$. 
+Then, introduce the map
+\begin{equation}
+    \label{eq:parametrization_P}
+    P: \honey^{G}\rightarrow \mathbb{R}^{E} \ ,
+\end{equation}
+sending $h\in \honey^{G}$ to $(P[h](e))_{e\in E}$. 
 This map is clearly non-surjective 
-since $\mathcal{L} \left(\honey^G\right)$ is a bounded subset of 
+since $P \left(\honey^G\right)$ is a bounded subset of 
 $\left(\mathbb{R}^{3n(n+1)/2}\right)^N$. 
 Moreover, there are several relations among the 
-values of $((\mathcal{L}_{\vert T_i}(e))_{e\in G_h^i})_{1\leq i\leq N}$
-which implies that $\mathcal{L}$ is an over-parametrization of $\honey^{G}$. However, it will be proven in 
-Proposition \ref{prop:parametrization_triangular_honey_first} that $\mathcal{L}$ is injective. 
-In the sequel, we identify $\honey^G$ with its image through $\mathcal{L}$. 
+values of $((P_{\vert T_i}(e))_{e\in G_h^i})_{1\leq i\leq N}$
+which implies that $P$ is an over-parametrization of $\honey^{G}$. 
+However, it will follow from 
+Proposition \ref{prop:parametrization_triangular_honey_first} that $P$ is injective. 
+In the sequel, we identify $\honey^G$ with its image through $P$. 
 \\
 \\
-As a consequence of \eqref{eq:nb_vertices_edges_triangle} below, 
-all graphs of $\mathcal{G}^{(g,p)}$ have the same number $n_{g,p} = \frac{3Nn(n+1)}{2}$ 
-of edges and $n_{g,p}^{(V)} = Nn^2+\frac{(3N - (p+2g))n}{2} $ of vertices. 
+As a consequence of the decomposition described in Section \ref{sec:sieving_honeycombs} below, 
+all graphs of $\mathcal{G}^{(g,p)}$ have the same number $n_{e} = \frac{3Nn(n+1)}{2}$ 
+of edges and $n_{v} = Nn^2+\frac{(3N - (p+2g))n}{2} $ of vertices. 
 Hence, up to identifying edges and vertices of these graph, one can assume that there 
 is a unique set $E^{(g,p)}$ of edges (resp. set $V^{(g,p)}$ of vertices) 
 common to all graphs of $\mathcal{G}^{(g,p)}$ and that the graph structure of 
 $G\in \mathcal{G}^{(g,p)}$ is encoded in the map $\partial:E^{(g,p)}\rightarrow 
 \mathcal{P}(V^{(g,p)})$ which associates to an edge its endpoints.
-}
 
 \subsection{Volume of flat connections}
+
 Let us denote by $M_{g, n}(\alpha_1, \dots, \alpha_p)$ 
 the moduli space of flat $\U(n)$-valued connections 
 on a compact oriented surface with genus $g$ having $p$ 
@@ -408,9 +413,13 @@ boundary components for which the holonomies around
 $L_1,\ldots,L_p$ respectively belong to 
 $\mathcal{O}_{\alpha_1},\mathcal{O}_{\alpha_2}\ldots,\mathcal{O}_{\alpha_p}$. 
 For $g,p\geq 0$, Set $\diff \Vol\in\Omega^{n_{g,p}}\left(\mathbb{R}^{E^{(g,p)}}\right)$ 
-for the volume form on $n_{g,p}$-dimensional subspaces induced by the canonical Riemannian metric on $\mathbb{R}^{E^{(g,p)}}$. Hence, 
-$$\diff \Vol = \sum_{1\leq i_1<\ldots<i_{n_{g,p}} \leqslant n_{g, p}}\diff x_{i_1} 
-\wedge\ldots \wedge \diff x_{i_{n_{g,p}}}.$$
+for the volume form on $n_{g,p}$-dimensional subspaces induced by the 
+canonical Riemannian metric on $\mathbb{R}^{E^{(g,p)}}$. Hence, 
+\begin{equation}
+    \label{eq:volume_R_E}
+    \diff \Vol = \sum_{1\leq i_1<\ldots<i_{n_{g,p}} \leqslant n_{e}}\diff x_{i_1} 
+    \wedge\ldots \wedge \diff x_{i_{n_{g,p}}}.
+\end{equation}
 In the following statement, we write $\Vol(K)$ for the integration of $ \diff \Vol$ on a 
 $n_{g,p}$-dimensional submanifold and we let $\Delta(x)=\prod_{i<j}(x_j-x_i)$ 
 denote the Vandermonde determinant.
@@ -430,11 +439,20 @@ denote the Vandermonde determinant.
     \end{equation}
    where $c_{0,3}=\frac{2^{(n+1)[2]}(2\pi)^{(n-1)(n-2)}}{n!}$.
 \end{theorem}
-Remark that the sum on the right hand-side is finite, since each set $\mathcal{G}_{d}^{(g,p)}$ is finite and $d\leq n-1$. As it will appear below, for given $\alpha_1, \dots, \alpha_p\in\mathcal{H}_{reg}$ the volumes appearing in the sum will be non-zero only for $G\in \mathcal{G}_{d}^{(g,p)}$ where $d=\sum_{i=1}^p\sum_{j=1}^n\alpha_j^i-(p-2)n$. 
 
-The formula of Theorem \ref{th:Z_g_p_0} also yields a formula for $\SU(n)$-valued connections, since the volume for the $\SU(n)$ case is equal to the one of the $\U(n)$ case for $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}^0$, see \eqref{eq:SU_n_equal_Un}.
+\noindent
+Remark that the sum on the right hand-side is finite, 
+since each set $\mathcal{G}_{d}^{(g,p)}$ is finite and $d\leq n-1$. 
+As it will appear below, for given $\alpha_1, \dots, \alpha_p\in\mathcal{H}_{reg}$ 
+the volumes appearing in the sum will be non-zero only for $G\in \mathcal{G}_{d}^{(g,p)}$ 
+where $d=\sum_{i=1}^p\sum_{j=1}^n\alpha_j^i-(p-2)n$. 
+\\
+The formula of Theorem \ref{th:Z_g_p_0} also yields a formula for 
+$\SU(n)$-valued connections, since the volume for the $\SU(n)$ case is equal 
+to the one of the $\U(n)$ case for $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}^0$, 
+see \eqref{eq:SU_n_equal_Un}.
 
-\subsection*{Yang-Mills marginal for disjoint curves}
+\subsection{Yang-Mills marginal for disjoint curves}
 Theorem \ref{th:Z_g_p_0} provides an explicit formula 
 for the marginal Yang--Mills partition function of an
 oriented surface 
@@ -947,7 +965,11 @@ In the following, be set
     \label{eq:definition_volume_form}
 d\Vol=\frac{1}{\sqrt{\# \mbox{ Spanning trees of } G}} \mathcal Leb_{\mathcal F(\phi)} \ ,
 \end{equation}
-so that $(\phi_S)_{*}d\Vol=\mathcal Leb_{\Omega^1(S)}$.
+so that 
+\begin{equation}
+    \label{eq:pushforward_phi_S}
+    (\varphi_S)_{*}\diff \Vol=\mathcal \Leb_{\Omega^1(S)} \ .
+\end{equation}
 
 
 \subsection{Boundary and sieving of graphs}
@@ -1101,13 +1123,13 @@ Hence,
 \begin{align*}
 Vol(K_1\times K_2\cap\mathcal{F}(\phi)) =& 
 \int_{\mathbb{R}^{S_1}\times \mathbb{R}^{S_2}\times \mathbb{R}^{s}} 
-\mathbf{1}_{\lambda(t_1,t_2,x)\in K_1\times K_2} \diff t_1 \diff t_2 \diff x \\
+\indic_{\lambda(t_1,t_2,x)\in K_1\times K_2} \diff t_1 \diff t_2 \diff x \\
 =&\int_{\mathbb{R}^s}\left(\int_{\mathbb{R}^{S_1}\times \mathbb{R}^{S_2}} 
-\mathbf{1}_{(\varphi_{S_1}^x)^{-1}(t_1)\in K_1} 
-\mathbf{1}_{(\varphi_{S_2}^x)^{-1}(t_2)\in K_2} \diff t_1 \diff t_2\right) \diff x\\
+\indic_{(\varphi_{S_1}^x)^{-1}(t_1)\in K_1} 
+\indic_{(\varphi_{S_2}^x)^{-1}(t_2)\in K_2} \diff t_1 \diff t_2\right) \diff x\\
 =&\int_{\mathbb{R}^{s}}\left(\int_{\mathbb{R}^{S_1}} 
-\mathbf{1}_{(\varphi_{S_1}^x)^{-1}(t_1)\in K_1} \diff t_1\right) \cdot 
-\left( \int_{\mathbb{R}^{S_2}}\mathbf{1}_{(\varphi_{S_2}^x)^{-1}(t_2)\in K_2}\diff t_2\right) \diff x\\
+\indic_{(\varphi_{S_1}^x)^{-1}(t_1)\in K_1} \diff t_1\right) \cdot 
+\left( \int_{\mathbb{R}^{S_2}}\indic_{(\varphi_{S_2}^x)^{-1}(t_2)\in K_2}\diff t_2\right) \diff x\\
 =&\int_{\mathbb{R}^{s}}\Vol\left[K_1\cap \mathcal{F}_{G_1}(\phi_{\vert V_1\setminus W},(x_w)_{w\in R},y) \right] \\
 &\hspace{1cm}\cdot \Vol\left[K_2\cap\mathcal{F}(\phi_{\vert V_2\setminus W'}, 
 (\phi(\tilde{w})-x_{w}))_{w\in R},\phi(w_0)-y)\right] \diff x \ .
@@ -1251,15 +1273,15 @@ Suppose that $G\in \mathcal{G}_d$.
     Definition \ref{def:triangular_honey}, 
     each edge is oriented along $e^{2(\ell+1)i\pi/3}$ for some $\ell\in\{0,1,2\}$. 
     Hence, there exists a sign $s(v)\in\{-1,+1\}$ such that, up to a relabeling, 
-    $e_\ell \subset \left\{v+s(v)\ed^{2(\ell+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$. 
+    $e_\ell \subset \left\{v-s(v)\ed^{2(\ell+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$. 
     For a univalent vertex $v\in\partial G$ connected to a unique trivalent vertex 
     $v' \in \interior(G)$, we set $s(v) = -s(v')$.
     \\
     \\
     Let $v,v'\in V$ be such that $e = \{v,v'\} \in E$. 
     By the previous reasoning, there exist $\ell,\ell'$ such that 
-    $e\subset \left\{v+s(v)\ed^{2(\ell+1) i\pi/3} \mathbb{R}_{\geq 0} \right\}$ and 
-    $e\subset \left\{v'+s(v')\ed^{2(\ell'+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$.  
+    $e\subset \left\{v-s(v)\ed^{2(\ell+1) i\pi/3} \mathbb{R}_{\geq 0} \right\}$ and 
+    $e\subset \left\{v'-s(v')\ed^{2(\ell'+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$.  
     Necessarily, $\ell=\ell'$ and $s(v)=-s(v')$, see Figure \ref{fig:adjacent_vertices}.
 
     \begin{figure}[ht]
@@ -2114,12 +2136,37 @@ using two equivalent
 models named \textit{toric hives} and \textit{dual hives}. 
 Using the results of this section, we present a reformulation of this results 
 in terms of triangular honeycombs. For $G \in \mathcal{G}_d$, let us set  
-$$\Vol\left[\honey_{n,d}^G(\alpha,\beta,\gamma)\right] \coloneqq 
-\Vol \left[ \mathcal{L}( \honey_{n,d}^G(\alpha,\beta,\gamma)) \right] \ ,$$
+\begin{equation}
+    \label{eq:def_volume_honey_with_L}
+    \Vol\left[\honey_{n,d}^G(\alpha,\beta,\gamma)\right] \coloneqq 
+    \Vol \left[ \mathcal{L}( \honey_{n,d}^G(\alpha,\beta,\gamma)) \right] \ ,
+\end{equation}
 where $\mathcal{L} : \honey_{n,d}^G(\alpha,\beta,\gamma) \to 
 \mathcal{F}_G(\phi_{\alpha,\beta,\gamma})$ was defined in Definition 
 \ref{def:flow_honeycomb} and $\Vol$ is the volume form defined 
 in \eqref{eq:definition_volume_form}.
+
+\begin{remark}[Volume correspondance]
+    \label{rmk:volume_correspondance}
+    Recall that in \eqref{eq:parametrization_P}, we introduced the parametrization map 
+    \begin{equation*}
+        P: \honey^G(\alpha, \beta, \gamma) \to \R^E \ ,
+    \end{equation*}
+    which to a honecomb $h$ associates $P[h] = (|\mathcal{L}[h](e)|)_{e \in E}$. 
+    For $S \subset E$, let us consider the map 
+    \begin{align*}
+        \eta_S: \Omega^1(S) & \rightarrow \R^S \\
+        w & \mapsto (|w(e)|)_{e \in S} \ .
+    \end{align*}
+    Then, the pullback $(\eta_S)^* \diff \Vol$ of $\diff \Vol$ defined 
+    in \eqref{eq:volume_R_E} on $\R^S$ viewed as a subspace of $\R^E$ satisfies 
+    \begin{equation}
+        (\eta_S)^* \diff \Vol = \Leb_{\Omega^1(S)} = (\varphi_S)_* \diff \Vol' \ ,
+    \end{equation}
+    where $\diff \Vol'$ is the volume form defined 
+in \eqref{eq:definition_volume_form} and where we used \eqref{eq:pushforward_phi_S} 
+for the last equality.
+\end{remark}
 
 \begin{theorem}[Volume of flat $\U(n)$-connections on the three-holed sphere]
     \label{th:volume_flat_connection_0_3}
@@ -2737,11 +2784,17 @@ volume expression for the volume $M_{g,n}(\alpha_1,\ldots,\alpha_p)$ of flat $SU
 
 Let us consider the standard parametrization of conjugacy classes in $\U(n)$ 
 given by
-$$\mathcal{A}=\{t_1\geq\ldots\geq t_n,\,\sum_{i=1}^nt_i=0, t_1-t_n\leq 1\}.$$
-The set $\mathcal{A}$ is called an alcove of type $A_{n-1}$. Remark that $\mathcal{A}$ is a polytope of dimension $n-1$ in $\mathbb{R}^n$, and for any $R\subset \{1,\ldots,n\}$ of cardinal $n-1$, the projection $p_{R}:\mathcal{A}\rightarrow \mathbb{R}^R$ yields a non-zero volume form $p_{R}^{*}d\ell_{\mathbb{R}^R}$ on $\mathcal{A}$. This volume form is again independent of $R$ and denoted by $dt$ in the sequel. Choosing for example $R=\{1,\ldots n-1\}$, we have
+$$\mathcal{A}= \left\{t_1\geq\ldots\geq t_n \mid \sum_{i=1}^nt_i=0, \ t_1-t_n\leq 1 \right\} .$$
+The set $\mathcal{A}$ is called an alcove of type $A_{n-1}$. 
+Remark that $\mathcal{A}$ is a polytope of dimension $n-1$ in $\mathbb{R}^n$, 
+and for any $R\subset \{1,\ldots,n\}$ of cardinal $n-1$, the projection 
+$p_{R}:\mathcal{A}\rightarrow \mathbb{R}^R$ yields a non-zero volume form 
+$p_{R}^{*}d\ell_{\mathbb{R}^R}$ on $\mathcal{A}$. 
+This volume form is independent of $R$ and denoted by $dt$ in the sequel. 
+Choosing for example $R=\{1,\ldots n-1\}$, we have
 \begin{align*}
-Vol(\mathcal{A})=&\int_{\mathbb{R}^{n-1}}\mathbf{1}_{t_1\geq\ldots\geq t_{n-1},\,t_1+\sum_{i=1}^{n-1}t_i\leq 1}\prod_{i=1}^{n-1} dt_i\\
-=&\int_{\mathbb{R}^{n-1}}\mathbf{1}_{1\geq u_1\geq\ldots\geq u_{n-1}\geq 0}\frac{1}{n}\prod_{i=1}^{n-1} du_i=\frac{1}{(n-1)!},
+Vol(\mathcal{A})=&\int_{\mathbb{R}^{n-1}}\indic_{t_1\geq\ldots\geq t_{n-1},\,t_1+\sum_{i=1}^{n-1}t_i\leq 1}\prod_{i=1}^{n-1} dt_i\\
+=&\int_{\mathbb{R}^{n-1}}\indic_{1\geq u_1\geq\ldots\geq u_{n-1}\geq 0}\frac{1}{n}\prod_{i=1}^{n-1} du_i=\frac{1}{(n-1)!},
 \end{align*}
 where we did the change of variable $\phi:(t_i)_{1\leq i\leq n-1}\mapsto (t_i+\sum_{i=1}^{n-1}t_i)_{1\leq i\leq n}$ with $Jac(\phi(t))=n$.
 
@@ -2962,7 +3015,7 @@ We say that $R$ \textit{parametrizes} $F$ if $p_{R}$ is bijective. For a set $R\
 \end{equation}
 the induced measure on $F$, where $\ell_{\mathbb{R}^R}$ is the canonical volume measure on $\mathbb{R}^R$. 
 For any Borel subset $K\subset F$, we then define 
-$$\Vol_R(K)=\int_{K}\diff \ell_{R}=\int_{\mathbb{R}^R}\mathbf{1}_{x\in p_{R}(K)}\diff\ell_{\mathbb{R}^R}(x).$$
+$$\Vol_R(K)=\int_{K}\diff \ell_{R}=\int_{\mathbb{R}^R}\indic_{x\in p_{R}(K)}\diff\ell_{\mathbb{R}^R}(x).$$
 
 \noindent
 Let $g, p$ be non-negative integers such that $p+g \geqslant 2$ and 
@@ -3418,9 +3471,9 @@ $g\in h_{\mathcal{A}}^{-1}(\beta)$, where $p_{R}:\mathcal{H}(\mathcal{A},g)\righ
 $p_{S}:\mathcal{H}(\mathcal{A},g)\rightarrow \mathbb{R}^S$. 
 Hence, for any $g \in \R^{\partial G}$ admissible and $K\subset \mathcal{H}(\mathcal{A},g)$,
 \begin{align*}
-\Vol_R(K) &= \int_{\mathbb{R}^R}\mathbf{1}_{p_R^{-1}(x)\in K} \diff x\\
-&=\int_{\mathbb{R}^{S}}\mathbf{1}_{p_R^{-1}p_{R}p_{S}^{-1}(x)\in K}\vert\det(p_{R}p_{S}^{-1})\vert \diff x\\
-&=\int_{\mathbb{R}^{S}}\mathbf{1}_{p_{S}^{-1}(x)\in K} \diff x = \Vol_{S}(K).
+\Vol_R(K) &= \int_{\mathbb{R}^R}\indic_{p_R^{-1}(x)\in K} \diff x\\
+&=\int_{\mathbb{R}^{S}}\indic_{p_R^{-1}p_{R}p_{S}^{-1}(x)\in K}\vert\det(p_{R}p_{S}^{-1})\vert \diff x\\
+&=\int_{\mathbb{R}^{S}}\indic_{p_{S}^{-1}(x)\in K} \diff x = \Vol_{S}(K).
 \end{align*}
 The volume form $\diff \ell_R = p_R^* \diff x$ is therefore independent of the 
 parametrizing subset $R$ and we call the volume form on $\mathcal{H}(\mathcal{A}, g)$ the 

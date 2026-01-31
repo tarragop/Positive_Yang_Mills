@@ -1227,8 +1227,6 @@ INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/bbm/bbm8.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/bbm/bbm6.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
 INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/labels_s_s_prime.pdf
 INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/labels_s_s_prime.pdf
 INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/labels_s_s_prime.pdf
@@ -1262,9 +1260,6 @@ INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bu
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
