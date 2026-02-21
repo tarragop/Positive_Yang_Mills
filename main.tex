@@ -78,17 +78,37 @@
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{remark}[theorem]{Remark}
 
-\title{A volume formula for Yang-Mills marginals}
+\title{A positive formula for volumes of flat unitary connections on Riemann surfaces}
 \author{Quentin François, David García-Zelada, Thierry Lévy, Pierre Tarrago}
 
 \begin{document}
 
 \begin{abstract}
-    TODO
+We provide a manisfestly positive expression for the volume of flat $\U_n$-valued connections on punctured compact Riemann surfaces. This volume is obtained by summing volumes of explicit polytopes describing colored honeycombs on a polygon, in the spirit of the work of Knutson and Tao describing the spectrum of the sum of two hermitian matrices. As a corollary, we also provide a positive formula for marginals of $\U_n$-valued Yang-Mills measures on a compact Riemann surfaces in terms of the probability distribution of an explicit path process.
 \end{abstract}
 
 \maketitle
 
+\section{Introduction}
+
+Moduli spaces of unitary holomorphic vector bundles have been introduced by Narasimhan and Seshadri \cite{Narasimhan_Seshadri} as a way to classify vector bundles on a compact Riemann surface. As highlighted in the work of Atiyah and Bott \cite{Atiyah_bott_1983}, these  moduli spaces are deeply related to the $\U_n$-valued Yang-Mills measure on the corresponding surface. The latter is a random $\U_n$-valued connection weighted by its curvature, and the critical points then correspond to flat connections, which in turns are in correspondance with the holomorphic vector bundles. As such, there is a natural symplectic volume form on the moduli space of holomorphic bundles (or flat connections) which appears as the a zero-limit temperature of the Yang-Mills functional.
+
+Since the paper of Atiyah and Bott, there have been several works pursuing the goal of a better understanding of either the Yang-Mills measure or the volume form on flat connections. Let us mention in particular two pioneering works that appeared around 1990. The first one, introduced by Verlinde \cite{Verlinde}, expresses the volume form as the limit of the dimension of a vector space of holomorphic sections on the moduli space. This expression is clearly positive as a limit of a positive integers. There is an explicit formula, orginally due to Verlinde and later proved by Bismut and Labourie \cite{bismut5symplectic}, to compute these integers as a sum of complex numbers in the case of the three-holed sphere. 
+
+However, until recently \cite{Buch_Kresch_Purbhoo_Tamvakis}, no manifestly positive formula existed for the dimension of such spaces. The second work, due to Witten \cite{witten1992two}, reduces the case of an arbitrary compact Riemann surface to a three-holed sphere by exploiting a decomposition of pants of the surface. Such surgery procedure has been then rigorously proved several times, see \cite{jeffrey1998intersection} and \cite{meinrenken1999moduli}. Using this method, Witten succesfully obtained a general formula for the volume of flat connections as series of characters of the unitary group. This first result, which is a series of complex numbers, has been improved to an alternating sum of positive numbers by Jeffrey \cite{jeffrey1994extended} and then Meinrenken and Woodward \cite{meinrenken1999moduli}.
+
+In the present paper, we provide a positive formula for the volume of such moduli spaces as  a sum of volumes of explicit finite dimensional polytopes. These polytopes consist of coordinates of a collection of geodesics in a polygonal surface. The surface itself simply reflects the pants decomposition of the corresponding puncture Riemann surface, while the collection of geodesics is a colored generalization of the honeycomb model introduced by Knutson and Tao \cite{knutson2004honeycomb} to describe the spectrum of the sum of two hermitian matrices with prescribed spectra. The fact that our model is a generalization of \cite{knutson2004honeycomb} should not be a surprise, since the solution of the eigenvalue problem for the sum of hermitian matrices yields a particular subexample of a flat connection on a three-holed sphere, see \cite{klyachko1998stable,belkale2008quantum}. Actually, this subexample has been used to get the previously mentioned signed formula for the volume of the moduli spaces on the three-holed sphere, see \cite{meinrenken1999moduli}.
+
+
+The proof of the present result is mainly based on the positive formula given in \cite{françois2024positiveformulaproductconjugacy} in the case of the three-holed sphere. Roughly speaking, this formula has been obtained by following the initial method of Verlinde together with some recent results on the computation of the structure constants of the quantum cohomology of the Grassmannians \cite{Buch_Kresch_Purbhoo_Tamvakis}. In \cite{françois2024positiveformulaproductconjugacy}, the formula was given in terms of volumes of a so-called coloured hive model, which consists of a union of some explicit but degenerated polytope. 
+
+Note that volumes are always defined up to a constant and when polytopes of a Euclidean space are degenerated, there are several ways to choose this constant from the volume measure of the ambient space : one can either consider the volume induced by the restriction of the Riemann metric or consider the pull-back of the canonical Lebesgue measure by a bijective projection on a subset of a canonical basis. Both definitions agree in the case of a convex body, but they start to differ when degeneracies appear. The choice of a volume form was relatively inconsequent in the case of \cite{knutson2004honeycomb}, since there was only one polytope considered and the change of volume form only amounted to a change by an overall constant. However, we are considering here a sum of volume polytopes, each of them degenerated and being in different subspaces of the ambient space, and we thus have to ensure that the chosen volumes are coherent from one polytope to the other. In \cite{françois2024positiveformulaproductconjugacy}, the correct choice was to use the pull-back corresponding to particular bijective projections. 
+
+It appears that the formulation of \cite{françois2024positiveformulaproductconjugacy} in terms of hive does not fit easily in the surgery formulas of Witten. In order to generalize the case of the three-holed sphere to arbitrary punctured compact Riemann surfaces, our first task has been to reformulate the latter hive model in terms of a colored version of honeycombs. As a byproduct of this reformulation, we also obtain a new volume formula in the case of the three holed sphere which is coordinate free : we provide an explicit relation between the volume form induced by the Riemann metric of the ambient space and any volume induced by a bijective projection on some coordinates. This relation is given by a simple combinatorial number, the number of spanning tree of a graph, in the similar spirit as in \cite{kassel2022determinantal}. Thanks to the new honeycomb model, the surgery formulas of \cite{witten1992two} to compute the volume of flat connections easily translates into a patching of honeycombs, and we thus get the desired positive formula.
+
+ Remark that this formula suggests a simple geometric description of a flat $\U_n$-connection on a compact Riemann surface, up to an overall conjugation by a unitary matrix, by then corresponding honeycomb arrangement. It would be very interesting to provide an explicit measure preserving bijection between the two models. However up to now, such a bijection has been out of reach already for the simplest particular case of the sum of hermitian matrices.
+
+As suggested by \cite{Atiyah_Bott}, volume of flat connections are the building blocks for the computations of the partition function of the two dimensional Yang-Mills measure on compact Riemann surfaces, see \cite[Section 2]{witten1992two}. Using the new positive formulas for flat connections, one can thus easily deduce new formulas for marginals of the Yang-Mills measure which are again manifestly positive. Remark that our formulas are only valid for the holonomy on a set of non-crossing curves, and this gives thus only a partial description of the full Yang-Mills measure. Once again, our result suggests the existence of a measure preserving bijection between a projection of the Yang-Mills measure and a random path processes consisting of Dyson Brownian motions on circle and certain frozen path configurations in polygons, see Remark \ref{rmk:Yang-Mills_volume_conditioned_process}.
 \section{Notations and statement of the main result}
 
 \subsection{Conjugacy classes}
@@ -131,13 +151,9 @@ $$\mathcal{H}_{reg}^0=\left\{\theta\in \mathcal{H} \;
 \colon  \; 
 \theta_1>\theta_2>\ldots>\theta_n \text{ and }\sum_{i=1}^n \theta_i\in\mathbb{N}\right\}.$$
 
-\subsection{Triangular honeycomb} Let $S$ be an oriented surface with 
-boundary (possibly empty) endowed with
-a flat metric $g$ and with its induced
-volume form $\omega$. 
-Consider, for example, $S=\mathbb{C}$ or 
-$S=\mathbb{C}\setminus\{0\}$
-with their usual metrics. 
+\subsection{Triangular honeycomb} Let $S$ be an oriented Riemannian surface with boundary obtained by patching some equilateral triangles along some of their 
+boundaries. Formally, $S$ is a surface with boundary (possibly empty) endowed with
+a flat metric $g$. 
 Let us denote by $\mathbb{G}$ the set of non-degenerate 
 geodesics of $S$. 
 For $x, y \in S$ and $e$ a geodesic from $x$ to $y$, we then set $\partial e=\{x,y\}$ 
@@ -233,7 +249,7 @@ $$\partial T=\bigsqcup_{i\in\{0,1,2\}}\partial_iT \text{ , where }
 \noindent
 A triangular honeycomb 
 has always $n^2+3n$ vertices and $\frac{3n(n+1)}{2}$ edges, 
-see \eqref{eq:nb_vertices_edges_triangle}.
+see Remark \ref{rmk:graph_vertices_edges}.
 This definition implies that $G(h)$ has only trivalent 
 vertices in $\overset{\circ} T$. Moreover, the condition on 
 the boundaries yields a natural choice of root 
@@ -291,7 +307,7 @@ graphs with ordered boundary appearing in $\{G(h) \mid h\in\honey_{n,d}\}$.
     \label{fig:boundary_toric_honey}
 \end{figure}
 
-\subsection{ \texorpdfstring{$(g,p)-$}{(g, p)-}honeycombs} Let $g,p\geqslant 0$ be integers and let $S$ be a 
+\subsection{ \texorpdfstring{$(g,p)-$}{(g, p)-}honeycombs}\label{subsec:(g,p)_honey} Let $g,p\geqslant 0$ be integers and let $S$ be a 
 connected compact orientable surface of genus $g$ with 
 $p$ boundary components $L_1, \ldots, L_{p}$. 
 Let $\mathcal{M}=(M_1\ldots, M_{2g+p-2})$ be a decomposition in pants
@@ -363,7 +379,7 @@ $$c(G)=\sum_{i=1}^Nc(G_i) \ ,$$
 and let us denote by $\mathcal{G}^{(g,p)}_{d}\subset \mathcal{G}^{(g,p)}$ 
 the subset of graphs $G$ such that $c(G)=d$.
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{toric_honey_example_3_4_5_6_7_sparse.pdf}
     \caption{A $(2, 3)$ honeycomb for a surface with genus 2 and 3 boundaries}
@@ -421,8 +437,8 @@ canonical Riemannian metric on $\mathbb{R}^{E^{(g,p)}}$. Hence,
     \wedge\ldots \wedge \diff x_{i_{n_{g,p}}}.
 \end{equation}
 In the following statement, we write $\Vol(K)$ for the integration of $ \diff \Vol$ on a 
-$n_{g,p}$-dimensional submanifold and we let $\Delta(x)=\prod_{i<j}(x_j-x_i)$ 
-denote the Vandermonde determinant.
+$n_{g,p}$-dimensional submanifold and we let $\Delta(x)=2^{n(n-1)/2}\prod_{i<j}\sin(\pi(x_i-x_j))$ 
+denotes the absolute value of the Vandermonde determinant of $(e^{ix_j})_{1\leq j\leq n}$.
 
 \begin{theorem}[Volume formula for $(g, p)$ partition function]
     \label{th:Z_g_p_0}
@@ -432,7 +448,7 @@ denote the Vandermonde determinant.
     \begin{equation}
         \label{eq:Z_g_p_0}
         Z_{g, p, 0}(\alpha_1, \dots, \alpha_p) = 
-        \frac{c_{0,3}^{2g+p-2}}{n^{2g+p-3}}
+        \frac{c_{0,3}^{2g+p-2}}{n^{2g+p-3}\prod_{j=1}^{p} \Delta(\alpha_j)}
         \sum_{\substack{ G \in \mathcal{G}^{(g,p)}}}
         \frac{\Vol \left[ \honey^G(\alpha_1, 
         \dots, \alpha_p) \right]}{\sqrt{\# \mbox{ Spanning trees of } G}},
@@ -441,7 +457,7 @@ denote the Vandermonde determinant.
 \end{theorem}
 
 \noindent
-Remark that the sum on the right hand-side is finite, 
+The sum on the right hand-side is finite, 
 since each set $\mathcal{G}_{d}^{(g,p)}$ is finite and $d\leq n-1$. 
 As it will appear below, for given $\alpha_1, \dots, \alpha_p\in\mathcal{H}_{reg}$ 
 the volumes appearing in the sum will be non-zero only for $G\in \mathcal{G}_{d}^{(g,p)}$ 
@@ -450,16 +466,23 @@ where $d=\sum_{i=1}^p\sum_{j=1}^n\alpha_j^i-(p-2)n$.
 The formula of Theorem \ref{th:Z_g_p_0} also yields a formula for 
 $\SU(n)$-valued connections, since the volume for the $\SU(n)$ case is equal 
 to the one of the $\U(n)$ case for $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}^0$, 
-see \eqref{eq:SU_n_equal_Un}.
+see \eqref{eq:SU_n_equal_Un}. 
 
+There are several other conventions to define the volume of flat connections, depending on the chosen volume on the unitary group (see \cite[Section 4.1]{witten1992two}) and depending on the kind of volume form considered. On the latter convention, remark that we are choosing here the symplectic volume, more adapted to Yang Mills generalizations, rather than the torsion volume introduced in \cite{witten1992two}, see also \cite[Appendix A]{meinrenken1999moduli} for a symplectic point of view on the relation between both volumes. The volume forms are easily related by the explicit factor $\prod_{j=1}^{p} \Delta(\alpha_j)$, see \cite[Section 4.7]{witten1992two}.
+
+
+\begin{remark}[Volume and conditioned processes]\label{rmk:_volume_conditioned_process}
+For each $G\in\mathcal{G}^{(g,p)}$, choosing a spanning tree $S\subset E^{(g,p)}$ of $G$ yields a natural parametrization of $\honey^G(\alpha_1,\ldots,\alpha_p)$ in terms of  the coordinates $P(e),e\in S$. By construction, each of those coordinates belongs to $[0,1]$. Considering the uniform probability measure on $[0,1]^S$, one can prove that the formula $\frac{\Vol \left[ \honey^G(\alpha_1, 
+        \dots, \alpha_p) \right]}{\sqrt{\# \mbox{ Spanning trees of } G}}$ is then exactly the probability that the vector $(L(e))_{e\in S}$ belongs to some convex set $K_G$, see Lemma \ref{lem:product_gluing} for a definition of $K_G$. After the summation on all graphs $G$, $Z_{g,p,0}(\alpha_1,\ldots,\alpha_p)$ can be seen as the probability that a random process remains in a union of convex set, up to an explicit constant. Visually, the non-conditioned process would allow geodesics to exit the domain and to meet at the trivalent vertices with angles being any multiple of $\pi/3$. 
+\end{remark}
 \subsection{Yang-Mills marginal for disjoint curves}
 Theorem \ref{th:Z_g_p_0} provides an explicit formula 
-for the marginal Yang--Mills partition function of an
+for the marginal of $U_n$-valued Yang--Mills partition function of an
 oriented surface 
 of genus $g$ with prescribed non-degenerate holonomies 
 (up to conjugation) on a finite set of disjoint loops. This 
 formula is given in Corollary \ref{cor:yang_mills_g_p} below.
-As it is proven in {\color{blue} XXXRefXXX}, the partition function 
+As it is proven in \cite{levy2003yang}, the partition function 
 only depends on the prescribed conjugacy classes and on the 
 areas of each connected components delimited by the loops. 
 \\
@@ -493,15 +516,10 @@ $Z_{0,2,0}(\mu,\nu)=\delta_{\mu=\nu}$ and $Z_{g,p,0}$
 is given in \eqref{eq:Z_g_p_0} otherwise.
 \end{corollary}
 
-{\color{blue}
-    XXXTo do :
+\begin{remark}[Yang-Mills marginals and conditioned processes]\label{rmk:Yang-Mills_volume_conditioned_process}
+As a consequence of Theorem \ref{th:Z_g_p_0} and Remark \ref{rmk:_volume_conditioned_process}, the latter formula express the partition function $ \operatorname{YM}(\alpha_1,\ldots,\alpha_p)$ as the probability that a random process remains in some domain and has the right boundary values. This random process consists in concatenations of Brownian motions on circle and straight paths in some frozen domains and the domain of restriction corresponds to the condition of being non-crossing for the Brownian motion and yielding $(g,p)-$honeycombs in the frozen domains. It would be interesting to see wether such interpretation allows simulations of a generical process contributing to the formula \eqref{eq:yang_mills_marginal_g_p}.
+\end{remark}
 
-- Explain why we remove the crossings : parametrization with spanning tree
-
-- Explain that it is really the volume of a random process.XXX
-
-- Reference ?
-XXX }
 
 \subsection*{Organisation of the paper} 
 
@@ -1427,8 +1445,8 @@ labeled $(\ell(e),h(e))\in\{0,1,2\}\times \{0,\ldots,n+d\}$ with
 \end{equation}
 
 \noindent
-Table \ref{tab:edge_types} below shows the different edge types for dual hives 
-and honeycombs, dual to each other. 
+Table \ref{tab:edge_types} below summarizes the different edge types for dual hives 
+and honeycombs; edges of dual hives will be in duality with edges of honeycombs with the same type. 
 
 \begin{table}[ht]
     \centering
@@ -2117,7 +2135,9 @@ that $(v,w)<(v',w')$ is and only if $\{v,w\}<\{v',w'\}$ in the former sense.
 \end{proof}
 
 
-
+\begin{remark}[Number of vertices and edges]\label{rmk:graph_vertices_edges}
+By Proposition \ref{prop:honey_hive} and the construction of $G^C$ from a coloured map $C$, we deduce that all the graphs $G^C$ have the same number $n^2+3n$ of vertices and the same number $\frac{3n(n+1)}{2}$ of edges : indeed, vertices correspond to either triangles of the dual hive model which are not neighbours to an edge coloured $m$ or to boundary edges, and edges correspond to edges of the dual hive model which are not coloured $m$. Since it has been proven in \cite{françois2024positiveformulaproductconjugacy} that there are always $d(n-d)$ edges coloured $m$ in a dual hive, the result is deduced.
+\end{remark}
 
 \subsection{Volume of flat connections}
 \label{subsec:main_th_three_holed_sphere}
@@ -2146,27 +2166,7 @@ where $\mathcal{L} : \honey_{n,d}^G(\alpha,\beta,\gamma) \to
 \ref{def:flow_honeycomb} and $\Vol$ is the volume form defined 
 in \eqref{eq:definition_volume_form}.
 
-\begin{remark}[Volume correspondance]
-    \label{rmk:volume_correspondance}
-    Recall that in \eqref{eq:parametrization_P}, we introduced the parametrization map 
-    \begin{equation*}
-        P: \honey^G(\alpha, \beta, \gamma) \to \R^E \ ,
-    \end{equation*}
-    which to a honecomb $h$ associates $P[h] = (|\mathcal{L}[h](e)|)_{e \in E}$. 
-    For $S \subset E$, let us consider the map 
-    \begin{align*}
-        \eta_S: \Omega^1(S) & \rightarrow \R^S \\
-        w & \mapsto (|w(e)|)_{e \in S} \ .
-    \end{align*}
-    Then, the pullback $(\eta_S)^* \diff \Vol$ of $\diff \Vol$ defined 
-    in \eqref{eq:volume_R_E} on $\R^S$ viewed as a subspace of $\R^E$ satisfies 
-    \begin{equation}
-        (\eta_S)^* \diff \Vol = \Leb_{\Omega^1(S)} = (\varphi_S)_* \diff \Vol' \ ,
-    \end{equation}
-    where $\diff \Vol'$ is the volume form defined 
-in \eqref{eq:definition_volume_form} and where we used \eqref{eq:pushforward_phi_S} 
-for the last equality.
-\end{remark}
+
 
 \begin{theorem}[Volume of flat $\U(n)$-connections on the three-holed sphere]
     \label{th:volume_flat_connection_0_3}
@@ -2202,7 +2202,7 @@ on the canonical bases and such that
 $Rot[C\rightarrow C]=Id$ and $Rot[C\rightarrow C']^{-1}=Rot[C'\rightarrow C]$.
 \item There exists a color map $C_0$ and a subset $S\subset E_{n,d}$ 
 such that $p_S: \dualhive^{C_0}(\alpha,\beta,\gamma) \to \R^S$ which to a label map 
-$L: E_{n, d} \to \R$ associates $(L(e))_{e \in S}$ is an integral isomorphism. 
+$L: E_{n, d} \to \R$ associates $(L(e))_{e \in S}$ is an isomorphism such that both the map and its inverse have integer coefficients in the canonical bases indexed by $E_{n,d}$ and $S$. 
 \item We have the formula 
 $$Z_{0, 3}(\alpha,\beta,\gamma) = 
     \frac{2^{(n+1) [2]}(2\pi)^{(n-1)(n-2)}} 
@@ -2212,12 +2212,12 @@ $$Z_{0, 3}(\alpha,\beta,\gamma) =
     where the sum is over color maps $C: E_{n, d} \to \{0, 1, 3, m\}$ 
     and where $\Vol_S$ is the Lebesgue measure of dimension $|S|$.
 \end{enumerate}
-
+In the following proof, let us call an {\it integral} linear map $f:\mathbb{R}^E\rightarrow \mathbb{R}^F$ a linear map with integer coefficients in the canonical bases. Likewise, an integral isomorphism is an invertible linear map such that both a map and its inverse has integers coefficients in the canonical bases.
 \begin{proof}[Proof of Theorem \ref{th:volume_flat_connection_0_3}] 
 Let $C$ be a color map. By Proposition \ref{prop:BijectionTrees}, 
 there exists a set $R \subset E$ such the restriction map $\varphi_{R} : 
 \mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))\rightarrow \Omega^1(R)$
- is a bijection with integral coefficient in the canonical bases. 
+ is an integral isomorphism. 
 Denote by $i_{R}:\Omega^1(R)\rightarrow \Omega^1(G)$ the corresponding inverse map, 
 which has thus affine with integer coefficients in the canonical basis 
 and is a bijection from $\Omega^1(R)$ to $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma})$. 
@@ -2268,6 +2268,27 @@ Z_{0, 3}(\alpha,\beta,\gamma) &=
 where we used Proposition \ref{prop:honey_hive} for the last equality.
 \end{proof}
 
+\begin{remark}[Volume correspondance]
+    \label{rmk:volume_correspondance}
+    Recall that in \eqref{eq:parametrization_P}, we introduced the parametrization map 
+    \begin{equation*}
+        P: \honey^G(\alpha, \beta, \gamma) \to \R^E \ ,
+    \end{equation*}
+    which to a honecomb $h$ associates $P[h] = (|\mathcal{L}[h](e)|)_{e \in E}$. 
+    For $S \subset E$, let us consider the map 
+    \begin{align*}
+        \eta_S: \Omega^1(S) & \rightarrow \R^S \\
+        w & \mapsto (|w(e)|)_{e \in S} \ .
+    \end{align*}
+    Then, the pullback $(\eta_S)^* \diff \Vol$ of $\diff \Vol$ defined 
+    in \eqref{eq:volume_R_E} on $\R^S$ viewed as a subspace of $\R^E$ satisfies 
+    \begin{equation}
+        (\eta_S)^* \diff \Vol = \Leb_{\Omega^1(S)} = (\varphi_S)_* \diff \Vol' \ ,
+    \end{equation}
+    where $\diff \Vol'$ is the volume form defined 
+in \eqref{eq:definition_volume_form} and where we used \eqref{eq:pushforward_phi_S} 
+for the last equality.
+\end{remark}
 
 \section{Sieving of honeycombs}
 \label{sec:sieving_honeycombs}
@@ -2778,25 +2799,25 @@ volume of flat $\U(n)$-connections on a compact surface}
 
 \noindent
 The goal of this section is the proof of Theorem \ref{th:Z_g_p_0}, which gives a 
-volume expression for the volume $M_{g,n}(\alpha_1,\ldots,\alpha_p)$ of flat $SU(n)$--connection on surface $\mathcal{M}$ of genus $g$ and $p$ boundary components for $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}$. 
+volume expression for the volume $M_{g,n}(\alpha_1,\ldots,\alpha_p)$ of flat $SU(n)$--connections on a surface $\mathcal{M}$ of genus $g$ with $p$ boundary components for $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}$. 
 
 \subsection*{Parametrizations of conjugacy classes and volume form} 
 
-Let us consider the standard parametrization of conjugacy classes in $\U(n)$ 
+Let us consider the standard parametrization of conjugacy classes in $\SU(n)$ 
 given by
 $$\mathcal{A}= \left\{t_1\geq\ldots\geq t_n \mid \sum_{i=1}^nt_i=0, \ t_1-t_n\leq 1 \right\} .$$
 The set $\mathcal{A}$ is called an alcove of type $A_{n-1}$. 
 Remark that $\mathcal{A}$ is a polytope of dimension $n-1$ in $\mathbb{R}^n$, 
 and for any $R\subset \{1,\ldots,n\}$ of cardinal $n-1$, the projection 
 $p_{R}:\mathcal{A}\rightarrow \mathbb{R}^R$ yields a non-zero volume form 
-$p_{R}^{*}d\ell_{\mathbb{R}^R}$ on $\mathcal{A}$. 
+$dt=p_{R}^{*}d\ell_{\mathbb{R}^R}$ on $\mathcal{A}$. 
 This volume form is independent of $R$ and denoted by $dt$ in the sequel. 
 Choosing for example $R=\{1,\ldots n-1\}$, we have
 \begin{align*}
 Vol(\mathcal{A})=&\int_{\mathbb{R}^{n-1}}\indic_{t_1\geq\ldots\geq t_{n-1},\,t_1+\sum_{i=1}^{n-1}t_i\leq 1}\prod_{i=1}^{n-1} dt_i\\
-=&\int_{\mathbb{R}^{n-1}}\indic_{1\geq u_1\geq\ldots\geq u_{n-1}\geq 0}\frac{1}{n}\prod_{i=1}^{n-1} du_i=\frac{1}{(n-1)!},
+=&\int_{\mathbb{R}^{n-1}}\indic_{1\geq u_1\geq\ldots\geq u_{n-1}\geq 0}\frac{1}{n}\prod_{i=1}^{n-1} du_i=\frac{1}{n!},
 \end{align*}
-where we did the change of variable $\phi:(t_i)_{1\leq i\leq n-1}\mapsto (t_i+\sum_{i=1}^{n-1}t_i)_{1\leq i\leq n}$ with $Jac(\phi(t))=n$.
+where we did the change of variable $\phi:(t_i)_{1\leq i\leq n-1}\mapsto (t_i+\sum_{i=1}^{n-1}t_i)_{1\leq i\leq n-1}$ with $Jac(\phi(t))=n$.
 
 Since $\mathcal{H}^0$ and $\mathcal{A}$ are both parametrizing conjugacy classes of $SU(n)$, there is a natural bijection $\phi:\mathcal{A}\rightarrow\mathcal{H}^0$ whose value on $(t_1\geq \ldots\geq t_i\geq 0>t_{i+1}\geq \dots \geq t_n)$ is 
 \begin{equation}\label{eq:change_parametrization_conjugacy}
@@ -2812,12 +2833,11 @@ $L_1,\ldots,L_p,L_{p+1}, L_{p+2}$. Let $\mathcal{M}$ be the oriented surface obt
 \begin{theorem}[{\autocite[Prop. 5.4]{Meinrenken_Woodward}}]\label{thm:contraction_formula_connection}
 Suppose that $\alpha_1,\ldots,\alpha_p\in \mathcal{H}_{reg}^0$. If $M(\mathcal{M},\alpha_1,\ldots,\alpha_p)$ contains at least one connection whose stabilizer is $Z(SU(n))$, then
 \begin{align*}
-\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{k}\int_{\mathcal{A}}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\phi(t),\phi(-t)))\tilde{d}t,
+\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{k}\int_{\mathcal{A}}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\phi(t),\phi(-t)))\Delta(t)^2dt,
 \end{align*}
-where $k=1$ if $\widehat{\mathcal{M}}$ is connected and $\#Z(SU(n))=n$ otherwise, and $\tilde{d}$ is the unique volume form on $\{(t_1,\ldots,t_n),\sum_{i=1}^nt_i=0\}$ whose volume $\widetilde{\Vol}$ satisfies 
-$$\widetilde{\Vol}\left(\left\{(t_1,\ldots,t_n),\sum_{i=1}^nt_i=0,\max_{1\leq i,j\leq 1}(t_i-t_j)\leq 1\right\}\right)=1.$$
+where $k=1$ if $\widehat{\mathcal{M}}$ is connected and $\#Z(SU(n))=n$ otherwise, $dt$ is the previous volume form on $\mathcal{A}$ and $\Delta(t)=2^{n(n-1)/2}\prod_{1\leq i<j\leq n}\sin\left(\pi(t_i-t_j)\right)^2$.
 \end{theorem}
-Let us first remark that considering $U(n)$-valued connection instead of $SU(n)-$valued connection does not change the volume. Indeed, suppose that $\mathcal{M}$ corresponds to a surface of genus $g$ with $p$ boundary components. Then, for any $\alpha_1,\ldots,\alpha_{p}\in\mathcal{H}_{reg}$,
+Note that we slightly adapted the result of \cite{Meinrenken_Woodward}, which was stated for the torsion volume of \cite{witten1992two}, to translate it in the symplectic picture : this only consists in adding the term $\Delta(t)$. Let us first remark that considering $U(n)$-valued connection instead of $SU(n)-$valued connection does not change the volume. Indeed, suppose that $\mathcal{M}$ corresponds to a surface of genus $g$ with $p$ boundary components. Then, for any $\alpha_1,\ldots,\alpha_{p}\in\mathcal{H}_{reg}$,
 \begin{align*}
 &M_{U(n)}(\mathcal{M},\alpha_1,\ldots,\alpha_{p})\\
 &\simeq \left\{((U_i)_{1\leq i\leq 2g},C_1,\ldots,C_{p})\in U(n)^{2g}\times\mathcal{O}_{\alpha_1}\times\dots\times \mathcal{O}_{\alpha_{p}}\Big\vert\prod_{i=1}^g[U_{2i-1},U_{2i}]=\prod_{i=1}^{p}C_i\right\}/U(n),
@@ -2843,11 +2863,11 @@ We deduce then from this and the previous theorem the following proposition.
 \begin{proposition}\label{prop:volume_formula_flat}
 Suppose that $\alpha_1,\ldots,\alpha_p\in \mathcal{H}_{reg}^0$. If either $p\geq 3$, $p=1$ and $g(\mathcal{M})=1$ or $g(\mathcal{M})\geq 2$, then, if $\widehat{\mathcal{M}}$ is disconnected, 
 \begin{align*}
-\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{n}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))d\theta,
+\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{n}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2d\theta,
 \end{align*}
 and, if $\widehat{\mathcal{M}}$ is connected,
 \begin{align*}
-\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\int_{\mathcal{H}_{reg}}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))d\theta,
+\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\int_{\mathcal{H}_{reg}}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2d\theta,
 \end{align*}
 \end{proposition}
 \begin{proof}
@@ -2856,7 +2876,7 @@ First, by \autocite[Thm. 5.20]{bismut5symplectic}, $M_{g,n}(\alpha_1,\ldots,\alp
 Remark that the volume form $dt$ on $\mathcal{A}$ introduced in the previous subsection is such that 
 $$\Vol\left(\left\{(t_1,\ldots,t_n)\in \mathbb{R}^n,\sum_{i=1}^nt_i=0, \max_{1\leq i,j\leq n}t_i-t_j<1\right\}\right)=1,$$
 that $\tilde{d}=d$. By \eqref{eq:change_parametrization_conjugacy}, $\phi(-t)=\widetilde{\phi(t)}$ and $Jac(\phi(t))=1$ for all $t\in\mathcal{A}$. Hence, doing the change of variable $\theta=\phi(t)$ yields
-$$\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{k}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}))d\theta,$$
+$$\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{k}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}))\Delta(\theta)^2d\theta,$$
 where $k=1$ if $\widehat{\mathcal{M}}$ is connected and $k=n$ otherwise. 
 
 In remains to replace the integration on $\mathcal{H}^0$ by the integration on $\mathcal{H}$ in the case where $\widehat{\mathcal{M}}$ is connected. For all $t\in [0,1]$, $\alpha_i\in \mathcal{H}_{reg}^0,\,1\leq i\leq p$, and $\theta\in \mathcal{H}_{reg}^0$, by \eqref{eq:SU_n_equal_Un}
@@ -2864,8 +2884,9 @@ $$\Vol(M_{U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,t\cdot\theta,\wid
  for any $t\in [0,1/n[$.
 Therefore, if $\hat{\mathcal{M}}$ is connected,
 \begin{align*}
-\frac{1}{k}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}))d\theta=&n\int_{0}^{1/n}\left(\int_{\mathcal{H}_{reg}^0}\Vol(M_{U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,t\cdot\theta,\widetilde{t\cdot\theta}))d\theta\right) dt\\
-=&\int_{\mathcal{H}_{reg}}\Vol(M_{U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,u,\widetilde{u}))du,
+&\frac{1}{k}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}))\Delta(\theta)^2d\theta\\
+&\hspace{2cm}=n\int_{0}^{1/n}\left(\int_{\mathcal{H}_{reg}^0}\Vol(M_{U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,t\cdot\theta,\widetilde{t\cdot\theta}))\Delta(\theta)^2d\theta\right) dt\\
+&\hspace{2cm}=\int_{\mathcal{H}_{reg}}\Vol(M_{U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,u,\widetilde{u}))\Delta(u)^2du,
 \end{align*}
 where we use that the change of variable $(u_1,\ldots,u_n)=(\theta_1+t,\ldots,\theta_{n-1}+t,-\sum_{i=1}^{n-1}\theta_i+t)=:\phi(\theta_1,\ldots,\theta_{n-1},t)$ yields $Jac(\phi)=n$.
 \end{proof}
@@ -2879,23 +2900,23 @@ The proof is done by recursion $N=3g+p$, where $N\geq 3$. If $N=3$, the result i
 
 In the first case $\mathcal{T}'$ is a flat surface associated to a surface $\mathcal{M}'$ with genus $g-1$ and $p+2$ points removed. Let $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}$ with $\sum_{i=1}^p\vert\alpha_{i}\vert\in \mathbb{N}$. Then, by applying \eqref{eq:SU_n_equal_Un} and Theorem \ref{prop:volume_formula_flat}, we have 
 \begin{align*}
-Z_{g,p}(\alpha_1,\dots,\alpha_p)=Z_{g,p}(\hat{\alpha}_1,\dots,\hat{\alpha}_p)=&\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_p,\theta,\tilde{\theta}))d\theta.\\
-=&\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))d\theta.
+Z_{g,p}(\alpha_1,\dots,\alpha_p)=Z_{g,p}(\hat{\alpha}_1,\dots,\hat{\alpha}_p)=&\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_p,\theta,\tilde{\theta}))\Delta(\theta)^2d\theta.\\
+=&\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2d\theta.
 \end{align*}
 Since $3(g-1)+p+2<N$, by induction
-$$\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))=c_{g-1,p+2}\sum_{\substack{G \in \mathcal{G}^{(g,p)}}}
+$$\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))=\frac{c_{g-1,p+2}}{\prod_{j=1}^p\Delta(\alpha_j)}\sum_{\substack{G \in \mathcal{G}^{(g,p)}}}
         \Vol \left[ \honey^G(\alpha_1, 
         \dots, \alpha_p,\theta,\tilde{\theta}) \right],$$
 and thus by Proposition \ref{prop:formula_contracting_honey},
 \begin{align*}
-Z_{g,p}(\alpha_1,\dots,\alpha_p)=&c_{g-1,p+2}\int_{\mathcal{H}_{reg}}\sum_{\substack{G \in \mathcal{G}^{(g-1,p+2)}}}
+Z_{g,p}(\alpha_1,\dots,\alpha_p)=&\frac{c_{g-1,p+2}}{\prod_{j=1}^{-2}p\Delta(\alpha_j)}\int_{\mathcal{H}_{reg}}\sum_{\substack{G \in \mathcal{G}^{(g-1,p+2)}}}
         \Vol \left[ \honey^G(\alpha_1, 
-        \dots, \alpha_p,\theta,\tilde{\theta})\right]d\theta\\
+        \dots, \alpha_p,\theta,\tilde{\theta})\right]\frac{\Delta(\theta)^2}{\Delta(\theta)\Delta(\tilde{\theta})}d\theta\\
         =&c_{g-1,p+2}\sum_{\substack{G \in \mathcal{G}^{(g,p)}}}
         \Vol \left[ \honey^G(\alpha_1, 
-        \dots, \alpha_p) \right].
+        \dots, \alpha_p) \right],
  \end{align*}
-In the second case, $\mathcal{T}'$ is obtained by gluing a  a surface $\mathcal{M}'$ with genus $g$ and $p-1$ points removed and a triangle $T$. Let $\widehat{M}=\mathcal{M'}\cup T$ be the corresponding disconnected surface. Then, by \eqref{eq:SU_n_equal_Un} and Proposition \ref{prop:volume_formula_flat},
+where we used the fact that $\Delta(\theta)=\Delta(\tilde{\theta})$ on the second equality. In the second case, $\mathcal{T}'$ is obtained by gluing a  a surface $\mathcal{M}'$ with genus $g$ and $p-1$ points removed and a triangle $T$. Let $\widehat{M}=\mathcal{M'}\cup T$ be the corresponding disconnected surface. Then, by \eqref{eq:SU_n_equal_Un} and Proposition \ref{prop:volume_formula_flat},
 \begin{align*}
 Z_{g,p}(\alpha_1,\dots,\alpha_p)=&Z_{g,p}(\hat{\alpha}_1,\dots,\hat{\alpha}_p)\\
 =&\frac{1}{n}\int_{\mathcal{H}_{reg}^0}\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_{p-2},\theta))\Vol(M(T,-\theta,\hat{\alpha}_{p-1},\hat{\alpha}_p))d\theta.
@@ -2910,21 +2931,22 @@ Since the map $\theta\mapsto \theta-s$ is volume preserving,
 &\hspace{3cm}=\int_{\mathcal{H}_{reg}^{s}}\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_{p-2},\theta))\Vol(M(T,-\theta,\alpha_{p-1},\alpha_p))d\theta.
 \end{align*}
 By induction,
-$$\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_{p-2},\theta,))=c_{g,p-1}\sum_{\substack{G \in \mathcal{G}^{(g,p-1)}}}
+$$\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_{p-2},\theta,))=\frac{c_{g,p-1}}{\Delta(\theta)\prod_{i=1}^{p-2}\Delta(\alpha_i)}\sum_{\substack{G \in \mathcal{G}^{(g,p-1)}}}
         \Vol \left[ \honey^G(\alpha_1, 
         \dots, \alpha_{p-2},\theta) \right],$$
  and
- $$\Vol(M(T,\theta,\alpha_{p-1},\alpha_p))=c_{0,3}\sum_{\substack{G \in \mathcal{G}^{(g,p-1)}}}
+ $$\Vol(M(T,\theta,\alpha_{p-1},\alpha_p))=\frac{c_{0,3}}{\Delta(\theta)\Delta(\alpha_{p-1}),\Delta(\alpha_{p})}\sum_{\substack{G \in \mathcal{G}^{(g,p-1)}}}
         \Vol \left[ \honey^G(\theta, 
         \dots, \alpha_{p-1},\alpha_{p}) \right],$$
  and thus, by Proposition \ref{prop:formula_gluing_honey},
 \begin{align*}
-& Z_{g,p}(\alpha_1,\dots,\alpha_p)\\
- =&c_{g,p-1}c_{0,3}\frac{1}{n}\int_{\mathcal{H}_{reg}^s}\sum_{\substack{G_1 \in \mathcal{G}^{(g,p-1)},G_2\in \mathcal{G}^{(0,3)}}}
+Z_{g,p}(\alpha_1,\dots,\alpha_p)
+ =&\frac{c_{g,p-1}c_{0,3}}{\prod_{i=1}^{p}\Delta(\alpha_{i})}\frac{1}{n}\int_{\mathcal{H}_{reg}^s}\sum_{\substack{G_1 \in \mathcal{G}^{(g,p-1)},G_2\in \mathcal{G}^{(0,3)}}}
         \Vol \left[ \honey^{G_1}(\alpha_1, 
-        \dots, \alpha_{p-2},\theta)\right]\Vol \left[ \honey^{G_2}(\tilde{\theta}, 
-        \alpha_{p-1},\alpha_{p})\right]d\theta\\
-        =&c_{g,p}\sum_{\substack{G \in \mathcal{G}^{(g,p)}}}
+        \dots, \alpha_{p-2},\theta)\right]\\
+        &\hspace{5cm}\Vol \left[ \honey^{G_2}(\tilde{\theta}, 
+        \alpha_{p-1},\alpha_{p})\right]\frac{\Delta(\theta)^2}{\Delta(\theta)\Delta(\tilde{\theta})}d\theta\\
+        =&\frac{c_{g,p}}{\prod_{i=1}^{p}\Delta(\alpha_{i})}\sum_{\substack{G \in \mathcal{G}^{(g,p)}}}
         \Vol \left[ \honey^G(\alpha_1, 
         \dots, \alpha_p) \right],\\
 \end{align*}
@@ -2936,7 +2958,7 @@ with $c_{g,p}=\frac{c_{g,p-1}c_{0,3}}{n}$.
 \label{sec:proof_positive_area}
 
 The goal of this section is to give an explicit volume formula for the marginal
-Yang--Mills partition function of an oriented surface of genus $g$ with prescribed non-degenerated holonomies (up to conjugation) on a finite set of disjoint loops.  As it is proven in XXXRefXXX, the corresponding partition function then only depends on the prescribed conjugacy classes and on the areas of each connected components delimites by the loops. 
+Yang--Mills partition function of an oriented surface of genus $g$ with prescribed non-degenerated holonomies (up to conjugation) on a finite set of disjoint loops.  As it is proven in \cite{levy2003yang}, the corresponding partition function then only depends on the prescribed conjugacy classes and on the areas of each connected components delimites by the loops. 
 \begin{definition}
 A disjoint loops configuration $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p)$ is the data of a compact oriented surface together with $p$ disjoints Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each $\Gamma_i, \,1\leq i\leq p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
 
@@ -2955,35 +2977,41 @@ To each disjoint loops configuration $\mathcal{L}$, one associates a skeleton $T
 \end{definition}
 
 In this section, 
-for $T \geqslant 0$ and $x \in \SU(n)$, we denote by $p_T(x)$ the heat kernel 
-on $\SU(n)$.
+for $T \geqslant 0$ and $x \in \SU(n)$, we denote by $p_T(x,y)$ the projection of the heat kernel 
+on $\U(n)$ to $\mathcal{H}$.
 
 \begin{lemma}[Partition function of a cylinder]
-    Let $T > 0$, $\alpha \in \mathcal{H}$ and let $x \in \Ocal_\alpha$. Then,
+    Let $T > 0$, $\alpha_1,\alpha_2 \in \mathcal{H}_{reg}$. Then,
     \begin{equation*}
-        Z_{0, 2, T}(1, x) = p_T(x).
+        Z_{0, 2, T}(\alpha_1, \alpha_2) =\frac{1}{\Delta(\alpha_2)^2} p_T(\alpha_1,\alpha_2),
     \end{equation*}
+ where $p_T$ is the heat kernel at time $T$ of the Dyson Brownian motion on $\mathcal{H}$ starting at $\alpha_1$.
 \end{lemma}
 
 \begin{proof}
-    This is a consequence of Proposition 4.2.4 and $(5.3)$ in \autocite{levy2003yang}.
+    This is a consequence of \cite[Proposition 4.2.4 and $(5.3)$]{levy2003yang}.
 \end{proof}
 
-\begin{theorem}[Volume formula for Yang-Mills partition function]
+\begin{proposition}[Volume formula for Yang-Mills partition function]
     Let $p, g \geqslant 0$ be integers, $(\alpha_1, \dots, \alpha_p) \in \mathcal{H}^p$ 
-    and $T > 0$. Assume that loops associated to $\alpha_1, \dots, \alpha_p$ enclose 
-    respective areas $t_1, \dots, t_p$. Then, the Yang--Mills partition function is given by 
+    and $T > 0$. Assume that loops $\gamma_1,\ldots,\gamma_p$ associated to $\alpha_1, \dots, \alpha_p$ enclose contractible domains $D_1,\ldots,D_p$ with 
+    respective areas $t_1, \dots, t_p$ and that the area of $S\setminus \bigcup_{i=1}^pD_i$ is $T$. Then, the Yang--Mills partition function is given by 
     \begin{equation*}
         Z_{g, p, T}(\alpha_1, \dots, \alpha_p) 
         = \int Z_{g, p, 0}(\alpha_1, \dots, \alpha_{p-1}, u) \, 
-        Z_{0, 2, T}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \diff u
+        Z_{0, 2, T}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \Delta(u)^2\diff u.
     \end{equation*}
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
-Recall that 
+Recall that the partition function is invariant by area preserving diffeomorphism. Let us introduce a curve $\gamma$ enclosing the curve $\gamma_p$ such that the area of the domain enclosed by $\gamma_p$ and $\gamma$ is $T'$, with $0< T'< T$. Then, by the Markov property of the Yang-Mills partition function, see \cite[Proposition 5.1.2]{levy2003yang} or \cite[Eq. (2.63)]{witten1992two},
+$$Z_{g, p, T}(\alpha_1, \dots, \alpha_p)=\int_{\mathcal{H}} Z_{g, p, T-T'}(\alpha_1, \dots, \alpha_{p-1}, u) \, 
+        Z_{0, 2, T'}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \Delta(u)^2\diff u.$$
+By shrinking the domain between the curve $\gamma$ and the curves $\gamma_1,\ldots,\gamma_p$ to awe have $T'$ converging to $T$ and $T-T'$ going to zero. In this case the partition function $Z_{g, p, T-T'}(\alpha_1, \dots, \alpha_{p-1}, u)$ converges to $Z_{g,p,0}(\alpha_1, \dots, \alpha_{p-1}, u)$, the volume of flat connections with boundary holonomies $\alpha_1,\ldots,\alpha_p$, see \cite{sengupta2003volume}. The result is deduced.
 \end{proof}
-
+\begin{proof}[Proof of Corollary \ref{cor:yang_mills_g_p}]
+The corollary is then a deduction of the latter proposition, \cite[Proposition 5.1.2]{levy2003yang} and Theorem \ref{th:Z_g_p_0}.
+\end{proof}
 % \bibliographystyle{plain}
 % \bibliography{mybib}
 
