@@ -17,36 +17,141 @@
 \endgroup
 
 \datalist[entry]{anyt/global//global/global}
-  \entry{bismut5symplectic}{article}{}
+  \entry{Atiyah_Bott}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AMF}{%
+         family={Atiyah},
+         familyi={A\bibinitperiod},
+         given={M.\bibnamedelima F.},
+         giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=BR}{%
+         family={Bott},
+         familyi={B\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AMFBR1}
+    \strng{fullhash}{AMFBR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{AB83}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \verb{doi}
+    \verb 10.1098/rsta.1983.0017
+    \endverb
+    \field{pages}{523\bibrangedash 615}
+    \field{title}{The {Yang}-{Mills} equations over {Riemann} surfaces}
+    \field{volume}{308}
+    \field{journaltitle}{Philos. Trans. R. Soc. Lond., Ser. A}
+    \field{year}{1983}
+  \endentry
+
+  \entry{belkale2008quantum}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BP}{%
+         family={Belkale},
+         familyi={B\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BP1}
+    \strng{fullhash}{BP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Bel08}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1090/S0894-0347-07-00584-X
+    \endverb
+    \field{number}{2}
+    \field{pages}{365\bibrangedash 408}
+    \field{title}{Quantum generalization of the Horn conjecture}
+    \field{volume}{21}
+    \field{journaltitle}{J. Am. Math. Soc.}
+    \field{year}{2008}
+  \endentry
+
+  \entry{bismut5symplectic}{incollection}{}
     \name{author}{2}{}{%
       {{hash=BJM}{%
          family={Bismut},
          familyi={B\bibinitperiod},
-         given={Jean-Michel},
+         given={J.-M.},
          giveni={J\bibinithyphendelim M\bibinitperiod},
       }}%
       {{hash=LF}{%
          family={Labourie},
          familyi={L\bibinitperiod},
-         given={Fran{\c{c}}ois},
+         given={F.},
          giveni={F\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
-      {International Press of Boston}%
+      {Boston, MA: International Press}%
     }
     \strng{namehash}{BJMLF1}
     \strng{fullhash}{BJMLF1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{BL}
+    \field{labelalpha}{BL99}
     \field{sortinit}{B}
     \field{sortinithash}{B}
-    \field{number}{1}
+    \field{booktitle}{Surveys in differential geometry. Vol. V: Differential
+  geometry inspired by string theory}
     \field{pages}{97\bibrangedash 311}
-    \field{title}{Symplectic geometry and the Verlinde Formulas}
-    \field{volume}{5}
-    \field{journaltitle}{Surveys in Differential Geometry}
+    \field{title}{Symplectic geometry and the {Verlinde} formulas}
+    \field{year}{1999}
+  \endentry
+
+  \entry{Buch_Kresch_Purbhoo_Tamvakis}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BAS}{%
+         family={Buch},
+         familyi={B\bibinitperiod},
+         given={A.\bibnamedelima S.},
+         giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Kresch},
+         familyi={K\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PK}{%
+         family={Purbhoo},
+         familyi={P\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=TH}{%
+         family={Tamvakis},
+         familyi={T\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BAS+1}
+    \strng{fullhash}{BASKAPKTH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Buc+16}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1007/s10801-016-0697-3
+    \endverb
+    \field{number}{4}
+    \field{pages}{973\bibrangedash 1007}
+    \field{title}{The puzzle conjecture for the cohomology of two-step flag
+  manifolds}
+    \field{volume}{44}
+    \field{journaltitle}{J. Algebr. Comb.}
+    \field{year}{2016}
   \endentry
 
   \entry{françois2024positiveformulaproductconjugacy}{misc}{}
@@ -79,6 +184,132 @@
     \field{eprinttype}{arXiv}
     \field{eprintclass}{math.RT}
     \field{year}{2024}
+  \endentry
+
+  \entry{jeffrey1994extended}{article}{}
+    \name{author}{1}{}{%
+      {{hash=JLC}{%
+         family={Jeffrey},
+         familyi={J\bibinitperiod},
+         given={L.\bibnamedelima C.},
+         giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{JLC1}
+    \strng{fullhash}{JLC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Jef94}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.1007/BF01459756
+    \endverb
+    \field{pages}{667\bibrangedash 692}
+    \field{title}{Extended moduli spaces of flat connections on Riemann
+  surfaces}
+    \field{volume}{298}
+    \field{journaltitle}{Math. Ann.}
+    \field{year}{1994}
+  \endentry
+
+  \entry{jeffrey1998intersection}{article}{}
+    \name{author}{2}{}{%
+      {{hash=JLC}{%
+         family={Jeffrey},
+         familyi={J\bibinitperiod},
+         given={L.\bibnamedelima C.},
+         giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=KFC}{%
+         family={Kirwan},
+         familyi={K\bibinitperiod},
+         given={F.\bibnamedelima C.},
+         giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JLCKFC1}
+    \strng{fullhash}{JLCKFC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{JK98}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.2307/120993
+    \endverb
+    \field{number}{1}
+    \field{pages}{109\bibrangedash 196}
+    \field{title}{Intersection theory on moduli spaces of holomorphic bundles
+  of arbitrary rank on a {Riemann} surface}
+    \field{volume}{148}
+    \field{journaltitle}{Ann. Math. (2)}
+    \field{year}{1998}
+  \endentry
+
+  \entry{kassel2022determinantal}{article}{}
+    \name{author}{2}{}{%
+      {{hash=KA}{%
+         family={Kassel},
+         familyi={K\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LT}{%
+         family={L{\'e}vy},
+         familyi={L\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KALT1}
+    \strng{fullhash}{KALT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{KL22}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.4171/AIHPD/152
+    \endverb
+    \field{number}{4}
+    \field{pages}{659\bibrangedash 732}
+    \field{title}{Determinantal probability measures on {Grassmannians}}
+    \field{volume}{9}
+    \field{journaltitle}{Ann. Inst. Henri Poincar{\'e} D, Comb. Phys.
+  Interact.}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Klyachko}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KAA}{%
+         family={Klyachko},
+         familyi={K\bibinitperiod},
+         given={A.\bibnamedelima A.},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KAA1}
+    \strng{fullhash}{KAA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Kly98}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.1007/s000290050037
+    \endverb
+    \field{number}{3}
+    \field{pages}{419\bibrangedash 445}
+    \field{title}{Stable bundles, representation theory and {Hermitian}
+  operators}
+    \field{volume}{4}
+    \field{journaltitle}{Sel. Math., New Ser.}
+    \field{year}{1998}
   \endentry
 
   \entry{Knutson_Tao_honeycomb}{article}{}
@@ -115,26 +346,69 @@
     \field{year}{1999}
   \endentry
 
+  \entry{knutson2004honeycomb}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KA}{%
+         family={Knutson},
+         familyi={K\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TT}{%
+         family={Tao},
+         familyi={T\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Woodward},
+         familyi={W\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KATTWC1}
+    \strng{fullhash}{KATTWC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{KTW04}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.1090/S0894-0347-03-00441-7
+    \endverb
+    \field{number}{1}
+    \field{pages}{19\bibrangedash 48}
+    \field{title}{The honeycomb model of $Gl_n(\mathbb{C})$-tensor products II:
+  Puzzles determine facets of the Littlewood-Richardson cone}
+    \field{volume}{17}
+    \field{journaltitle}{J. Am. Math. Soc.}
+    \field{year}{2004}
+  \endentry
+
   \entry{levy2003yang}{book}{}
     \name{author}{1}{}{%
       {{hash=LT}{%
-         family={L{\'e}vy},
+         family={L\'evy},
          familyi={L\bibinitperiod},
          given={T.},
          giveni={T\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {American Mathematical Soc.}%
-    }
     \strng{namehash}{LT1}
     \strng{fullhash}{LT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{L{\'e}v03}
+    \field{labelalpha}{L\'03}
     \field{sortinit}{L}
     \field{sortinithash}{L}
-    \field{title}{Yang-Mills measure on compact surfaces}
+    \verb{doi}
+    \verb 10.1090/memo/0790
+    \endverb
+    \field{number}{790}
+    \field{title}{Yang-{M}ills measure on compact surfaces}
+    \field{volume}{166}
+    \field{journaltitle}{Mem. Amer. Math. Soc.}
     \field{year}{2003}
   \endentry
 
@@ -168,6 +442,121 @@
     \field{title}{Moduli spaces of flat connections on 2-manifolds, cobordism,
   and {Witten}'s volume formulas.}
     \field{year}{1999}
+  \endentry
+
+  \entry{Narasimhan_Seshadri}{article}{}
+    \name{author}{2}{}{%
+      {{hash=NMS}{%
+         family={Narasimhan},
+         familyi={N\bibinitperiod},
+         given={M.\bibnamedelima S.},
+         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=SCS}{%
+         family={Seshadri},
+         familyi={S\bibinitperiod},
+         given={C.\bibnamedelima S.},
+         giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NMSSCS1}
+    \strng{fullhash}{NMSSCS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{NS65}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \verb{doi}
+    \verb 10.2307/1970710
+    \endverb
+    \field{pages}{540\bibrangedash 567}
+    \field{title}{Stable and unitary vector bundles on a compact {Riemann}
+  surface}
+    \field{volume}{82}
+    \field{journaltitle}{Ann. Math. (2)}
+    \field{year}{1965}
+  \endentry
+
+  \entry{sengupta2003volume}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SAN}{%
+         family={Sengupta},
+         familyi={S\bibinitperiod},
+         given={A.\bibnamedelima N.},
+         giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SAN1}
+    \strng{fullhash}{SAN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sen03}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1016/S0393-0440(02)00229-2
+    \endverb
+    \field{number}{4}
+    \field{pages}{398\bibrangedash 426}
+    \field{title}{The volume measure for flat connections as limit of the
+  Yang--Mills measure}
+    \field{volume}{47}
+    \field{journaltitle}{J. Geom. Phys.}
+    \field{year}{2003}
+  \endentry
+
+  \entry{Verlinde}{article}{}
+    \name{author}{1}{}{%
+      {{hash=VE}{%
+         family={Verlinde},
+         familyi={V\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VE1}
+    \strng{fullhash}{VE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ver88}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \verb{doi}
+    \verb 10.1016/0550-3213(88)90603-7
+    \endverb
+    \field{pages}{360\bibrangedash 376}
+    \field{title}{Fusion rules and modular transformations in 2D conformal
+  field theory}
+    \field{volume}{300}
+    \field{journaltitle}{Nucl. Phys., B}
+    \field{year}{1988}
+  \endentry
+
+  \entry{witten1992two}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WE}{%
+         family={Witten},
+         familyi={W\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WE1}
+    \strng{fullhash}{WE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Wit92}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1016/0393-0440(92)90034-X
+    \endverb
+    \field{number}{4}
+    \field{pages}{303\bibrangedash 368}
+    \field{title}{Two dimensional gauge theories revisited}
+    \field{volume}{9}
+    \field{journaltitle}{J. Geom. Phys.}
+    \field{year}{1992}
   \endentry
 \enddatalist
 \endinput

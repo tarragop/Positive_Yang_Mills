@@ -1196,8 +1196,13 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/geodescis_cases.pdf
+INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/geodescis_cases.pdf
+INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/geodescis_cases.pdf
+INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/geodescis_cases.pdf
+INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/geodescis_cases.pdf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtcsc10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
@@ -1258,6 +1263,7 @@ INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bu
 INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/common_boundary.pdf
 INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/common_boundary.pdf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -1269,7 +1275,6 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/bbm/bbm7.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/bbm/bbm5.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.aux
 INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.out
 INPUT /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.out

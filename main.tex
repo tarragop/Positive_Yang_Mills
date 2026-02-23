@@ -23,18 +23,21 @@
 \usepackage[maxbibnames=50, style=alphabetic,backend=bibtex]{biblatex}
 
 
+
+
 \usepackage{xcolor}
 \definecolor{darkgreen}{RGB}{0,100,0}
-
-
+\definecolor{pslblue}{RGB}{36, 56, 141}
+\definecolor{bordeau}{rgb}{0.5,0,0}
 \renewcommand*{\bibfont}{\small}
 \addbibresource{mybib.bib}
 \usepackage{csquotes}
 \usepackage{hyperref}
 \hypersetup{
   colorlinks   = true, 
-  linkcolor    = black,
-  citecolor    = blue      
+  linkcolor    = pslblue,
+  citecolor    = bordeau,
+  urlcolor = bordeau      
 }
 
 %%%%%%%%%% macros
@@ -91,27 +94,78 @@ We provide a manifestly positive expression for the volume of flat $\U_n$-valued
 
 \section{Introduction}
 
-Moduli spaces of unitary holomorphic vector bundles have been introduced by Narasimhan and Seshadri \cite{Narasimhan_Seshadri} as a way to classify vector bundles on a compact Riemann surface. As highlighted in the work of Atiyah and Bott \cite{Atiyah_bott_1983}, these  moduli spaces are deeply related to the $\U_n$-valued Yang-Mills measure on the corresponding surface. The latter is a random $\U_n$-valued connection weighted by its curvature, and the critical points then correspond to flat connections, which in turns are in correspondance with the holomorphic vector bundles. As such, there is a natural symplectic volume form on the moduli space of holomorphic bundles (or flat connections) which appears as the a zero-limit temperature of the Yang-Mills functional.
+Moduli spaces of unitary holomorphic vector bundles have been introduced by Narasimhan and Seshadri \cite{Narasimhan_Seshadri} 
+as a way to classify vector bundles on a compact Riemann surface. As highlighted in the work of Atiyah and Bott \cite{Atiyah_Bott}, 
+these  moduli spaces are deeply related to the $\U_n$-valued Yang-Mills measure on the corresponding surface. 
+The latter is a random $\U_n$-valued connection weighted by its curvature, and the critical points then correspond to flat connections, 
+which in turn are in correspondence with the holomorphic vector bundles. As such, there is a natural symplectic volume form on the moduli 
+space of holomorphic bundles (or flat connections) which appears as the zero-limit temperature of the Yang-Mills functional.
 
-Since the paper of Atiyah and Bott, there have been several works pursuing the goal of a better understanding of either the Yang-Mills measure or the volume form on flat connections. Let us mention in particular two pioneering works that appeared around 1990. The first one, introduced by Verlinde \cite{Verlinde}, expresses the volume form as the limit of the dimension of a vector space of holomorphic sections on the moduli space. This expression is clearly positive as a limit of a positive integers. There is an explicit formula, orginally due to Verlinde and later proved by Bismut and Labourie \cite{bismut5symplectic}, to compute these integers as a sum of complex numbers in the case of the three-holed sphere. 
+Since the paper of Atiyah and Bott, there have been several works pursuing the goal of a better understanding of either the Yang-Mills 
+measure or the volume form on flat connections. Let us mention in particular two pioneering works that appeared around 1990. 
+The first one, introduced by Verlinde \cite{Verlinde}, expresses the volume form as the limit of the dimension of a vector space of holomorphic sections on the moduli space. 
+This expression is clearly positive as a limit of positive integers. 
+There is an explicit formula, originally due to Verlinde and later proved by Bismut and Labourie \cite{bismut5symplectic}, 
+to compute these integers as a sum of complex numbers in the case of the three-holed sphere. 
 
-However, until recently \cite{Buch_Kresch_Purbhoo_Tamvakis}, no manifestly positive formula existed for the dimension of such spaces. The second work, due to Witten \cite{witten1992two}, reduces the case of an arbitrary compact Riemann surface to a three-holed sphere by exploiting a decomposition of pants of the surface. Such surgery procedure has been then rigorously proved several times, see \cite{jeffrey1998intersection} and \cite{meinrenken1999moduli}. Using this method, Witten succesfully obtained a general formula for the volume of flat connections as series of characters of the unitary group. This first result, which is a series of complex numbers, has been improved to an alternating sum of positive numbers by Jeffrey \cite{jeffrey1994extended} and then Meinrenken and Woodward \cite{meinrenken1999moduli}.
+However, until recently \cite{Buch_Kresch_Purbhoo_Tamvakis}, no manifestly positive formula existed for the dimension of such spaces. 
+The second work, due to Witten \cite{witten1992two}, reduces the case of an arbitrary compact Riemann surface to a three-holed sphere 
+by exploiting a decomposition of pants of the surface. 
+Such a surgery procedure has since been rigorously proved several times, see \cite{jeffrey1998intersection} and \cite{Meinrenken_Woodward}. 
+Using this method, Witten successfully obtained a general formula for the volume of flat connections as a series of characters of the unitary group. 
+This first result, which is a series of complex numbers, has been improved to an alternating sum of positive numbers by Jeffrey \cite{jeffrey1994extended} 
+and then Meinrenken and Woodward \cite{Meinrenken_Woodward}.
 
-In the present paper, we provide a positive formula for the volume of such moduli spaces as  a sum of volumes of explicit finite dimensional polytopes. These polytopes consist of coordinates of a collection of geodesics in a polygonal surface. The surface itself simply reflects the pants decomposition of the corresponding puncture Riemann surface, while the collection of geodesics is a colored generalization of the honeycomb model introduced by Knutson and Tao \cite{knutson2004honeycomb} to describe the spectrum of the sum of two hermitian matrices with prescribed spectra. The fact that our model is a generalization of \cite{knutson2004honeycomb} should not be a surprise, since the solution of the eigenvalue problem for the sum of hermitian matrices yields a particular subexample of a flat connection on a three-holed sphere, see \cite{klyachko1998stable,belkale2008quantum}. Actually, this subexample has been used to get the previously mentioned signed formula for the volume of the moduli spaces on the three-holed sphere, see \cite{meinrenken1999moduli}.
+In the present paper, we provide a positive formula for the volume of such moduli spaces as  a sum of volumes of explicit finite dimensional polytopes. 
+These polytopes consist of coordinates of a collection of geodesics in a polygonal surface. The surface itself simply reflects the pants decomposition 
+of the corresponding punctured Riemann surface, while the collection of geodesics is a colored generalization of the honeycomb model introduced by 
+Knutson and Tao \cite{knutson2004honeycomb} to describe the spectrum of the sum of two hermitian matrices with prescribed spectra. 
+The fact that our model is a generalization of \cite{knutson2004honeycomb} should not be a surprise, since the solution of the eigenvalue problem 
+for the sum of hermitian matrices yields a particular subexample of a flat connection on a three-holed sphere, see \cite{Klyachko, belkale2008quantum}. 
+Actually, this subexample has been used to get the previously mentioned signed formula for the volume of the moduli spaces on the three-holed sphere, see \cite{Meinrenken_Woodward}.
 
 
-The proof of the present result is mainly based on the positive formula given in \cite{françois2024positiveformulaproductconjugacy} in the case of the three-holed sphere. Roughly speaking, this formula has been obtained by following the initial method of Verlinde together with some recent results on the computation of the structure constants of the quantum cohomology of the Grassmannians \cite{Buch_Kresch_Purbhoo_Tamvakis}. In \cite{françois2024positiveformulaproductconjugacy}, the formula was given in terms of volumes of a so-called coloured hive model, which consists of a union of some explicit but degenerated polytope. 
+The proof of the present result is mainly based on the positive formula given in \cite{françois2024positiveformulaproductconjugacy} in the case of the three-holed sphere. 
+Roughly speaking, this formula has been obtained by following the initial method of Verlinde together with some recent results on the computation 
+of the structure constants of the quantum cohomology of the Grassmannians \cite{Buch_Kresch_Purbhoo_Tamvakis}. 
+In \cite{françois2024positiveformulaproductconjugacy}, the formula was given in terms of volumes of a so-called coloured hive model, 
+which consists of a union of some explicit but degenerate polytope. 
 
-Note that volumes are always defined up to a constant and when polytopes of a Euclidean space are degenerated, there are several ways to choose this constant from the volume measure of the ambient space : one can either consider the volume induced by the restriction of the Riemann metric or consider the pull-back of the canonical Lebesgue measure by a bijective projection on a subset of a canonical basis. Both definitions agree in the case of a convex body, but they start to differ when degeneracies appear. The choice of a volume form was relatively inconsequent in the case of \cite{knutson2004honeycomb}, since there was only one polytope considered and the change of volume form only amounted to a change by an overall constant. However, we are considering here a sum of volume polytopes, each of them degenerated and being in different subspaces of the ambient space, and we thus have to ensure that the chosen volumes are coherent from one polytope to the other. In \cite{françois2024positiveformulaproductconjugacy}, the correct choice was to use the pull-back corresponding to particular bijective projections. 
+Note that volumes are always defined up to a constant and when polytopes of a Euclidean space are degenerate, there are several ways 
+to choose this constant from the volume measure of the ambient space : one can either consider the volume induced by the restriction of 
+the Riemannian metric or consider the pull-back of the canonical Lebesgue measure by a bijective projection on a subset of a canonical basis. 
+Both definitions agree in the case of a convex body, but they start to differ when degeneracies appear. 
+The choice of a volume form was relatively inconsequential in the case of \cite{knutson2004honeycomb}, since there was only one polytope 
+considered and the change of volume form only amounted to a change by an overall constant. 
+However, we are considering here a sum of volume of polytopes, each of them degenerate and being in different subspaces of the ambient space, 
+and we thus have to ensure that the chosen volumes are coherent from one polytope to the other. 
+In \cite{françois2024positiveformulaproductconjugacy}, the correct choice was to use the pull-back corresponding to particular bijective projections. 
 
-It appears that the formulation of \cite{françois2024positiveformulaproductconjugacy} in terms of hive does not fit easily in the surgery formulas of Witten. In order to generalize the case of the three-holed sphere to arbitrary punctured compact Riemann surfaces, our first task has been to reformulate the latter hive model in terms of a colored version of honeycombs. As a byproduct of this reformulation, we also obtain a new volume formula in the case of the three holed sphere which is coordinate free : we provide an explicit relation between the volume form induced by the Riemann metric of the ambient space and any volume induced by a bijective projection on some coordinates. This relation is given by a simple combinatorial number, the number of spanning tree of a graph, in the similar spirit as in \cite{kassel2022determinantal}. Thanks to the new honeycomb model, the surgery formulas of \cite{witten1992two} to compute the volume of flat connections easily translates into a patching of honeycombs, and we thus get the desired positive formula.
+It appears that the formulation of \cite{françois2024positiveformulaproductconjugacy} in terms of hives does not fit easily in the surgery formulas of Witten. 
+In order to generalize the case of the three-holed sphere to arbitrary punctured compact Riemann surfaces, our first task has been to reformulate 
+the latter hive model in terms of a colored version of honeycombs. As a byproduct of this reformulation, 
+we also obtain a new volume formula in the case of the three-holed sphere which is coordinate-free : we provide an explicit relation between 
+the volume form induced by the Riemannian metric of the ambient space and any volume induced by a bijective projection onto some coordinates. 
+This relation is given by a simple combinatorial number, the number of spanning trees of a graph, in a similar spirit to \cite{kassel2022determinantal}. 
+Thanks to the new honeycomb model, the surgery formulas of \cite{witten1992two} to compute the volume of flat connections easily translate into a patching of honeycombs, 
+and we thus get the desired positive formula.
 
- Remark that this formula suggests a simple geometric description of a flat $\U_n$-connection on a compact Riemann surface, up to an overall conjugation by a unitary matrix, by then corresponding honeycomb arrangement. It would be very interesting to provide an explicit measure preserving bijection between the two models. However up to now, such a bijection has been out of reach already for the simplest particular case of the sum of hermitian matrices.
+Note that this formula suggests a simple geometric description of a flat $\U_n$-connection on a compact Riemann surface, 
+ up to an overall conjugation by a unitary matrix, by the corresponding honeycomb arrangement. It would be very interesting 
+ to provide an explicit measure preserving bijection between the two models. However up to now, such a bijection has been out of reach already 
+ for the simplest particular case of the sum of hermitian matrices.
 
-As suggested by \cite{Atiyah_Bott}, volume of flat connections are the building blocks for the computations of the partition function of the two dimensional Yang-Mills measure on compact Riemann surfaces, see \cite[Section 2]{witten1992two}. Using the new positive formulas for flat connections, one can thus easily deduce new formulas for marginals of the Yang-Mills measure which are again manifestly positive. Remark that our formulas are only valid for the holonomy on a set of non-crossing curves, and this gives thus only a partial description of the full Yang-Mills measure. Once again, our result suggests the existence of a measure preserving bijection between a projection of the Yang-Mills measure and a random path processes consisting of Dyson Brownian motions on circle and certain frozen path configurations in polygons, see Remark \ref{rmk:Yang-Mills_volume_conditioned_process}.
+As suggested by \cite{Atiyah_Bott}, volumes of flat connections are the building blocks for the computations of the partition function 
+of the two-dimensional Yang-Mills measure on compact Riemann surfaces, see \cite[Section 2]{witten1992two}. 
+Using the new positive formulas for flat connections, one can thus easily deduce new formulas for marginals of the Yang-Mills measure 
+which are again manifestly positive. Remark that our formulas are only valid for the holonomy on a set of non-crossing curves, 
+and this thus gives only a partial description of the full Yang-Mills measure. Once again, our result suggests the existence of a 
+measure preserving bijection between a projection of the Yang-Mills measure and random path processes consisting of Dyson Brownian motions 
+on the circle and certain frozen path configurations in polygons, see Remark \ref{rmk:Yang-Mills_volume_conditioned_process}.
+
+
 \section{Notations and statement of the main result}
-
-\subsection{Conjugacy classes}
+\subsection{Conjugacy classes of the unitary group}
 
 Throughout this paper, we fix an integer 
 $n \geq 3$ and denote
@@ -160,11 +214,12 @@ For $x, y \in S$ and $e$ a geodesic from $x$ to $y$, we then set $\partial e=\{x
 and denote by $\overset{\circ}{e} =e\setminus \{x,y\}$ its interior. 
 Remark that $(S,\mathbb{G})$ is then a graph with an uncountable number of vertices.
 \\
-Since $S$ is a locally flat and oriented surface, there non-vanishing two form $\omega$ on $S$ associated to its metric. If $e,e'\in\mathcal{E}$ are two geodesics such that $v\in e\cap e'$, we define the angle from $e$ to $e'$ as 
+Since $S$ is a locally flat and oriented surface, there non-vanishing two form $\omega$ on $S$ associated to its metric. 
+If $e,e'\in\mathcal{E}$ are two geodesics such that $v\in e\cap e'$, we define the angle from $e$ to $e'$ as 
 $$\widehat{(e,e')}=\arccos(g_{v}(t,t')),$$
 where $t,t'\in T_vS$ are unit tangent vectors of respectively $e$ and $e'$ at $v$ such that either $t=t'$ or $\omega_v(t,t')>0$.
 
-\begin{definition}[Non-degenerated honeycomb]
+\begin{definition}[Non-degenerate honeycomb]
 \label{def:toric_honeycomb}
 A \textit{honeycomb} $h$ is a union of closed 
 non-degenerate geodesics $\{e\}_{e\in \mathcal{E}}$, 
@@ -175,12 +230,26 @@ together with a color map $c:\mathcal{E}\rightarrow \{0,1,3\}$ such that :
 is only possible if, up to a transposition of $e$ and $e'$, 
 $c(e)=0, \,c'(e')=1$ and $\widehat{(e,e')}=-2\pi/3$,
 \item if $\partial e\cap \partial e'=\{v\}$, 
-then either $(c(e^1),c(e^2))\in\{(0,0),(1,1),(0,1),(1,3),(3,0)\}$ and $\widehat{(e,e')}=2 \pi/3$,
-or $(c(e^1),c(e^2))=(1,0)$ and $\widehat{(e,e')}=\pi/3$.
+then either $(c(e),c(e'))\in\{(0,0),(1,1),(0,1),(1,3),(3,0)\}$ and $\widehat{(e,e')}=2 \pi/3$,
+or $(c(e),c(e'))=(1,0)$ and $\widehat{(e,e')}=\pi/3$.
 \end{enumerate}
+
+\noindent
+Figure \ref{fig:geodesics} lists the possible cases for geodesics in non-degenerate 
+honeycombs of Definition \ref{def:toric_honeycomb}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=1]{images/geodescis_cases.pdf}
+    \caption{The possible angles between geodesics. The colors of the 
+    edges are given in the couple below the configuration.}
+    \label{fig:geodesics}
+\end{figure}
+
+\noindent
 A \textit{structure graph} of a honeycomb 
 $h$ is any finite graph $(V,E)$ with a coloring $c:E\rightarrow\{0,1,3\}$ with an injection $i:(V,E)\rightarrow (S,\mathbb{G})$ such that 
-$$h=\bigcup_{ e \in E}i(e)\quad\text{and }\quad c(e)=c(i(e)),e\in E.$$ 
+$$h=\bigcup_{ e \in E}i(e)\quad\text{and }\quad c(e)=c(i(e)), \ e\in E \ .$$ 
 \end{definition}
 
 \noindent
@@ -223,7 +292,7 @@ $$\partial T=\bigsqcup_{i\in\{0,1,2\}}\partial_iT \text{ , where }
 
 \begin{definition}[Triangular honeycomb]
     \label{def:triangular_honey}
-    A \textit{triangular honeycomb} $h$ of size $n$ is a non-degenerated 
+    A \textit{triangular honeycomb} $h$ of size $n$ is a non-degenerate 
     honeycomb $h$ on the surface $T$ endowed 
     with the Euclidian metric such that
     \begin{enumerate}
@@ -468,7 +537,7 @@ $\SU(n)$-valued connections, since the volume for the $\SU(n)$ case is equal
 to the one of the $\U(n)$ case for $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}^0$, 
 see \eqref{eq:SU_n_equal_Un}. 
 
-There are several other conventions to define the volume of flat connections, depending on the chosen volume on the unitary group (see \cite[Section 4.1]{witten1992two}) and depending on the kind of volume form considered. On the latter convention, remark that we are choosing here the symplectic volume, more adapted to Yang Mills generalizations, rather than the torsion volume introduced in \cite{witten1992two}, see also \cite[Appendix A]{meinrenken1999moduli} for a symplectic point of view on the relation between both volumes. The volume forms are easily related by the explicit factor $\prod_{j=1}^{p} \Delta(\alpha_j)$, see \cite[Section 4.7]{witten1992two}.
+There are several other conventions to define the volume of flat connections, depending on the chosen volume on the unitary group (see \cite[Section 4.1]{witten1992two}) and depending on the kind of volume form considered. On the latter convention, remark that we are choosing here the symplectic volume, more adapted to Yang Mills generalizations, rather than the torsion volume introduced in \cite{witten1992two}, see also \cite[Appendix A]{Meinrenken_Woodward} for a symplectic point of view on the relation between both volumes. The volume forms are easily related by the explicit factor $\prod_{j=1}^{p} \Delta(\alpha_j)$, see \cite[Section 4.7]{witten1992two}.
 
 
 \begin{remark}[Volume and conditioned processes]\label{rmk:_volume_conditioned_process}
@@ -529,7 +598,7 @@ with formulas for two operations on graphs which we call
 sieving and contractions in Section \ref{subsec:sieving_contraction}.
 Section \ref{sec:three_holed_sphere} is devoted to the proof of 
 Theorem \ref{th:Z_g_p_0} in the 
-case of the three holed-sphere which corresponds to $(g, p) = (0, 3)$.
+case of the three-holed sphere which corresponds to $(g, p) = (0, 3)$.
 We first show that triangular honeycombs can be viewed as flows on 
 graphs in Seection \ref{subsec:parametrization_honeycombs}. Section 
 \ref{subsec:dual_hive} recalls the \textit{dual hive} model introduced 
@@ -1510,7 +1579,7 @@ and honeycombs; edges of dual hives will be in duality with edges of honeycombs 
     $(0,0,0), (1,1,1), (1,0,3)$ or $(0,1,m)$ up to a cyclic rotation.
 \end{definition}
 
-\begin{definition}[Non-degenerated dual hive]
+\begin{definition}[Non-degenerate dual hive]
 \label{def:limit_dual_hive}
     For $(\alpha, \beta, \gamma) \in \mathcal{H}_{reg}^3$, 
     such that $|\alpha| + |\beta| = |\gamma| + d$,
@@ -2022,7 +2091,7 @@ has been defined in Definition \ref{def:triangular_honey}. We thus need to show 
 $x_{\ell} > x'_{\ell}$. Since $f \in E^{\tilde{G}}$ is of type $\ell + 1$, we have 
 that $f \subset x + \R\ed^{2i \pi (\ell+2)/3}$ in $T$. 
 The geodesic $f$ cannot be reduced to a point 
-as the honeycomb is non-degenerated and for otherwise condition $(2)$ of 
+as the honeycomb is non-degenerate and for otherwise condition $(2)$ of 
 Definition \ref{def:toric_honeycomb} would not be satisfied. Therefore, the 
 coordinate $\ell$ is strictly decreasing between edges $e$ and $e'$ so 
 that $x_{\ell} > x'_{\ell}$. Hence, $H\in \dualhive^C(\alpha,\beta,\gamma)$.
@@ -2144,7 +2213,7 @@ By Proposition \ref{prop:honey_hive} and the construction of $G^C$ from a colour
 
 We can now combine the results of \autocite{françois2024positiveformulaproductconjugacy} 
 with the ones of the previous section to prove Theorem \ref{th:Z_g_p_0} in the 
-case of the three holed-sphere, that is, for $(g, p) = (0, 3)$.
+case of the three-holed sphere, that is, for $(g, p) = (0, 3)$.
 Let us denote by $\Sigma_0^3$ the Riemann sphere with three generic marked points removed. 
 The moduli space of flat $\SU(n)$ connections can be described as 
 $$M_{0, 3}(\alpha,\beta,\gamma) = 
@@ -2958,7 +3027,7 @@ with $c_{g,p}=\frac{c_{g,p-1}c_{0,3}}{n}$.
 \label{sec:proof_positive_area}
 
 The goal of this section is to give an explicit volume formula for the marginal
-Yang--Mills partition function of an oriented surface of genus $g$ with prescribed non-degenerated holonomies (up to conjugation) on a finite set of disjoint loops.  As it is proven in \cite{levy2003yang}, the corresponding partition function then only depends on the prescribed conjugacy classes and on the areas of each connected components delimites by the loops. 
+Yang--Mills partition function of an oriented surface of genus $g$ with prescribed non-degenerate holonomies (up to conjugation) on a finite set of disjoint loops.  As it is proven in \cite{levy2003yang}, the corresponding partition function then only depends on the prescribed conjugacy classes and on the areas of each connected components delimites by the loops. 
 \begin{definition}
 A disjoint loops configuration $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p)$ is the data of a compact oriented surface together with $p$ disjoints Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each $\Gamma_i, \,1\leq i\leq p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
 
@@ -2972,10 +3041,11 @@ To each disjoint loops configuration $\mathcal{L}$, one associates a skeleton $T
 \item for $v_1,v_2\in V$, there is an edge $e$ between $v_1$ and $v_2$ for each boundary component. Since loops of $\mathcal{L}$ are non-intersecting, the each boundary component corresponds to a unique loop $\Gamma_j$ of $\mathcal{L}$, and then we label $\alpha_j$ the edge $e$.
 \end{itemize}
 
-\begin{definition}[Fat $(g,p)$-toric honeycomb] Let 
+% \begin{definition}[Fat $(g,p)$-toric honeycomb] Let 
 
-\end{definition}
+% \end{definition}
 
+\noindent
 In this section, 
 for $T \geqslant 0$ and $x \in \SU(n)$, we denote by $p_T(x,y)$ the projection of the heat kernel 
 on $\U(n)$ to $\mathcal{H}$.
