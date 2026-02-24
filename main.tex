@@ -168,14 +168,14 @@ on the circle and certain frozen path configurations in polygons, see Remark \re
 \subsection{Conjugacy classes of the unitary group}
 
 Throughout this paper, we fix an integer 
-$n \geq 3$ and denote
+$n \geqslant 3$ and denote
 $\mathcal{H}=(\mathbb{R}/\mathbb{Z})^n/S_n$,
 where $S_n$ is the symmetric
 group of degree $n$ acting on
 $(\mathbb R/\mathbb Z)^n$ by permutations
 of the coordinates.
 As a set, we identify $\mathcal H$ with $\{\theta=(\theta_1,\dots,\theta_n) 
-\in [0,1[^n \colon \theta_1 \geq \dots \geq \theta_n\}$ in the usual way.
+\in [0,1[^n \colon \theta_1 \geqslant \dots \geqslant \theta_n\}$ in the usual way.
 For our purposes, $\mathcal H$ represents
 the set of conjugacy classes
 of $\U(n)$, where
@@ -183,8 +183,7 @@ the conjugacy class of
 $\theta \in \mathcal H$ is
 \begin{equation*}
 	\mathcal{O}(\theta) = 
-	\left\lbrace Ue^{2\pi i\theta}U^{-1} \colon
-	\,U\in \U(n)\right\rbrace
+	\left\lbrace Ue^{2\pi i\theta}U^{-1} \mid U\in \U(n)\right\rbrace
 	\quad \text{ with } \quad e^{2\pi i\theta}=
 	\begin{pmatrix} 
 		e^{2\pi i \theta_1}&0&\dots& 0
@@ -196,13 +195,13 @@ $\theta \in \mathcal H$ is
 
 \noindent
 Let us use the notation $\mathcal{H}_{reg}=
-\{\theta\in \mathcal{H} \colon
+\{\theta\in \mathcal{H} \mid
 \theta_1>\theta_2>\ldots>\theta_n\}$ which
 represents the set of regular 
 conjugacy classes of $\U(n)$, namely the ones of maximal 
 dimension in $\U(n)$. Finally, let $\mathcal{H}_{reg}^0$ denote the subset of $\mathcal{H}_{reg}$ corresponding to the regular conjugacy classes of $\SU(n)$. Namely,
 $$\mathcal{H}_{reg}^0=\left\{\theta\in \mathcal{H} \; 
-\colon  \; 
+\mid  \; 
 \theta_1>\theta_2>\ldots>\theta_n \text{ and }\sum_{i=1}^n \theta_i\in\mathbb{N}\right\}.$$
 
 \subsection{Triangular honeycomb} Let $S$ be an oriented Riemannian surface with boundary obtained by patching some equilateral triangles along some of their 
@@ -216,7 +215,7 @@ Remark that $(S,\mathbb{G})$ is then a graph with an uncountable number of verti
 \\
 Since $S$ is a locally flat and oriented surface, there non-vanishing two form $\omega$ on $S$ associated to its metric. 
 If $e,e'\in\mathcal{E}$ are two geodesics such that $v\in e\cap e'$, we define the angle from $e$ to $e'$ as 
-$$\widehat{(e,e')}=\arccos(g_{v}(t,t')),$$
+$$\widehat{(e,e')}=\arccos(g_{v}(t,t')) \ ,$$
 where $t,t'\in T_vS$ are unit tangent vectors of respectively $e$ and $e'$ at $v$ such that either $t=t'$ or $\omega_v(t,t')>0$.
 
 \begin{definition}[Non-degenerate honeycomb]
@@ -228,10 +227,9 @@ together with a color map $c:\mathcal{E}\rightarrow \{0,1,3\}$ such that :
 \begin{enumerate}
 \item $\overset{\circ}{e}\cap \overset{\circ}{e}'\not=\emptyset$ 
 is only possible if, up to a transposition of $e$ and $e'$, 
-$c(e)=0, \,c'(e')=1$ and $\widehat{(e,e')}=-2\pi/3$,
+$c(e)=0, \,c(e')=1$ and $\widehat{(e,e')}=-2\pi/3$,
 \item if $\partial e\cap \partial e'=\{v\}$, 
-then either $(c(e),c(e'))\in\{(0,0),(1,1),(0,1),(1,3),(3,0)\}$ and $\widehat{(e,e')}=2 \pi/3$,
-or $(c(e),c(e'))=(1,0)$ and $\widehat{(e,e')}=\pi/3$.
+then $(c(e),c(e'))\in\{(0,0),(1,1),(0,1),(1,3),(3,0)\}$ and $\widehat{(e,e')}=2 \pi/3$.
 \end{enumerate}
 
 \noindent
@@ -281,14 +279,14 @@ of Definition \ref{def:toric_honeycomb}.
 \\
 \\
 Let us denote by 
-$T \coloneqq \{x+ye^{i\pi/3} \mid 0\leq x,y\leq 1, \ x+y\leq 1\} 
+$T \coloneqq \{x+ye^{i\pi/3} \mid 0\leqslant x,y\leqslant 1, \ x+y\leqslant 1\} 
 \subset \mathbb{C}$ the equilateral triangle with vertices $0, 1$ 
 and $e^{i\pi/3}$. To each point $v \in T$ we associate the 
 triple $(v_0,v_1,v_2)$ such that $v=v_1+v_2e^{i\pi/3}$ 
 and $v_0=1-v_1-v_2$.
 Then, the boundary $\partial T$ can be decomposed as
 $$\partial T=\bigsqcup_{i\in\{0,1,2\}}\partial_iT \text{ , where } 
-\partial_iT=\{v\in T \mid \,v_i=0\}.$$
+\partial_iT=\{v\in T \mid \,v_i=0\} \ .$$
 
 \begin{definition}[Triangular honeycomb]
     \label{def:triangular_honey}
@@ -304,14 +302,14 @@ $$\partial T=\bigsqcup_{i\in\{0,1,2\}}\partial_iT \text{ , where }
     The integer $\ell(e)$ is then called the \textit{type} of $e$ 
     and $L(e)=x_{\ell(e)}$ is called the \textit{height} of $e$ 
     which is independent of the choice of $x$, 
-    \item for $0\leq i\leq 2$, $\#h\cap \partial_i T=n$ and if $e$ 
+    \item for $0\leqslant i\leqslant 2$, $\#h\cap \partial_i T=n$ and if $e$ 
     is adjacent to a boundary vertex belonging to $\partial_i T$, 
     then either $c(e)=0$ and $\ell(e)=i+1$ or 
     $c(e)=1$ and $\ell(e)=i+2$. Moreover, 
     the color is increasing along each edge : 
     namely, if $e^1$ (resp. $e^2$) meets 
     $\partial_iT$ at $x^1$ (resp. $x^2$) with 
-    $x_{i+1}^2>x_{i+1}^1$, then $c(e^2)\geq c(e^1)$. 
+    $x_{i+1}^2>x_{i+1}^1$, then $c(e^2)\geqslant c(e^1)$. 
     \end{enumerate}
 \end{definition}
 
@@ -326,7 +324,7 @@ $v^0$ of $G$, corresponding to the univalent vertex on
 $\partial_0T$ whose coordinate $v^1_1$ is maximal. 
 Then, the cyclic counter-clockwise order on the boundary vertices 
 given by the orientation of $T$ yields an order on the $3n$ boundary vertices 
-$\{v^1,\ldots,v^{3n}\}$, with the vertices $\{v^{ni+j},1\leq j\leq n\}$ located on $\partial_iT$.
+$\{v^1,\ldots,v^{3n}\}$, with the vertices $\{v^{ni+j},1\leqslant j\leqslant n\}$ located on $\partial_iT$.
 \\
 In the particular case where all edges have the same color, 
 our definition is the original definition of a generic honeycomb 
@@ -343,14 +341,14 @@ is the $3n$ tuple
 \begin{equation}
     \label{eq:boundary_honeycomb_order}
     \partial h \coloneqq 
-    \left((\alpha^0_n \leq \dots\leq  \alpha^0_1), 
-    (\alpha^1_n\leq \dots\leq \alpha^1_1), 
-    ( \alpha^2_n\leq \dots\leq \alpha^2_1)\right),
+    \left((\alpha^0_n \leqslant \dots\leqslant  \alpha^0_1), 
+    (\alpha^1_n\leqslant \dots\leqslant \alpha^1_1), 
+    ( \alpha^2_n\leqslant \dots\leqslant \alpha^2_1)\right),
 \end{equation}
-where $(\alpha^i_n\leq \dots\leq \alpha^i_1)$ is the ordered 
+where $(\alpha^i_n\leqslant \dots\leqslant \alpha^i_1)$ is the ordered 
 tuple of the $i+1$-coordinates of boundary points of 
 $h$ on $\partial_iT$. Hence, 
-$\alpha^i_j=v^{ni+j}_{i+1}$ for $0\leq i\leq 2$ and $1\leq j\leq n$.
+$\alpha^i_j=v^{ni+j}_{i+1}$ for $0\leqslant i\leqslant 2$ and $1\leqslant j\leqslant n$.
 \\
 \\
 For $\alpha,\beta,\gamma\in \mathcal{H}_{reg}$ let us 
@@ -376,10 +374,11 @@ graphs with ordered boundary appearing in $\{G(h) \mid h\in\honey_{n,d}\}$.
     \label{fig:boundary_toric_honey}
 \end{figure}
 
-\subsection{ \texorpdfstring{$(g,p)-$}{(g, p)-}honeycombs}\label{subsec:(g,p)_honey} Let $g,p\geqslant 0$ be integers and let $S$ be a 
+\subsection{ \texorpdfstring{$(g,p)-$}{(g, p)-}honeycombs}\label{subsec:(g,p)_honey} Let $g,p\geqslant 0$ be integers 
+such that $p + 2g-2 \geqslant 1$ and let $S$ be a 
 connected compact orientable surface of genus $g$ with 
 $p$ boundary components $L_1, \ldots, L_{p}$. 
-Let $\mathcal{M}=(M_1\ldots, M_{2g+p-2})$ be a decomposition in pants
+Let $\mathcal{M}=(M_1\ldots, M_{2g+p-2})$ be a pant decomposition 
 of this surface. 
 We build from $\mathcal{M}$ a surface as follows : 
 \begin{itemize}
@@ -405,7 +404,7 @@ $h\cap S'$ is again a honeycomb.
 
 \begin{definition}
 A \textit{$(g,p)$-honeycomb }is a honeycomb $h$ on 
-$\mathcal{T}$ such that for each $1\leq i\leq 2g+p-2$, 
+$\mathcal{T}$ such that for each $1\leqslant i\leqslant 2g+p-2$, 
 $h\cap T_i$ is a triangular honeycomb.
 \end{definition} 
 
@@ -414,8 +413,8 @@ Let us denote by $\honey^{(g, p)}$ the set of
 $(g,p)$-honeycombs. For $h\in\honey^{(g,p)}$ and $1 \leqslant i \leqslant 2g+p-2$, let $G_h^i=(V^i, E^i)$ be 
 the canonical graph structure of the honeycomb $h\cap  T_i$. 
 We choose as structure graph of $h$ the graph $\hat{G}[h] = (V, E)$ where
-$$V = \bigcup_{1\leq i\leq 2g+p-2}V_i \ \text{ and } \ 
-E = \bigcup_{1\leq i\leq 2g+p-2} E_i \ .$$
+$$V = \bigcup_{1\leqslant i\leqslant 2g+p-2}V_i \ \text{ and } \ 
+E = \bigcup_{1\leqslant i\leqslant 2g+p-2} E_i \ .$$
 
 \noindent
 In particular, if $h$ is a $(g,p)$ honeycomb and 
@@ -424,8 +423,8 @@ there exists a triangle $T_{j_i}$ and $\ell_i\in\{0,1,2\}$
 such that $L_i=\partial_{\ell_i} T^{j_i}$, 
 and we set $\partial_i h = h\cap L_i$. As in the triangular case, the orientation of $S$ yields an orientation on each boundary component. 
 For $h\in \honey^{(g,p)}$, order the boundary points so that 
-$$h\cap \bigcup_{1\leq i\leq p}L_i=\{v^{(i-1)n+j},1\leq i\leq p,j\leq n\},$$ 
-where  $\partial_ih=\{v^{(i-1)n+j},\, 1\leq j\leq n\}$ with $v^{(i-1)n+j}_{\ell_i+1}>  v^{(i-1)n+j'}_{\ell_i+1}$ if $1\leq j<j'\leq n$.
+$$h\cap \bigcup_{1\leqslant i\leqslant p}L_i=\{v^{(i-1)n+j},1\leqslant i\leqslant p,j\leqslant n\},$$ 
+where  $\partial_ih=\{v^{(i-1)n+j},\, 1\leqslant j\leqslant n\}$ with $v^{(i-1)n+j}_{\ell_i+1}>  v^{(i-1)n+j'}_{\ell_i+1}$ if $1\leqslant j<j'\leqslant n$.
 \\
 We denote by $\honey^{(g,p)} \left(\alpha^1,\ldots,\alpha^p\right)$ 
 the set of $(g,p)$-honeycombs with boundary components 
@@ -457,7 +456,7 @@ the subset of graphs $G$ such that $c(G)=d$.
 
 \noindent
 For $G = (V, E) \in\mathcal{G}^{(p, g)}$, there is a natural parametrization of 
-$\honey^G$ constructed as follows. For any edge $e\in E$, there exists $1\leq i\leq N$ such that 
+$\honey^G$ constructed as follows. For any edge $e\in E$, there exists $1\leqslant i\leqslant N$ such that 
 $e\in E_i$. For $h\in\honey^G$, let us set 
 $$P[h](e)=L_{T_i}(i(e)) \ ,$$ 
 where $L_{\vert T_i}$ is the height map defined on $T_i$ from 
@@ -473,7 +472,7 @@ This map is clearly non-surjective
 since $P \left(\honey^G\right)$ is a bounded subset of 
 $\left(\mathbb{R}^{3n(n+1)/2}\right)^N$. 
 Moreover, there are several relations among the 
-values of $((P_{\vert T_i}(e))_{e\in G_h^i})_{1\leq i\leq N}$
+values of $((P_{\vert T_i}(e))_{e\in G_h^i})_{1\leqslant i\leqslant N}$
 which implies that $P$ is an over-parametrization of $\honey^{G}$. 
 However, it will follow from 
 Proposition \ref{prop:parametrization_triangular_honey_first} that $P$ is injective. 
@@ -497,17 +496,17 @@ on a compact oriented surface with genus $g$ having $p$
 boundary components for which the holonomies around 
 $L_1,\ldots,L_p$ respectively belong to 
 $\mathcal{O}_{\alpha_1},\mathcal{O}_{\alpha_2}\ldots,\mathcal{O}_{\alpha_p}$. 
-For $g,p\geq 0$, Set $\diff \Vol\in\Omega^{n_{g,p}}\left(\mathbb{R}^{E^{(g,p)}}\right)$ 
+For $g,p\geqslant 0$, Set $\diff \Vol\in\Omega^{n_{g,p}}\left(\mathbb{R}^{E^{(g,p)}}\right)$ 
 for the volume form on $n_{g,p}$-dimensional subspaces induced by the 
 canonical Riemannian metric on $\mathbb{R}^{E^{(g,p)}}$. Hence, 
 \begin{equation}
     \label{eq:volume_R_E}
-    \diff \Vol = \sum_{1\leq i_1<\ldots<i_{n_{g,p}} \leqslant n_{e}}\diff x_{i_1} 
+    \diff \Vol = \sum_{1\leqslant i_1<\ldots<i_{n_{g,p}} \leqslant n_{e}}\diff x_{i_1} 
     \wedge\ldots \wedge \diff x_{i_{n_{g,p}}}.
 \end{equation}
 In the following statement, we write $\Vol(K)$ for the integration of $ \diff \Vol$ on a 
 $n_{g,p}$-dimensional submanifold and we let $\Delta(x)=2^{n(n-1)/2}\prod_{i<j}\sin(\pi(x_i-x_j))$ 
-denotes the absolute value of the Vandermonde determinant of $(e^{ix_j})_{1\leq j\leq n}$.
+denotes the absolute value of the Vandermonde determinant of $(e^{ix_j})_{1\leqslant j\leqslant n}$.
 
 \begin{theorem}[Volume formula for $(g, p)$ partition function]
     \label{th:Z_g_p_0}
@@ -527,7 +526,7 @@ denotes the absolute value of the Vandermonde determinant of $(e^{ix_j})_{1\leq 
 
 \noindent
 The sum on the right hand-side is finite, 
-since each set $\mathcal{G}_{d}^{(g,p)}$ is finite and $d\leq n-1$. 
+since each set $\mathcal{G}_{d}^{(g,p)}$ is finite and $d\leqslant n-1$. 
 As it will appear below, for given $\alpha_1, \dots, \alpha_p\in\mathcal{H}_{reg}$ 
 the volumes appearing in the sum will be non-zero only for $G\in \mathcal{G}_{d}^{(g,p)}$ 
 where $d=\sum_{i=1}^p\sum_{j=1}^n\alpha_j^i-(p-2)n$. 
@@ -559,7 +558,7 @@ areas of each connected components delimited by the loops.
 Let $S$ be a connected compact oriented surface of genus $g \geqslant 0$
 together with $p$ disjoints Jordan curves 
 $\Gamma_1,\ldots,\Gamma_p$ on $S$. For each 
-$\Gamma_i, \,1\leq i\leq p$, let $\alpha_i$ be an element of 
+$\Gamma_i, \,1\leqslant i\leqslant p$, let $\alpha_i$ be an element of 
 $\mathcal{H}_{reg}$.
 \\
 We associate to $(S,\Gamma_1,\ldots,\Gamma_p)$ a labeled finite tree $T=(V,E)$ such that vertices are labeled by $\mathbb{N}\times \mathbb{R}^+$ and edges are labeled by $\mathcal{H}_{reg}$ as follows :
@@ -1073,7 +1072,7 @@ $$\sum_{v\in R}\phi(v)=-\sum_{v\in V\setminus R}\phi(v) \ .$$
 
 
 \begin{definition}[Sieving of graphs]\label{def:sieving}
-Let $r\geq 1$. Let $G=(V,E)$ be a finite graph 
+Let $r\geqslant 1$. Let $G=(V,E)$ be a finite graph 
 (non necessarily connected) and $W,W'\subset \partial G$ 
 with a bijection $g:W\rightarrow W'$. 
 The sieving of $G$ along $(R_1,R_2)$ is the graph 
@@ -1175,7 +1174,7 @@ then $\lambda\in \mathcal{F}(\phi)$.
 Let $e_i$ be the edge of $E_1$ adjacent to $w_i$. 
 Let $T_i$ be a spanning tree of $G_i$ for $i\in \{1,2\}$. 
 Since each edge $\tilde{w},w\in W$ is bivalent in $\tilde{G}$, 
-removing the edges $e_j$, $1\leq j\leq s$ from $T_1\cup T_2$ yields a spanning 
+removing the edges $e_j$, $1\leqslant j\leqslant s$ from $T_1\cup T_2$ yields a spanning 
 tree $T$ of $\tilde{G}$. 
 By Proposition \ref{prop:BijectionTrees} applied to $S=T^c$, the restriction map 
 $\varphi_{S}$ is a bijection from $\mathcal{F}_{\tilde{G}}(\phi)$ to $\Omega^1(S)$. 
@@ -1304,9 +1303,9 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
     \\
     \\
     Suppose that all vertices of $G$ are adjacent to at most one boundary edge. 
-    Let $(v_1,\ldots, v_m)$, $m\geq 1$ be the boundary vertices in the cyclic order. 
+    Let $(v_1,\ldots, v_m)$, $m\geqslant 1$ be the boundary vertices in the cyclic order. 
     By hypothesis, there exist $(w_1,\ldots,w_m)$ such that 
-    $\partial G=\{ e^i := \left\{v_i,w_i\right\} ,1\leq i\leq m\}$ 
+    $\partial G=\{ e^i := \left\{v_i,w_i\right\} ,1\leqslant i\leqslant m\}$ 
     and $w_i\not =w_j$ when $i\not=j$. We claim that there exists $w_{i},w_{i'}$ such that 
     $\{w_{i},w_{i'}\}\in E$ and $\{\ell(\{w_{i},w_{i'}\}),\ell(e_{i}),\ell(e_{i'})\}=\{0,1,2\}$. 
     Let $\tilde{G}=(V\setminus V_{1},E\setminus \partial G)$ and $\tilde{h}=\bigcup_{e\in E\setminus \partial G} i(e)$. 
@@ -1318,7 +1317,7 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
     \begin{itemize}
     \item $\alpha_i=\pi/3$ is $z_i$ is the intersection of the interior of two geodesics 
     of $\mathcal{E}$,
-    \item $\alpha_i=2\pi/3$ if $z_i=w_{j_i}$ with $1\leq j_i\leq m$,
+    \item $\alpha_i=2\pi/3$ if $z_i=w_{j_i}$ with $1\leqslant j_i\leqslant m$,
     \item $\alpha_i=4\pi/3$ if $z_i\in \{w_1,\ldots,w_n\}$.
     \end{itemize}
     Since $L$ is a close polygonal curve, there is at least two consecutive vertices 
@@ -1360,15 +1359,15 @@ Suppose that $G\in \mathcal{G}_d$.
     Definition \ref{def:triangular_honey}, 
     each edge is oriented along $e^{2(\ell+1)i\pi/3}$ for some $\ell\in\{0,1,2\}$. 
     Hence, there exists a sign $s(v)\in\{-1,+1\}$ such that, up to a relabeling, 
-    $e_\ell \subset \left\{v-s(v)\ed^{2(\ell+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$. 
+    $e_\ell \subset \left\{v-s(v)\ed^{2(\ell+1)i\pi/3} \mathbb{R}_{\geqslant 0} \right\}$. 
     For a univalent vertex $v\in\partial G$ connected to a unique trivalent vertex 
     $v' \in \interior(G)$, we set $s(v) = -s(v')$.
     \\
     \\
     Let $v,v'\in V$ be such that $e = \{v,v'\} \in E$. 
     By the previous reasoning, there exist $\ell,\ell'$ such that 
-    $e\subset \left\{v-s(v)\ed^{2(\ell+1) i\pi/3} \mathbb{R}_{\geq 0} \right\}$ and 
-    $e\subset \left\{v'-s(v')\ed^{2(\ell'+1)i\pi/3} \mathbb{R}_{\geq 0} \right\}$.  
+    $e\subset \left\{v-s(v)\ed^{2(\ell+1) i\pi/3} \mathbb{R}_{\geqslant 0} \right\}$ and 
+    $e\subset \left\{v'-s(v')\ed^{2(\ell'+1)i\pi/3} \mathbb{R}_{\geqslant 0} \right\}$.  
     Necessarily, $\ell=\ell'$ and $s(v)=-s(v')$, see Figure \ref{fig:adjacent_vertices}.
 
     \begin{figure}[ht]
@@ -1426,7 +1425,7 @@ $$ g^{\alpha,\beta,\gamma}_{\ell n+i} \coloneqq g^{\alpha,\beta,\gamma}(e_{\ell 
     &\beta_i&\text{if }c(e_{\ell n+i})=0 \\ 
     &\beta_i-1&\text{if }c(e_{\ell n+i})=1
 \end{aligned} \right . $$
-for $\ell = 0$ and $1\leq i\leq n$ and replacing 
+for $\ell = 0$ and $1\leqslant i\leqslant n$ and replacing 
 $\beta_i$ by $\alpha_i$ (resp. $\gamma_i$) 
 when $\ell = 1$ (resp. $\ell = 2$). Remark that for $v\in \partial G$, $s(v)=1$ 
 if and only if $c(e)=1$, where $e$ is the unique edge adjacent to $v$, 
@@ -1445,7 +1444,7 @@ $$\mathcal{L}[h] \in \mathcal{F}_{G}(\phi_{\alpha,\beta,\gamma}) \ .$$
 
 \begin{proposition}[Honeycomb injection]
     \label{prop:parametrization_triangular_honey_first}
-    Let $d\geq 0$ and $G\in \mathcal{G}_d$. 
+    Let $d\geqslant 0$ and $G\in \mathcal{G}_d$. 
     The map $\mathcal{L}: h\rightarrow \mathcal{L}[h]$ is an injective 
     map from $\honey^G$ to $\Omega^1(G)$ and 
     $$\mathcal{L} \left(\honey_{n,d}^G(\alpha,\beta,\gamma)\right) 
@@ -1469,7 +1468,7 @@ it suffices to show the equality $V^1 = V^2$.
 \\
 Let $v\in V$. First, suppose that $v\in V_{1}$. Since the boundary 
 $\partial G \simeq (v^1,\ldots,v^{3n})$ 
-of $G$ is ordered, there exists $1\leq j\leq 3n$ such that $v=v^j$ and there exists a 
+of $G$ is ordered, there exists $1\leqslant j\leqslant 3n$ such that $v=v^j$ and there exists a 
 unique edge $e\in E$ adjacent to $v$. 
 Since $(V^1, \mathcal{E}^1)$ and $(V^2,\mathcal{E}^2)$ are isomorphic to $G$ 
 as colored graph with ordered boundary, $\iota_i(v)$ is the $j$-th vertex of the 
@@ -1650,7 +1649,7 @@ For a given color map $C$, let us denote by
 $\dualhive^C(\alpha, \beta, \gamma)$ the set of dual hives with 
 boundary $(\alpha,\beta,\gamma)$ and color map $C$. 
 Since an element of $\dualhive^C(\alpha,\beta,\gamma)$ is uniquely defined by its map 
-$L:E_{n,d}\rightarrow \mathbb{R}_{\geq 0}$, the set $\dualhive^C(\alpha,\beta,\gamma)$ 
+$L:E_{n,d}\rightarrow \mathbb{R}_{\geqslant 0}$, the set $\dualhive^C(\alpha,\beta,\gamma)$ 
 can be seen as an affine polytope of $\mathbb{R}^{E_{n,d}}$ written as 
 $$\dualhive^C(\alpha,\beta,\gamma)=A^C\cap K_{n,d} \ ,$$ 
 where $K_{n,d}$ is the cone of induced by (2)(b)(ii) and $A^C$ is the 
@@ -1782,9 +1781,9 @@ and $e_{\ell}>e'_{\ell}$. Next, using Condition (2)(ii) of
 Definition \ref{def:limit_dual_hive} and the fact that $C$ is a color map, 
 $L(e)>L(e')$ if $e_{\ell+1}=e'_{\ell+1}-1$ and $e_{\ell}=e'_{\ell}+1$. 
 Therefore, $L(e)>L(e')$ if $e$ and $e'$ are of same type $\ell$ and 
-$e_{\ell+1}\leq e'_{\ell+1}$, $e_{\ell}>e'_{\ell}$. 
-The same reasoning yields that $L(e)\geq L(e')$ if $e$ and $e'$ are of same 
-type $\ell$ and $e_{\ell+1}\leq e'_{\ell+1}$, $e_{\ell}=e'_{\ell}$ 
+$e_{\ell+1}\leqslant e'_{\ell+1}$, $e_{\ell}>e'_{\ell}$. 
+The same reasoning yields that $L(e)\geqslant L(e')$ if $e$ and $e'$ are of same 
+type $\ell$ and $e_{\ell+1}\leqslant e'_{\ell+1}$, $e_{\ell}=e'_{\ell}$ 
 with equality only if all edges of type $\ell-1$ between $e$ and $e'$ 
 are colored $m$.
 \\
@@ -1803,7 +1802,7 @@ Set $x^i:=x_{v_i}$ and $y^i=x_{v'_i}$ for $i=1,2$.
 Since $x^1_2=L(e^2_1)$ and $y^1_2=L(e^2_2)$, by the previous reasoning 
 $x^1_2>y^1_2$. Doing the same with the lower triangular faces $v_2,v'_2$, 
 which must be adjacent respectively to $v_1$ and $v'_1$, yield that 
-$x^2_2\geq y^2_2$. Hence, the geodesics $\Phi(e)=[x^1,x^2]$ and 
+$x^2_2\geqslant y^2_2$. Hence, the geodesics $\Phi(e)=[x^1,x^2]$ and 
 $\Phi(e')=[y^1,y^2]$ can only meet at $y^2$, and $int(\Phi(e))\cap int(\Phi(e'))=\emptyset$. 
 \end{proof}
 
@@ -1824,7 +1823,7 @@ $\Phi(e')=[y^1,y^2]$ can only meet at $y^2$, and $int(\Phi(e))\cap int(\Phi(e'))
         to emphasize that the path 
         goes from $x$ to $y$. 
     % and we write $e\in \gamma$ if 
-    % $e=e_s$ for some $1\leq s\leq 2r+1$. 
+    % $e=e_s$ for some $1\leqslant s\leqslant 2r+1$. 
     Moreover, the color of $\gamma$ is defined as $c(\gamma)=c(e_1)$. 
     \\
     \item The \textit{reduced graph of C} is the graph $G^C=(V^C,E^C)$ 
@@ -1856,12 +1855,12 @@ maximal chain $\gamma$ as $c(e_{2i+1})=c(\gamma)$ and $c(e_{2i})=m$.
 In the sequel, we denote by $\partial G^C$ 
 the set of edges adjacent to a univalent vertex of $G^C$. 
 Following Definition \ref{def:limit_dual_hive} and Definition \ref{def:skeleton}, 
-we introduce a partial order $\leq$ on $E^C$ by completing the relation 
-$e\leq e'$
+we introduce a partial order $\leqslant$ on $E^C$ by completing the relation 
+$e\leqslant e'$
 if there exists an edge $\tilde{e}\in E_{d,n}$ 
 (resp. $\tilde{e}'\in E_{d,n}$) dual to an edge in the equivalence class of 
 $e$ (resp. $e'$) and such that $\tilde{e},\tilde{e}'$ are of same type, 
-adjacent to the same lozenge and satisfy $h(\tilde{e}')\geq h(\tilde{e})$. 
+adjacent to the same lozenge and satisfy $h(\tilde{e}')\geqslant h(\tilde{e})$. 
 \\
 \\
 Let $C$ be a color map and let $H \in \dualhive^C(\alpha,\beta,\gamma)$ 
@@ -1952,11 +1951,11 @@ this implies that $x\in T\setminus \partial T$.
 In the second case, $x$ is univalent and belongs to $\partial T$ by construction.
 \item Condition (2) is a direct consequence of Lemma \ref{lem:hive_honey_1}.
 \item  Let $x$ be the $i$-th boundary point of $\rho_{C}(H)$ on $\partial_1T$, so that $x_0=0$. 
-If $i\leq d$, then $x=x_{v_{\tilde{e}}}$ for the edge $\tilde{e}\in \partial^{(2,0)}$ 
+If $i\leqslant d$, then $x=x_{v_{\tilde{e}}}$ for the edge $\tilde{e}\in \partial^{(2,0)}$ 
 such that $L(\tilde{e})=1-\beta_i$ 
 and $c(e)=1$. Since $\tilde{e}$ is of type $2$, $x_2=L(\tilde{e})=1-\beta_i$, and thus 
 $x_1=1-(1-\beta_i)=\beta_i \ .$
-If $d+1\leq i\leq n$, then $\tilde{e}\in\partial^{(1,1)}$, $L(\tilde{e})=\beta_i$ and $c(e)=0$. 
+If $d+1\leqslant i\leqslant n$, then $\tilde{e}\in\partial^{(1,1)}$, $L(\tilde{e})=\beta_i$ and $c(e)=0$. 
 Moreover, $\tilde{e}$ is of type $1$ and thus $x_1=L(\tilde{e})=\beta_i$. 
 The cases of other boundaries are similar.
 \end{enumerate}
@@ -2195,7 +2194,7 @@ that $(v,w)<(v',w')$ is and only if $\{v,w\}<\{v',w'\}$ in the former sense.
     \text{ satisfy condition (2)(b)(ii) of Definition \ref{def:limit_dual_hive}} \right\}.$$
     Hence, 
     $$\mathcal{L}\left(\honey_{n,d}^{G^C}(\alpha,\beta,\gamma)\right) = 
-    \Psi^{-1} \left(\mathcal{H}^C(\alpha,\beta,\gamma) \cap \mathcal{K}_{\leq} \right)
+    \Psi^{-1} \left(\mathcal{H}^C(\alpha,\beta,\gamma) \cap \mathcal{K}_{\leqslant} \right)
     =\Psi^{-1}\left(\mathcal{H}^C(\alpha,\beta,\gamma)\right) \cap 
     \Psi^{-1}\left(\mathcal{K}_{<}\right).$$
     One then checks that $\Psi^{-1}(\mathcal{H}^C(\alpha,\beta,\gamma)) = 
@@ -2239,7 +2238,7 @@ in \eqref{eq:definition_volume_form}.
 
 \begin{theorem}[Volume of flat $\U(n)$-connections on the three-holed sphere]
     \label{th:volume_flat_connection_0_3}
-    Let $n\geq 3$ and consider the canonical volume form on $\U(n)$. 
+    Let $n\geqslant 3$ and consider the canonical volume form on $\U(n)$. 
     Then, for $\alpha,\beta,\gamma\in \mathcal{H}_{reg}$, 
     \begin{equation*}
         Z_{0, 3}(\alpha,\beta,\gamma) \coloneqq 
@@ -2371,16 +2370,16 @@ $h\cap \mathcal{T}^i$ is triangular.
 Then, the structure graph $\hat{G}[h]$ of $h$, as defined after 
 Definition \ref{def:toric_honeycomb}, has $pn$ univalent vertices, 
 $n$ of them being on each boundary component 
-$L_j,\, 1\leq j\leq p$, and $\frac{(3m-p)n}{2}$ bivalent vertices, 
+$L_j,\, 1\leqslant j\leqslant p$, and $\frac{(3m-p)n}{2}$ bivalent vertices, 
 $n$ of them being on a the boundary of a common triangle while being 
 in the interior of the surface. 
 \\
 \\
 Let us introduce some notations. 
-First, for $1\leq j\leq p$, let $1 \leqslant s_j \leqslant m $ and 
+First, for $1\leqslant j\leqslant p$, let $1 \leqslant s_j \leqslant m $ and 
 $ 0 \leqslant \ell_j \leqslant 2$ 
 be such that $L_j=\partial_{\ell_j}T^{s_j}$. 
-For $1 \leqslant j \leqslant p$, let us denote by $(v^j_m)_{1\leq m\leq n}$ 
+For $1 \leqslant j \leqslant p$, let us denote by $(v^j_m)_{1\leqslant m\leqslant n}$ 
 the univalent boundary vertices on $L_{j}$ ranked decreasingly with respect to 
 their $(\ell_j+1)$-coordinate. 
 Let $\mathcal{G}_\mathcal{T}$ be the set of structure graphs appearing in 
@@ -2399,17 +2398,17 @@ There is an injective map $t:\mathcal{G}_{\mathcal{T}} \rightarrow \mathcal{G}^m
 $$i: \left\lbrace \begin{aligned}  
     & \honey_{\mathcal{T}}&\rightarrow& \left\{(h^1,\ldots,h^m) \in 
     \honey_{T^{1}}\times\ldots\times \honey_{T^m} \mid h^{r_j^{(1)}}_{\vert B_j } = 
-    h^{r_j^{(2)}}_{\vert B_j}, 1\leq j\leq N(\mathcal{T}) \right\}\\
-    & h &\mapsto&(h\cap T^{i})_{1\leq i\leq m}\end{aligned} \right.$$
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}\\
+    & h &\mapsto&(h\cap T^{i})_{1\leqslant i\leqslant m}\end{aligned} \right.$$
 is bijective and restricts for each $G\in\mathcal{G}_{\mathcal{T}}$ 
 and $(G_1,\ldots,G_m)=t(G)$ to a bijection 
 $$i:\honey_{\mathcal{T}}^G\rightarrow \left\{(h^1,\ldots,h^m) \in 
 \honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} \mid h^{r_j^{(1)}}_{\vert B_j } = 
-    h^{r_j^{(2)}}_{\vert B_j}, 1\leq j\leq N(\mathcal{T}) \right\}.$$
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}.$$
 \end{lemma}
 \begin{proof}
 The proof is done by induction on $m$. The result holds for $m=1$. 
-Suppose the result true for $m\geq 1$, and let $\mathcal{T}$ be a surface 
+Suppose the result true for $m\geqslant 1$, and let $\mathcal{T}$ be a surface 
 obtained by pasting $m$ triangles $T^1,\ldots,T^{m}$ 
 along some boundaries and that $L_1,\ldots,L_p$ 
 are the boundary which have not been pasted together. 
@@ -2452,9 +2451,9 @@ Reciprocally, let $(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}
 \times \honey_{\mathcal{T}}^{G_2}$ be such that 
 $h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}$. 
 Suppose without loss of generality that 
-$T^{m+1}=\{-r+se^{2\pi i/3},\,0\leq r,s\leq 1, r+s\leq 1\}$ and that 
+$T^{m+1}=\{-r+se^{2\pi i/3},\,0\leqslant r,s\leqslant 1, r+s\leqslant 1\}$ and that 
 $\partial_0T^{m+1}=\{se^{2\pi i/3}\}=L_p$, so that 
-$T^{m}=\{re^{\pi i/3}+se^{2\pi i/3},\,0\leq r,s\leq 1, r+s\leq 1\}$. 
+$T^{m}=\{re^{\pi i/3}+se^{2\pi i/3},\,0\leqslant r,s\leqslant 1, r+s\leqslant 1\}$. 
 Let $x\in h^1_{\partial_0T^{m+1}}=h^{2}_{\vert L_p}$. 
 Then, by Condition (3) of Definition \ref{def:triangular_honey} 
 (see Figure \ref{fig:common_boundary}): 
@@ -2480,7 +2479,7 @@ defines a honeycomb on $\mathcal{T}'$.
 Moreover, the structure graph $G = (V^G, E^G)$ of $h$ is obtained 
 by setting 
 \begin{equation*}
-    V^G=(V^{G_1}\cup V^{G_2})/\langle v_i=w_i, 1\leq i\leq n\rangle \ ,
+    V^G=(V^{G_1}\cup V^{G_2})/\langle v_i=w_i, 1\leqslant i\leqslant n\rangle \ ,
 \end{equation*}
 where $v_1,\ldots, v_n$ and $w_1, \dots, w_n$ are the boundary vertices 
 of $G_1$ and $G_2$ corresponding to points on $\partial_0T^{m+1}$ and $L_p$ 
@@ -2519,7 +2518,7 @@ Let us denote by $\interior_3(G)$ the set of vertices of degree
 $3$ of $G$. By the construction of $G$ in terms of 
 the graphs $G_i$ and the fact that all vertices of 
 $\interior(G_i)$ have degree $3$, 
-$$\interior_3(G)=\bigsqcup_{1\leq i\leq m}\interior(G_i) \ .$$
+$$\interior_3(G)=\bigsqcup_{1\leqslant i\leqslant m}\interior(G_i) \ .$$
 We can therefore extend the maps $s_i$ defined on each 
 $G_i$ to a map $s:\interior_3(G) \to \{-1,1\}$.
 
@@ -2539,7 +2538,7 @@ map defined in Definition \ref{def:triangular_honey}. (2).
 Remark that each edge $e \in E$ of $G$ is adjacent to at 
 least one trivalent vertex, and if $e=\{v,v'\}$ with 
 $v,v'\in \interior_3(G)$, then necessarily there exists 
-$1\leq i\leq m$ such that $v,v'\in V_i$. 
+$1\leqslant i\leqslant m$ such that $v,v'\in V_i$. 
 Therefore $s(v)s(v')=-1$, so that $\mathcal{L}[h] \in \Omega^1(G)$ 
 and $\mathcal{L}$ is a well-defined map from $\honey^G_{\mathcal{T}}$ to $\Omega^1(G)$.
 
@@ -2598,11 +2597,11 @@ We then write $K_{G}=K_{G_1}\times \dots\times K_{G_m}$.
     $$i:\honey_{\mathcal{T}}^G\rightarrow \left\{(h^1,\ldots,h^m) \in 
     \honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} 
     \mid h^{r_j^{(1)}}_{\vert B_j } = 
-    h^{r_j^{(2)}}_{\vert B_j}, 1\leq j\leq N(\mathcal{T}) \right\}.$$
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}.$$
     Next, recall that  
     $$V=\bigcup_{i=1}^mV_i \, / \left\langle 
     \partial_{\ell_j}G^{r_j^{(1)}}=\partial_{\ell'_j}G^{r_j^{(2)}} 
-    , 1\leq j\leq N(\mathcal{T}) \right\rangle$$ 
+    , 1\leqslant j\leqslant N(\mathcal{T}) \right\rangle$$ 
     and that $E$ is the image of $\bigcup_{i=1}^m E_i$ 
     in this quotient. 
     Since any element of $\bigcup_{i=1}^m E_i$ has at 
@@ -2631,10 +2630,10 @@ We then write $K_{G}=K_{G_1}\times \dots\times K_{G_m}$.
     $$\left\{(h^1,\ldots,h^m) \in 
     \honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} 
     \mid h^{r_j^{(1)}}_{\vert B_j } = 
-    h^{r_j^{(2)}}_{\vert B_j}, 1\leq j\leq N(\mathcal{T}) \right\}.$$
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}.$$
     Let us first describe how the condition 
     $\partial_{\ell_j}h^{s_j}=\gamma^{(j)}$ for 
-    $1\leq j\leq p$ translates through $\mathcal{L}$. 
+    $1\leqslant j\leqslant p$ translates through $\mathcal{L}$. 
     Let $v^j_m\in \partial_{\ell_j}G_{s_j}$ and 
     $x\in \partial_{\ell_j}h^{s_j}$ the point such that 
     $\iota(v^j_m) = x$. Since $h^{s_j}\in \honey_{G_{s_j}}$, 
@@ -2734,7 +2733,7 @@ Using Proposition \ref{prop:divergence_product} (2) gives
 % &= ±Vol(\{\mathcal{L}[h_1],\mathcal{L}[h_2]), (h_1,h_2)\in\honey_{T}^{G_1}\times 
 % \honey^{G_2}_{\mathcal{T}} ,h^{1}_{\partial_0T}=h^{2}_{\partial_0\mathcal{T}},\nonumber\\
 % & \hspace{6cm} h^{1}_{\partial_iT}=\gamma^{(i)}, h^{2}_{\partial_{i-2}\mathcal{T}} 
-% =\gamma^{(i)},1\leq i\leq p+1).\label{eq:product_formula_volume}
+% =\gamma^{(i)},1\leqslant i\leqslant p+1).\label{eq:product_formula_volume}
 \end{align*}
 By Lemma \ref{lem:product_gluing} and Lemma \ref{lem:differential_gluing_honey}, 
 the latter volume is non-zero only if 
@@ -2800,7 +2799,7 @@ with $\sum_{i=1}^{p-2}\vert \gamma^i\vert\in\mathbb{Z}$,
 % \begin{proposition}[Parametrization of $(g,p)$-honeycomb]
 %     \label{prop:parametrization_honey}
 %     {\color{blue} Let $p, g \geqslant 0$ be integers such that 
-%     $p+g \geqslant 2$ and set $n_{g,p}=g(n^2-1)+p\frac{n(n-1)}{2}-(n^2-1)$. For any $d\geq 0$ and
+%     $p+g \geqslant 2$ and set $n_{g,p}=g(n^2-1)+p\frac{n(n-1)}{2}-(n^2-1)$. For any $d\geqslant 0$ and
 %     $G \in \mathcal{G}^{(g,p)}_{d}$,
 % \begin{enumerate}
 % \item $\partial \honey^G\subset  Z_d \coloneqq 
@@ -2868,145 +2867,204 @@ volume of flat $\U(n)$-connections on a compact surface}
 
 \noindent
 The goal of this section is the proof of Theorem \ref{th:Z_g_p_0}, which gives a 
-volume expression for the volume $M_{g,n}(\alpha_1,\ldots,\alpha_p)$ of flat $SU(n)$--connections on a surface $\mathcal{M}$ of genus $g$ with $p$ boundary components for $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}$. 
+volume expression for the volume $M_{g,n}(\alpha_1,\ldots,\alpha_p)$ of flat $\SU(n)$--connections on a surface $\mathcal{M}$ of 
+genus $g$ with $p$ boundary components for $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}$. 
+Recall that $\mathcal{H}_{reg}^0$ denotes the set of regular conjugacy classes of $\SU(n)$.
 
-\subsection*{Parametrizations of conjugacy classes and volume form} 
+\subsection{Parametrizations of conjugacy classes and volume form} 
 
 Let us consider the standard parametrization of conjugacy classes in $\SU(n)$ 
 given by
-$$\mathcal{A}= \left\{t_1\geq\ldots\geq t_n \mid \sum_{i=1}^nt_i=0, \ t_1-t_n\leq 1 \right\} .$$
+$$\mathcal{A}= \left\{t_1\geqslant\ldots\geqslant t_n \mid \sum_{i=1}^nt_i=0, \ t_1-t_n\leqslant 1 \right\} .$$
 The set $\mathcal{A}$ is called an alcove of type $A_{n-1}$. 
 Remark that $\mathcal{A}$ is a polytope of dimension $n-1$ in $\mathbb{R}^n$, 
 and for any $R\subset \{1,\ldots,n\}$ of cardinal $n-1$, the projection 
 $p_{R}:\mathcal{A}\rightarrow \mathbb{R}^R$ yields a non-zero volume form 
-$dt=p_{R}^{*}d\ell_{\mathbb{R}^R}$ on $\mathcal{A}$. 
-This volume form is independent of $R$ and denoted by $dt$ in the sequel. 
+$p_{R}^{*}d\ell_{\mathbb{R}^R}$ on $\mathcal{A}$. 
+This volume form is independent of $R$ and denoted by $\diff t$ in the sequel. 
 Choosing for example $R=\{1,\ldots n-1\}$, we have
 \begin{align*}
-Vol(\mathcal{A})=&\int_{\mathbb{R}^{n-1}}\indic_{t_1\geq\ldots\geq t_{n-1},\,t_1+\sum_{i=1}^{n-1}t_i\leq 1}\prod_{i=1}^{n-1} dt_i\\
-=&\int_{\mathbb{R}^{n-1}}\indic_{1\geq u_1\geq\ldots\geq u_{n-1}\geq 0}\frac{1}{n}\prod_{i=1}^{n-1} du_i=\frac{1}{n!},
+Vol(\mathcal{A})=&\int_{\mathbb{R}^{n-1}}\indic_{t_1\geqslant\ldots\geqslant t_{n-1},\,t_1+\sum_{i=1}^{n-1}t_i\leqslant 1}\prod_{i=1}^{n-1} \diff t_i\\
+=&\int_{\mathbb{R}^{n-1}}\indic_{1\geqslant u_1\geqslant\ldots\geqslant u_{n-1}\geqslant 0}\frac{1}{n}\prod_{i=1}^{n-1} \diff u_i=\frac{1}{n!} \ ,
 \end{align*}
-where we did the change of variable $\phi:(t_i)_{1\leq i\leq n-1}\mapsto (t_i+\sum_{i=1}^{n-1}t_i)_{1\leq i\leq n-1}$ with $Jac(\phi(t))=n$.
-
-Since $\mathcal{H}^0$ and $\mathcal{A}$ are both parametrizing conjugacy classes of $SU(n)$, there is a natural bijection $\phi:\mathcal{A}\rightarrow\mathcal{H}^0$ whose value on $(t_1\geq \ldots\geq t_i\geq 0>t_{i+1}\geq \dots \geq t_n)$ is 
+where we did the change of variable $\eta:(t_i)_{1\leqslant i\leqslant n-1}\mapsto (t_i+\sum_{j=1}^{n-1}t_j)_{1\leqslant i\leqslant n-1}$ with $Jac(\eta(t))=n$.
+Since $\mathcal{H}^0_{reg}$ and $\mathcal{A}$ both parametrize conjugacy classes of $\SU(n)$, there is a natural bijection 
+$\phi:\mathcal{A}\rightarrow\mathcal{H}^0_{reg}$ whose value on $(t_1\geqslant \ldots\geqslant t_i\geqslant 0>t_{i+1}\geqslant \dots \geqslant t_n)$ is 
 \begin{equation}\label{eq:change_parametrization_conjugacy}
-\phi(t_1,\ldots,t_n) =(1-t_{i+1},\ldots,1-t_{n},t_1,\ldots,t_{i}).
+\phi(t_1,\ldots,t_n) =(1+t_{i+1},\ldots,1+t_{n},t_1,\ldots,t_{i}) \ .
 \end{equation}
-One has $Jac(\phi(t))=1$ for all $t\in\mathcal{A}$, and thus $\phi$ is volume preserving. One then checks that $\phi^*d\theta=dt$.
+One has $Jac(\phi(t))=1$ for all $t\in\mathcal{A}$, and thus $\phi$ is volume preserving. One then checks that $\phi^* \diff \theta= \diff t$.
 
 \subsection{Contraction formula on moduli spaces of flat connections} 
 \label{subsec:contraction_formulas_flat_co}
 
 Let $\widehat{\mathcal{M}}$ be a (possibly disconnected) oriented surface with $(p+2)$ boundary components 
-$L_1,\ldots,L_p,L_{p+1}, L_{p+2}$. Let $\mathcal{M}$ be the oriented surface obtained by gluing $L_{p+1}$ and $L_{p+2}$ in an orientation reversing way and suppose that $\mathcal{M}$ is connected. Then, the following formula holds for the corresponding volume of flat $SU(n)$-connection. 
+$L_1,\ldots,L_p,L_{p+1}, L_{p+2}$. Let $\mathcal{M}$ be the oriented surface obtained by gluing $L_{p+1}$ 
+and $L_{p+2}$ in an orientation reversing way and suppose that $\mathcal{M}$ is connected. 
+Then, if we denote by $M(\mathcal{M},\alpha_1,\ldots,\alpha_p)$ the moduli space of flat $\SU(n)$-connections on $\mathcal{M}$, 
+the following formula from \cite{Meinrenken_Woodward} holds for the its volume.
+
 \begin{theorem}[{\autocite[Prop. 5.4]{Meinrenken_Woodward}}]\label{thm:contraction_formula_connection}
-Suppose that $\alpha_1,\ldots,\alpha_p\in \mathcal{H}_{reg}^0$. If $M(\mathcal{M},\alpha_1,\ldots,\alpha_p)$ contains at least one connection whose stabilizer is $Z(SU(n))$, then
+Suppose that $\alpha_1,\ldots,\alpha_p\in \mathcal{H}_{reg}^0$. If $M(\mathcal{M},\alpha_1,\ldots,\alpha_p)$ 
+contains at least one connection whose stabilizer is $Z(\SU(n))$, then
 \begin{align*}
-\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{k}\int_{\mathcal{A}}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\phi(t),\phi(-t)))\Delta(t)^2dt,
+\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{k} 
+\int_{\mathcal{A}}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\phi(t),\phi(-t)))\Delta(t)^2 \diff t \ ,
 \end{align*}
-where $k=1$ if $\widehat{\mathcal{M}}$ is connected and $\#Z(SU(n))=n$ otherwise, $dt$ is the previous volume form on $\mathcal{A}$ and $\Delta(t)=2^{n(n-1)/2}\prod_{1\leq i<j\leq n}\sin\left(\pi(t_i-t_j)\right)^2$.
+where $k=1$ if $\widehat{\mathcal{M}}$ is connected and $\#Z(\SU(n))=n$ otherwise, 
+$dt$ is the previous volume form on $\mathcal{A}$ and 
+$\Delta(t)=2^{n(n-1)/2}\prod_{1\leqslant i<j\leqslant n}\sin\left(\pi(t_i-t_j)\right)^2$.
 \end{theorem}
-Note that we slightly adapted the result of \cite{Meinrenken_Woodward}, which was stated for the torsion volume of \cite{witten1992two}, to translate it in the symplectic picture : this only consists in adding the term $\Delta(t)$. Let us first remark that considering $U(n)$-valued connection instead of $SU(n)-$valued connection does not change the volume. Indeed, suppose that $\mathcal{M}$ corresponds to a surface of genus $g$ with $p$ boundary components. Then, for any $\alpha_1,\ldots,\alpha_{p}\in\mathcal{H}_{reg}$,
+
+\noindent
+Note that we slightly adapted the result of \cite{Meinrenken_Woodward}, which was stated for the torsion volume of \cite{witten1992two}, 
+to translate it in the symplectic picture : this only consists in adding the term $\Delta(t)$. 
+Let us first remark that considering $\U(n)$-valued connection instead of $\SU(n)$-valued connection does not change the volume. 
+Indeed, suppose that $\mathcal{M}$ corresponds to a surface of genus $g$ with $p$ boundary components. 
+Then, for any $\alpha_1,\ldots,\alpha_{p}\in\mathcal{H}_{reg}$,
 \begin{align*}
-&M_{U(n)}(\mathcal{M},\alpha_1,\ldots,\alpha_{p})\\
-&\simeq \left\{((U_i)_{1\leq i\leq 2g},C_1,\ldots,C_{p})\in U(n)^{2g}\times\mathcal{O}_{\alpha_1}\times\dots\times \mathcal{O}_{\alpha_{p}}\Big\vert\prod_{i=1}^g[U_{2i-1},U_{2i}]=\prod_{i=1}^{p}C_i\right\}/U(n),
+&M_{\U(n)}(\mathcal{M},\alpha_1,\ldots,\alpha_{p})\\
+&\simeq \left\{\left((U_i)_{1\leqslant i\leqslant 2g},C_1,\ldots,C_{p}\right) \in \U(n)^{2g}\times\mathcal{O}_{\alpha_1}\times\dots\times 
+\mathcal{O}_{\alpha_{p}}\Big\vert\prod_{i=1}^g[U_{2i-1},U_{2i}]=\prod_{i=1}^{p}C_i\right\}/ \U(n) \ ,
 \end{align*} 
-where $U(n)$ acts diagonally by conjugation. Since $\det\prod_{i=1}^g[U_{2i-1},U_{2i}]=1$, the latter set is non-empty only if $\sum_{i=1}^p\vert \alpha_i\vert\in \mathbb{N}$. 
-
-Next, remark that any conjugacy class of $SU(n)$ is also a conjugacy class of $U(n)$ and there is a natural action of $\mathbb{R}$ on $\mathcal{H}_{reg}$ given by 
+where $\U(n)$ acts diagonally by conjugation. 
+Since $\det\prod_{i=1}^g[U_{2i-1},U_{2i}]=1$, the latter set is non-empty only if $\sum_{i=1}^p\vert \alpha_i\vert\in \mathbb{N}$. 
+Next, remark that any conjugacy class of $\SU(n)$ is also a conjugacy class of $\U(n)$ and there is a natural action of $\mathbb{R}$ on $\mathcal{H}_{reg}$ given by 
 $$t\cdot (\theta_1>\ldots >\theta_n)=std(\theta_i+t\mod \mathbb{Z}),$$
-where $std(x_1,\ldots,x_n)$ denotes the standardization $(x_{i_1}>x_{i_2}>\ldots>x_{i_n})$. For $\alpha\in\mathcal{H}_{reg}$, set $t(\alpha)=\vert \alpha\vert\mod \mathbb{Z}$ and $\hat{\alpha}=(-t_{\alpha}/n)\cdot \alpha$, so that $\hat{\alpha}\in \mathcal{H}^0_{reg}$.
-
-Since $Z(U(n))$ acts trivially by conjugation, when $\alpha_{1},\ldots \alpha_{p}\in \mathcal{H}_{reg}$ we have
+where $std(x_1,\ldots,x_n)$ denotes the standardization $(x_{i_1}>x_{i_2}>\ldots>x_{i_n})$. For $\alpha\in\mathcal{H}_{reg}$, set $t(\alpha)=\vert \alpha\vert\mod \mathbb{Z}$ 
+and $\hat{\alpha}=(-t_{\alpha}/n)\cdot \alpha$, so that $\hat{\alpha}\in \mathcal{H}^0_{reg}$.
+Since $Z(\U(n))$ acts trivially by conjugation, when $\alpha_{1},\ldots \alpha_{p}\in \mathcal{H}_{reg}$ we have
 \begin{align*}
-&M_{U(n)}(\mathcal{M},\alpha_1,\ldots,\alpha_{p})\\
-&\simeq \left\{((U_i)_{1\leq i\leq 2g},C_1,\ldots,C_{p})\in U(n)^{2g}\times\mathcal{O}_{\alpha_1}\times\dots\times \mathcal{O}_{\alpha_{p}}\Big\vert\prod_{i=1}^g[U_{2i-1},U_{2i}]=\prod_{i=1}^{p}C_i\right\}/SU(n)\\
-&\simeq \mathbb{T}^{2g}\times\left\{((U_i)_{1\leq i\leq 2g},C_1,\ldots,C_{p})\in SU(n)^{2g}\times\mathcal{O}_{\hat{\alpha}_1}\times\dots\times \mathcal{O}_{\hat{\alpha}_{p}}\Big\vert\prod_{i=1}^g[U_{2i-1},U_{2i}]=\prod_{i=1}^{p}C_i\right\}/SU(n)\\
+&M_{\U(n)}(\mathcal{M},\alpha_1,\ldots,\alpha_{p})\\
+&\simeq \left\{((U_i)_{1\leqslant i\leqslant 2g},C_1,\ldots,C_{p})\in \U(n)^{2g}\times\mathcal{O}_{\alpha_1}\times\dots\times 
+\mathcal{O}_{\alpha_{p}}\Big\vert\prod_{i=1}^g[U_{2i-1},U_{2i}]=\prod_{i=1}^{p}C_i\right\}/ \SU(n)\\
+&\simeq \mathbb{T}^{2g}\times\left\{((U_i)_{1\leqslant i\leqslant 2g},C_1,\ldots,C_{p})\in \SU(n)^{2g}\times\mathcal{O}_{\hat{\alpha}_1}\times\dots\times 
+\mathcal{O}_{\hat{\alpha}_{p}}\Big\vert\prod_{i=1}^g[U_{2i-1},U_{2i}]=\prod_{i=1}^{p}C_i\right\}/ \SU(n)\\
 &\simeq \mathbb{T}^{2g}\times M_{\SU(n)}(\mathcal{M},\hat{\alpha}_1,\ldots,\hat{\alpha}_{p}),
 \end{align*} 
 so that with the convention that $\Vol(\mathbb{T})=1$, 
 \begin{equation}\label{eq:SU_n_equal_Un}
-\Vol(M_{U(n)}(\mathcal{M},\alpha_1,\ldots,\alpha_{p}))=\Vol(M_{SU(n)}(\mathcal{M},\hat{\alpha}_1,\ldots,\hat{\alpha}_{p})).
+\Vol \left[M_{\U(n)}\left(\mathcal{M},\alpha_1,\ldots,\alpha_{p}\right)\right] = 
+\Vol \left[M_{\SU(n)}(\mathcal{M}, \hat{\alpha}_1,\ldots,\hat{\alpha}_{p})\right] .
 \end{equation}
-We deduce then from this and the previous theorem the following proposition.
+We then derive the following proposition. Recall that for $\theta = (\theta_1 > \dots > \theta_n) \in \mathcal{H}_{reg}$, 
+we denote by $\tilde{\theta}$ the element of $\mathcal{H}_{reg}$ given by 
+\begin{equation*}
+    \tilde{\theta} = (1 - \theta_n > \dots > 1 - \theta_1) \ .
+\end{equation*}
+
 \begin{proposition}\label{prop:volume_formula_flat}
-Suppose that $\alpha_1,\ldots,\alpha_p\in \mathcal{H}_{reg}^0$. If either $p\geq 3$, $p=1$ and $g(\mathcal{M})=1$ or $g(\mathcal{M})\geq 2$, then, if $\widehat{\mathcal{M}}$ is disconnected, 
+Suppose that $\alpha_1,\ldots,\alpha_p\in \mathcal{H}_{reg}^0$. If either $p\geqslant 3$ or $(p,g(\mathcal{M}))=(1, 1)$ 
+or $g(\mathcal{M})\geqslant 2$, then, if $\widehat{\mathcal{M}}$ is disconnected, 
 \begin{align*}
-\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{n}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2d\theta,
+\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p)) = 
+\frac{1}{n}\int_{\mathcal{H}_{reg}^0} 
+\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2 \diff \theta \ ,
 \end{align*}
 and, if $\widehat{\mathcal{M}}$ is connected,
 \begin{align*}
-\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\int_{\mathcal{H}_{reg}}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2d\theta,
+\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\int_{\mathcal{H}_{reg}}\Vol(M(\widehat{\mathcal{M}}, 
+\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2 \diff \theta \ .
 \end{align*}
 \end{proposition}
+
 \begin{proof}
-First, by \autocite[Thm. 5.20]{bismut5symplectic}, $M_{g,n}(\alpha_1,\ldots,\alpha_p)$ contains at least one element for which the stabiliser under the diagonal action of $SU(n)$ is $Z(SU(n))$ if $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}^0$ and either $p\geq 3$,  $p=1$ and $g(\mathcal{M})=1$ or $g(\mathcal{M})\geq 2$.
-
-Remark that the volume form $dt$ on $\mathcal{A}$ introduced in the previous subsection is such that 
-$$\Vol\left(\left\{(t_1,\ldots,t_n)\in \mathbb{R}^n,\sum_{i=1}^nt_i=0, \max_{1\leq i,j\leq n}t_i-t_j<1\right\}\right)=1,$$
-that $\tilde{d}=d$. By \eqref{eq:change_parametrization_conjugacy}, $\phi(-t)=\widetilde{\phi(t)}$ and $Jac(\phi(t))=1$ for all $t\in\mathcal{A}$. Hence, doing the change of variable $\theta=\phi(t)$ yields
-$$\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{k}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}))\Delta(\theta)^2d\theta,$$
+First, by \autocite[Thm. 5.20]{bismut5symplectic}, $M_{g,n}(\alpha_1,\ldots,\alpha_p)$ contains at least one element 
+for which the stabiliser under the diagonal action of $\SU(n)$ is $Z(\SU(n))$ if $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}^0$ 
+and either $p\geqslant 3$, $p=1$ and $g(\mathcal{M})=1$, or $g(\mathcal{M})\geqslant 2$.
+Remark that the volume form $\diff t$ on $\mathcal{A}$ introduced in the previous subsection is such that 
+$$\Vol\left(\left\{(t_1,\ldots,t_n)\in \mathbb{R}^n \, \Big\vert \, \sum_{i=1}^nt_i=0, \max_{1\leqslant i,j\leqslant n}t_i-t_j<1\right\}\right)=1 \ .$$
+By \eqref{eq:change_parametrization_conjugacy}, we have that $\phi(-t)=\widetilde{\phi(t)}$ and $Jac(\phi(t))=1$ for all $t\in\mathcal{A}$. 
+Hence, doing the change of variable $\theta=\phi(t)$ yields
+$$\Vol(M(\mathcal{M},\alpha_1,\ldots,\alpha_p))=\frac{1}{k}\int_{\mathcal{H}_{reg}^0}
+\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}))\Delta(\theta)^2 \diff \theta,$$
 where $k=1$ if $\widehat{\mathcal{M}}$ is connected and $k=n$ otherwise. 
-
-In remains to replace the integration on $\mathcal{H}^0$ by the integration on $\mathcal{H}$ in the case where $\widehat{\mathcal{M}}$ is connected. For all $t\in [0,1]$, $\alpha_i\in \mathcal{H}_{reg}^0,\,1\leq i\leq p$, and $\theta\in \mathcal{H}_{reg}^0$, by \eqref{eq:SU_n_equal_Un}
-$$\Vol(M_{U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,t\cdot\theta,\widetilde{t\cdot\theta}))=\Vol(M_{SU(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}))$$
- for any $t\in [0,1/n[$.
+It remains to replace the integration on $\mathcal{H}^0_{reg}$ by the integration on $\mathcal{H}_{reg}$ in the case where $\widehat{\mathcal{M}}$ is connected. 
+For all $t\in [0,1/n)$, $\alpha_1,\ldots,\alpha_p\in \mathcal{H}_{reg}^0$ and $\theta\in \mathcal{H}_{reg}^0$, by \eqref{eq:SU_n_equal_Un}
+$$\Vol\left[ M_{\U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,t\cdot\theta,\widetilde{t\cdot\theta})\right]  = 
+\Vol \left[M_{\SU(n)}\left(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}\right)\right] . $$
 Therefore, if $\hat{\mathcal{M}}$ is connected,
 \begin{align*}
-&\frac{1}{k}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}))\Delta(\theta)^2d\theta\\
-&\hspace{2cm}=n\int_{0}^{1/n}\left(\int_{\mathcal{H}_{reg}^0}\Vol(M_{U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,t\cdot\theta,\widetilde{t\cdot\theta}))\Delta(\theta)^2d\theta\right) dt\\
-&\hspace{2cm}=\int_{\mathcal{H}_{reg}}\Vol(M_{U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,u,\widetilde{u}))\Delta(u)^2du,
+&\frac{1}{k}\int_{\mathcal{H}_{reg}^0}\Vol(M(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,\theta,\widetilde{\theta}))\Delta(\theta)^2 \diff \theta\\
+&\hspace{2cm}=n\int_{0}^{1/n}\left(\int_{\mathcal{H}_{reg}^0}\Vol(M_{\U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,t\cdot\theta, 
+\widetilde{t\cdot\theta}))\Delta(\theta)^2d\theta\right) \diff t\\
+&\hspace{2cm}=\int_{\mathcal{H}_{reg}}\Vol(M_{\U(n)}(\widehat{\mathcal{M}},\alpha_1,\ldots,\alpha_p,u,\widetilde{u}))\Delta(u)^2 \diff u \ ,
 \end{align*}
-where we use that the change of variable $(u_1,\ldots,u_n)=(\theta_1+t,\ldots,\theta_{n-1}+t,-\sum_{i=1}^{n-1}\theta_i+t)=:\phi(\theta_1,\ldots,\theta_{n-1},t)$ yields $Jac(\phi)=n$.
+where we use that the change of variable $(u_1,\ldots,u_n)=
+(\theta_1+t,\ldots,\theta_{n-1}+t,-\sum_{i=1}^{n-1}\theta_i+t)=:\phi(\theta_1,\ldots,\theta_{n-1},t)$ yields $Jac(\phi)=n$.
 \end{proof}
 
 \subsection{Proof of Theorem \ref{th:Z_g_p_0}}
 \label{subsec:proof_th_flat_co}
 
-The proof of Theorem \ref{th:Z_g_p_0} is then a deduction of the previous results and the previous construction on differential structures.
-\begin{proof}[Proof of Theorem \ref{th:Z_g_p_0}]
-The proof is done by recursion $N=3g+p$, where $N\geq 3$. If $N=3$, the result is given by Theorem \ref{th:volume_flat_connection_0_3}. Suppose $N>3$ and let $S$ be a surface of genus $g$ with $p$ points removed, where $3g+p=N$. Let $\mathcal{T}$ be a surface constructed in Section \ref{subsec:(g,p)_honey}. Then $\mathcal{T}$ is obtained either by gluing two edges of a connected surface $\mathcal{T}'$ or by gluing one edge of a connected surface $\mathcal{T}'$ to the edge of an equilateral triangle $T$. 
+The proof of Theorem \ref{th:Z_g_p_0} is then a deduction from the previous results and the previous construction on differential structures.
 
-In the first case $\mathcal{T}'$ is a flat surface associated to a surface $\mathcal{M}'$ with genus $g-1$ and $p+2$ points removed. Let $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}$ with $\sum_{i=1}^p\vert\alpha_{i}\vert\in \mathbb{N}$. Then, by applying \eqref{eq:SU_n_equal_Un} and Theorem \ref{prop:volume_formula_flat}, we have 
+\begin{proof}[Proof of Theorem \ref{th:Z_g_p_0}]
+The proof is done by induction on $N=3g+p$, where $N\geqslant 3$. If $N=3$, the condition 
+$p + 2g-2 \geqslant 1$ implies that $p=3$ and $g=0$. The surface is therefore the three-holed sphere and 
+the result is given by Theorem \ref{th:volume_flat_connection_0_3}. 
+Suppose $N>3$ and let $S$ be a surface of genus $g$ with $p$ points removed. 
+Let $\mathcal{T}$ be a surface constructed in Section \ref{subsec:(g,p)_honey}. 
+Then $\mathcal{T}$ is obtained either by gluing two edges of a connected surface $\mathcal{T}'$ or by gluing one edge of a connected surface 
+$\mathcal{T}'$ to the edge of an equilateral triangle $T$. 
+\\
+In the first case, $\mathcal{T}'$ is a flat surface associated to a surface $\mathcal{M}'$ with genus $g-1$ and $p+2$ points removed. 
+Let $\alpha_1,\ldots,\alpha_p\in\mathcal{H}_{reg}$ with $\sum_{i=1}^p\vert\alpha_{i}\vert\in \mathbb{N}$. 
+By applying \eqref{eq:SU_n_equal_Un} and Theorem \ref{prop:volume_formula_flat}, we have 
 \begin{align*}
-Z_{g,p}(\alpha_1,\dots,\alpha_p)=Z_{g,p}(\hat{\alpha}_1,\dots,\hat{\alpha}_p)=&\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_p,\theta,\tilde{\theta}))\Delta(\theta)^2d\theta.\\
-=&\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2d\theta.
+Z_{g,p}(\alpha_1,\dots,\alpha_p)=Z_{g,p}(\hat{\alpha}_1,\dots,\hat{\alpha}_p) = 
+&\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_p,\theta,\tilde{\theta}))\Delta(\theta)^2 \diff \theta \\
+=&\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2\diff \theta \ .
 \end{align*}
+Let us denote by $c_{g, p} = \frac{c_{0,3}^{2g+p-2}}{n^{2g+p-3}}$ where $c_{0, 3}$ is given in Theorem \ref{th:Z_g_p_0}. 
 Since $3(g-1)+p+2<N$, by induction
-$$\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))=\frac{c_{g-1,p+2}}{\prod_{j=1}^p\Delta(\alpha_j)}\sum_{\substack{G \in \mathcal{G}^{(g,p)}}}
-        \Vol \left[ \honey^G(\alpha_1, 
+$$\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta})) = 
+\frac{c_{g-1,p+2}}{\Delta(\theta)\Delta(\tilde{\theta}) \prod_{j=1}^p\Delta(\alpha_j)}\sum_{\substack{G \in \mathcal{G}^{(g-1,p+2)}}}
+        \Vol \left[ \honey^G_{\mathcal{T'}}(\alpha_1, 
         \dots, \alpha_p,\theta,\tilde{\theta}) \right],$$
 and thus by Proposition \ref{prop:formula_contracting_honey},
 \begin{align*}
-Z_{g,p}(\alpha_1,\dots,\alpha_p)=&\frac{c_{g-1,p+2}}{\prod_{j=1}^{-2}p\Delta(\alpha_j)}\int_{\mathcal{H}_{reg}}\sum_{\substack{G \in \mathcal{G}^{(g-1,p+2)}}}
-        \Vol \left[ \honey^G(\alpha_1, 
-        \dots, \alpha_p,\theta,\tilde{\theta})\right]\frac{\Delta(\theta)^2}{\Delta(\theta)\Delta(\tilde{\theta})}d\theta\\
-        =&c_{g-1,p+2}\sum_{\substack{G \in \mathcal{G}^{(g,p)}}}
-        \Vol \left[ \honey^G(\alpha_1, 
+Z_{g,p}(\alpha_1,\dots,\alpha_p)=
+&\frac{c_{g-1,p+2}}{\prod_{j=1}^{p}\Delta(\alpha_j)}
+\int_{\mathcal{H}_{reg}}\sum_{\substack{G \in \mathcal{G}^{(g-1,p+2)}}}
+        \Vol \left[ \honey^G_{\mathcal{T'}}(\alpha_1, 
+        \dots, \alpha_p,\theta,\tilde{\theta})\right]\frac{\Delta(\theta)^2}{\Delta(\theta)\Delta(\tilde{\theta})} \diff \theta\\
+        =&\frac{c_{g-1,p+2}}{\prod_{j=1}^{p}\Delta(\alpha_j)}\sum_{\substack{G \in \mathcal{G}^{(g,p)}}}
+        \Vol \left[ \honey^G_{\mathcal{T}}(\alpha_1, 
         \dots, \alpha_p) \right],
  \end{align*}
-where we used the fact that $\Delta(\theta)=\Delta(\tilde{\theta})$ on the second equality. In the second case, $\mathcal{T}'$ is obtained by gluing a  a surface $\mathcal{M}'$ with genus $g$ and $p-1$ points removed and a triangle $T$. Let $\widehat{M}=\mathcal{M'}\cup T$ be the corresponding disconnected surface. Then, by \eqref{eq:SU_n_equal_Un} and Proposition \ref{prop:volume_formula_flat},
+where we used the fact that $\Delta(\theta)=\Delta(\tilde{\theta})$ on the second equality. 
+Since $c_{g-1, p+2} = c_{g, p}$, one gets the result.
+In the second case, $\mathcal{T}$ is obtained by gluing a 
+surface $\mathcal{M}'$ with genus $g$ and $p-1$ points removed and a triangle $T$ associated to a three-holed sphere. 
+Let $\widehat{M}=\mathcal{M'}\cup T$ be the corresponding disconnected surface. Then, by \eqref{eq:SU_n_equal_Un} and Proposition \ref{prop:volume_formula_flat},
 \begin{align*}
-Z_{g,p}(\alpha_1,\dots,\alpha_p)=&Z_{g,p}(\hat{\alpha}_1,\dots,\hat{\alpha}_p)\\
-=&\frac{1}{n}\int_{\mathcal{H}_{reg}^0}\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_{p-2},\theta))\Vol(M(T,-\theta,\hat{\alpha}_{p-1},\hat{\alpha}_p))d\theta.
+Z_{g,p}(\alpha_1,\dots,\alpha_p)=
+&Z_{g,p}(\hat{\alpha}_1,\dots,\hat{\alpha}_p)\\
+=&\frac{1}{n}\int_{\mathcal{H}_{reg}^0}\Vol(M(\mathcal{M}', \hat{\alpha}_1,\ldots,\hat{\alpha}_{p-2},\theta)) 
+\Vol(M(T,\tilde{\theta},\hat{\alpha}_{p-1},\hat{\alpha}_p)) \diff \theta.
 \end{align*}
 Set $s=-\sum_{i=1}^{p-2}\vert \alpha\vert_i$. By \eqref{eq:SU_n_equal_Un},
-$$\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_{p-2},\theta))=\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_{p-2},\theta+s))$$
+$$\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_{p-2},\theta)) = 
+\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_{p-2},\theta+s))$$
 and
-$$ \Vol(M(T,\theta,\hat{\alpha}_{p-1},\hat{\alpha}_p))=\Vol(M(T,-\theta-s,\alpha_{p-1},\alpha_p)).$$
+$$ \Vol(M(T,\tilde{\theta},\hat{\alpha}_{p-1},\hat{\alpha}_p))=\Vol(M(T,\tilde{\theta}-s,\alpha_{p-1},\alpha_p)).$$
 Since the map $\theta\mapsto \theta-s$ is volume preserving,
 \begin{align*}
-&\int_{\mathcal{H}_{reg}^0}\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_{p-2},\theta))\Vol(M(T,-\theta,\hat{\alpha}_{p-1},\hat{\alpha}_p))d\theta\\
-&\hspace{3cm}=\int_{\mathcal{H}_{reg}^{s}}\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_{p-2},\theta))\Vol(M(T,-\theta,\alpha_{p-1},\alpha_p))d\theta.
+&\int_{\mathcal{H}_{reg}^0}\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_{p-2},\theta)) 
+\Vol(M(T,\tilde{\theta},\hat{\alpha}_{p-1},\hat{\alpha}_p)) \diff \theta\\
+&\hspace{3cm}=\int_{\mathcal{H}_{reg}^{s}}\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_{p-2},\theta))
+\Vol(M(T,\tilde{\theta},\alpha_{p-1},\alpha_p))\diff \theta.
 \end{align*}
 By induction,
-$$\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_{p-2},\theta,))=\frac{c_{g,p-1}}{\Delta(\theta)\prod_{i=1}^{p-2}\Delta(\alpha_i)}\sum_{\substack{G \in \mathcal{G}^{(g,p-1)}}}
+$$\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_{p-2},\theta,)) = 
+\frac{c_{g,p-1}}{\Delta(\theta)\prod_{i=1}^{p-2}\Delta(\alpha_i)}\sum_{\substack{G \in \mathcal{G}^{(g,p-1)}}}
         \Vol \left[ \honey^G(\alpha_1, 
         \dots, \alpha_{p-2},\theta) \right],$$
  and
- $$\Vol(M(T,\theta,\alpha_{p-1},\alpha_p))=\frac{c_{0,3}}{\Delta(\theta)\Delta(\alpha_{p-1}),\Delta(\alpha_{p})}\sum_{\substack{G \in \mathcal{G}^{(g,p-1)}}}
-        \Vol \left[ \honey^G(\theta, 
-        \dots, \alpha_{p-1},\alpha_{p}) \right],$$
+ $$\Vol(M(T,\tilde{\theta},\alpha_{p-1},\alpha_p)) = 
+ \frac{c_{0,3}}{\Delta(\tilde{\theta})\Delta(\alpha_{p-1}),\Delta(\alpha_{p})}\sum_{\substack{G \in \mathcal{G}^{(0,3)}}}
+        \Vol \left[ \honey^G(\tilde{\theta}, \alpha_{p-1},\alpha_{p}) \right],$$
  and thus, by Proposition \ref{prop:formula_gluing_honey},
 \begin{align*}
 Z_{g,p}(\alpha_1,\dots,\alpha_p)
@@ -3017,9 +3075,9 @@ Z_{g,p}(\alpha_1,\dots,\alpha_p)
         \alpha_{p-1},\alpha_{p})\right]\frac{\Delta(\theta)^2}{\Delta(\theta)\Delta(\tilde{\theta})}d\theta\\
         =&\frac{c_{g,p}}{\prod_{i=1}^{p}\Delta(\alpha_{i})}\sum_{\substack{G \in \mathcal{G}^{(g,p)}}}
         \Vol \left[ \honey^G(\alpha_1, 
-        \dots, \alpha_p) \right],\\
+        \dots, \alpha_p) \right] 
 \end{align*}
-with $c_{g,p}=\frac{c_{g,p-1}c_{0,3}}{n}$.
+since $c_{g,p}=\frac{c_{g,p-1}c_{0,3}}{n}$.
 \end{proof}
 
 
@@ -3029,7 +3087,7 @@ with $c_{g,p}=\frac{c_{g,p-1}c_{0,3}}{n}$.
 The goal of this section is to give an explicit volume formula for the marginal
 Yang--Mills partition function of an oriented surface of genus $g$ with prescribed non-degenerate holonomies (up to conjugation) on a finite set of disjoint loops.  As it is proven in \cite{levy2003yang}, the corresponding partition function then only depends on the prescribed conjugacy classes and on the areas of each connected components delimites by the loops. 
 \begin{definition}
-A disjoint loops configuration $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p)$ is the data of a compact oriented surface together with $p$ disjoints Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each $\Gamma_i, \,1\leq i\leq p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
+A disjoint loops configuration $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p)$ is the data of a compact oriented surface together with $p$ disjoints Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each $\Gamma_i, \,1\leqslant i\leqslant p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
 
 
 A skeleton is the data of a labeled finite tree $T=(V,E)$ such vertices are labeled by $\mathbb{N}\times \mathbb{R}^+$ and edges are labeled by $\mathcal{H}_{reg}$.
@@ -3405,26 +3463,26 @@ In particular $\mathcal{H}(\mathcal{A})$ is an affine subspace of $\R^E$ of codi
     connected component admits a unique element of $V_1$. 
     Let $T_1,\ldots, T_r$ be the connected components of $R^c$ and set $V_1=\{w_1,\ldots,w_r\}$ with $w_i\in T_i$.
     \\
-    Let $1\leq i\leq r$. Since $G$ is connected, $G_{\vert \interior(G)}$ is connected and thus $G_{\vert (\interior(G)\cup\{w_i\})}$ is connected. 
+    Let $1\leqslant i\leqslant r$. Since $G$ is connected, $G_{\vert \interior(G)}$ is connected and thus $G_{\vert (\interior(G)\cup\{w_i\})}$ is connected. 
     \\
     Let us root $T_i$ at $w_i$, and then take any labelling $(v_1,\ldots, v_{m})$ 
-    of the vertices of $\bigcup_{1\leq i\leq r}T_i$ distinct from the roots that is decreasing in the 
+    of the vertices of $\bigcup_{1\leqslant i\leqslant r}T_i$ distinct from the roots that is decreasing in the 
     ordering of the trees and in the height of each tree $T_i$ rooted at $w_i$. 
     Set $v_{m+i}=w_i$. Complete $(v_1,\ldots, v_{m+r})$ into a labeling $(v_1,\ldots,v_{m'})$ of the set $V$. 
     Likewise, label any edge of $T$ with the same label of its unique neighboring vertex of maximal height, 
-    so that $e_s$ is adjacent to $v_s$ for $1\leq s\leq m$. Complete $(e_1,\ldots,e_m)$ into a labeling $(e_1,\ldots, e_N)$ of $E$. 
+    so that $e_s$ is adjacent to $v_s$ for $1\leqslant s\leqslant m$. Complete $(e_1,\ldots,e_m)$ into a labeling $(e_1,\ldots, e_N)$ of $E$. 
     \\
     Let $K$ be matrix of $\tilde{A}$ with respect to the basis $(v_1,\ldots,v_{m})$ and $(e_1,\ldots,e_N)$. 
     Namely, $K \in \mathcal{M}_{m', N}(\mathbb{R})$ and $K_{ij} = A(v_i, v')$ when $e_j=\{v_i,v'\}$. 
     Hence, 
     $$\mathcal{H}(\mathcal{A})=\{L\in \mathbb{R}^N \mid KL=\alpha\}.$$
-    By the choice of labels of the vertices and edges of $\bigcup_{1\leq i\leq r}T_i$, any edge $e_i$, $1\leq i\leq m$ 
+    By the choice of labels of the vertices and edges of $\bigcup_{1\leqslant i\leqslant r}T_i$, any edge $e_i$, $1\leqslant i\leqslant m$ 
     is adjacent to $v_i$ and some $v_j$ for $j>i$. 
-    Hence, the minor $K_1 = K_{ij, \ \substack{1\leq i,j\leq m}}$ is an upper triangular matrix with integers entries and 
+    Hence, the minor $K_1 = K_{ij, \ \substack{1\leqslant i,j\leqslant m}}$ is an upper triangular matrix with integers entries and 
     $\pm 1$ on the diagonal. We deduce that $K_1$ is invertible and $K_1^{-1}\in \mathcal{M}_{m, m}(\mathbb{Z})$.
     \\
     In particular, $K$ has rank $m$ and thus $\mathcal{H}(\mathcal{A})$ has codimension $m$. 
-    Let $K_2 = K_{\substack{ij, \ 1\leq i\leq m\\m+1\leq j\leq N}}$. Then,
+    Let $K_2 = K_{\substack{ij, \ 1\leqslant i\leqslant m\\m+1\leqslant j\leqslant N}}$. Then,
     \begin{align*}
     \mathcal{H}(\mathcal{A})=&\{x\in \mathbb{R}^N, Kx=\alpha\}\\
     =&\{(x_1,x_2)\in \mathbb{R}^m\times \mathbb{R}^{N-m}, K_1x_1 + K_2x_2=\alpha\}\\
@@ -3463,9 +3521,9 @@ In particular $\mathcal{H}(\mathcal{A})$ is an affine subspace of $\R^E$ of codi
     \\
     Therefore, any connected component of $G_0$ contains at least a univalent vertex.
     Let $r$ be the number of univalent vertices in $V_1$ and $c$ the number of connected component of $G_0$. 
-    By the previous reasoning, $c\leq r$. However, by Euler's formula,
-    $$\#V-\#R^c\leq c,$$
-    with equality if and only if $G_0$ is a forest. Since $\#R^c=m$ and $\#V=m+r$, we get $r\leq c$. 
+    By the previous reasoning, $c\leqslant r$. However, by Euler's formula,
+    $$\#V-\#R^c\leqslant c,$$
+    with equality if and only if $G_0$ is a forest. Since $\#R^c=m$ and $\#V=m+r$, we get $r\leqslant c$. 
     Hence, $r=c$ and $\mathbb{R}^c$ is a spanning forest. 
     Moreover, there must be a unique element of $V_{1}$ in each connected component of $G_0$.
 \end{proof}
