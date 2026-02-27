@@ -2875,7 +2875,7 @@ Recall that $\mathcal{H}_{reg}^0$ denotes the set of regular conjugacy classes o
 
 Let us consider the standard parametrization of conjugacy classes in $\SU(n)$ 
 given by
-$$\mathcal{A}= \left\{t_1\geqslant\ldots\geqslant t_n \mid \sum_{i=1}^nt_i=0, \ t_1-t_n\leqslant 1 \right\} .$$
+$$\mathcal{A}= \left\{t_1\geqslant\ldots\geqslant t_n \mid \sum_{i=1}^nt_i=0, \ t_1-t_n\leqslant 1 \right\}.$$
 The set $\mathcal{A}$ is called an alcove of type $A_{n-1}$. 
 Remark that $\mathcal{A}$ is a polytope of dimension $n-1$ in $\mathbb{R}^n$, 
 and for any $R\subset \{1,\ldots,n\}$ of cardinal $n-1$, the projection 
@@ -2888,12 +2888,13 @@ Vol(\mathcal{A})=&\int_{\mathbb{R}^{n-1}}\indic_{t_1\geqslant\ldots\geqslant t_{
 =&\int_{\mathbb{R}^{n-1}}\indic_{1\geqslant u_1\geqslant\ldots\geqslant u_{n-1}\geqslant 0}\frac{1}{n}\prod_{i=1}^{n-1} \diff u_i=\frac{1}{n!} \ ,
 \end{align*}
 where we did the change of variable $\eta:(t_i)_{1\leqslant i\leqslant n-1}\mapsto (t_i+\sum_{j=1}^{n-1}t_j)_{1\leqslant i\leqslant n-1}$ with $Jac(\eta(t))=n$.
-Since $\mathcal{H}^0_{reg}$ and $\mathcal{A}$ both parametrize conjugacy classes of $\SU(n)$, there is a natural bijection 
-$\phi:\mathcal{A}\rightarrow\mathcal{H}^0_{reg}$ whose value on $(t_1\geqslant \ldots\geqslant t_i\geqslant 0>t_{i+1}\geqslant \dots \geqslant t_n)$ is 
+
+Denote by $\mathcal{A}_{reg}$ the subset of $\mathcal{A}$ consisting of tuples $(t_1>\ldots>t_n)$ with $t_1-t_n<1$. The set $\mathcal{A}_{reg}$ parametrizes then the regular conjugacy classes of $\SU(n)$, as $\mathcal{H}^0_{reg}$ does. There is moreover a piecewise affine bijection 
+$\phi:\mathcal{A}_{reg}\rightarrow\mathcal{H}^0_{reg}$ whose value on $(t_1>\ldots> t_i> 0>t_{i+1}> \dots> t_n)$ is 
 \begin{equation}\label{eq:change_parametrization_conjugacy}
 \phi(t_1,\ldots,t_n) =(1+t_{i+1},\ldots,1+t_{n},t_1,\ldots,t_{i}) \ .
 \end{equation}
-One has $Jac(\phi(t))=1$ for all $t\in\mathcal{A}$, and thus $\phi$ is volume preserving. One then checks that $\phi^* \diff \theta= \diff t$.
+One has $Jac(\phi(t))=1$ for all $t\in\mathcal{A}_{reg}$, and thus $\phi$ is volume preserving. One then checks that $\phi^* \diff \theta= \diff t$.
 
 \subsection{Contraction formula on moduli spaces of flat connections} 
 \label{subsec:contraction_formulas_flat_co}
