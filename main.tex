@@ -87,7 +87,7 @@
 \begin{document}
 
 \begin{abstract}
-We provide a manifestly positive expression for the volume of flat $\U_n$-valued connections on punctured compact Riemann surfaces. This volume is obtained by summing volumes of explicit polytopes describing coloured honeycombs on a polygon, in the spirit of the work of Knutson and Tao describing the spectrum of the sum of two hermitian matrices. As a corollary, we also provide a positive formula for marginals of the $\U_n$-valued Yang-Mills measure on a compact Riemann surface in terms of the probability distribution of an explicit path process.
+We provide a manifestly positive expression for the volume of flat $\U(n)$-valued connections on punctured compact Riemann surfaces. This volume is obtained by summing volumes of explicit polytopes describing coloured honeycombs on a polygon, in the spirit of the work of Knutson and Tao describing the spectrum of the sum of two hermitian matrices. As a corollary, we also provide a positive formula for marginals of the $\U(n)$-valued Yang-Mills measure on a compact Riemann surface in terms of the probability distribution of an explicit path process.
 \end{abstract}
 
 \maketitle
@@ -96,8 +96,8 @@ We provide a manifestly positive expression for the volume of flat $\U_n$-valued
 
 Moduli spaces of unitary holomorphic vector bundles have been introduced by Narasimhan and Seshadri \cite{Narasimhan_Seshadri} 
 as a way to classify vector bundles on a compact Riemann surface. As highlighted in the work of Atiyah and Bott \cite{Atiyah_Bott}, 
-these  moduli spaces are deeply related to the $\U_n$-valued Yang-Mills measure on the corresponding surface. 
-The latter is a random $\U_n$-valued connection weighted by its curvature, and the critical points then correspond to flat connections, 
+these  moduli spaces are deeply related to the $\U(n)$-valued Yang-Mills measure on the corresponding surface. 
+The latter is a random $\U(n)$-valued connection weighted by its curvature, and the critical points then correspond to flat connections, 
 which in turn are in correspondence with the holomorphic vector bundles. As such, there is a natural symplectic volume form on the moduli 
 space of holomorphic bundles (or flat connections) which appears as the zero-limit temperature of the Yang-Mills functional.
 
@@ -150,7 +150,7 @@ This relation is given by a simple combinatorial number, the number of spanning 
 Thanks to the new honeycomb model, the surgery formulas of \cite{witten1992two} to compute the volume of flat connections easily translate into a patching of honeycombs, 
 and we thus get the desired positive formula.
 
-Note that this formula suggests a simple geometric description of a flat $\U_n$-connection on a compact Riemann surface, 
+Note that this formula suggests a simple geometric description of a flat $\U(n)$-connection on a compact Riemann surface, 
  up to an overall conjugation by a unitary matrix, by the corresponding honeycomb arrangement. It would be very interesting 
  to provide an explicit measure preserving bijection between the two models. However up to now, such a bijection has been out of reach already 
  for the simplest particular case of the sum of hermitian matrices.
@@ -545,7 +545,7 @@ For each $G\in\mathcal{G}^{(g,p)}$, choosing a spanning tree $S\subset E^{(g,p)}
 \end{remark}
 \subsection{Yang-Mills marginal for disjoint curves}
 Theorem \ref{th:Z_g_p_0} provides an explicit formula 
-for the marginal of $U_n$-valued Yang--Mills partition function of an
+for the marginal of $\U(n)$-valued Yang--Mills partition function of an
 oriented surface 
 of genus $g$ with prescribed non-degenerate holonomies 
 (up to conjugation) on a finite set of disjoint loops. This 
@@ -561,12 +561,35 @@ $\Gamma_1,\ldots,\Gamma_p$ on $S$. For each
 $\Gamma_i, \,1\leqslant i\leqslant p$, let $\alpha_i$ be an element of 
 $\mathcal{H}_{reg}$.
 \\
-We associate to $(S,\Gamma_1,\ldots,\Gamma_p)$ a labeled finite tree $T=(V,E)$ such that vertices are labeled by $\mathbb{N}\times \mathbb{R}^+$ and edges are labeled by $\mathcal{H}_{reg}$ as follows :
+We associate to $(S,\Gamma_1,\ldots,\Gamma_p)$ a labeled finite tree $\mathcal{T}=(V,E)$ such that vertices are labeled by $\mathbb{R}_{\geqslant 0} \times \mathbb{N}$ and edges are labeled by $\mathcal{H}_{reg}$ as follows :
 \begin{itemize}
-\item the set $V$ of vertices of $T$ is the set of connected components of $S\setminus \bigcup_{i=1}^p\Gamma_i$. Each vertex $v\in V$ is labeled $(A_v,g_v)$ where $A_v$ is the area of the corresponding connected component and $g_v$ is its genus.
-\item for $v_1,v_2\in V$, there is an edge $e$ between $v_1$ and $v_2$ for each boundary component. Since loops of $\mathcal{L}$ are non-intersecting, the each boundary component corresponds to a unique loop $\Gamma_j$ of $\mathcal{L}$, and then we label $\alpha_j$ the edge $e$.
+\item the set $V$ of vertices of $\mathcal{T}$ is the set of connected components of $S\setminus \bigcup_{i=1}^p\Gamma_i$. 
+Each vertex $v\in V$ is labeled $(A_v,g_v)$ where $A_v$ is the area of the corresponding connected component and $g_v$ is its genus.
+\item For $v_1,v_2\in V$, there is an edge $e$ between $v_1$ and $v_2$ 
+if $v_1$ and $v_2$ are boundary components of a loop. Since loops of $\mathcal{L}$ are non-intersecting, each boundary component corresponds to a unique loop $\Gamma_j$ of $\mathcal{L}$, and we label the corresponding edge $e$ by $\alpha_j$.
 \end{itemize}
-In the following, denote by $d_v$ the degree of a vertex $v\in V$.
+
+\noindent
+We refer to Figure \ref{fig:fig_loops} for an example of such a configuration of loops and its corresponding 
+edge-labeled tree.In the following, let us denote by $d_v$ the degree of a vertex $v\in V$. For $T \geqslant 0$ and $x,y \in \SU(n)$, let us denote by $p_T(x,y)$ the projection of the heat kernel 
+on $\U(n)$ to $\mathcal{H}$.
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.55\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/loops.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tree_surface_loops.pdf}
+    \end{minipage}
+    \caption{A disjoint loops configurations and its corresponding edge-labeled tree}
+    \label{fig:fig_loops}
+\end{figure}
+
+
 \begin{corollary}[Yang-Mills partition function]
     \label{cor:yang_mills_g_p}
     The Yang-Mills partition function associated 
@@ -577,7 +600,7 @@ In the following, denote by $d_v$ the degree of a vertex $v\in V$.
         = \int_{\mathcal{H}^{\sum_{i=1}^{\#V}d_v}} 
         \prod_{v\in V}Z_{g, p, 0}(\mu_1^v, \dots, \mu_{v_v}^v) 
         \prod_{e_i, v\in e_i}p_{A_v/d_v}(\mu_i^v,\alpha_i) 
-        \prod \diff \mu_i^v,
+        \prod \diff \mu_i^v \ ,
     \end{equation}
 where $Z_{0, 1, 0}(\mu)=\delta_{0}$, 
 $Z_{0,2,0}(\mu,\nu)=\delta_{\mu=\nu}$ and $Z_{g,p,0}$ 
@@ -3085,34 +3108,41 @@ since $c_{g,p}=\frac{c_{g,p-1}c_{0,3}}{n}$.
 \section{Yang-Mills partition function on compact oriented surfaces}
 \label{sec:proof_positive_area}
 
-The goal of this section is to give an explicit volume formula for the marginal
-Yang--Mills partition function of an oriented surface of genus $g$ with prescribed non-degenerate holonomies (up to conjugation) on a finite set of disjoint loops.  As it is proven in \cite{levy2003yang}, the corresponding partition function then only depends on the prescribed conjugacy classes and on the areas of each connected components delimites by the loops. 
-\begin{definition}
-A disjoint loops configuration $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p)$ is the data of a compact oriented surface together with $p$ disjoints Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each $\Gamma_i, \,1\leqslant i\leqslant p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
+The goal of this section is to derive an explicit volume formula 
+for the marginal Yang–Mills partition function on an oriented surface of genus $g$ 
+with prescribed non-degenerate holonomies (up to conjugation) 
+along a finite collection of disjoint loops. 
+As shown in \cite{levy2003yang}, this partition function depends 
+only on the prescribed conjugacy classes and on the areas of the 
+connected components delimited by the loops. 
 
-
-A skeleton is the data of a labeled finite tree $T=(V,E)$ such vertices are labeled by $\mathbb{N}\times \mathbb{R}^+$ and edges are labeled by $\mathcal{H}_{reg}$.
+\begin{definition}[Disjoint loops configuration]
+A \textit{disjoint loops configuration} $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p)$ 
+is the data of a compact oriented surface together with $p$ disjoints 
+Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each 
+$\Gamma_i, \,1\leqslant i\leqslant p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
+A \textit{skeleton} is the data of a labeled finite tree $\mathcal{T}=(V,E)$ such vertices are labeled by $\R_{\geqslant 0} \times \mathbb{N} $ 
+and edges are labeled by elements of $\mathcal{H}_{reg}$.
 \end{definition} 
 
-To each disjoint loops configuration $\mathcal{L}$, one associates a skeleton $T(\mathcal{L})$ as follows :
+To each disjoint loops configuration $\mathcal{L}$, one associates a skeleton $\mathcal{T}(\mathcal{L})$ as follows :
 \begin{itemize}
-\item the set $V$ of vertices of $T(\mathcal{L})$ is the set of connected components of $S\setminus \bigcup_{i=1}^p\Gamma_i$. Each vertex $v\in V$ is labeled $(A_v,g_v)$ where $A_v$ is the area of the corresponding connected component and $g_v$ is its genus.
-\item for $v_1,v_2\in V$, there is an edge $e$ between $v_1$ and $v_2$ for each boundary component. Since loops of $\mathcal{L}$ are non-intersecting, the each boundary component corresponds to a unique loop $\Gamma_j$ of $\mathcal{L}$, and then we label $\alpha_j$ the edge $e$.
+\item the set $V$ of vertices of $\mathcal{T}(\mathcal{L})$ is the set of connected components of $S\setminus \bigcup_{i=1}^p\Gamma_i$. 
+Each vertex $v\in V$ is labeled $(A_v,g_v)$ where $A_v \geqslant 0$ is the area of the corresponding connected component and $g_v \in \N$ is its genus.
+\item For $v_1,v_2\in V$, there is an edge $e$ between $v_1$ and $v_2$ 
+if $v_1$ and $v_2$ are boundary components of a loop.
+Since loops of $\mathcal{L}$ are non-intersecting, each boundary component corresponds to a unique loop $\Gamma_j$ of $\mathcal{L}$, and then we label $\alpha_j$ the edge $e$.
 \end{itemize}
-
-% \begin{definition}[Fat $(g,p)$-toric honeycomb] Let 
-
-% \end{definition}
 
 \noindent
 In this section, 
-for $T \geqslant 0$ and $x \in \SU(n)$, we denote by $p_T(x,y)$ the projection of the heat kernel 
-on $\U(n)$ to $\mathcal{H}$.
+for $T \geqslant 0$ and $x,y \in \SU(n)$, let us denote by $p_T(x,y)$ the projection of the heat kernel 
+on $\U(n)$ to $\mathcal{H}$ and $p_T(x) = p_T(\mathrm{id}, x)$.
 
 \begin{lemma}[Partition function of a cylinder]
     Let $T > 0$, $\alpha_1,\alpha_2 \in \mathcal{H}_{reg}$. Then,
     \begin{equation*}
-        Z_{0, 2, T}(\alpha_1, \alpha_2) =\frac{1}{\Delta(\alpha_2)^2} p_T(\alpha_1,\alpha_2),
+        Z_{0, 2, T}(\alpha_1, \alpha_2) =\frac{1}{\Delta(\alpha_2)^2} p_T(\alpha_1,\alpha_2) \ ,
     \end{equation*}
  where $p_T$ is the heat kernel at time $T$ of the Dyson Brownian motion on $\mathcal{H}$ starting at $\alpha_1$.
 \end{lemma}
@@ -3127,16 +3157,18 @@ on $\U(n)$ to $\mathcal{H}$.
     respective areas $t_1, \dots, t_p$ and that the area of $S\setminus \bigcup_{i=1}^pD_i$ is $T$. Then, the Yang--Mills partition function is given by 
     \begin{equation*}
         Z_{g, p, T}(\alpha_1, \dots, \alpha_p) 
-        = \int Z_{g, p, 0}(\alpha_1, \dots, \alpha_{p-1}, u) \, 
-        Z_{0, 2, T}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \Delta(u)^2\diff u.
+        = \int_\mathcal{H} Z_{g, p, 0}(\alpha_1, \dots, \alpha_{p-1}, u) \, 
+        Z_{0, 2, T}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \Delta(u)^2\diff u \ .
     \end{equation*}
 \end{proposition}
 
 \begin{proof}
 Recall that the partition function is invariant by area preserving diffeomorphism. Let us introduce a curve $\gamma$ enclosing the curve $\gamma_p$ such that the area of the domain enclosed by $\gamma_p$ and $\gamma$ is $T'$, with $0< T'< T$. Then, by the Markov property of the Yang-Mills partition function, see \cite[Proposition 5.1.2]{levy2003yang} or \cite[Eq. (2.63)]{witten1992two},
 $$Z_{g, p, T}(\alpha_1, \dots, \alpha_p)=\int_{\mathcal{H}} Z_{g, p, T-T'}(\alpha_1, \dots, \alpha_{p-1}, u) \, 
-        Z_{0, 2, T'}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \Delta(u)^2\diff u.$$
-By shrinking the domain between the curve $\gamma$ and the curves $\gamma_1,\ldots,\gamma_p$ to awe have $T'$ converging to $T$ and $T-T'$ going to zero. In this case the partition function $Z_{g, p, T-T'}(\alpha_1, \dots, \alpha_{p-1}, u)$ converges to $Z_{g,p,0}(\alpha_1, \dots, \alpha_{p-1}, u)$, the volume of flat connections with boundary holonomies $\alpha_1,\ldots,\alpha_p$, see \cite{sengupta2003volume}. The result is deduced.
+        Z_{0, 2, T'}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \Delta(u)^2\diff u \ .$$
+Let us shrink the domain between the curve $\gamma$ and the curves $\gamma_1,\ldots,\gamma_p$ so that $T'$ converges to $T$ i.e $T-T'$ converges to zero. 
+In this case, the partition function $Z_{g, p, T-T'}(\alpha_1, \dots, \alpha_{p-1}, u)$ converges to $Z_{g,p,0}(\alpha_1, \dots, \alpha_{p-1}, u)$, 
+the volume of flat connections with boundary holonomies $\alpha_1,\ldots,\alpha_p$, see \cite{sengupta2003volume}. 
 \end{proof}
 \begin{proof}[Proof of Corollary \ref{cor:yang_mills_g_p}]
 The corollary is then a deduction of the latter proposition, \cite[Proposition 5.1.2]{levy2003yang} and Theorem \ref{th:Z_g_p_0}.
