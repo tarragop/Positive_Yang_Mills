@@ -81,35 +81,34 @@
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{remark}[theorem]{Remark}
 
-\title{A positive formula for volumes of flat unitary connections on Riemann surfaces}
+\title{A positive formula for volumes of flat unitary connections on compact oriented surfaces}
 \author{Quentin François, David García-Zelada, Thierry Lévy, Pierre Tarrago}
 
 \begin{document}
 
 \begin{abstract}
-We provide a manifestly positive expression for the volume of flat $\U(n)$-valued connections on punctured compact Riemann surfaces. This volume is obtained by summing volumes of explicit polytopes describing coloured honeycombs on a polygon, in the spirit of the work of Knutson and Tao describing the spectrum of the sum of two hermitian matrices. As a corollary, we also provide a positive formula for marginals of the $\U(n)$-valued Yang-Mills measure on a compact Riemann surface in terms of the probability distribution of an explicit path process.
+We provide a manifestly positive expression for the volume of flat $\U(n)$-valued connections on punctured compact oriented surfaces. This volume is obtained by summing volumes of explicit polytopes describing coloured honeycombs on a polygon, in the spirit of the work of Knutson and Tao describing the spectrum of the sum of two hermitian matrices. As a corollary, we also provide a positive formula for marginals of the $\U(n)$-valued Yang-Mills measure on a compact oriented surface in terms of the probability distribution of an explicit path process.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
 
-Moduli spaces of unitary holomorphic vector bundles have been introduced by Narasimhan and Seshadri \cite{Narasimhan_Seshadri} 
+Moduli spaces of flat unitary connections have been introduced by Narasimhan and Seshadri \cite{Narasimhan_Seshadri,donaldson1983new} 
 as a way to classify vector bundles on a compact Riemann surface. As highlighted in the work of Atiyah and Bott \cite{Atiyah_Bott}, 
 these  moduli spaces are deeply related to the $\U(n)$-valued Yang-Mills measure on the corresponding surface. 
-The latter is a random $\U(n)$-valued connection weighted by its curvature, and the critical points then correspond to flat connections, 
-which in turn are in correspondence with the holomorphic vector bundles. As such, there is a natural symplectic volume form on the moduli 
-space of holomorphic bundles (or flat connections) which appears as the zero-limit temperature of the Yang-Mills functional.
+The latter is a random $\U(n)$-valued connection weighted by its curvature and depending on a temperature parameter. As the temperature vanishes, the only surviving connections are the ones with zero curvature and the zero-limit temperature of the Yang-Mills functional yields a natural symplectic volume form on the moduli 
+space of flat connections.
 
 Since the paper of Atiyah and Bott, there have been several works pursuing the goal of a better understanding of either the Yang-Mills 
-measure or the volume form on flat connections. Let us mention in particular two pioneering works that appeared around 1990. 
-The first one, introduced by Verlinde \cite{Verlinde}, expresses the volume form as the limit of the dimension of a vector space of holomorphic sections on the moduli space. 
+measure or its zero temperature limit, the volume form on flat connections. Let us mention in particular two pioneering directions that appeared around 1990. 
+The first one, initiated by Verlinde \cite{Verlinde}, expresses the volume form as the limit of the dimension of vector spaces of holomorphic sections on the moduli space. 
 This expression is clearly positive as a limit of positive integers. 
-There is an explicit formula, originally due to Verlinde and later proved by Bismut and Labourie \cite{bismut5symplectic}, 
-to compute these integers as a sum of complex numbers in the case of the three-holed sphere. 
+There is an explicit formula 
+to compute these integers, originally due to Verlinde and later proved by Bismut and Labourie \cite{bismut5symplectic}, involving sums of complex numbers in the case of the three-holed sphere. However, until recently \cite{Buch_Kresch_Purbhoo_Tamvakis}, no manifestly positive formula existed for the dimension of such spaces.  
 
-However, until recently \cite{Buch_Kresch_Purbhoo_Tamvakis}, no manifestly positive formula existed for the dimension of such spaces. 
-The second work, due to Witten \cite{witten1992two}, reduces the case of an arbitrary compact Riemann surface to a three-holed sphere 
+
+The second work, due to Witten \cite{witten1992two}, reduces the case of an arbitrary compact oriented surface to a three-holed sphere 
 by exploiting a decomposition of pants of the surface. 
 Such a surgery procedure has since been rigorously proved several times, see \cite{jeffrey1998intersection} and \cite{Meinrenken_Woodward}. 
 Using this method, Witten successfully obtained a general formula for the volume of flat connections as a series of characters of the unitary group. 
@@ -118,7 +117,7 @@ and then Meinrenken and Woodward \cite{Meinrenken_Woodward}.
 
 In the present paper, we provide a positive formula for the volume of such moduli spaces as  a sum of volumes of explicit finite dimensional polytopes. 
 These polytopes consist of coordinates of a collection of geodesics in a polygonal surface. The surface itself simply reflects the pants decomposition 
-of the corresponding punctured Riemann surface, while the collection of geodesics is a colored generalization of the honeycomb model introduced by 
+of the corresponding punctured oriented surface, while the collection of geodesics is a colored generalization of the honeycomb model introduced by 
 Knutson and Tao \cite{knutson2004honeycomb} to describe the spectrum of the sum of two hermitian matrices with prescribed spectra. 
 The fact that our model is a generalization of \cite{knutson2004honeycomb} should not be a surprise, since the solution of the eigenvalue problem 
 for the sum of hermitian matrices yields a particular subexample of a flat connection on a three-holed sphere, see \cite{Klyachko, belkale2008quantum}. 
@@ -126,15 +125,15 @@ Actually, this subexample has been used to get the previously mentioned signed f
 
 
 The proof of the present result is mainly based on the positive formula given in \cite{françois2024positiveformulaproductconjugacy} in the case of the three-holed sphere. 
-Roughly speaking, this formula has been obtained by following the initial method of Verlinde together with some recent results on the computation 
+Roughly speaking, this formula has been obtained by following the initial method of Verlinde together with the recent results on the computation 
 of the structure constants of the quantum cohomology of the Grassmannians \cite{Buch_Kresch_Purbhoo_Tamvakis}. 
 In \cite{françois2024positiveformulaproductconjugacy}, the formula was given in terms of volumes of a so-called coloured hive model, 
-which consists of a union of some explicit but degenerate polytope. 
+which consists of a union of some explicit but degenerate polytopes. 
 
 Note that volumes are always defined up to a constant and when polytopes of a Euclidean space are degenerate, there are several ways 
-to choose this constant from the volume measure of the ambient space : one can either consider the volume induced by the restriction of 
+to choose this constant from the volume measure of the ambient space: one can either consider the volume induced by the restriction of 
 the Riemannian metric or consider the pull-back of the canonical Lebesgue measure by a bijective projection on a subset of a canonical basis. 
-Both definitions agree in the case of a convex body, but they start to differ when degeneracies appear. 
+Both definitions agree in the case of a convex body (that is, a convex polytope of the same dimension as the ambient space), but they start to differ when degeneracies appear. 
 The choice of a volume form was relatively inconsequential in the case of \cite{knutson2004honeycomb}, since there was only one polytope 
 considered and the change of volume form only amounted to a change by an overall constant. 
 However, we are considering here a sum of volume of polytopes, each of them degenerate and being in different subspaces of the ambient space, 
@@ -142,21 +141,21 @@ and we thus have to ensure that the chosen volumes are coherent from one polytop
 In \cite{françois2024positiveformulaproductconjugacy}, the correct choice was to use the pull-back corresponding to particular bijective projections. 
 
 It appears that the formulation of \cite{françois2024positiveformulaproductconjugacy} in terms of hives does not fit easily in the surgery formulas of Witten. 
-In order to generalize the case of the three-holed sphere to arbitrary punctured compact Riemann surfaces, our first task has been to reformulate 
+In order to generalize the case of the three-holed sphere to arbitrary punctured compact oriented surfaces, our first task has been to reformulate 
 the latter hive model in terms of a colored version of honeycombs. As a byproduct of this reformulation, 
 we also obtain a new volume formula in the case of the three-holed sphere which is coordinate-free : we provide an explicit relation between 
 the volume form induced by the Riemannian metric of the ambient space and any volume induced by a bijective projection onto some coordinates. 
 This relation is given by a simple combinatorial number, the number of spanning trees of a graph, in a similar spirit to \cite{kassel2022determinantal}. 
 Thanks to the new honeycomb model, the surgery formulas of \cite{witten1992two} to compute the volume of flat connections easily translate into a patching of honeycombs, 
-and we thus get the desired positive formula.
+and we thus get the desired positive formula for surfaces of arbitrary genus.
 
-Note that this formula suggests a simple geometric description of a flat $\U(n)$-connection on a compact Riemann surface, 
+Note that this formula suggests a simple geometric description of a flat $\U(n)$-connection on a compact oriented surface, 
  up to an overall conjugation by a unitary matrix, by the corresponding honeycomb arrangement. It would be very interesting 
  to provide an explicit measure preserving bijection between the two models. However up to now, such a bijection has been out of reach already 
  for the simplest particular case of the sum of hermitian matrices.
 
 As suggested by \cite{Atiyah_Bott}, volumes of flat connections are the building blocks for the computations of the partition function 
-of the two-dimensional Yang-Mills measure on compact Riemann surfaces, see \cite[Section 2]{witten1992two}. 
+of the two-dimensional Yang-Mills measure on compact oriented surfaces, see \cite[Section 2]{witten1992two}. 
 Using the new positive formulas for flat connections, one can thus easily deduce new formulas for marginals of the Yang-Mills measure 
 which are again manifestly positive. Remark that our formulas are only valid for the holonomy on a set of non-crossing curves, 
 and this thus gives only a partial description of the full Yang-Mills measure. Once again, our result suggests the existence of a 
@@ -203,61 +202,64 @@ dimension in $\U(n)$. Finally, let $\mathcal{H}_{reg}^0$ denote the subset of $\
 $$\mathcal{H}_{reg}^0=\left\{\theta\in \mathcal{H} \; 
 \mid  \; 
 \theta_1>\theta_2>\ldots>\theta_n \text{ and }\sum_{i=1}^n \theta_i\in\mathbb{N}\right\}.$$
+Consider the moduli space $\mathcal{M}_{g, n}(\alpha_1, \dots, \alpha_p)$ of flat $\U(n)$-valued connections 
+on a compact oriented surface with genus $g$ having $p$ 
+boundary components $L_1,\ldots,L_p$, for which the holonomy around 
+each $L_i$, $1\leqslant i\leqslant p$, belongs to 
+$\mathcal{O}_{\alpha_i}$. Then, there is a symplectic structure on the quotient space $M_{g, n}(\alpha_1, \dots, \alpha_p)=\mathcal{M}_{g, n}(\alpha_1, \dots, \alpha_p)/\mathcal{G}_n$, where $\mathcal{G}_n$ is the $\U(n)$-valued gauge group on the surface, see \cite{meinrenken1999moduli}. The space $M_{g, n}(\alpha_1, \dots, \alpha_p)$ inherits thus a canonical volume form from the symplectic form. 
 
-\subsection{Triangular honeycomb} Let $S$ be an oriented Riemannian surface with boundary obtained by patching some equilateral triangles along some of their 
-boundaries. Formally, $S$ is a surface with boundary (possibly empty) endowed with
-a flat metric $g$. 
-Let us denote by $\mathbb{G}$ the set of non-degenerate 
-geodesics of $S$. 
-For $x, y \in S$ and $e$ a geodesic from $x$ to $y$, we then set $\partial e=\{x,y\}$ 
-and denote by $\overset{\circ}{e} =e\setminus \{x,y\}$ its interior. 
-Remark that $(S,\mathbb{G})$ is then a graph with an uncountable number of vertices.
-\\
-Since $S$ is a locally flat and oriented surface, there non-vanishing two form $\omega$ on $S$ associated to its metric. 
-If $e,e'\in\mathcal{E}$ are two geodesics such that $v\in e\cap e'$, we define the angle from $e$ to $e'$ as 
-$$\widehat{(e,e')}=\arccos(g_{v}(t,t')) \ ,$$
-where $t,t'\in T_vS$ are unit tangent vectors of respectively $e$ and $e'$ at $v$ such that either $t=t'$ or $\omega_v(t,t')>0$.
+The main goal of the present paper is to provide an explicit and positive formula for the corresponding volume of $M_{g, n}(\alpha_1, \dots, \alpha_p)$. This formula is given in terms of certain configurations of lines, called honeycomb, which are a generalization of the honeycomb model introduced in \cite{knutson2004honeycomb} and are described in the next two paragraphs.
+
+\subsection{Triangular honeycomb}\label{subsec:triangular_honey} Let us a first define a triangular honeycomb, which will contribute to the volume of the moduli space in the case $g=0,p=3$, see Theorem \ref{th:volume_flat_connection_0_3}. 
+
+\noindent
+Consider $S\subset \mathbb{R}^2$, a convex subdomain of the plane. Recall that a segment of $S$ is any set of the form $\{xv+(1-x)v', 0\leq x\leq 1\}$ for some $v,v'\in S$. For any such segment $e=\{xv+(1-x)v', 0\leq x\leq 1\}$, we then set $\partial e=\{v,v'\}$ 
+and denote by $\overset{\circ}{e} =e\setminus \{v,v'\}$ its interior. A segment is then called non-trivial if $\overset{\circ}{e}\not=\emptyset$. Denote by  $\mathbb{G}$ the set of non-trivial segments of $S$.
+
+If $e,e'$ are two non-trivial segments, we define the angle from $e$ to $e'$ as 
+$$\widehat{(e,e')}=\arccos(\langle u,u'\rangle) \ ,$$
+where $u,u'$ are unit tangent vectors of respectively $e$ and $e'$ such that $\det(u,u')>0$.
 
 \begin{definition}[Non-degenerate honeycomb]
 \label{def:toric_honeycomb}
-A \textit{honeycomb} $h$ is a union of closed 
-non-degenerate geodesics $\{e\}_{e\in \mathcal{E}}$, 
-where $\mathcal{E} \subset \mathbb{G}$ is finite, 
+A \textit{honeycomb} $h=(\mathcal{E},c)$ is a finite subset $\mathcal{E} \subset \mathbb{G}$ 
 together with a color map $c:\mathcal{E}\rightarrow \{0,1,3\}$ such that :
 \begin{enumerate}
 \item $\overset{\circ}{e}\cap \overset{\circ}{e}'\not=\emptyset$ 
 is only possible if, up to a transposition of $e$ and $e'$, 
-$c(e)=0, \,c(e')=1$ and $\widehat{(e,e')}=-2\pi/3$,
+$c(e)=0, \,c(e')=1$ and $\widehat{(e,e')}=\pi/3$,
 \item if $\partial e\cap \partial e'=\{v\}$, 
 then $(c(e),c(e'))\in\{(0,0),(1,1),(0,1),(1,3),(3,0)\}$ and $\widehat{(e,e')}=2 \pi/3$.
 \end{enumerate}
-
+\end{definition}
 \noindent
-Figure \ref{fig:geodesics} lists the possible cases for geodesics in non-degenerate 
+From the definition that $\mathcal{E}$ is unambiguously defined from the representation $\bigcup_{e\in \mathcal{E}}e$ of $h$ as a subset of $S$. In the sequel, we set 
+ $$t(h)=\bigcup_{e\in \mathcal{E}}e.$$
+\\
+\noindent
+Figure \ref{fig:segments} lists the possible angles between segments in non-degenerate 
 honeycombs of Definition \ref{def:toric_honeycomb}.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[scale=1]{images/geodescis_cases.pdf}
-    \caption{The possible angles between geodesics. The colors of the 
+    \caption{The possible angles between segments. The colors of the 
     edges are given in the couple below the configuration.}
-    \label{fig:geodesics}
+    \label{fig:segments}
 \end{figure}
 
 \noindent
-A \textit{structure graph} of a honeycomb 
-$h$ is any finite graph $(V,E)$ with a coloring $c:E\rightarrow\{0,1,3\}$ with an injection $i:(V,E)\rightarrow (S,\mathbb{G})$ such that 
-$$h=\bigcup_{ e \in E}i(e)\quad\text{and }\quad c(e)=c(i(e)), \ e\in E \ .$$ 
+
+Remark that our choice of colors is coherent with the colors coming from \cite{Buch_Kresch_Purbhoo_Tamvakis} and \cite{françois2024positiveformulaproductconjugacy} : the colors $0$ and $1$ play a symmetric role that differs from the one played by the color $3$.
+
+
+
+\begin{definition}
+The \textit{structure graph} of a honeycomb 
+$h$ is the finite graph $G(h)=(V,E)$ with colored edges such that $V=\bigcup_{e\in \mathcal{E}}\partial e$, $E=\{\partial e, e\in \mathcal{E}\}$, and the color map $c:E\rightarrow\{0,1,3\}$ is defined by $c(v,v')=c(e)$ if $\partial e=\{v,v'\}$.
 \end{definition}
 
 \noindent
-In particular, if $h$ is a non-degenerate honeycomb, then 
-$G(h)=(V,\mathcal{E})$ with 
-$V=\{v\in S \mid \exists e\in \mathcal{E}, v \in \partial e\}$ and the coloring $c$
-is a structure graph of $h$, called its \textit{canonical structure 
-graph}. Remark from the definition that $\mathcal{E}$ is unambiguously defined from $h$. 
-\\
-\\
 By the angle condition, $G = G(h)$ has only vertices of degree less than $3$ 
 and the sequence of colors around any trivalent 
 (resp. bivalent) vertex of $G(h)$ belongs to 
@@ -266,16 +268,9 @@ in the clockwise order.
 \\
 The \textit{color number} $c(G)$ of a colored graph $G$ is defined as 
 the number of edges 
-colored $1$ and adjacent to a univalent vertex. Then, all structure graphs of a same honeycomb $h$ have the same color number.
-\\
-By abuse of definition, we speak of edges and vertices 
+colored $1$ and adjacent to a univalent vertex. By abuse of definition, we speak of edges and vertices 
 of a honeycomb to denote edges and vertices of its 
 canonical structure graph. 
-\\
-\\
-Remark that in general, one may choose a structure vertices up 
-to degree $4$ if we add the crossing of edges from case (1) 
-of Definition \ref{def:toric_honeycomb}.
 \\
 \\
 Let us denote by 
@@ -290,19 +285,19 @@ $$\partial T=\bigsqcup_{i\in\{0,1,2\}}\partial_iT \text{ , where }
 
 \begin{definition}[Triangular honeycomb]
     \label{def:triangular_honey}
-    A \textit{triangular honeycomb} $h$ of size $n$ is a non-degenerate 
-    honeycomb $h$ on the surface $T$ endowed 
+    For $n\geq 1$, a \textit{triangular honeycomb} $h$ of size $n$ is a non-degenerate 
+    honeycomb $h=(\mathcal{E},c)$ on the surface $T$ endowed 
     with the Euclidian metric such that
     \begin{enumerate}
     \item $G(h)$ has only univalent and trivalent vertices, 
-    and $\bigcup_{e\in h}e\cap \partial T=V_1$, where 
-    $V_1$ denotes the set of univalent vertices in $G(h)$,
-    \item if $e\in h$, then $e \subset \left\{x+\mathbb{R} \ed^{2\pi i(\ell(e) +1) / 3}\right\} $ 
+    and $t(h)\cap \partial T=\partial V$, where 
+    $\partial V$ denotes the set of univalent vertices in $G(h)$,
+    \item if $e\in \mathcal{E}$, then $e \subset \left\{x+\mathbb{R} \ed^{2\pi i(\ell(e) +1) / 3}\right\} $ 
     for some $\ell(e)\in\{0,1,2\}$ and $x\in T$. 
     The integer $\ell(e)$ is then called the \textit{type} of $e$ 
     and $L(e)=x_{\ell(e)}$ is called the \textit{height} of $e$ 
     which is independent of the choice of $x$, 
-    \item for $0\leqslant i\leqslant 2$, $\#h\cap \partial_i T=n$ and if $e$ 
+    \item for $0\leqslant i\leqslant 2$, $\#t(h)\cap \partial_i T=n$ and if $e$ 
     is adjacent to a boundary vertex belonging to $\partial_i T$, 
     then either $c(e)=0$ and $\ell(e)=i+1$ or 
     $c(e)=1$ and $\ell(e)=i+2$. Moreover, 
@@ -317,14 +312,14 @@ $$\partial T=\bigsqcup_{i\in\{0,1,2\}}\partial_iT \text{ , where }
 A triangular honeycomb 
 has always $n^2+3n$ vertices and $\frac{3n(n+1)}{2}$ edges, 
 see Remark \ref{rmk:graph_vertices_edges}.
-This definition implies that $G(h)$ has only trivalent 
+This definition implies that $G(h)=(V,E)$ has only trivalent 
 vertices in $\overset{\circ} T$. Moreover, the condition on 
 the boundaries yields a natural choice of root 
-$v^0$ of $G$, corresponding to the univalent vertex on 
-$\partial_0T$ whose coordinate $v^1_1$ is maximal. 
+$v^0$ of $G$, corresponding to the univalent vertex lying on 
+$\partial_0T$ and whose coordinate $v^1_1$ is maximal. 
 Then, the cyclic counter-clockwise order on the boundary vertices 
 given by the orientation of $T$ yields an order on the $3n$ boundary vertices 
-$\{v^1,\ldots,v^{3n}\}$, with the vertices $\{v^{ni+j},1\leqslant j\leqslant n\}$ located on $\partial_iT$.
+$\{v^1,\ldots,v^{3n}\}$ of $\partial V$, with the vertices $\{v^{ni+j},1\leqslant j\leqslant n\}$ located on $\partial_iT$.
 \\
 In the particular case where all edges have the same color, 
 our definition is the original definition of a generic honeycomb 
@@ -336,7 +331,7 @@ of the ones from the present manuscript (in the case where all colors are the sa
 \\
 \\
 The \textit{boundary}, or the \textit{boundary values}, 
-of a honeycomb $h$ of size $n \geqslant 3$ 
+of a triangular honeycomb $h$ of size $n \geqslant 3$ 
 is the $3n$ tuple 
 \begin{equation}
     \label{eq:boundary_honeycomb_order}
@@ -347,12 +342,12 @@ is the $3n$ tuple
 \end{equation}
 where $(\alpha^i_n\leqslant \dots\leqslant \alpha^i_1)$ is the ordered 
 tuple of the $i+1$-coordinates of boundary points of 
-$h$ on $\partial_iT$. Hence, 
+$t(h)$ on $\partial_iT$. Hence, 
 $\alpha^i_j=v^{ni+j}_{i+1}$ for $0\leqslant i\leqslant 2$ and $1\leqslant j\leqslant n$.
 \\
 \\
 For $\alpha,\beta,\gamma\in \mathcal{H}_{reg}$ let us 
-denote by $\honey_{d, n}(\alpha, \beta, \gamma)$ 
+denote by $\honey_{n, d}(\alpha, \beta, \gamma)$ 
 the set of triangular honeycombs $h$ having boundary 
 values $ \partial h = (\beta, \alpha, \gamma)$, 
 see Figure \ref{fig:boundary_toric_honey}, and such that 
@@ -374,94 +369,85 @@ graphs with ordered boundary appearing in $\{G(h) \mid h\in\honey_{n,d}\}$.
     \label{fig:boundary_toric_honey}
 \end{figure}
 
-\subsection{ \texorpdfstring{$(g,p)-$}{(g, p)-}honeycombs}\label{subsec:(g,p)_honey} Let $g,p\geqslant 0$ be integers 
-such that $p + 2g-2 \geqslant 1$ and let $S$ be a 
+
+\subsection{ \texorpdfstring{$(g,p)-$}{(g, p)-}honeycombs}\label{subsec:(g,p)_honey} We next turn to a generalization of triangular honeycombs which will provide a formula for arbitrary surfaces. Let $g,p\geqslant 0$ be integers 
+such that $N=p + 2g-2 \geqslant 1$ and let $S$ be a 
 connected compact orientable surface of genus $g$ with 
-$p$ boundary components $L_1, \ldots, L_{p}$. 
-Let $\mathcal{M}=(M_1\ldots, M_{2g+p-2})$ be a pant decomposition 
+$p$ boundary components $\mathcal{L}_1, \ldots, \mathcal{L}_{p}$. 
+Let $\mathcal{M}=(M_1\ldots, M_{N})$ be a pant decomposition 
 of this surface. 
-We build from $\mathcal{M}$ a surface as follows : 
+We build from $\mathcal{M}$ a surface $\mathcal{T}$ as follows: 
 \begin{itemize}
-    \item take $N:=2g+p-2$ oriented equilateral triangles 
-    $(T^1,\ldots,T^{2g+p-2})$, each $T^j$ having three oriented 
-    boundaries $\partial_{i}T^j$ of size $1$. 
-    \item For each pair of boundary components $\partial_iM^j, 
-    \partial_{i'}M^{j'}$ which are identified in the pair of pants 
-    decomposition, identify the boundaries $\partial_iT^j$ and 
-    $\partial_{i'}T^{j'}$ in an orientation reversing way. 
+    \item take $N$ oriented equilateral triangles 
+    $(T^1,\ldots,T^{N})$, each $T^i$ having three oriented 
+    boundaries $\partial_{j}T^i$ of size $1$. 
+    \item For each pair of boundary components $\partial_jM^i, 
+    \partial_{j'}M^{i'}$ which are identified in the pair of pants 
+    decomposition, write $(i,j)\sim(i',j')$ and identify the boundaries $\partial_jT^i$ and 
+    $\partial_{j'}T^{i'}$ in an isometric and orientation reversing way. 
 \end{itemize}
 Then, the resulting surface $\mathcal{T}$ is an oriented surface 
-with $p$ boundaries edges 
-$\partial_1 \mathcal{T},\ldots,\partial_p\mathcal{T}$, 
-and the natural euclidean metric on each equilateral 
+with $p$ boundaries edges denoted by
+$L_1,\ldots,L_p$. If $L_i$ a boundary component, 
+there exists a triangle $T_{j_i}$ and $\ell_i\in\{0,1,2\}$ 
+such that $L_i=\partial_{\ell_i} T^{j_i}$. 
+
+For each $1\leq i\leq p+2g-2$, let $f_i:T\rightarrow \mathcal{T}$ be an orientation preserving isometry such that $f_i(T)=T^i$ (where $T^i$ is seen as a subset of $\mathcal{T}$ by the above construction). For a triangular honeycomb $h=(\mathcal{E},c)$, set $t_i(h)=\bigcup_{e\in\mathcal{E}}f_i(e)$. 
+\begin{definition}\label{def:(g,p)_honey}
+A \textit{$(g,p)$-honeycomb }is a tuple $(h^i)_{1\leq i\leq N}$ of triangular honeycombs such that $t_i(h^i)_{\vert \partial_j T^i}=t_{i'}(h^{i'})_{\vert \partial_{j'}T^{i'}}$ for any $(i,j)\sim(i',j')$.
+\end{definition} 
+See Figure \ref{fig:ex_g2_p_3} for the representation of a $(g,p)$-honeycomb for $g=2$ and $p=3$.
+\begin{remark}
+The natural euclidean metric on each equilateral 
 triangle yields a metric on $\mathcal{T}$ which is flat 
 except at the vertices of the triangulation belonging to 
-the interior of $\mathcal{T}$.
-\\
-Remark that if $h$ is a honeycomb on $S$ and 
-$S'\subset S$ is a closed convex submanifold, then 
-$h\cap S'$ is again a honeycomb.
+the interior of $\mathcal{T}$. Hence,  writing $h^i=(\mathcal{E}^i,c^i)$ for $1\leq i\leq 2p+g+2$, $\bigcup_{i=1}^{N}\mathcal{E}^i$ defines again a non-degenerate honeycomb on $\mathcal{T}$, where we extended Definition \ref{def:toric_honeycomb} from a subdomain of $\mathbb{R}^2$ to any locally flat Riemannian oriented surface.
+\end{remark}
 
-\begin{definition}
-A \textit{$(g,p)$-honeycomb }is a honeycomb $h$ on 
-$\mathcal{T}$ such that for each $1\leqslant i\leqslant 2g+p-2$, 
-$h\cap T_i$ is a triangular honeycomb.
-\end{definition} 
 
 \noindent
 Let us denote by $\honey^{(g, p)}$ the set of 
-$(g,p)$-honeycombs. For $h\in\honey^{(g,p)}$ and $1 \leqslant i \leqslant 2g+p-2$, let $G_h^i=(V^i, E^i)$ be 
-the canonical graph structure of the honeycomb $h\cap  T_i$. 
-We choose as structure graph of $h$ the graph $\hat{G}[h] = (V, E)$ where
-$$V = \bigcup_{1\leqslant i\leqslant 2g+p-2}V_i \ \text{ and } \ 
-E = \bigcup_{1\leqslant i\leqslant 2g+p-2} E_i \ .$$
+$(g,p)$-honeycombs. For $h=(h^i)_{1\leqslant i\leqslant N}\in\honey^{(g,p)}$ and $1 \leqslant i \leqslant N$, let $G(h^i)=(V^i, E^i)$ be 
+the structure graph of the honeycomb $h_i$ with corresponding color map $c_i:E^i\rightarrow \{0,1,3\}$. 
+We then define the structure graph of $h$ as the graph $G(h) = (V, E)$ where
+$$V = \bigcup_{1\leqslant i\leqslant N}f_i(V^i) \ \text{ and } \ 
+E = \bigcup_{1\leqslant i\leqslant N} \{f_i(e), e\in E^i\} \ .$$
+We define a coloring of the edges of this graph by setting $c(f_i(e))=c_i(e_i)$ if $e\in E^i$.
 
 \noindent
-In particular, if $h$ is a $(g,p)$ honeycomb and 
-$L_i$ a boundary component, 
-there exists a triangle $T_{j_i}$ and $\ell_i\in\{0,1,2\}$ 
-such that $L_i=\partial_{\ell_i} T^{j_i}$, 
-and we set $\partial_i h = h\cap L_i$. As in the triangular case, the orientation of $S$ yields an orientation on each boundary component. 
+If $h$ is a $(g,p)$ honeycomb and $1\leq i\leq p$, we set $\partial_i h = t(h)\cap L_i$. Each element $v$ of $t(h)\cap L_i$ belongs to a unique triangle $T^{j_i}$ and inherits a triple of coordinate $(v_0,v_1,v_2)$ from this triangle.  Moreover, as in the triangular case, the orientation of $S$ yields an orientation on each boundary component. 
 For $h\in \honey^{(g,p)}$, order the boundary points so that 
-$$h\cap \bigcup_{1\leqslant i\leqslant p}L_i=\{v^{(i-1)n+j},1\leqslant i\leqslant p,j\leqslant n\},$$ 
-where  $\partial_ih=\{v^{(i-1)n+j},\, 1\leqslant j\leqslant n\}$ with $v^{(i-1)n+j}_{\ell_i+1}>  v^{(i-1)n+j'}_{\ell_i+1}$ if $1\leqslant j<j'\leqslant n$.
+$$t(h)\cap \bigcup_{1\leqslant i\leqslant p}L_i=\{v^{(i-1)n+j},1\leqslant i\leqslant p,j\leqslant n\},$$ 
+where  $\partial_ih=\{v^{(i-1)n+j},\, 1\leqslant j\leqslant n\}$ with $v^{(i-1)n+j}_{\ell_i+1}>  v^{(i-1)n+j'}_{\ell_i+1}$ if $1\leqslant j<j'\leqslant n$. Hence, the structure graph $G(h)$ inherits the previous order on its boundary points. 
 \\
 We denote by $\honey^{(g,p)} \left(\alpha^1,\ldots,\alpha^p\right)$ 
 the set of $(g,p)$-honeycombs with boundary components 
 $\partial_ih=\alpha^i$.
 \\
-\\
-Beware that the structure graph we are using for $(g,p)$- honeycombs 
-are slightly different from the canonical structure graph introduced 
-after Definition \ref{def:toric_honeycomb}, since geodesics may cross the 
-boundary $\partial T$ of an equilateral triangle $T$. 
-In this case, the geodesic breaks into two geodesics meeting at a vertex belonging to $\partial T$.
-\\
 Like in the triangular case, we denote by $\honey^{G}$  
 the subset of $\honey^{(g,p)}$ 
-of honeycombs $h$ with structure graph $\hat{G}$ isomorphic to $G$ as colored graph with ordered boundary vertices. 
+of honeycombs $h$ with structure graph $G(h)$ isomorphic to $G$ as colored graph with ordered boundary vertices. 
 We also denote by $\mathcal{G}^{(p, g)}$ the set of isomorphism classes of 
-colored graphs with ordered boundary appearing in $\honey^{(g,p)}$.
+colored graphs with ordered boundary appearing as structure graph of elements of $\honey^{(g,p)}$.
 For $G\in\mathcal{G}^{(g,p)}$, let us set 
 $$c(G)=\sum_{i=1}^Nc(G_i) \ ,$$
-and let us denote by $\mathcal{G}^{(g,p)}_{d}\subset \mathcal{G}^{(g,p)}$ 
+where $c(G_i)$ is the color number of the structure graph $G_i$ as defined at the end of Section \ref{subsec:triangular_honey}. Let us denote by $\mathcal{G}^{(g,p)}_{d}\subset \mathcal{G}^{(g,p)}$ 
 the subset of graphs $G$ such that $c(G)=d$.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{toric_honey_example_3_4_5_6_7_sparse.pdf}
-    \caption{A $(2, 3)$ honeycomb for a surface with genus 2 and 3 boundaries}
+    \caption{A $(2, 3)$ honeycomb for a surface with genus 2 and 3 boundaries. On each upper triangle, the endpoints of the segments of the honeycomb coincide on the left and on the right edge.}
     \label{fig:ex_g2_p_3}
 \end{figure}
 
 \noindent
 For $G = (V, E) \in\mathcal{G}^{(p, g)}$, there is a natural parametrization of 
 $\honey^G$ constructed as follows. For any edge $e\in E$, there exists $1\leqslant i\leqslant N$ such that 
-$e\in E_i$. For $h\in\honey^G$, let us set 
-$$P[h](e)=L_{T_i}(i(e)) \ ,$$ 
-where $L_{\vert T_i}$ is the height map defined on $T_i$ from 
-Definition \ref{def:triangular_honey} and $i:E\rightarrow \mathbb{G}$ is the injection from 
-Definition \ref{def:toric_honeycomb} such that $h\cap T_i=\bigcup_{e\in E_i}i(e)$. 
+$e=f_i(\tilde{e})$ with $\tilde{e}\in E^i$. For $h\in\honey^G$, let us set 
+$$P[h](e)=L(\tilde{e}) \ ,$$ 
+where $L$ is the height map defined on $T$ from 
+Definition \ref{def:triangular_honey}. 
 Then, introduce the map
 \begin{equation}
     \label{eq:parametrization_P}
@@ -472,8 +458,8 @@ This map is clearly non-surjective
 since $P \left(\honey^G\right)$ is a bounded subset of 
 $\left(\mathbb{R}^{3n(n+1)/2}\right)^N$. 
 Moreover, there are several relations among the 
-values of $((P_{\vert T_i}(e))_{e\in G_h^i})_{1\leqslant i\leqslant N}$
-which implies that $P$ is an over-parametrization of $\honey^{G}$. 
+values of $((P[h](e))_{e\in G_h^i})_{1\leqslant i\leqslant N}$
+which imply that $P$ is an over-parametrization of $\honey^{G}$. 
 However, it will follow from 
 Proposition \ref{prop:parametrization_triangular_honey_first} that $P$ is injective. 
 In the sequel, we identify $\honey^G$ with its image through $P$. 
@@ -488,14 +474,8 @@ common to all graphs of $\mathcal{G}^{(g,p)}$ and that the graph structure of
 $G\in \mathcal{G}^{(g,p)}$ is encoded in the map $\partial:E^{(g,p)}\rightarrow 
 \mathcal{P}(V^{(g,p)})$ which associates to an edge its endpoints.
 
-\subsection{Volume of flat connections}
+\subsection{Volume formula for the moduli space of flat connections}
 
-Let us denote by $M_{g, n}(\alpha_1, \dots, \alpha_p)$ 
-the moduli space of flat $\U(n)$-valued connections 
-on a compact oriented surface with genus $g$ having $p$ 
-boundary components for which the holonomies around 
-$L_1,\ldots,L_p$ respectively belong to 
-$\mathcal{O}_{\alpha_1},\mathcal{O}_{\alpha_2}\ldots,\mathcal{O}_{\alpha_p}$. 
 For $g,p\geqslant 0$, Set $\diff \Vol\in\Omega^{n_{g,p}}\left(\mathbb{R}^{E^{(g,p)}}\right)$ 
 for the volume form on $n_{g,p}$-dimensional subspaces induced by the 
 canonical Riemannian metric on $\mathbb{R}^{E^{(g,p)}}$. Hence, 
@@ -516,7 +496,7 @@ denotes the absolute value of the Vandermonde determinant of $(e^{ix_j})_{1\leqs
     \begin{equation}
         \label{eq:Z_g_p_0}
         Z_{g, p, 0}(\alpha_1, \dots, \alpha_p) = 
-        \frac{c_{0,3}^{2g+p-2}}{n^{2g+p-3}\prod_{j=1}^{p} \Delta(\alpha_j)}
+        \frac{c_{0,3}^{N}}{n^{2g+p-3}\prod_{j=1}^{p} \Delta(\alpha_j)}
         \sum_{\substack{ G \in \mathcal{G}^{(g,p)}}}
         \frac{\Vol \left[ \honey^G(\alpha_1, 
         \dots, \alpha_p) \right]}{\sqrt{\# \mbox{ Spanning trees of } G}},
@@ -541,10 +521,10 @@ There are several other conventions to define the volume of flat connections, de
 
 \begin{remark}[Volume and conditioned processes]\label{rmk:_volume_conditioned_process}
 For each $G\in\mathcal{G}^{(g,p)}$, choosing a spanning tree $S\subset E^{(g,p)}$ of $G$ yields a natural parametrization of $\honey^G(\alpha_1,\ldots,\alpha_p)$ in terms of  the coordinates $P(e),e\in S$. By construction, each of those coordinates belongs to $[0,1]$. Considering the uniform probability measure on $[0,1]^S$, one can prove that the formula $\frac{\Vol \left[ \honey^G(\alpha_1, 
-        \dots, \alpha_p) \right]}{\sqrt{\# \mbox{ Spanning trees of } G}}$ is then exactly the probability that the vector $(L(e))_{e\in S}$ belongs to some convex set $K_G$, see Lemma \ref{lem:product_gluing} for a definition of $K_G$. After the summation on all graphs $G$, $Z_{g,p,0}(\alpha_1,\ldots,\alpha_p)$ can be seen as the probability that a random process remains in a union of convex set, up to an explicit constant. Visually, the non-conditioned process would allow geodesics to exit the domain and to meet at the trivalent vertices with angles being any multiple of $\pi/3$. 
+        \dots, \alpha_p) \right]}{\sqrt{\# \mbox{ Spanning trees of } G}}$ is then exactly the probability that the vector $(L(e))_{e\in S}$ belongs to some convex set $K_G$, see Lemma \ref{lem:product_gluing} for a definition of $K_G$. After the summation on all graphs $G$, $Z_{g,p,0}(\alpha_1,\ldots,\alpha_p)$ can be seen as the probability that a random process remains in a union of convex set, up to an explicit constant. Visually, the non-conditioned process would allow segments to exit the domain and to meet at the trivalent vertices with angles being any multiple of $\pi/3$. 
 \end{remark}
 \subsection{Yang-Mills marginal for disjoint curves}
-Theorem \ref{th:Z_g_p_0} provides an explicit formula 
+As a consequence of Theorem \ref{th:Z_g_p_0}, there is an explicit formula 
 for the marginal of $\U(n)$-valued Yang--Mills partition function of an
 oriented surface 
 of genus $g$ with prescribed non-degenerate holonomies 
@@ -561,17 +541,18 @@ $\Gamma_1,\ldots,\Gamma_p$ on $S$. For each
 $\Gamma_i, \,1\leqslant i\leqslant p$, let $\alpha_i$ be an element of 
 $\mathcal{H}_{reg}$.
 \\
-We associate to $(S,\Gamma_1,\ldots,\Gamma_p)$ a labeled finite tree $\mathcal{T}=(V,E)$ such that vertices are labeled by $\mathbb{R}_{\geqslant 0} \times \mathbb{N}$ and edges are labeled by $\mathcal{H}_{reg}$ as follows :
+We associate to $(S,\Gamma_1,\ldots,\Gamma_p)$ a labeled finite directed graph $\mathcal{T}=(V,E)$ such that vertices are labeled by $\mathbb{R}_{\geqslant 0} \times \mathbb{N}$ and directed edges are labeled by $\mathcal{H}_{reg}$ as follows :
 \begin{itemize}
 \item the set $V$ of vertices of $\mathcal{T}$ is the set of connected components of $S\setminus \bigcup_{i=1}^p\Gamma_i$. 
 Each vertex $v\in V$ is labeled $(A_v,g_v)$ where $A_v$ is the area of the corresponding connected component and $g_v$ is its genus.
-\item For $v_1,v_2\in V$, there is an edge $e$ between $v_1$ and $v_2$ 
-if $v_1$ and $v_2$ are boundary components of a loop. Since loops of $\mathcal{L}$ are non-intersecting, each boundary component corresponds to a unique loop $\Gamma_j$ of $\mathcal{L}$, and we label the corresponding edge $e$ by $\alpha_j$.
+\item For $v_1,v_2\in V$, there is a direct edge $e$ between $v_1$ and $v_2$ 
+if $v_1$ and $v_2$ are boundary components of a loop. Since loops of $\mathcal{L}$ are non-intersecting, each boundary component corresponds to a unique loop $\Gamma_j$ of $\mathcal{L}$, and we label the corresponding edge $e$ by $\alpha_j$ of $1-\alpha_j$ depending on the orientation of the curve around the surface $v_1$.
 \end{itemize}
 
 \noindent
 We refer to Figure \ref{fig:fig_loops} for an example of such a configuration of loops and its corresponding 
-edge-labeled tree.In the following, let us denote by $d_v$ the degree of a vertex $v\in V$. For $T \geqslant 0$ and $x,y \in \SU(n)$, let us denote by $p_T(x,y)$ the projection of the heat kernel 
+edge-labeled tree.In the following, let us denote by $d_v$ the degree of a vertex $v\in V$. For $T \geqslant 0$ and $x,y \in \mathcal
+H$, let us denote by $p_T(x,y)$ the projection of the heat kernel 
 on $\U(n)$ to $\mathcal{H}$.
 
 \begin{figure}[h!]
@@ -597,10 +578,10 @@ on $\U(n)$ to $\mathcal{H}$.
     \begin{equation}
         \label{eq:yang_mills_marginal_g_p}
         \operatorname{YM}(\alpha_1,\ldots,\alpha_p) 
-        = \int_{\mathcal{H}^{\sum_{i=1}^{\#V}d_v}} 
+        =\int_{\mathcal{H}^{\sum_{i=1}^{\#V}d_v}} 
         \prod_{v\in V}Z_{g, p, 0}(\mu_1^v, \dots, \mu_{v_v}^v) 
         \prod_{e_i, v\in e_i}p_{A_v/d_v}(\mu_i^v,\alpha_i) 
-        \prod \diff \mu_i^v \ ,
+        \prod V(\mu_i^v)^2\diff \mu_i^v \ ,
     \end{equation}
 where $Z_{0, 1, 0}(\mu)=\delta_{0}$, 
 $Z_{0,2,0}(\mu,\nu)=\delta_{\mu=\nu}$ and $Z_{g,p,0}$ 
@@ -792,26 +773,26 @@ the condition
 	is necessary.
 	Let us show it is sufficient.
 	Consider first the case where
-	$G$ is a \textbf{tree}. To solve
+	$G=(V,E)$ is a \textbf{tree}. To solve
 	$ \mathrm{div} \lambda = \phi$
 	we look for
 	the edges where $\lambda$
-	is most easily determined by the boundary conditions. Let us denote by $V_{1}$ the set of leaves of $T$. Then, the divergence condition yields $\lambda(e)=\phi(x)$ if $x\in V_{1}$ and $e$ is the unique edge starting from $x$. 
+	is most easily determined by the boundary conditions. Let us denote by $\partial V$ the set of leaves of $G$. Then, the divergence condition yields $\lambda(e)=\phi(x)$ if $x\in \partial V$ and $e$ is the unique edge starting from $x$. 
 	
 	
-	Next, denote by $V_{>1}$ the vertices of $G$ of degree larger than one. Let us consider edges with an endpoint whose
+	Next, denote by $\interior{V}=V\setminus \partial V$ the vertices of $G$ of degree larger than one. Let us consider edges with an endpoint whose
 	other edges connect only to leaves
 	or, equivalently, the edges
-	in $G\setminus V_1$ adjacent to leaves
-	of $G\setminus V_1$. Take
-	one such leaf $x \in V_{>1}$ of $G \setminus V_1$
+	in $E\setminus \partial E$ adjacent to leaves
+	of $V\setminus \partial V$. Take
+	one such leaf $x \in \interior{V}$
 	and notice that,
 	since $x$ is not a leaf of $G$, the set $V_{1,x}$
-	of vertices in $V_1$ connected to
+	of vertices in $\partial V$ connected to
 	$x$ is non-empty.  
 	Let us reduce our task to finding
-	a solution on $G \setminus V_{1,x}$ as follows.  If $e$ denotes
-	the edge of $G \setminus V_1$
+	a solution on $V \setminus V_{1,x}$ as follows.  If $e$ denotes
+	the edge of $E \setminus \partial E$
 	starting at $x$, using the previous case of $x$ being a leaf yields that a solution should satisfy
 	\[ \phi(x)=\bigg(\sum_{y \in V_{1,x}}\lambda(x,y)
 	\bigg) +\lambda(e) 
@@ -819,14 +800,14 @@ the condition
 	\bigg) +\lambda(e)=-\bigg(\sum_{y \in V_{1,x}}\phi(y)
 	\bigg) +\lambda(e)\]
 	which determines $\lambda$
-	at $e$ as linear combinations of different values $\phi$ with integer coefficients. Now, we consider the graph 
-	$G\setminus V_{1,x} $, define
+	at $e$ as linear combinations of different values $\phi$ with integer coefficients. Now, we consider the graph restricted to
+	$V\setminus V_{1,x} $, and define
 	$\phi(x) =\left(\phi(x)+
 	\sum_{y \in V_{1,x}}\phi(y)\right) 
 	$
 	and notice that
 	\eqref{eq:ExistenceCondition}
-	is satisfied for $G\setminus V_{1,x}$.
+	is satisfied for $V\setminus V_{1,x}$.
 	We may proceed by induction
 	until the tree consists solely of leaves
 	in which case
@@ -836,7 +817,7 @@ the condition
 	equation 	 
 	$\mathrm{div}\lambda = \phi$. By this procedure
 	we have seen that, for a tree, 
-	in case there is a solution, it is unique, and its value at $e\in G$ is a linear combination with integer coefficients of the values $\phi(x)$ for $x\in V$.
+	in case there is a solution, it is unique, and its value at $e\in E$ is a linear combination with integer coefficients of the values $\phi(x)$ for $x\in V$.
 	
 	For a \textbf{general graph} $G$ we
 	may take a spanning tree $T$ of $G$
@@ -1084,10 +1065,10 @@ so that
 \subsection{Boundary and sieving of graphs}
 \label{subsec:sieving_contraction}
 
-For $G$ a finite graph, let us denote by $\partial G$ (resp. $\interior(G)$) 
+For $G=(V,E)$ a finite graph, recall that we denote by $\partial V$ (resp. $\interior(V)$) 
 the set vertices of $G$ of degree $1$ (resp. degree larger than $1$) and by 
-$\partial E$ the set of edges adjacent to $\partial G$. If $\phi\in \Omega ^0(G)$, 
-we denote by $\partial \phi$ the restriction of $\phi$ to $\partial G$. 
+$\partial E$ the set of edges adjacent to $\partial V$. If $\phi\in \Omega ^0(G)$, 
+we denote by $\partial \phi$ the restriction of $\phi$ to $\partial V$. 
 Likewise, we denote by $\partial \lambda$ the restriction of $\lambda\in \Omega^1(G)$ 
 to $\{(a,b),\{a,b\}\in\partial E\}$. By the previous section, 
 for $R\subset  V$, $\mathcal{F}(\phi) \neq \emptyset$ if and only if 
@@ -1096,7 +1077,7 @@ $$\sum_{v\in R}\phi(v)=-\sum_{v\in V\setminus R}\phi(v) \ .$$
 
 \begin{definition}[Sieving of graphs]\label{def:sieving}
 Let $r\geqslant 1$. Let $G=(V,E)$ be a finite graph 
-(non necessarily connected) and $W,W'\subset \partial G$ 
+(non necessarily connected) and $W,W'\subset \partial V$ 
 with a bijection $g:W\rightarrow W'$. 
 The sieving of $G$ along $(R_1,R_2)$ is the graph 
 $G_{W*W'}=(\tilde{V},\tilde{E})$ obtained as follows:
@@ -1109,7 +1090,7 @@ $G_{W*W'}=(\tilde{V},\tilde{E})$ obtained as follows:
 \noindent
 This construction informally amounts to merge $v$ and $g(v)$ for 
 $v\in W$ and considering the resulting edge structure inferred by $E$. 
-Since $W,W'\subset \partial G$, $\vert \tilde{E}\vert=\vert E\vert$ as long 
+Since $W,W'\subset \partial V$, $\vert \tilde{E}\vert=\vert E\vert$ as long 
 as each connected component of $G$ has a size at least $3$ 
 (which will always by the case in the present paper). 
 There is moreover a canonical bijection between $E$ and $\tilde{E}$. 
@@ -1126,7 +1107,7 @@ is considered in the graph $G$.
 \begin{proposition}[Product formula]\label{prop:divergence_product}
 Let $G_1=(V_1,E_1),G_2=(V_2,E_2)$ be two connected finite graphs, 
 such that $V_1 \cap V_2 = \emptyset$. Let
-$W\subset \partial G_1, W'\subset \partial G_2$ and let
+$W\subset \partial V_1, W'\subset \partial V_2$ and let
 $g:W\rightarrow W'$ be a bijection.
 Set $\tilde{G}=(G_1\cup G_2)_{W*W'}$ and 
 let $\phi\in \Omega^0(\tilde{G})$ be such that 
@@ -1248,7 +1229,7 @@ Vol(K_1\times K_2\cap\mathcal{F}(\phi)) =&
 \end{proof}
 
 \begin{proposition}[Contraction formula]\label{prop:divergence_contraction}
-Let $G=(V,E)$ be a connected finite graph, $W,W'\subset \partial G$ with $W\cap W'=\emptyset$ and $g:W\rightarrow W'$ a bijection and set $G_{W*W'}=(\tilde{V},\tilde{E})$. Then, for $\phi\in \Omega^0(G_{W*W'})$ such that $\sum_{v\in \tilde{V}}\phi(v)=0$ and $K\subset \Omega^1(\tilde{G})$,
+Let $G=(V,E)$ be a connected finite graph, $W,W'\subset \partial V$ with $W\cap W'=\emptyset$ and $g:W\rightarrow W'$ a bijection and set $G_{W*W'}=(\tilde{V},\tilde{E})$. Then, for $\phi\in \Omega^0(G_{W*W'})$ such that $\sum_{v\in \tilde{V}}\phi(v)=0$ and $K\subset \Omega^1(\tilde{G})$,
 \begin{align*}
 Vol(K\cap\mathcal{F}_{\tilde{G}}(\phi))= &\int_{\mathbb{R}^{\vert W\vert-1}} 
 \Vol\left[K\cap \mathcal{F}_{G}(\phi_{\vert V\setminus (W\cup W')}, 
@@ -1287,7 +1268,7 @@ as flows on a graph with prescribed divergence.
 Proposition \ref{prop:divergence_volume} then yields a volume form on this set of 
 flows. Recall that for $d \geqslant 0$, $\mathcal{G}_d$ denotes 
 the set of isomorphism classes of colored 
-graphs with ordered boundary appearing in $\{G[h],\,h \in \honey_{n,d}\}$.
+graphs with ordered boundary appearing in $\{G(h),\,h \in \honey_{n,d}\}$.
 For a honeycomb $h\in \honey^G$ and an edge $e \in E$, let us denote by 
 $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (2).
 
@@ -1299,19 +1280,19 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
 \end{lemma}
 
 \begin{proof}
-    Remark that such label and color maps are defined for any honeycomb $h\subset T$ such 
-    that any geodesic $e\subset h$ is contained in some ray $\{x+\mathbb{R}e^{2(\ell+1)i \pi/3}\}$ 
+    Remark that such label and color maps can be defined similarly for any honeycomb $h=(\mathcal{E},c)$ of $S\subset T$ such 
+    that any segment $e\in \mathcal{E}$ is contained in some ray $\{x+\mathbb{R}e^{2(\ell+1)i \pi/3}\}$ 
     for some $\ell\in\{0,1,2\}$. 
     Let us call such a honeycomb \textit{admissible} and let us prove by 
     induction on the number $M$ 
-    of inner vertices the following : 
-    \textit{for any admissible honeycomb $h$, the induced label and color map on $G[h]$ 
+    of inner vertices (that is, the number of vertices of $G(h)$ which are in the interior of $T$) the following : 
+    \textit{for any admissible honeycomb $h$, the induced label and color map on $G(h)$ 
     only depends on the type and color map of the boundary edges and on the 
     order on the boundary vertices}.
     \\
     \\
     If $M=1$, then all edges of $G[h]$ are boundary edges, and the assertion holds. 
-    Let $M>1$. Suppose that there is $v\in \interior (G)$ which is adjacent to two boundary edges 
+    Let $M>1$ and let $h$ be a honeycomb such that $G(h)=(V,E)$ has $M$ inner vertices. Suppose that there is $v\in \interior (V)$ which is adjacent to two boundary edges 
     $e_1=\{v,v_1\},e_2=\{v,v_2\}$ and one non boundary edge $e$. 
     Then, the type $e$ is uniquely determined by the relation 
     $\{\ell(e),\ell(e_1),\ell(e_2)\}=\{0,1,2\}$ 
@@ -1319,7 +1300,7 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
     Next, since the cyclic order of the boundary vertices is given, 
     by Definition \ref{def:triangular_honey} the color $c(e)$ is uniquely determined 
     by $c(e_1)$ and $c(e_2)$. Hence, on $\tilde{G}=(V\setminus \{v_1,v_2\}, 
-    E\setminus \{e_1,e_2\}$ 
+    E\setminus \{e_1,e_2\})$ 
     the type and color of the boundary edges is known, and by induction, 
     the type and colors of all edges of $\tilde{G}$ only depends on the graph 
     structure and their value on the boundary. 
@@ -1328,27 +1309,23 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
     Suppose that all vertices of $G$ are adjacent to at most one boundary edge. 
     Let $(v_1,\ldots, v_m)$, $m\geqslant 1$ be the boundary vertices in the cyclic order. 
     By hypothesis, there exist $(w_1,\ldots,w_m)$ such that 
-    $\partial G=\{ e^i := \left\{v_i,w_i\right\} ,1\leqslant i\leqslant m\}$ 
+    $\partial E=\{ e^i := \left\{v_i,w_i\right\} ,1\leqslant i\leqslant m\}$ 
     and $w_i\not =w_j$ when $i\not=j$. We claim that there exists $w_{i},w_{i'}$ such that 
     $\{w_{i},w_{i'}\}\in E$ and $\{\ell(\{w_{i},w_{i'}\}),\ell(e_{i}),\ell(e_{i'})\}=\{0,1,2\}$. 
-    Let $\tilde{G}=(V\setminus V_{1},E\setminus \partial G)$ and $\tilde{h}=\bigcup_{e\in E\setminus \partial G} i(e)$. 
-    Then, $\tilde{h} \subset \overset{\circ}{T}$, and thus 
-    there exists a unique connected component $K_0$ in $T\setminus\tilde{h}$ which is adjacent to $\partial T$. 
-    Let $L$ be a boundary component of $K_0$. Then, $L$ is a close polygonal line with vertices 
+    Let $\tilde{G}=(V\setminus V_{1},E\setminus \partial E)$ and $\tilde{h}=(\mathcal{E}\setminus \partial \mathcal{E},c_{\vert \mathcal{E}\setminus \partial \mathcal{E}})$ where $\partial \mathcal{E}$ are the segments corresponding to edges of $\partial E$. 
+    Then, $t(\tilde{h})=\bigcup_{e\in \mathcal{E}\setminus \partial \mathcal{E}}e \subset \overset{\circ}{T}$, and thus 
+    there exists a unique connected component $K_0$ in $T\setminus t(\tilde{h})$ which is adjacent to $\partial T$. 
+    Let $L$ be a boundary component of $K_0$ in $\overset{\circ}{T}$. Then, $L$ is a close polygonal line with vertices 
     $\{z_1,\ldots,z_p\}$ enumerated in the cyclic order. 
-    At each $z_i$, $L$ has an angle $\alpha_i$ so that 
-    \begin{itemize}
-    \item $\alpha_i=\pi/3$ is $z_i$ is the intersection of the interior of two geodesics 
-    of $\mathcal{E}$,
-    \item $\alpha_i=2\pi/3$ if $z_i=w_{j_i}$ with $1\leqslant j_i\leqslant m$,
-    \item $\alpha_i=4\pi/3$ if $z_i\in \{w_1,\ldots,w_n\}$.
-    \end{itemize}
-    Since $L$ is a close polygonal curve, there is at least two consecutive vertices 
-    $z_i,z_{i+1}$  such that $\alpha_i=\alpha_{i+1}=4\pi/3$. 
-    Hence, $[w_{j_i},w_{j_{i+1}}]$ is a geodesic, and thus $\{w_{j_i},w_{j_{i+1}}\}\in E$. 
-    Moreover, the angle from $\{v_{j_i},w_{j_i}\}$ (resp. $\{v_{j_{i+1}},w_{j_{i+1}}\}$) to 
+    At each $z_i$, $L$ has an angle $\alpha_i$ so that $\alpha_i=4\pi/3$ if $z_i\in \{w_1,\ldots,w_n\}$.
+    
+    
+    Since $L$ is a close polygonal curve, there are at least two consecutive vertices 
+    $z_i,z_{i+1}$  such that $\alpha_i=\alpha_{i+1}=4\pi/3$, and thus $z_i=w_{j_i}$ and $z_{i+1}=w_{j_{i+1}}$ for some $1\leq i_j\not=i_{j+1}\leq m$. 
+    Moreover, $[w_{j_i},w_{j_{i+1}}]$ is a segment, and thus $\{w_{j_i},w_{j_{i+1}}\}\in E$. 
+    Since the angle from $\{v_{j_i},w_{j_i}\}$ (resp. $\{v_{j_{i+1}},w_{j_{i+1}}\}$) to 
     $\{w_{j_i},w_{j_{i+1}}\}$ 
-    is $-2\pi/3$ (resp. $2\pi/3$), so that
+    is $-2\pi/3$ (resp. $2\pi/3$),
     $$\left\{ \ell(\{w_{j_i},w_{j_{i+1}}\}), \ 
     \ell(\{v_{j_i},w_{j_i}\}), \ 
     \ell(\{v_{j_{i+1}},w_{j_{i+1}}\})\right\} = \{0,1,2\}.$$
@@ -1364,27 +1341,27 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
     $c(e)=3$ if $c(e^1)\not=c(e^2)$ and otherwise $c(e)=c(e^1)=c(e^2)$. 
     Then, $c(f^1)$ and $c(f^2)$ are uniquely determined by $\{c(e), c(e^2),c(e^2)\}$. 
     Let $\hat{G} = \left(V\setminus \{v_i,v_{i'}\},E\setminus \{e,e^1,e^2\}\right)$. 
-    Then, $\hat{h}=(h\setminus \{e\cup e^1\cup e^2\})\cup \{w_i,w_{i'}\}$ is a honeycomb such 
-    $G[\hat{h}] = \hat{G}$ having $M-1$ inner vertices, and such that the type and color 
+    Then, $\hat{h}=(\mathcal{E}\setminus \{e, e^1, e^2\},c_{\vert \mathcal{E}\setminus \{e, e^1, e^2\}})$ is a honeycomb such that
+    $G(\hat{h}) = \hat{G}$ has $M-1$ inner vertices, and such that the type and color 
     of the boundary edges are known. By induction, the type and color of all edges of $\hat{G}$, 
     and thus of $G$ are known. 
 \end{proof}
 
 \noindent
 Let us provide a description of honeycombs with structure graph $G$ in terms of flows. 
-Suppose that $G\in \mathcal{G}_d$. 
+Suppose that $G=(V,E)\in \mathcal{G}_d$. 
     By the condition (1) Definition \ref{def:triangular_honey}, 
     $G$ has only vertices of degree $1$ or $3$ and thus $v$ has three adjacent 
     edges $e_\ell,\, \ell\in \{0,1,2\}$. 
-    Denote by $\interior(G)$ the set of vertices of degrees $3$ and let $v\in\interior(G)$. 
+    Denote by $\interior(V)$ the set of vertices of degrees $3$ and let $v\in\interior(V)$. 
     By (2) of Definition \ref{def:toric_honeycomb}, 
     the angle between two successive edges at $v$ is $2\pi/3$ and by (2) of 
     Definition \ref{def:triangular_honey}, 
     each edge is oriented along $e^{2(\ell+1)i\pi/3}$ for some $\ell\in\{0,1,2\}$. 
     Hence, there exists a sign $s(v)\in\{-1,+1\}$ such that, up to a relabeling, 
     $e_\ell \subset \left\{v-s(v)\ed^{2(\ell+1)i\pi/3} \mathbb{R}_{\geqslant 0} \right\}$. 
-    For a univalent vertex $v\in\partial G$ connected to a unique trivalent vertex 
-    $v' \in \interior(G)$, we set $s(v) = -s(v')$.
+    For a univalent vertex $v\in\partial V$ connected to a unique trivalent vertex 
+    $v' \in \interior(V)$, we set $s(v) = -s(v')$.
     \\
     \\
     Let $v,v'\in V$ be such that $e = \{v,v'\} \in E$. 
@@ -1396,12 +1373,12 @@ Suppose that $G\in \mathcal{G}_d$.
     \begin{figure}[ht]
         \centering
         \includegraphics[scale=1]{images/labels_s_s_prime.pdf}
-        \caption{Two adjacent vertices in $\interior(G)$ for which $\ell = \ell'=2$.}
+        \caption{Two adjacent vertices in $\interior(V)$ for which $\ell = \ell'=2$.}
         \label{fig:adjacent_vertices}
     \end{figure}
     \noindent
     In particular, the map $s:v\mapsto s(v)$ only depends on the value of $s$ on the 
-    boundary $\partial G$. Since $s(v)$ for $v\in \partial G$ is given by the 
+    boundary $\partial V$. Since $s(v)$ for $v\in \partial V$ is given by the 
     type and thus the color of the unique adjacent edge, 
     see Definition \ref{def:triangular_honey}.(3), 
     we deduce by Lemma \ref{lem:types_colors_determined_by_boundaries} 
@@ -1418,28 +1395,27 @@ Suppose that $G\in \mathcal{G}_d$.
 
 
 \noindent
-If $v\in \interior(G)$, $v$ corresponds to a point if $T$ and thus 
+If $v\in \interior(V)$, $v$ corresponds to a point if $T$ and thus 
 its coordinates $(v_1,v_2,v_3)$ satisfies $v_1+v_2+v_3=1$. 
 If $e_1,e_2,e_3$ are the three edges adjacent to $v$, we have by 
 Definition \ref{def:triangular_honey}(2), $L(e_1)+L(e_2)+L(e_3)=1$.
 Hence, considering now oriented edges yields 
 \begin{equation}
     \label{eq:honeycomb_divergence_1}
-    \forall v \in \interior(G): \sum_{v\sim v'}\mathcal{L}[h](v,v')=s(v) \ .
+    \forall v \in \interior(V): \sum_{v\sim v'}\mathcal{L}[h](v,v')=s(v) \ .
 \end{equation}
 
 \noindent
 Let $(\alpha, \beta, \gamma) \in \mathcal{H}_{reg}^3$ and let $G\in\mathcal{G}_d$. 
-Recall that for a structure graph $G$, its boundary 
-$\partial G = \left\{ \{v, v'\} \mid v \in \partial V \right\}$ consists of edges having a 
-vertex of degree one. Since by Definition \ref{def:triangular_honey}, 
-$\partial G \subset \partial T$, 
-we may write $\partial G = \left( e_1, \dots, e_{3n} \right)$, where for 
+Recall that for a structure graph $G$, its set of boundary edges
+$\partial E = \left\{ \{v, v'\} \mid v \in \partial V \right\}$ consists of edges having an endpoint of degree one. Since by Definition \ref{def:triangular_honey}, 
+$\partial V \subset \partial T$, 
+we may write $\partial E = \left( e_1, \dots, e_{3n} \right)$, where for 
 $0 \leqslant l \leqslant 2$
 and $1 \leqslant i \leqslant n$, the edge
 $e_{\ell \, n + i}$ is adjacent to $v^{\ell n+ i}$ on $\partial_\ell T$.
 Let us denote by 
-$g^{\alpha,\beta,\gamma} \in \mathbb{R}^{\partial G}$ the boundary condition
+$g^{\alpha,\beta,\gamma} \in \mathbb{R}^{\partial V}$ the boundary condition
 given by 
 $$ g^{\alpha,\beta,\gamma}_{\ell n+i} \coloneqq g^{\alpha,\beta,\gamma}(e_{\ell \, n + i}) 
 = 
@@ -1450,7 +1426,7 @@ $$ g^{\alpha,\beta,\gamma}_{\ell n+i} \coloneqq g^{\alpha,\beta,\gamma}(e_{\ell 
 \end{aligned} \right . $$
 for $\ell = 0$ and $1\leqslant i\leqslant n$ and replacing 
 $\beta_i$ by $\alpha_i$ (resp. $\gamma_i$) 
-when $\ell = 1$ (resp. $\ell = 2$). Remark that for $v\in \partial G$, $s(v)=1$ 
+when $\ell = 1$ (resp. $\ell = 2$). Remark that for $v\in \partial V$, $s(v)=1$ 
 if and only if $c(e)=1$, where $e$ is the unique edge adjacent to $v$, 
 see for example Figure \ref{fig:boundary_toric_honey}. 
 Hence, the boundary condition translates into the condition 
@@ -1459,9 +1435,9 @@ Hence, the boundary condition translates into the condition
     = g^{\alpha,\beta,\gamma}_{\ell n+i} \ ,
 \end{equation}
 where $v'$ is the unique vertex of $V$ adjacent to $v_{\ell n+i}$. 
-Hence, setting $\phi_{\alpha,\beta,\gamma}(v)=s(v)$ for $v\in \interior(G)$ 
+Hence, setting $\phi_{\alpha,\beta,\gamma}(v)=s(v)$ for $v\in \interior(V)$ 
 and $\phi_{\alpha,\beta,\gamma}(v_{\ell n+i})=g^{\alpha,\beta,\gamma}_{\ell n+i}$ 
-for $v^{\ell n+i}\in \partial G$, \eqref{eq:honeycomb_divergence_1} 
+for $v^{\ell n+i}\in \partial V$, \eqref{eq:honeycomb_divergence_1} 
 and \eqref{eq:honeycomb_divergence_2} yields that for $h\in \honey_{n,d}^G(\alpha,\beta,\gamma)$,
 $$\mathcal{L}[h] \in \mathcal{F}_{G}(\phi_{\alpha,\beta,\gamma}) \ .$$
 
@@ -1479,22 +1455,21 @@ The fact that $\mathcal{L} \left(\honey_{n,d}^G(\alpha,\beta,\gamma)\right)
 \subset  \mathcal{F}_{G}(\phi_{\alpha,\beta,\gamma})$ is given by the previous discussion. 
 Let us prove the injectivity of the map. Let $h_1,h_2\in \honey^G$ such that 
 $\mathcal{L}[h_1] = \mathcal{L}[h_2]$. 
-Since $G=(V,E)$ is isomorphic to the canonical graph structure of both $h_1$ and $h_2$, 
-there are two isomorphisms $i_i:G\rightarrow (V^i,\mathcal{E}^i)$, $i\in\{1,2\}$, 
-where $\mathcal{E}^i$ is the set of geodesics associated to $h_i$ 
-by Definition \ref{def:toric_honeycomb} and $V^i$ are the endpoints of these geodesics. 
+Since $G=(V,E)$ is isomorphic to the structure graph of both $h_1$ and $h_2$, 
+there are two isomorphisms $\iota_i:G\rightarrow (V^i,\mathcal{E}^i)$, $i\in\{1,2\}$, 
+where $\mathcal{E}^i$ is the set of segments associated to $h_i$ 
+by Definition \ref{def:toric_honeycomb} and $V^i$ are the endpoints of these segments. 
 Since both $h$ and $h'$ are honeycombs on the equilateral triangle, 
-for which there exists a unique geodesic between two points, 
-and $(V^1,\mathcal{E}^1)$ is isomorphic to $(V^2,\mathcal{E}^2)$ so that 
-it suffices to show the equality $V^1 = V^2$. 
+for which there exists a unique segment between two points, 
+and $(V^1,\mathcal{E}^1)$ is isomorphic to $(V^2,\mathcal{E}^2)$, it suffices to show the equality $V^1 = V^2$. 
 \\
 \\
-Let $v\in V$. First, suppose that $v\in V_{1}$. Since the boundary 
-$\partial G \simeq (v^1,\ldots,v^{3n})$ 
+Let $v\in V$. First, suppose that $v\in \partial V$. Since the boundary 
+$\partial V \simeq (v^1,\ldots,v^{3n})$ 
 of $G$ is ordered, there exists $1\leqslant j\leqslant 3n$ such that $v=v^j$ and there exists a 
 unique edge $e\in E$ adjacent to $v$. 
 Since $(V^1, \mathcal{E}^1)$ and $(V^2,\mathcal{E}^2)$ are isomorphic to $G$ 
-as colored graph with ordered boundary, $\iota_i(v)$ is the $j$-th vertex of the 
+as colored graphs with ordered boundary, $\iota_i(v)$ is the $j$-th vertex of the 
 boundary of $h_i$ and $c(\iota_i(e))=c(e)$ for $i \in \{1,2\}$. 
 By Definition \ref{def:triangular_honey}, $\iota_1(v)$ and $\iota_2(v)$ belong to the 
 same boundary $\partial_\ell$ of $T$ and their $(\ell+1)-$coordinates are 
@@ -1506,7 +1481,7 @@ same boundary $\partial_\ell$ of $T$ and their $(\ell+1)-$coordinates are
 Hence, $\iota_1(v) = \iota_2(v)$.
 \\
 \\
-Suppose that $v\in \interior(G)$. By Definition \ref{def:triangular_honey}, 
+Suppose that $v\in \interior(V)$. By Definition \ref{def:triangular_honey}, 
 $v$ is a trivalent vertex 
 and they are three edges $e^0,e^1,e^2$ adjacent to $v$. 
 Moreover, by Lemma \ref{lem:types_colors_determined_by_boundaries}, 
@@ -1709,7 +1684,7 @@ $L(e)=L(\tilde{e})$ of its dual edge.
 \\
 \\
 To a dual hive $H=(C,L)\in \dualhive(\alpha,\beta,\gamma)$, 
-we associate a collection $\mathcal{S}(H)$ of geodesics 
+we associate a collection $\mathcal{S}(H)$ of segments 
 of $T$:
 
 \begin{enumerate}
@@ -1718,7 +1693,7 @@ of $T$:
 \item if $v$ is adjacent to three edges 
 $(e^0,e^1,e^2) \in E_\Gamma^3$ with $e^\ell$ of type $\ell$. 
 We then set $x_v= \left(L(e^0),L(e^1),L(e^2)\right) \in T$,
-\item if $v\in V_{1}^{\Gamma}$ and $v$ is adjacent to an 
+\item if $v\in \partial V^{\Gamma}$ and $v$ is adjacent to an 
 edge $e$ such that $\tilde{e}$ $\in \ell^{(i,i)}$ 
 (resp. in $\ell^{(i+1,i+2)}$), 
 we set $x_v=(L(e)\delta_{i, 0}, L(e) \delta_{i, 1}, 
@@ -1730,16 +1705,16 @@ where $\delta_{i, j} = 1 $ if $i=j$ and $0$ otherwise.
 \item Then, we set 
 $$\mathcal{S}(H) = \left\{[x_v,x_{v'}] \mid e=\{v,v'\} \in E^\Gamma \right\} .$$
 \end{enumerate}
-For $e=\{v,v'\} \in E^\Gamma$, let us denote its associated geodesic by 
+For $e=\{v,v'\} \in E^\Gamma$, let us denote its associated segment by 
 \begin{equation}
     \label{eq:def_Phi}
     \Phi(e) = [x_v,x_{v'}] \ .
 \end{equation}
-As shown below, the collection of geodesics 
-$\mathcal{S}(H)$ is almost the edge set of the canonical 
+As shown below, the collection of segments 
+$\mathcal{S}(H)$ is almost the edge set of the 
 structure graph of a honeycomb.
 
-\begin{lemma}[Edge geodesics]
+\begin{lemma}[Edge segments]
     \label{lem:hive_honey_1}
     Suppose that $\tilde{e} \in E_{n, d}$ is an edge of type 
     $\ell$ adjacent to a face $\tilde{v}$ of $H_{n,d}$ 
@@ -1782,10 +1757,10 @@ structure graph of a honeycomb.
 \end{proof}
 
 
-\begin{lemma}[Distinct edges give disjoint geodesics]
+\begin{lemma}[Distinct edges give disjoint segments]
     \label{lem:hive_honey_non_crossing}
     If $e,e'\in E^\Gamma$ are distinct, then 
-    $$int(\Phi(e))\cap int(\Phi(e'))=\emptyset \ .$$
+    $$\interior(\Phi(e))\cap \interior(\Phi(e'))=\emptyset \ .$$
 \end{lemma}
 
 \noindent
@@ -1813,7 +1788,7 @@ are colored $m$.
 Next suppose that $e=\{v_1,v_2\}$ and $e'=\{v'_1,v'_2\}$ with $e\not =e'$, 
 with $v_1,v'_1$ being dual to an upper-triangular face and $v_2,v'_2$ being 
 dual to a lower-triangular face. If $v_i=v'_j$ for some $i,j\in\{1,2\}$, 
-then $int(\Phi(e))\cap int(\Phi(e'))=\emptyset$ by Lemma \ref{lem:hive_honey_1}. 
+then $\interior(\Phi(e))\cap \interior(\Phi(e'))=\emptyset$ by Lemma \ref{lem:hive_honey_1}. 
 \\
 Otherwise, suppose without loss of generality that $(v_1)_0<(v'_1)_0$. 
 Since $\sum_{j=0}^2(v_1)_j= \sum_{j=0}^2(v'_1)_j=1$, we can assume without loss 
@@ -1825,8 +1800,8 @@ Set $x^i:=x_{v_i}$ and $y^i=x_{v'_i}$ for $i=1,2$.
 Since $x^1_2=L(e^2_1)$ and $y^1_2=L(e^2_2)$, by the previous reasoning 
 $x^1_2>y^1_2$. Doing the same with the lower triangular faces $v_2,v'_2$, 
 which must be adjacent respectively to $v_1$ and $v'_1$, yield that 
-$x^2_2\geqslant y^2_2$. Hence, the geodesics $\Phi(e)=[x^1,x^2]$ and 
-$\Phi(e')=[y^1,y^2]$ can only meet at $y^2$, and $int(\Phi(e))\cap int(\Phi(e'))=\emptyset$. 
+$x^2_2\geqslant y^2_2$. Hence, the segments $\Phi(e)=[x^1,x^2]$ and 
+$\Phi(e')=[y^1,y^2]$ can only meet at $y^2$, and $\interior(\Phi(e))\cap \interior(\Phi(e'))=\emptyset$. 
 \end{proof}
 
 \begin{definition}[Maximal chain, reduced graph]
@@ -1852,9 +1827,9 @@ $\Phi(e')=[y^1,y^2]$ can only meet at $y^2$, and $int(\Phi(e))\cap int(\Phi(e'))
     \item The \textit{reduced graph of C} is the graph $G^C=(V^C,E^C)$ 
     defined by:
     \begin{itemize}
-    \item $V^C=\interior(G)^C\cup V_1^C$, where $\interior(G)^C = 
+    \item $V^C=\interior(V^C)\cup \partial (V^C)$, where $\interior(V^C) = 
     V^{\Gamma} \setminus \{u\in V_{\Gamma} \mid \exists 
-    (u,v)\in E_{\Gamma}, C(\{u,v\})=m\}$ and $V_{1}^C=V_1^{\Gamma}$,
+    (u,v)\in E_{\Gamma}, C(\{u,v\})=m\}$ and $\partial V^C=\partial V^{\Gamma}$,
     \item $E^C=\{ \gamma = \{x,y\} \mid \{x,y\}\text{ is a maximal chain of }C\}.$
     \end{itemize}
     The boundary vertices of $G^C$ are ordered as 
@@ -1875,7 +1850,7 @@ colored $m$ is a maximal chain (with $r=0$) and is thus in $E^C$.
 The map $C\mapsto C^C$ is injective as we can recover $C$ 
 from $G^C$: it suffices to color the successive edges of a 
 maximal chain $\gamma$ as $c(e_{2i+1})=c(\gamma)$ and $c(e_{2i})=m$.
-In the sequel, we denote by $\partial G^C$ 
+In the sequel, we denote by $\partial E^C$ 
 the set of edges adjacent to a univalent vertex of $G^C$. 
 Following Definition \ref{def:limit_dual_hive} and Definition \ref{def:skeleton}, 
 we introduce a partial order $\leqslant$ on $E^C$ by completing the relation 
@@ -1889,11 +1864,13 @@ adjacent to the same lozenge and satisfy $h(\tilde{e}')\geqslant h(\tilde{e})$.
 Let $C$ be a color map and let $H \in \dualhive^C(\alpha,\beta,\gamma)$ 
 be a dual hive. For any $\hat{e} \in E^C$, let us set 
 $\hat{\Phi}[H](\hat{e})=\bigcup_{e\in \hat{e}}\Phi[H](e)$ and
-$$\rho_C(H)=\bigcup_{\hat{e}\in E^C}\hat{\Phi}[H](\hat{e}) 
-=\bigcup_{e\in E}\Phi[H](e) \ .$$
-\begin{lemma}[Reduced graph geodesics]
+$$\rho_C(H)=\left(\{\hat{\Phi}[H](\hat{e}) 
+,\hat{e}\in E^C\},c\right)=\bigcup_{e\in E}\Phi[H](e) \ ,$$
+where $c:\{\hat{\Phi}[H](\hat{e}) 
+,\hat{e}\in E^C\}\rightarrow \{0,1,3\}$ with $c(\hat{\Phi}[H](\hat{e}))$ being the unique color different from $m$ in the maximal chain $\hat{e}$. Remark that $\bigcup_{\hat{e}\in E^C}\hat{\Phi}[H](\hat{e}) =\bigcup_{e\in E}\Phi[H](e)$.
+\begin{lemma}[Reduced graph segments]
     The set $ \left\{\hat{\Phi}[H](\hat{e}) \mid \hat{e}\in E^C \right\}$ 
-    is a set of geodesics of $T$.
+    is a set of segments of $T$.
 \end{lemma}
 
 \begin{proof}
@@ -1906,9 +1883,9 @@ $$\rho_C(H)=\bigcup_{\hat{e}\in E^C}\hat{\Phi}[H](\hat{e})
     $\Phi(e)\subset x_{v_2}-\mathbb{R}e^{2(\ell+1)\pi/3}$ 
     (resp. $\Phi(e')\subset x_{v_2}+\mathbb{R}e^{2(\ell+1)\pi/3}$) 
     and $x_v\in \Phi(e)\cap \Phi(e')$, so that $\Phi(e)\cup \Phi(e')$ is 
-    a geodesic corresponding to $[x_{v_1},x_{v_2'}]$. 
+    a segment corresponding to $[x_{v_1},x_{v_2'}]$. 
     Hence, if $\hat{e}=\{v,v'\}$ is a maximal chain of $C$, 
-    $\bigcup_{e\in \hat{e}}\Phi(e)$ is the geodesic $[x_{v},x_{v'}]$.
+    $\bigcup_{e\in \hat{e}}\Phi(e)$ is the segment $[x_{v},x_{v'}]$.
 \end{proof}
 
 \noindent
@@ -1937,16 +1914,16 @@ We first check that the two conditions of Definition \ref{def:toric_honeycomb}
 are fullfilled.
 \begin{enumerate}
 \item Suppose that $\hat{e}\not=\hat{e}'$ and 
-$int(\hat{\Phi}(\hat{e}))\cap int(\hat{\Phi}(\hat{e}'))\not=\emptyset$. 
-Let $x\in int(\hat{\Phi}(\hat{e}))\cap int(\hat{\Phi}(\hat{e}'))$. 
+$\interior(\hat{\Phi}(\hat{e}))\cap \interior(\hat{\Phi}(\hat{e}'))\not=\emptyset$. 
+Let $x\in \interior(\hat{\Phi}(\hat{e}))\cap \interior(\hat{\Phi}(\hat{e}'))$. 
 Since $\hat{\Phi}(\hat{e})=\bigcup_{e\in\hat{e}}\Phi(e)$, 
 $\hat{\Phi}(\hat{e}')=\bigcup_{e\in\hat{e}'}\Phi(e)$ and, 
 by Lemma \ref{lem:hive_honey_non_crossing}, 
-$int(\Phi(e))\cap int(\Phi(e'))=\emptyset$ for $e\not=e'$, we have that $x=x_v$ 
+$\interior(\Phi(e))\cap \interior(\Phi(e'))=\emptyset$ for $e\not=e'$, we have that $x=x_v$ 
 for some $v\in  e\cap e'$ with $e\in \hat{e}$, $e'\in \hat{e}'$ not colored $m$. 
 By Lemma \ref{lem:hive_honey_1} and up to switching $e$ and $e'$, 
 the angle from $\Phi(e)$ to $\Phi(e')$ is $2\pi/3$. 
-Since $x\in int(\hat{\Phi}(\hat{e}))$, $v$ is adjacent to a third edge colored 
+Since $x\in \interior(\hat{\Phi}(\hat{e}))$, $v$ is adjacent to a third edge colored 
 $m$; since $C$ is a color map, $c(e)=1$ and $c(e')=0$.  
 \item Suppose that $x\in \partial \hat{\Phi}(\hat{e}))\cap \partial\hat{\Phi}(\hat{e}')$. 
 Then, there exists $e\in\hat{e}$, $e'\in\hat{e}'$, neither of them colored $m$, 
@@ -1956,20 +1933,20 @@ the second condition.
 \end{enumerate}
 
 \noindent
-Hence, $\rho_C(H)$ is a honeycomb and the canonical structure graph is given by 
+Hence, $\rho_C(H)$ is a honeycomb and the structure graph is given by 
 $$G[\rho_C(H)] = \left( \left\{x_v,v\in V^C \right\}, 
-\left\{ \hat{\Phi}[H](\hat{e}),\hat{e}\in G^C \right\}\right),$$
+\left\{ \partial\hat{\Phi}[H](\hat{e}),\hat{e}\in G^C \right\}\right),$$
 so that $G[\rho_C(H)]$ is isomorphic to $G^C$ as colored graph with ordered boundary.  
 We next turn to the conditions of being a triangular honeycomb.
 \begin{enumerate}
 \item Let $x$ be a vertex of $G[\rho_{C}(H)]$. 
-Then, $x$ is the endpoint of a geodesic $\hat{\Phi}(\hat{e})=\bigcup_{e\in\hat{e}}\Phi(e)$. 
+Then, $x$ is the endpoint of a segment $\hat{\Phi}(\hat{e})=\bigcup_{e\in\hat{e}}\Phi(e)$. 
 Hence, $x=x_{v}$ for some $v\in V^{\Gamma}$ which is either dual to a triangular face 
-$\tilde{v}$ without edge $m$ on its boundary (for otherwise $x_{v}\in int(\hat{\Phi}(\hat{e}))$), 
+$\tilde{v}$ without edge $m$ on its boundary (for otherwise $x_{v}\in \interior(\hat{\Phi}(\hat{e}))$), 
 or is equal to $v_{\tilde{e}}$ for some $\tilde{e}\in E_{d,n}$.  
 In the first case, $x$ is trivalent and, by Lemma \ref{lem:hive_honey_1}, 
-there are three non-trivial geodesics in $T$ adjacent to $x$, 
-with the angle between two successive geodesics being equal to $2\pi/3$ : 
+there are three non-trivial segments in $T$ adjacent to $x$, 
+with the angle between two successive segments being equal to $2\pi/3$ : 
 this implies that $x\in T\setminus \partial T$. 
 In the second case, $x$ is univalent and belongs to $\partial T$ by construction.
 \item Condition (2) is a direct consequence of Lemma \ref{lem:hive_honey_1}.
@@ -2037,8 +2014,8 @@ $\tilde{\Phi} : \tilde{E} \rightarrow \mathcal{P}(T)$ as follows :
 \begin{enumerate}
 \item first consider an intermediate augmentation 
 $\hat{G} = \left( \hat{V}, \hat{E} \right)$ of $G$, 
-where $\hat{V}$ consists of vertices $V^G$ of $G$ together with 
-the points which are not locally a one-dimensional variety. 
+where $\hat{V}$ consists of vertices $V$ of $G$ together with 
+the points which are intersection of two segment of $h$. 
 For $x, y\in \hat{V}$, we have an edge $\{x,y\}\in \hat{E}$ if and only if 
 $[x,y] \subset e$ for some $e\in h$ and 
 $]x,y[ \, \cap \, \hat{V}=\emptyset$. Then, set $\tilde{c}(\{x,y\})=c(e)$ 
@@ -2112,15 +2089,15 @@ definition above, $\tilde{L}(e) = L(e)$ where for $e \in E^G$, $L(e) = x_{\ell}$
 has been defined in Definition \ref{def:triangular_honey}. We thus need to show that 
 $x_{\ell} > x'_{\ell}$. Since $f \in E^{\tilde{G}}$ is of type $\ell + 1$, we have 
 that $f \subset x + \R\ed^{2i \pi (\ell+2)/3}$ in $T$. 
-The geodesic $f$ cannot be reduced to a point 
-as the honeycomb is non-degenerate and for otherwise condition $(2)$ of 
+The segment $f$ cannot be reduced to a point 
+by the definition of a non-degenerate honeycomb and for otherwise condition $(2)$ of 
 Definition \ref{def:toric_honeycomb} would not be satisfied. Therefore, the 
 coordinate $\ell$ is strictly decreasing between edges $e$ and $e'$ so 
 that $x_{\ell} > x'_{\ell}$. Hence, $H\in \dualhive^C(\alpha,\beta,\gamma)$.
 \\
-Remark that a triangular honeycomb $h$ is uniquely determined by its image 
-$\mathcal{S}=\bigcup_{e\in h}e$, 
-since then the elements of $h$ are all the geodesics of $\mathcal{S}$ whose 
+Remark that a triangular honeycomb $h=(\mathcal{E},c)$ is uniquely determined by its image 
+$t(h)=\bigcup_{e\in \mathcal{E}}e$, 
+since then the elements of $\mathcal{E}$ are all the segments of $\mathcal{S}$ whose 
 endpoints are univalent or trivalent vertices. 
 Recall that for $e = \{v, v'\} \in E^\Gamma$, $\Phi(e) = [x_v, x_{v'}]$.
 Hence, to check that $\rho_C(H)=h$, it suffices to 
@@ -2161,7 +2138,7 @@ yields the following decomposition.
     $$\honey_{n,d}=\bigsqcup_{C\text{ color map}}\honey_{n,d}^{G^C} \ .$$
     \noindent
     Finally, for a color map $C$, the map $\rho_C^{-1}$ is then obtained as follows : 
-    each geodesic $e \in h$ of type $\ell$ corresponds to a maximal chain $\hat{e}$ 
+    each segment $e \in h$ of type $\ell$ corresponds to a maximal chain $\hat{e}$ 
     of type $\ell$ of $\Gamma_{n,d}$ 
     with respect to $C$. Hence, for all edge $f\in \hat{e}$ of type $\ell$, one has 
     $\rho_C^{-1}[h](f)=L(e)$. 
@@ -2385,185 +2362,63 @@ for the last equality.
 \label{sec:sieving_honeycombs}
 
 Let $\mathcal{T}$ be an oriented surface with boundary obtained 
-by gluing $m$ equilateral triangles $T^1,\ldots,T^m$ along their boundaries, 
-such that $p$ edges $L_1,\ldots,L_{p}$ of the equilateral triangles are not glued. 
-Each edge $L_j$ has a natural orientation $\ell_j$ coming from the equilateral it belongs to. 
-Suppose that $h$ is a honeycomb on the surface $\mathcal{T}$ such that each 
-$h\cap \mathcal{T}^i$ is triangular. 
-Then, the structure graph $\hat{G}[h]$ of $h$, as defined after 
-Definition \ref{def:toric_honeycomb}, has $pn$ univalent vertices, 
-$n$ of them being on each boundary component 
-$L_j,\, 1\leqslant j\leqslant p$, and $\frac{(3m-p)n}{2}$ bivalent vertices, 
-$n$ of them being on a the boundary of a common triangle while being 
-in the interior of the surface. 
-\\
-\\
-Let us introduce some notations. 
-First, for $1\leqslant j\leqslant p$, let $1 \leqslant s_j \leqslant m $ and 
+by gluing $N$ equilateral triangles $T^1,\ldots,T^N$ by pairs along some of their boundaries in an orientation reversing way, 
+such that $p$ edges $L_1,\ldots,L_{p}$ of the equilateral triangles are not glued together. For each $1\leq i\leq N$, let $f_i:T\rightarrow \mathcal{T}$ be an orientation-preserving isometry from $T$ to $T^i$ (viewed as a subset of $\mathcal{T}$). For $1\leqslant j\leqslant p$, let $1 \leqslant s_j \leqslant N $ and 
 $ 0 \leqslant \ell_j \leqslant 2$ 
-be such that $L_j=\partial_{\ell_j}T^{s_j}$. 
-For $1 \leqslant j \leqslant p$, let us denote by $(v^j_m)_{1\leqslant m\leqslant n}$ 
-the univalent boundary vertices on $L_{j}$ ranked decreasingly with respect to 
-their $(\ell_j+1)$-coordinate. 
-Let $\mathcal{G}_\mathcal{T}$ be the set of structure graphs appearing in 
-$\honey_{\mathcal{T}}$ rooted at $v^1_1$, and $\mathcal{G}$ the case where $m=1$ 
-of a single triangle as in Section \ref{sec:three_holed_sphere}.
-Then, set $N(\mathcal{T})=\frac{3m-p}{2}$ and denote 
-by $B_{1},\ldots,B_{N(\mathcal{T})}$ the segments of $\mathcal{T}$ 
-corresponding to boundary of triangles identified together. 
-Each $B_j$ is then adjacent to two triangles $T^{r^{(1)}_j}$ and $T^{r^{(2)}_j}$ 
-and there exists $\ell^{(1)}_j,\ell^{(2)}_j$ such that 
-$B_j=\partial_{\ell^{(1)}_j}T^{r^{(1)}_j}=\partial_{\ell^{(2)}_j}T^{r^{(2)}_j}$.
-
-\begin{lemma}[Honeycomb decomposition]
-    \label{lem:product_gluing}
-There is an injective map $t:\mathcal{G}_{\mathcal{T}} \rightarrow \mathcal{G}^m$ such that the map 
-$$i: \left\lbrace \begin{aligned}  
-    & \honey_{\mathcal{T}}&\rightarrow& \left\{(h^1,\ldots,h^m) \in 
-    \honey_{T^{1}}\times\ldots\times \honey_{T^m} \mid h^{r_j^{(1)}}_{\vert B_j } = 
-    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}\\
-    & h &\mapsto&(h\cap T^{i})_{1\leqslant i\leqslant m}\end{aligned} \right.$$
-is bijective and restricts for each $G\in\mathcal{G}_{\mathcal{T}}$ 
-and $(G_1,\ldots,G_m)=t(G)$ to a bijection 
-$$i:\honey_{\mathcal{T}}^G\rightarrow \left\{(h^1,\ldots,h^m) \in 
-\honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} \mid h^{r_j^{(1)}}_{\vert B_j } = 
-    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}.$$
-\end{lemma}
-\begin{proof}
-The proof is done by induction on $m$. The result holds for $m=1$. 
-Suppose the result true for $m\geqslant 1$, and let $\mathcal{T}$ be a surface 
-obtained by pasting $m$ triangles $T^1,\ldots,T^{m}$ 
-along some boundaries and that $L_1,\ldots,L_p$ 
-are the boundary which have not been pasted together. 
-Assume without loss of generality that $L_p$ belongs to $T^m$ and 
-let $T^{m+1}$ be another oriented equilateral triangle. Let $\mathcal{T}'$ 
-be the surface obtained by gluing $T^{m+1}$ to $T^m$ along $\partial_0 T^{m+1}$ and $L_p$. 
-\\
-\\
-Let $h$ be a honeycomb on $\mathcal{T}'$ with structure graph 
-$G\in\mathcal{G}_{\mathcal{T}'}$. The restriction $ i(h) = (h\cap T^{m+1},h\cap \mathcal{T})$ 
-yields a pair of honeycomb on  $T^{m+1}$ and $\mathcal{T}$ such that 
-$(h\cap \mathcal{T})_{\vert L_p}=(h\cap T^{m+1})_{\vert \partial_0T^{m+1}}$. 
-Moreover, the structure graphs $G_1$ of $h\cap T^{m+1}$ and 
-$G_2$ of $h\cap \mathcal{T}$ only depend on $G$. 
-Indeed, by construction of the structure graph $G$, $G_1$ 
-corresponds to all the edge that can be reached 
-from the boundaries 
-$\partial_1T^{m+1}$ and $\partial_2T^{m+1}$ 
-by avoiding bivalent vertices.
-Hence, the map
-$i : \honey_{\mathcal{T}'} \rightarrow \honey_{\mathcal{T}^{m+1}} 
-\times \honey_\mathcal{T}$
-and the map 
-\begin{align*}
-    \tilde{t}: \mathcal{G}_{\mathcal{T}'} &\rightarrow
-\mathcal{G} \times \mathcal{G}_\mathcal{T} \\
-    G & \mapsto (G_1, G_2)
-\end{align*}
-are such that for each $G\in\mathcal{G}_{\mathcal{T}'}$,
-$$ i \left(\honey_{\mathcal{T}'}^G \right) \subset 
-\left\{ (h^1,h^2)\in\honey_{T^{m+1}}^{G_1} \times 
-\honey_{\mathcal{T}}^{G_2} \mid 
-h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p} \right\}.$$
-If $h,h'\in \honey_{\mathcal{T}'}$ are such that 
-$i(h)=i(h')=(h^1,h^2)$, then $h=h^1\cup h^2=h'$ so that 
-$i$ is injective. 
-\\
-\\
-Reciprocally, let $(h^1,h^2)\in\honey_{T^{m+1}}^{G_1} 
-\times \honey_{\mathcal{T}}^{G_2}$ be such that 
-$h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}$. 
-Suppose without loss of generality that 
-$T^{m+1}=\{-r+se^{2\pi i/3},\,0\leqslant r,s\leqslant 1, r+s\leqslant 1\}$ and that 
-$\partial_0T^{m+1}=\{se^{2\pi i/3}\}=L_p$, so that 
-$T^{m}=\{re^{\pi i/3}+se^{2\pi i/3},\,0\leqslant r,s\leqslant 1, r+s\leqslant 1\}$. 
-Let $x\in h^1_{\partial_0T^{m+1}}=h^{2}_{\vert L_p}$. 
-Then, by Condition (3) of Definition \ref{def:triangular_honey} 
-(see Figure \ref{fig:common_boundary}): 
-\begin{itemize}
-\item a geodesic $e$ of $h^1$ arriving at 
-$\partial_0T^{m+1}$ at $x$ is either colored 
-$c(e)=0$ and included in $x+\mathbb{R}_{>0}e^{-2\pi i/3}$ 
-or colored $c(e)=1$ and included in $x+\mathbb{R}_{<0}$. 
-\item A geodesic $e'$ of $h^2$ arriving at 
-$L_p$ at $x$ is either colored $c(e)=0$ 
-and included in $x+\mathbb{R}_{<0}e^{-2\pi i/3}$ 
-or colored $c(e)=1$ and included in $x+\mathbb{R}_{>0}$.
-\end{itemize}
-In any case, the angle from $e$ to $e'$ is either 
-$0$ if $c(e)=c(e')$, in which case $e\cup e'$ is again a 
-geodesic colored $c(e)$, or $2\pi/3$ (resp. $4\pi/3$) 
-if $c(e)=0$ and $c(e')=1$ (resp. $c(e)=1$ and $c(e')=0$). 
-In the latter case, Condition (2) from Definition 
-\ref{def:toric_honeycomb} is satisfied. 
-Hence, the set of geodesics
-$$h=h_1\cup h_2$$ 
-defines a honeycomb on $\mathcal{T}'$. 
-Moreover, the structure graph $G = (V^G, E^G)$ of $h$ is obtained 
-by setting 
-\begin{equation*}
-    V^G=(V^{G_1}\cup V^{G_2})/\langle v_i=w_i, 1\leqslant i\leqslant n\rangle \ ,
-\end{equation*}
-where $v_1,\ldots, v_n$ and $w_1, \dots, w_n$ are the boundary vertices 
-of $G_1$ and $G_2$ corresponding to points on $\partial_0T^{m+1}$ and $L_p$ 
-respectively. The edge set of $G$ is $E^G=E^{G_1}\cup E^{G_2}$.
-In particular, the map $\tilde{t}:\mathcal{G}_{\mathcal{T}'} 
-\rightarrow \mathcal{G} \times \mathcal{G}_{\mathcal{T}} $ 
-is injective, and each restricted map 
-$$i:\honey_{\mathcal{T}'}^G\rightarrow 
-\left\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times 
-\honey_{\mathcal{T}}^{G_2} \mid h^1_{\vert \partial_0T^{m+1} } = 
-h^2_{\vert L_p} \right\}.$$
-is bijective. 
-Let $t_m,i_m$ be the maps given by induction on 
-$\mathcal{G}_{\mathcal{T}}$ and $\honey_{\mathcal{T}}$. 
-Then, the maps $(t_m\times \Id_{\mathcal{G}})\circ t$ 
-and $(i_m\times \Id_{\honey_n})\circ i$ 
-are the bijections of the statement of the lemma.
-\end{proof}
+be such that $L_j=\partial_{\ell_j}T^{s_j}$. Each edge $L_j$ has a natural orientation $\ell_j$ coming from the unique equilateral it belongs to.  
 
 \noindent
-Remark from the construction of the reciprocal of $t$ 
-in the latter proof that the injective map 
-$t_{\mathcal{T}}:\mathcal{G}_{\mathcal{T}}\rightarrow 
-\mathcal{G}^m$ such that $t(G)=(G_1,\ldots,G_m)$ satisfies 
-$$G=\left(\bigcup_{i=1}^mG_i\right)_{S*S'}$$ 
+Recall that a honeycomb on $\mathcal{T}$ is defined as a sequence $(h^i)_{1\leq i\leq N}$ of triangular honeycombs such that $t_i(h^i)_{\vert \partial_j T^i}=t_{i'}(h^{i'})_{\vert \partial_{j'}T^{i'}}$ whenever $\partial_jT^i$ is glued to $\partial_{j'}T^{i'}$, where for a triangular honeycomb $h=(\mathcal{E},c)$, $t_i(h)=\bigcup_{e\in\mathcal{E}}f_i(e)$. 
+
+Let $h=(h^i)_{1\leq i\leq N}$ be such a honeycomb and denote by $G_i=(V_i,E_i)$ the structure graph of $h^i$ for $1\leq i\leq N$. Then, the structure graph $G(h)$ of $h$, as defined after 
+Definition \ref{def:(g,p)_honey}, can be describe as 
+$$G(h)=\left(\bigcup_{i=1}^NG_i\right)_{S*S'}$$ 
 in the sense of Definition \ref{def:sieving}, 
-where $S,S'\subset \bigcup_{i=1}^m\partial G_i$ are the vertices 
+where $S,S'\subset \bigcup_{i=1}^m\partial V_i$ are the vertices 
 which are identified together. 
-\\
-\\
+Hence, if $\mathcal{G}_\mathcal{T}$ denotes the set of structure graphs appearing in 
+$\honey_{\mathcal{T}}$, there is an injective map
+$$i:\mathcal{G}_{\mathcal{T}}\rightarrow  \mathcal{G}^N,$$
+where $\mathcal{G}$ is the set of structure graphs appearing in the case $N=1$ and $i(G)$ is the tuple $(G_1,\ldots,G_N)$ such that $G=\left(\bigcup_{i=1}^NG_i\right)_{S*S'}$.
+Moreover, $G(h)$
+has $pn$ univalent vertices, 
+$n$ of them being on each boundary component 
+$L_j,\, 1\leqslant j\leqslant p$, and $\frac{(3N-p)n}{2}$ bivalent vertices, 
+$n$ of them being on a same boundary of a triangle while being 
+in the interior of the surface. 
+For $1 \leqslant j \leqslant p$, let us denote by $(v^j_m)_{1\leqslant m\leqslant n}$ 
+the univalent boundary vertices on $L_{j}$ ranked decreasingly with respect to 
+their $(\ell_j+1)$-coordinate.
+
+
+
+
 In Section \ref{subsec:parametrization_honeycombs}, 
 we defined for each $G_i=(V_i,E_i)\in \mathcal{G}_{d_i}$ 
 a map $s_i:V_i\rightarrow \{-1,1\}$ such that for each edge 
 $\{v,v'\}\in E_i$, $s_i(v)s_i(v')=-1$. 
-Let us denote by $\interior_3(G)$ the set of vertices of degree 
+Let us denote by $\interior_3(V)$ the set of vertices of degree 
 $3$ of $G$. By the construction of $G$ in terms of 
 the graphs $G_i$ and the fact that all vertices of 
-$\interior(G_i)$ have degree $3$, 
-$$\interior_3(G)=\bigsqcup_{1\leqslant i\leqslant m}\interior(G_i) \ .$$
+$\interior(V_i)$ have degree $3$, 
+$$\interior_3(V)=\bigsqcup_{1\leqslant i\leqslant N}\interior(V_i) \ .$$
 We can therefore extend the maps $s_i$ defined on each 
-$G_i$ to a map $s:\interior_3(G) \to \{-1,1\}$.
+$G_i$ to a map $s:\interior_3(V) \to \{-1,1\}$.
 
 \begin{definition}[Label map of a honeycomb]
     \label{def:map_L_arbitrary_honeycomb}
-Let $G=(V,E)\in\mathcal{G}_{\mathcal{T}}$ be a structure graph. 
-The \textit{label map} $\mathcal{L}:\honey_{\mathcal{T}}^G 
-\rightarrow \Omega^1(G)$ is defined by setting, 
-for $(v,v') \in \vec{E}$ with $v\in \interior_3(G)$, 
-$$\mathcal{L}[h](v,v')=s(v)L(i(e)) \ ,$$
-where $i(e)$ is the injection from Lemma 
-\ref{lem:product_gluing} and $L$ is the coordinate 
-map defined in Definition \ref{def:triangular_honey}. (2).
+Let $G=(V,E)\in\mathcal{G}_{\mathcal{T}}$ and $h=(h_i)_{1\leq i\leq N}\in \honey_{\mathcal{T}}^G$, with $h_i=(\mathcal{E}_i,c_i)$ for $1\leq i\leq N$. Let $\phi:G(h)\rightarrow G$ be the corresponding graph isomorphism. Then, the \textit{label map} $\mathcal{L}[h]$ is the element of $\Omega^1(G)$ whose value at $(v,v') \in \vec{E}$ such that $v\in \interior_3(V)$ and $\{v,v'\}=\phi(\partial e)$ for $e\in \mathcal{E}_i$ is
+$$\mathcal{L}[h](v,v')=s(v)L(e) \ ,$$
+where $L$ is the coordinate 
+map defined in Definition \ref{def:triangular_honey}. (2) for $h_i$.
 \end{definition}
-
-\noindent
 Remark that each edge $e \in E$ of $G$ is adjacent to at 
 least one trivalent vertex, and if $e=\{v,v'\}$ with 
-$v,v'\in \interior_3(G)$, then necessarily there exists 
-$1\leqslant i\leqslant m$ such that $v,v'\in V_i$. 
-Therefore $s(v)s(v')=-1$, so that $\mathcal{L}[h] \in \Omega^1(G)$ 
-and $\mathcal{L}$ is a well-defined map from $\honey^G_{\mathcal{T}}$ to $\Omega^1(G)$.
+$v,v'\in \interior_3(V)$, then necessarily there exists 
+$1\leqslant i\leqslant N$ such that $v,v'\in V_i$. 
+Therefore $s(v)s(v')=-1$, so that $\mathcal{L}[h] \in \Omega^1(G)$. Hence, the latter construction yields a well-defined map 
+$$\mathcal{L}:\honey_{\mathcal{T}}^G 
+\rightarrow \Omega^1(G).$$
 
 \begin{figure}[H]
     \centering
@@ -2606,40 +2461,46 @@ V\rightarrow\mathbb{R}$ by
     $$\mathcal{L}(\honey_{\mathcal{T}}^G(\gamma^{(1)}, 
     \ldots,\gamma^{(p)})) = 
     \mathcal{F}_{G}(\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}) 
-    \cap (K_{G_1}\times \dots\times K_{G_m}) \ ,$$
-    where $t(G)=(G_1,\ldots,G_m)$ and where $\Omega^1(G)$ 
-    is identified with $\prod_{i=1}^m\Omega^1(G_i)$. 
+    \cap (K_{G_1}\times \dots\times K_{G_N}) \ ,$$
+    where $i(G)=(G_1,\ldots,G_N)$ and where $\Omega^1(G)$ 
+    is identified with $\prod_{i=1}^N\Omega^1(G_i)$. 
 \end{lemma}
 
+Let us introduce some notations to prove this lemma. Set $n(\mathcal{T})=\frac{3N-p}{2}$ and denote 
+by $B_{1},\ldots,B_{n(\mathcal{T})}$ the segments of $\mathcal{T}$ 
+corresponding to boundary of triangles identified together. 
+Each $B_j$ is then adjacent to two triangles $T^{r^{(1)}_j}$ and $T^{r^{(2)}_j}$ 
+and there exists $\ell^{(1)}_j,\ell^{(2)}_j$ such that 
+$B_j=\partial_{\ell^{(1)}_j}T^{r^{(1)}_j}=\partial_{\ell^{(2)}_j}T^{r^{(2)}_j}$.
 \noindent
-We then write $K_{G}=K_{G_1}\times \dots\times K_{G_m}$.
+We then write $K_{G}=K_{G_1}\times \dots\times K_{G_N}$.
 
 \begin{proof}
     Let $G = (V, E)\in\mathcal{G}_T$. 
-    First, by Lemma \ref{lem:product_gluing}, there is a bijection 
-    $$i:\honey_{\mathcal{T}}^G\rightarrow \left\{(h^1,\ldots,h^m) \in 
-    \honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} 
+    First, by definition, 
+    $$\honey_{\mathcal{T}}^G= \left\{(h^1,\ldots,h^N) \in 
+    \honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^N}^{G_N} 
     \mid h^{r_j^{(1)}}_{\vert B_j } = 
-    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}.$$
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant n(\mathcal{T}) \right\}.$$
     Next, recall that  
-    $$V=\bigcup_{i=1}^mV_i \, / \left\langle 
+    $$V=\bigcup_{i=1}^NV_i \, / \left\langle 
     \partial_{\ell_j}G^{r_j^{(1)}}=\partial_{\ell'_j}G^{r_j^{(2)}} 
-    , 1\leqslant j\leqslant N(\mathcal{T}) \right\rangle$$ 
-    and that $E$ is the image of $\bigcup_{i=1}^m E_i$ 
+    , 1\leqslant j\leqslant n(\mathcal{T}) \right\rangle$$ 
+    and that $E$ is the image of $\bigcup_{i=1}^N E_i$ 
     in this quotient. 
-    Since any element of $\bigcup_{i=1}^m E_i$ has at 
-    most one endpoint in $\bigcup_{j=1}^{N(\mathcal{T})} 
+    Since any element of $\bigcup_{i=1}^N E_i$ has at 
+    most one endpoint in $\bigcup_{j=1}^{n(\mathcal{T})} 
     \partial_{\ell_j}G^{r_j^{(1)}} \cup \partial_{\ell'_j}G^{r_j^{(2)}}$, 
     there is a canonical identification 
-    $\Omega^1(G)=\prod_{j=1}^m\Omega(G^j)$. 
+    $\Omega^1(G)=\prod_{j=1}^N\Omega(G^j)$. 
     Moreover, by the definition of $\mathcal{L}: 
     \honey_G^{\mathcal{T}}\to \Omega^1(G)$ from 
     Definition \ref{def:map_L_arbitrary_honeycomb}, 
     for $h\in \honey_G^{\mathcal{T}}$
-    $$\mathcal{L}[h]=\prod_{i=1}^m\mathcal{L}_{\vert T_i}[h_{\vert T_i}]=\left(\prod_{i=1}^m\mathcal{L}_{\vert T_i}\right)(i(h))$$
+    $$\mathcal{L}[h]=\left(\prod_{i=1}^N\mathcal{L}\right)(h^1,\ldots,h^N)$$
     under the previous identification. 
-    The injectivity of $i$ together with the injectivity of 
-    each map $\mathcal{L}_{\vert T_i}$ from 
+    The injectivity of 
+    the map $\mathcal{L}$ from 
     Proposition \ref{prop:parametrization_triangular_honey_first} 
     yield the injectivity of $\mathcal{L}$.
     \\
@@ -2647,13 +2508,13 @@ We then write $K_{G}=K_{G_1}\times \dots\times K_{G_m}$.
     It remains to describe the image 
     $\mathcal{L}\left(\honey_{\mathcal{T}}^G
     (\gamma^{(1)},\ldots,\gamma^{(p)})\right)$. 
-    By Lemma \ref{lem:product_gluing} and the previous reasoning, 
-    this amounts to describe the image throught 
-    $\prod_{i=1}^m\mathcal{L}_{\vert T_i}$ of the set
-    $$\left\{(h^1,\ldots,h^m) \in 
-    \honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} 
+    By the previous reasoning, 
+    this amounts to describe the image throught
+    $\prod_{i=1}^N\mathcal{L}$ of the set
+    $$\left\{(h^1,\ldots,h^N) \in 
+    \honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^N}^{G_N} 
     \mid h^{r_j^{(1)}}_{\vert B_j } = 
-    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}.$$
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant n(\mathcal{T}) \right\}.$$
     Let us first describe how the condition 
     $\partial_{\ell_j}h^{s_j}=\gamma^{(j)}$ for 
     $1\leqslant j\leqslant p$ translates through $\mathcal{L}$. 
@@ -2708,16 +2569,16 @@ cardinal $n-1$. We simply denote by $\diff u$ this volume form.
 \begin{proposition}
     \label{prop:formula_gluing_honey}
     Suppose that $\mathcal{T}'$ is obtained by 
-    gluing $\mathcal{T}$ and $T^{m+1}$ along the boundaries 
-    $L_p$ and $\partial_0 T^{m+1}$. 
+    gluing $\mathcal{T}$ and $T^{N+1}$ along the boundaries 
+    $L_p$ and $\partial_0 T^{N+1}$. 
     Then, for all $G\in \mathcal{T}'$ and 
     $\gamma^1,\ldots,\gamma^{p+1}\in \mathcal{H}_{reg}$ such that 
     $\sum_{i=1}^{p+1}\vert \gamma_i\vert\in \mathbb{N}$,
     \begin{align*}
-    \sum_{G\in\mathcal{G}_{\mathcal{T}}} & 
+    \sum_{G\in\mathcal{G}_{\mathcal{T}'}} & 
     \Vol \left[ \mathcal{L}\left(\honey_{\mathcal{T}'}^{G}(\gamma^1,\ldots,\gamma^{p+1})\right) \right]\\
     =& \int_{\mathcal{H}_{reg}^{\theta} } 
-    \sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}} 
+    \sum_{(G_1,G_2)\in\mathcal{G}\times\mathcal{G}_{\mathcal{T}}} 
     \Vol \left[ \mathcal{L}\left(\honey_{\mathcal{T}}^{G_2}(\gamma^1,\ldots,\gamma^{p-1},u)\right) \right] 
     \Vol \left[ \mathcal{L}\left(\honey^{G_1}(\tilde{u},\gamma^p,\gamma^{p+1})\right) \right] \diff u,
     \end{align*}
@@ -2727,8 +2588,8 @@ cardinal $n-1$. We simply denote by $\diff u$ this volume form.
 \begin{proof}
 Remark that from \eqref{eq:def_phi_p},
 $$\sum_{v\in V}\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}(v) = 
-\sum_{j=1}^p\sum_{i=1}^n\gamma_s^{(j)}+\sum_{i=1}^m 
-\left(\sum_{v\in \interior(G_i)}s(v)-\sum_{v\in\partial G_i, v\sim v'} 
+\sum_{j=1}^p\sum_{i=1}^n\gamma_s^{(j)}+\sum_{i=1}^N 
+\left(\sum_{v\in \interior(V_i)}s(v)-\sum_{v\in\partial V_i, v\sim v'} 
 c(v,v')\right).$$
 Hence, in order for $\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}$ 
 to yields a non-empty set $\mathcal{F}_{G}(\phi_{\gamma^{(1)}, 
@@ -2758,30 +2619,20 @@ Using Proposition \ref{prop:divergence_product} (2) gives
 % & \hspace{6cm} h^{1}_{\partial_iT}=\gamma^{(i)}, h^{2}_{\partial_{i-2}\mathcal{T}} 
 % =\gamma^{(i)},1\leqslant i\leqslant p+1).\label{eq:product_formula_volume}
 \end{align*}
-By Lemma \ref{lem:product_gluing} and Lemma \ref{lem:differential_gluing_honey}, 
-the latter volume is non-zero only if 
-$(G_1,G_2)=t(G)$ where $G = (G_1 \cup G_2)_{S_1 * S_2} \in \mathcal{G}_{\mathcal{T}'}$ 
-and where $S_1 \subset \partial G_1$ and $S_2 \subset \partial G_2$ are 
-the vertices identified together on $L_p$ and $\partial_0 T^{m+1}$. In 
-this case, it is equal to 
+By Lemma \ref{lem:differential_gluing_honey}, 
+the latter volume is exactly
 \begin{equation*}
-    \indic_{t(G) = (G_1, G_2)} \Vol \left[\mathcal{L}\left( \honey_{\mathcal{T}}^G \left(\gamma^{(1)}, 
+    \Vol \left[\mathcal{L}\left( \honey_{\mathcal{T}}^G \left(\gamma^{(1)}, 
     \ldots,\gamma^{(p+1)}\right) \right) \right] \ .
 \end{equation*}
 Therefore, 
 \begin{align*}
-\sum_{(G_1,G_2)\in\mathcal{G}_{T}\times\mathcal{G}_{\mathcal{T}}} 
+\sum_{(G_1,G_2)\in\mathcal{G}\times\mathcal{G}_{\mathcal{T}}} 
 &\int_{\mathcal{H}_{reg}^{\theta} } 
      \Vol \left[ \mathcal{L}\left(\honey_{\mathcal{T}}^{G_2}
     (\gamma^1,\ldots,\gamma^{p-1},u)\right) \right] 
     \Vol \left[ \mathcal{L}\left(\honey^{G_1} 
     \left(\tilde{u},\gamma^p,\gamma^{p+1}\right)\right) \right] \diff u\\
-= \sum_{G\in\mathcal{G}_{\mathcal{T}'}, t(G)=(G_1,G_2)} 
-&\int_{\mathcal{H}_{reg}^{\theta} } 
-     \Vol \left[ \mathcal{L}\left(\honey_{\mathcal{T}}^{G_2}
-    \left(\gamma^1,\ldots,\gamma^{p-1},u\right) \right) \right] 
-    \Vol \left[ \mathcal{L}\left(\honey^{G_1} 
-    \left(\tilde{u},\gamma^p,\gamma^{p+1} \right)\right) \right] \diff u \\
 &= \sum_{G\in\mathcal{G}_{\mathcal{T}'}} 
 \Vol \left[\mathcal{L}\left( \honey_{\mathcal{T}}^G \left(\gamma^{(1)}, 
     \ldots,\gamma^{(p+1)}\right) \right) \right] \ .
@@ -3040,7 +2891,7 @@ Z_{g,p}(\alpha_1,\dots,\alpha_p)=Z_{g,p}(\hat{\alpha}_1,\dots,\hat{\alpha}_p) =
 &\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\hat{\alpha}_1,\ldots,\hat{\alpha}_p,\theta,\tilde{\theta}))\Delta(\theta)^2 \diff \theta \\
 =&\int_{\mathcal{H}_{reg}}\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta}))\Delta(\theta)^2\diff \theta \ .
 \end{align*}
-Let us denote by $c_{g, p} = \frac{c_{0,3}^{2g+p-2}}{n^{2g+p-3}}$ where $c_{0, 3}$ is given in Theorem \ref{th:Z_g_p_0}. 
+Let us denote by $c_{g, p} = \frac{c_{0,3}^{N}}{n^{2g+p-3}}$ where $c_{0, 3}$ is given in Theorem \ref{th:Z_g_p_0}. 
 Since $3(g-1)+p+2<N$, by induction
 $$\Vol(M(\mathcal{M}',\alpha_1,\ldots,\alpha_p,\theta,\tilde{\theta})) = 
 \frac{c_{g-1,p+2}}{\Delta(\theta)\Delta(\tilde{\theta}) \prod_{j=1}^p\Delta(\alpha_j)}\sum_{\substack{G \in \mathcal{G}^{(g-1,p+2)}}}
@@ -3121,7 +2972,7 @@ A \textit{disjoint loops configuration} $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p
 is the data of a compact oriented surface together with $p$ disjoints 
 Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each 
 $\Gamma_i, \,1\leqslant i\leqslant p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
-A \textit{skeleton} is the data of a labeled finite tree $\mathcal{T}=(V,E)$ such vertices are labeled by $\R_{\geqslant 0} \times \mathbb{N} $ 
+A \textit{skeleton} is the data of a labeled finite graph $\mathcal{T}=(V,E)$ such vertices are labeled by $\R_{\geqslant 0} \times \mathbb{N} $ 
 and edges are labeled by elements of $\mathcal{H}_{reg}$.
 \end{definition} 
 
@@ -3166,12 +3017,14 @@ on $\U(n)$ to $\mathcal{H}$ and $p_T(x) = p_T(\mathrm{id}, x)$.
 Recall that the partition function is invariant by area preserving diffeomorphism. Let us introduce a curve $\gamma$ enclosing the curve $\gamma_p$ such that the area of the domain enclosed by $\gamma_p$ and $\gamma$ is $T'$, with $0< T'< T$. Then, by the Markov property of the Yang-Mills partition function, see \cite[Proposition 5.1.2]{levy2003yang} or \cite[Eq. (2.63)]{witten1992two},
 $$Z_{g, p, T}(\alpha_1, \dots, \alpha_p)=\int_{\mathcal{H}} Z_{g, p, T-T'}(\alpha_1, \dots, \alpha_{p-1}, u) \, 
         Z_{0, 2, T'}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \Delta(u)^2\diff u \ .$$
-Let us shrink the domain between the curve $\gamma$ and the curves $\gamma_1,\ldots,\gamma_p$ so that $T'$ converges to $T$ i.e $T-T'$ converges to zero. 
-In this case, the partition function $Z_{g, p, T-T'}(\alpha_1, \dots, \alpha_{p-1}, u)$ converges to $Z_{g,p,0}(\alpha_1, \dots, \alpha_{p-1}, u)$, 
-the volume of flat connections with boundary holonomies $\alpha_1,\ldots,\alpha_p$, see \cite{sengupta2003volume}. 
+Choosing $T'=T(1-\frac{1}{p})$ and doing the same for the $p-1$ other curves yields
+$$Z_{g, p, T}(\alpha_1, \dots, \alpha_p)=\int_{\mathcal{H}} Z_{g, p, 0}(u_1, \dots, u_p) \, 
+        \prod_{i=1}^pZ_{0, 2, \frac{T}{p}}(u_i^{-1}, \alpha_i) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \prod_{i=1}^p \left(\Delta(u_i)^2\diff u_i \right)\ ,$$
+where $Z_{g,p,0}(u_1, \dots, u_p)$, 
+the volume of flat connections with boundary holonomies $u_1,\ldots,u_p$, see \cite{sengupta2003volume}. 
 \end{proof}
 \begin{proof}[Proof of Corollary \ref{cor:yang_mills_g_p}]
-The corollary is then a deduction of the latter proposition, \cite[Proposition 5.1.2]{levy2003yang} and Theorem \ref{th:Z_g_p_0}.
+The corollary is then a deduction of the latter proposition, the Markov properties of the Yang-Mills marginal, see \cite[Proposition 5.1.2]{levy2003yang} and Theorem \ref{th:Z_g_p_0}. The proof is done by induction on the number $M$ of vertices of the skeleton $\mathcal{T}(\mathcal{L})$. If $M=1$, any curve is 
 \end{proof}
 % \bibliographystyle{plain}
 % \bibliography{mybib}
@@ -3231,7 +3084,7 @@ For the next proposition, we say that a subgraph $H$ of
 $G$ is a \emph{forest} of $G$ if $H$
  is a spanning subgraph (i.e., it has the same vertex set as $G$) and each connected component of $H$
  is a tree whose vertex set
-contains a unique element of $V_1$.
+contains a unique element of $\partial V$.
 
 \begin{proposition} \label{prop:BijectionForests}
 	If $S \subset E$
@@ -3293,7 +3146,7 @@ contains a unique element of $V_1$.
 	(V,E\setminus S).\]
 	Given that 
 	$\mathrm{dim} (\mathcal F(0)) = 
-	|E| - |\interior(G)| = |E| - |V| + |V_1|$,
+	|E| - |\interior(V)| = |E| - |V| + |V_1|$,
 	the number of connected 
 	components of $(V,E\setminus S)$
 	must be less or equal than $|V_1|$
@@ -3319,11 +3172,11 @@ contains a unique element of $V_1$.
 	\[(\psi_S)_*: \Lambda^k
 	\mathcal F(0;0) \to 
 	\Lambda^k \Omega^1(S),\]
-	for $k = 	|E| - |\interior(G)| = |S|$ and let us
+	for $k = 	|E| - |\interior(V)| = |S|$ and let us
 	calculate
 	\[
 	\big<  \hspace{-0.5mm} *(\wedge_{v \in 
-	\interior(G)} d \delta_{v}),
+	\interior(V)} d \delta_{v}),
 	 \wedge_{e \in S} \hat e \, \big>
 	 = \pm 
 	 \big< \hspace{-0.5mm}  \wedge_{v \in \interior(G)} d \delta_{v},
@@ -3671,3 +3524,110 @@ in the sense of Definition \ref{def:generating_subset_canonical_vol}.
 
 \end{proof}
 
+
+\begin{lemma}[Honeycomb decomposition]
+    \label{lem:product_gluing}
+There is an injective map $t:\mathcal{G}_{\mathcal{T}} \rightarrow \mathcal{G}^m$ such that the map 
+$$i: \left\lbrace \begin{aligned}  
+    & \honey_{\mathcal{T}}&\rightarrow& \left\{(h^1,\ldots,h^m) \in 
+    \honey_{T^{1}}\times\ldots\times \honey_{T^m} \mid h^{r_j^{(1)}}_{\vert B_j } = 
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}\\
+    & h &\mapsto&(h\cap T^{i})_{1\leqslant i\leqslant m}\end{aligned} \right.$$
+is bijective and restricts for each $G\in\mathcal{G}_{\mathcal{T}}$ 
+and $(G_1,\ldots,G_m)=t(G)$ to a bijection 
+$$i:\honey_{\mathcal{T}}^G\rightarrow \left\{(h^1,\ldots,h^m) \in 
+\honey_{T^{1}}^{G_1}\times\ldots\times \honey_{T^m}^{G_m} \mid h^{r_j^{(1)}}_{\vert B_j } = 
+    h^{r_j^{(2)}}_{\vert B_j}, 1\leqslant j\leqslant N(\mathcal{T}) \right\}.$$
+\end{lemma}
+\begin{proof}
+The proof is done by induction on $m$. The result holds for $m=1$. 
+Suppose the result holds true for $m\geqslant 1$, and let $\mathcal{T}$ be a surface 
+obtained by pasting $m$ triangles $T^1,\ldots,T^{m}$ 
+along some boundaries. Denote by $L_1,\ldots,L_p$ 
+the boundaries which have not been pasted together. 
+Assume without loss of generality that $L_p$ belongs to $T^m$ and 
+let $T^{m+1}$ be another oriented equilateral triangle. Let $\mathcal{T}'$ 
+be the surface obtained by gluing $T^{m+1}$ to $T^m$ along $\partial_0 T^{m+1}$ and $L_p$. 
+\\
+\\
+Let $h$ be a honeycomb on $\mathcal{T}'$ with structure graph 
+$G\in\mathcal{G}_{\mathcal{T}'}$. The restriction $ i(h) = (h\cap T^{m+1},h\cap \mathcal{T})$ 
+yields a pair of honeycomb on  $T^{m+1}$ and $\mathcal{T}$ such that 
+$(h\cap \mathcal{T})_{\vert L_p}=(h\cap T^{m+1})_{\vert \partial_0T^{m+1}}$. 
+Moreover, the structure graphs $G_1$ of $h\cap T^{m+1}$ and 
+$G_2$ of $h\cap \mathcal{T}$ only depend on $G$. 
+Indeed, by construction of the structure graph $G$, $G_1$ 
+corresponds to all the edge that can be reached 
+from the boundaries 
+$\partial_1T^{m+1}$ and $\partial_2T^{m+1}$ 
+by avoiding bivalent vertices.
+Hence, the map
+$i : \honey_{\mathcal{T}'} \rightarrow \honey_{\mathcal{T}^{m+1}} 
+\times \honey_\mathcal{T}$
+and the map 
+\begin{align*}
+    \tilde{t}: \mathcal{G}_{\mathcal{T}'} &\rightarrow
+\mathcal{G} \times \mathcal{G}_\mathcal{T} \\
+    G & \mapsto (G_1, G_2)
+\end{align*}
+are such that for each $G\in\mathcal{G}_{\mathcal{T}'}$,
+$$ i \left(\honey_{\mathcal{T}'}^G \right) \subset 
+\left\{ (h^1,h^2)\in\honey_{T^{m+1}}^{G_1} \times 
+\honey_{\mathcal{T}}^{G_2} \mid 
+h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p} \right\}.$$
+If $h,h'\in \honey_{\mathcal{T}'}$ are such that 
+$i(h)=i(h')=(h^1,h^2)$, then $h=h^1\cup h^2=h'$ so that 
+$i$ is injective. 
+\\
+\\
+Reciprocally, let $(h^1,h^2)\in\honey_{T^{m+1}}^{G_1} 
+\times \honey_{\mathcal{T}}^{G_2}$ be such that 
+$h^1_{\vert \partial_0T^{m+1} }=h^2_{\vert L_p}$. 
+Suppose without loss of generality that 
+$T^{m+1}=\{-r+se^{2\pi i/3},\,0\leqslant r,s\leqslant 1, r+s\leqslant 1\}$ and that 
+$\partial_0T^{m+1}=\{se^{2\pi i/3}\}=L_p$, so that 
+$T^{m}=\{re^{\pi i/3}+se^{2\pi i/3},\,0\leqslant r,s\leqslant 1, r+s\leqslant 1\}$. 
+Let $x\in h^1_{\partial_0T^{m+1}}=h^{2}_{\vert L_p}$. 
+Then, by Condition (3) of Definition \ref{def:triangular_honey} 
+(see Figure \ref{fig:common_boundary}): 
+\begin{itemize}
+\item A segment $e$ of $h^1$ arriving on 
+$\partial_0T^{m+1}$ at $x$ is either colored 
+$c(e)=0$ and included in $x+\mathbb{R}_{>0}e^{-2\pi i/3}$ 
+or colored $c(e)=1$ and included in $x+\mathbb{R}_{<0}$. 
+\item A segment $e'$ of $h^2$ arriving on 
+$L_p$ at $x$ is either colored $c(e)=0$ 
+and included in $x+\mathbb{R}_{<0}e^{-2\pi i/3}$ 
+or colored $c(e)=1$ and included in $x+\mathbb{R}_{>0}$.
+\end{itemize}
+In any case, the angle from $e$ to $e'$ is either 
+$0$ if $c(e)=c(e')$, in which case $e\cup e'$ is again a 
+segment colored $c(e)$, or $2\pi/3$ (resp. $4\pi/3$) 
+if $c(e)=0$ and $c(e')=1$ (resp. $c(e)=1$ and $c(e')=0$). 
+In the latter case, Condition (2) from Definition 
+\ref{def:toric_honeycomb} is satisfied. 
+Hence, the set of segments
+$$h=h_1\cup h_2$$ 
+defines a honeycomb on $\mathcal{T}'$. 
+Moreover, the structure graph $G = (V^G, E^G)$ of $h$ is obtained 
+by setting 
+\begin{equation*}
+    V^G=(V^{G_1}\cup V^{G_2})/\langle v_i=w_i, 1\leqslant i\leqslant n\rangle \ ,
+\end{equation*}
+where $v_1,\ldots, v_n$ and $w_1, \dots, w_n$ are the boundary vertices 
+of $G_1$ and $G_2$ corresponding to points on $\partial_0T^{m+1}$ and $L_p$ 
+respectively. The edge set of $G$ is $E^G=E^{G_1}\cup E^{G_2}$.
+In particular, the map $\tilde{t}:\mathcal{G}_{\mathcal{T}'} 
+\rightarrow \mathcal{G} \times \mathcal{G}_{\mathcal{T}} $ 
+is injective, and each restricted map 
+$$i:\honey_{\mathcal{T}'}^G\rightarrow 
+\left\{(h^1,h^2)\in\honey_{T^{m+1}}^{G_1}\times 
+\honey_{\mathcal{T}}^{G_2} \mid h^1_{\vert \partial_0T^{m+1} } = 
+h^2_{\vert L_p} \right\}.$$
+is bijective. 
+Let $t_m,i_m$ be the maps given by induction on 
+$\mathcal{G}_{\mathcal{T}}$ and $\honey_{\mathcal{T}}$. 
+Then, the maps $(t_m\times \Id_{\mathcal{G}})\circ t$ 
+and $(i_m\times \Id_{\honey_n})\circ i$ 
+are the bijections of the statement of the lemma.
+\end{proof}

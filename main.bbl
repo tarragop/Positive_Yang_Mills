@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,8 +16,8 @@
   {}
 \endgroup
 
-\datalist[entry]{anyt/global//global/global}
-  \entry{Atiyah_Bott}{article}{}
+\datalist[entry]{anyt/global//global/global/global}
+  \entry{Atiyah_Bott}{article}{}{}
     \name{author}{2}{}{%
       {{hash=AMF}{%
          family={Atiyah},
@@ -49,7 +49,7 @@
     \field{year}{1983}
   \endentry
 
-  \entry{belkale2008quantum}{article}{}
+  \entry{belkale2008quantum}{article}{}{}
     \name{author}{1}{}{%
       {{hash=BP}{%
          family={Belkale},
@@ -76,7 +76,7 @@
     \field{year}{2008}
   \endentry
 
-  \entry{bismut5symplectic}{incollection}{}
+  \entry{bismut5symplectic}{incollection}{}{}
     \name{author}{2}{}{%
       {{hash=BJM}{%
          family={Bismut},
@@ -108,7 +108,7 @@
     \field{year}{1999}
   \endentry
 
-  \entry{Buch_Kresch_Purbhoo_Tamvakis}{article}{}
+  \entry{Buch_Kresch_Purbhoo_Tamvakis}{article}{}{}
     \name{author}{4}{}{%
       {{hash=BAS}{%
          family={Buch},
@@ -154,7 +154,34 @@
     \field{year}{2016}
   \endentry
 
-  \entry{françois2024positiveformulaproductconjugacy}{misc}{}
+  \entry{donaldson1983new}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=DSK}{%
+         family={Donaldson},
+         familyi={D\bibinitperiod},
+         given={Simon\bibnamedelima K},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Lehigh University}%
+    }
+    \strng{namehash}{DSK1}
+    \strng{fullhash}{DSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Don83}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{2}
+    \field{pages}{269\bibrangedash 277}
+    \field{title}{A new proof of a theorem of Narasimhan and Seshadri}
+    \field{volume}{18}
+    \field{journaltitle}{Journal of Differential Geometry}
+    \field{year}{1983}
+  \endentry
+
+  \entry{françois2024positiveformulaproductconjugacy}{misc}{}{}
     \name{author}{2}{}{%
       {{hash=FQ}{%
          family={François},
@@ -186,7 +213,7 @@
     \field{year}{2024}
   \endentry
 
-  \entry{jeffrey1994extended}{article}{}
+  \entry{jeffrey1994extended}{article}{}{}
     \name{author}{1}{}{%
       {{hash=JLC}{%
          family={Jeffrey},
@@ -216,7 +243,7 @@
     \field{year}{1994}
   \endentry
 
-  \entry{jeffrey1998intersection}{article}{}
+  \entry{jeffrey1998intersection}{article}{}{}
     \name{author}{2}{}{%
       {{hash=JLC}{%
          family={Jeffrey},
@@ -250,7 +277,7 @@
     \field{year}{1998}
   \endentry
 
-  \entry{kassel2022determinantal}{article}{}
+  \entry{kassel2022determinantal}{article}{}{}
     \name{author}{2}{}{%
       {{hash=KA}{%
          family={Kassel},
@@ -284,7 +311,7 @@
     \field{year}{2022}
   \endentry
 
-  \entry{Klyachko}{article}{}
+  \entry{Klyachko}{article}{}{}
     \name{author}{1}{}{%
       {{hash=KAA}{%
          family={Klyachko},
@@ -312,7 +339,7 @@
     \field{year}{1998}
   \endentry
 
-  \entry{Knutson_Tao_honeycomb}{article}{}
+  \entry{Knutson_Tao_honeycomb}{article}{}{}
     \name{author}{2}{}{%
       {{hash=KA}{%
          family={Knutson},
@@ -346,7 +373,7 @@
     \field{year}{1999}
   \endentry
 
-  \entry{knutson2004honeycomb}{article}{}
+  \entry{knutson2004honeycomb}{article}{}{}
     \name{author}{3}{}{%
       {{hash=KA}{%
          family={Knutson},
@@ -386,7 +413,7 @@
     \field{year}{2004}
   \endentry
 
-  \entry{levy2003yang}{book}{}
+  \entry{levy2003yang}{book}{}{}
     \name{author}{1}{}{%
       {{hash=LT}{%
          family={L\'evy},
@@ -412,7 +439,7 @@
     \field{year}{2003}
   \endentry
 
-  \entry{Meinrenken_Woodward}{incollection}{}
+  \entry{Meinrenken_Woodward}{incollection}{}{}
     \name{author}{2}{}{%
       {{hash=ME}{%
          family={Meinrenken},
@@ -435,6 +462,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelalpha}{MW99}
+    \field{extraalpha}{1}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{booktitle}{Advances in geometry}
@@ -444,7 +472,40 @@
     \field{year}{1999}
   \endentry
 
-  \entry{Narasimhan_Seshadri}{article}{}
+  \entry{meinrenken1999moduli}{incollection}{}{}
+    \name{author}{2}{}{%
+      {{hash=ME}{%
+         family={Meinrenken},
+         familyi={M\bibinitperiod},
+         given={Eckhard},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Woodward},
+         familyi={W\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{MEWC2}
+    \strng{fullhash}{MEWC2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{MW99}
+    \field{extraalpha}{2}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Advances in geometry}
+    \field{pages}{271\bibrangedash 295}
+    \field{title}{Moduli spaces of flat connections on 2-manifolds, cobordism,
+  and Witten’s volume formulas}
+    \field{year}{1999}
+  \endentry
+
+  \entry{Narasimhan_Seshadri}{article}{}{}
     \name{author}{2}{}{%
       {{hash=NMS}{%
          family={Narasimhan},
@@ -477,7 +538,7 @@
     \field{year}{1965}
   \endentry
 
-  \entry{sengupta2003volume}{article}{}
+  \entry{sengupta2003volume}{article}{}{}
     \name{author}{1}{}{%
       {{hash=SAN}{%
          family={Sengupta},
@@ -505,7 +566,7 @@
     \field{year}{2003}
   \endentry
 
-  \entry{Verlinde}{article}{}
+  \entry{Verlinde}{article}{}{}
     \name{author}{1}{}{%
       {{hash=VE}{%
          family={Verlinde},
@@ -532,7 +593,7 @@
     \field{year}{1988}
   \endentry
 
-  \entry{witten1992two}{article}{}
+  \entry{witten1992two}{article}{}{}
     \name{author}{1}{}{%
       {{hash=WE}{%
          family={Witten},
