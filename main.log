@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.5.10)  11 MAR 2026 15:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.5.10)  13 MAR 2026 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -957,11 +957,11 @@ Package biblatex Info: ... file 'main.bbl' found.
 Package biblatex Info: Reference section=0 on input line 87.
 Package biblatex Info: Reference segment=0 on input line 87.
  [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<images/geodescis_cases.pdf, id=170, 372.7837pt x 112.17006pt>
+<images/geodescis_cases.pdf, id=170, 371.74081pt x 112.17006pt>
 File: images/geodescis_cases.pdf Graphic file (type pdf)
 <use images/geodescis_cases.pdf>
 Package pdftex.def Info: images/geodescis_cases.pdf  used on input line 241.
-(pdftex.def)             Requested size: 372.78278pt x 112.16977pt.
+(pdftex.def)             Requested size: 371.7399pt x 112.16977pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 253--288
 
@@ -1023,11 +1023,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 547--565
 
  []
 
-<images/loops.png, id=337, 1015.795pt x 538.01pt>
+<images/loops.png, id=337, 839.135pt x 444.66125pt>
 File: images/loops.png Graphic file (type png)
 <use images/loops.png>
 Package pdftex.def Info: images/loops.png  used on input line 581.
-(pdftex.def)             Requested size: 266.03474pt x 140.89726pt.
+(pdftex.def)             Requested size: 266.03474pt x 140.97144pt.
 <images/tree_surface_loops.pdf, id=339, 130.63605pt x 65.77072pt>
 File: images/tree_surface_loops.pdf Graphic file (type pdf)
 <use images/tree_surface_loops.pdf>
@@ -1096,7 +1096,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1373--1395
 
  []
 
-<images/labels_s_s_prime.pdf, id=481, 147.0815pt x 109.67374pt>
+<images/labels_s_s_prime.pdf, id=491, 147.0815pt x 109.67374pt>
 File: images/labels_s_s_prime.pdf Graphic file (type pdf)
 <use images/labels_s_s_prime.pdf>
 Package pdftex.def Info: images/labels_s_s_prime.pdf  used on input line 1398.
@@ -1121,7 +1121,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1505--1516
  []
 
 [15]
-<images/boundary_limit_hive.pdf, id=547, 359.99797pt x 307.014pt>
+<images/boundary_limit_hive.pdf, id=555, 359.99797pt x 307.014pt>
 File: images/boundary_limit_hive.pdf Graphic file (type pdf)
 <use images/boundary_limit_hive.pdf>
 Package pdftex.def Info: images/boundary_limit_hive.pdf  used on input line 1656.
@@ -1131,7 +1131,7 @@ Underfull \hbox (badness 1424) in paragraph at lines 1657--1657
 \OT1/cmr/m/sc/10.95 Figure 6.[]\OT1/cmr/m/n/10.95 Boundary con-di-
  []
 
-<images/dual_hive_example.pdf, id=548, 182.38239pt x 166.40268pt>
+<images/dual_hive_example.pdf, id=556, 182.38239pt x 166.40268pt>
 File: images/dual_hive_example.pdf Graphic file (type pdf)
 <use images/dual_hive_example.pdf>
 Package pdftex.def Info: images/dual_hive_example.pdf  used on input line 1663.
@@ -1182,7 +1182,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1985--2018
 
  []
 
-<toric_honey_example_triangle.pdf, id=654, 741.47816pt x 600.47139pt>
+<toric_honey_example_triangle.pdf, id=662, 741.47816pt x 600.47139pt>
 File: toric_honey_example_triangle.pdf Graphic file (type pdf)
 <use toric_honey_example_triangle.pdf>
 Package pdftex.def Info: toric_honey_example_triangle.pdf  used on input line 2022.
@@ -1192,7 +1192,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2038--2048
 
  []
 
-<images/m_edge.pdf, id=656, 378.03937pt x 140.00305pt>
+<images/m_edge.pdf, id=664, 378.03937pt x 140.00305pt>
 File: images/m_edge.pdf Graphic file (type pdf)
 <use images/m_edge.pdf>
 Package pdftex.def Info: images/m_edge.pdf  used on input line 2062.
@@ -1260,7 +1260,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2530--2544
 
  []
 
-<images/common_boundary.pdf, id=782, 573.84187pt x 329.63048pt>
+<images/common_boundary.pdf, id=790, 573.84187pt x 329.63048pt>
 File: images/common_boundary.pdf Graphic file (type pdf)
 <use images/common_boundary.pdf>
 Package pdftex.def Info: images/common_boundary.pdf  used on input line 2570.
@@ -1354,10 +1354,10 @@ Here is how much of TeX's memory you used:
  1302 hyphenation exceptions out of 8191
  84i,15n,85p,1946b,1931s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/francois/Library/texlive/2022/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtcsc10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.pdf (33 pages, 735343 bytes).
+Output written on /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.pdf (33 pages, 727165 bytes).
 PDF statistics:
- 1059 PDF objects out of 1200 (max. 8388607)
- 886 compressed objects within 9 object streams
+ 1067 PDF objects out of 1200 (max. 8388607)
+ 892 compressed objects within 9 object streams
  170 named destinations out of 1000 (max. 500000)
  260 words of extra memory for PDF output out of 10000 (max. 10000000)
 
