@@ -82,7 +82,7 @@
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{remark}[theorem]{Remark}
 
-\title{A positive formula for volumes of flat unitary connections on compact oriented surfaces}
+\title[Positive Formula for Volumes of Flat Unitary Connections]{A positive formula for volumes of flat unitary connections on compact oriented surfaces}
 \author{Quentin François, David García-Zelada, Thierry Lévy, Pierre Tarrago}
 
 \begin{document}
@@ -98,7 +98,7 @@ We provide a manifestly positive expression for the volume of flat $\U(n)$-value
 Moduli spaces of flat unitary connections have been introduced by Narasimhan and Seshadri \cite{Narasimhan_Seshadri,donaldson1983new} 
 as a way to classify vector bundles on a compact Riemann surface. As highlighted in the work of Atiyah and Bott \cite{Atiyah_Bott}, 
 these  moduli spaces are deeply related to the $\U(n)$-valued Yang-Mills measure on the corresponding surface. 
-The latter is a random $\U(n)$-valued connection weighted by its curvature and depending on a temperature parameter. As the temperature vanishes, the only surviving connections are the ones with zero curvature and the zero-limit temperature of the Yang-Mills functional yields a natural symplectic volume form on the moduli 
+The latter is a random $\U(n)$-valued connection weighted by its curvature and depending on a temperature parameter. As the temperature vanishes, the only surviving connections are the ones with zero curvature and the zero-temperature limit of the Yang-Mills functional yields a natural symplectic volume form on the moduli 
 space of flat connections.
 
 Since the paper of Atiyah and Bott, there have been several works pursuing the goal of a better understanding of either the Yang-Mills 
@@ -110,14 +110,14 @@ to compute these integers, originally due to Verlinde and later proved by Bismut
 
 
 The second work, due to Witten \cite{witten1992two}, reduces the case of an arbitrary compact oriented surface to a three-holed sphere 
-by exploiting a decomposition of pants of the surface. 
+by exploiting a pants decomposition of the surface. 
 Such a surgery procedure has since been rigorously proved several times, see \cite{jeffrey1998intersection} and \cite{Meinrenken_Woodward}. 
 Using this method, Witten successfully obtained a general formula for the volume of flat connections as a series of characters of the unitary group. 
 This first result, which is a series of complex numbers, has been improved to an alternating sum of positive numbers by Jeffrey \cite{jeffrey1994extended} 
 and then Meinrenken and Woodward \cite{Meinrenken_Woodward}.
 
-In the present paper, we provide a positive formula for the volume of such moduli spaces as  a sum of volumes of explicit finite dimensional polytopes. Denote by $M_{g,p}(\alpha_1,\ldots,\alpha_p)$ the moduli space of flat unitary connections on an oriented punctured compact surface of genus $g$ with $p$ removed points, such that the holonomy around the $i$-th point belong to an orbit $\alpha_i\subset \U(n)$ which is supposed to be non-degenerated. Then, our result may be informally stated as follows, see Theorem \ref{th:Z_g_p_0} for a precise statement:
-$$\Vol\left[M_{n,p}(\alpha_1,\ldots,\alpha_p)\right]=\left(\frac{2^{(n+1)[2]}(2\pi)^{(n-1)(n-2)}}{n!n}\right)^{2g+p-2}\frac{n}{\prod_{j=1}^{p} \Delta(\alpha_j)}\sum_{G\in \mathcal{G}^{(g,p)}}\Vol\left[P^G_{\alpha_1,\ldots,\alpha_p}\right],$$
+In the present paper, we provide a positive formula for the volume of such moduli spaces as  a sum of volumes of explicit finite dimensional polytopes. Denote by $M_{g,p}(\alpha_1,\ldots,\alpha_p)$ the moduli space of flat unitary connections on an oriented punctured compact surface of genus $g$ with $p$ removed points, such that the holonomy around the $i$-th point belongs to an orbit $\alpha_i\subset \U(n)$ which is supposed to be non-degenerate. Then, our result may be informally stated as follows, see Theorem \ref{th:Z_g_p_0} for a precise statement:
+$$\Vol\left[M_{g,p}(\alpha_1,\ldots,\alpha_p)\right]=\left(\frac{2^{(n+1)[2]}(2\pi)^{(n-1)(n-2)}}{n!n}\right)^{2g+p-2}\frac{n}{\prod_{j=1}^{p} \Delta(\alpha_j)}\sum_{G\in \mathcal{G}^{(g,p)}}\Vol\left[P^G_{\alpha_1,\ldots,\alpha_p}\right],$$
 where $\Delta$ is an explicit function involving a Vandermonde determinant and $\{P^G, G\in \mathcal{G}^{(g,p)}\}$ is a collection of explicit polytopes indexed by a family of graphs $\mathcal{G}^{(g,p)}$ and whose boundaries depend on the values of $\alpha_1,\ldots,\alpha_p$. These polytopes consist of coordinates of a collection of segments on a polygonal surface, see Figure \ref{fig:ex_g2_p_3} for a typical example of such configurations. The surface itself simply reflects the pants decomposition 
 of the original punctured oriented surface, while the collection of segments is a colored generalization of the honeycomb model introduced by 
 Knutson and Tao \cite{knutson2004honeycomb} to describe the spectrum of the sum of two hermitian matrices with prescribed spectra. 
@@ -138,7 +138,7 @@ the Riemannian metric or consider the pull-back of the canonical Lebesgue measur
 Both definitions agree in the case of a convex body (that is, a convex polytope of the same dimension as the ambient space), but they start to differ when degeneracies appear. 
 The choice of a volume form was relatively inconsequential in the case of \cite{knutson2004honeycomb}, since there was only one polytope 
 considered and the change of volume form only amounted to a change by an overall constant. 
-However, we are considering here a sum of volumes of polytopes which are degenerate and lying each of them in different subspaces of the ambient space, so that we must ensure that the chosen volumes are coherent from one polytope to the other. 
+However, we are considering here a sum of volumes of polytopes that are degenerate and each lie in different subspaces of the ambient space, so that we must ensure that the chosen volumes are coherent from one polytope to the other. 
 In \cite{françois2024positiveformulaproductconjugacy}, the correct choice was to use the pull-back corresponding to particular bijective projections. 
 
 It appears that the formulation of \cite{françois2024positiveformulaproductconjugacy} in terms of hives does not fit easily in the surgery formulas of Witten. 
@@ -214,7 +214,7 @@ The main goal of the present paper is to provide an explicit and positive formul
 \subsection{Triangular honeycomb}\label{subsec:triangular_honey} Let us a first define a triangular honeycomb, which will contribute to the volume of the moduli space in the case $g=0,p=3$, see Theorem \ref{th:volume_flat_connection_0_3}. 
 
 \noindent
-Consider $S\subset \mathbb{R}^2$, a convex subdomain of the plane. Recall that a segment of $S$ is any set of the form $\{xv+(1-x)v', 0\leq x\leq 1\}$ for some $v,v'\in S$. For any such segment $e=\{xv+(1-x)v', 0\leq x\leq 1\}$, we then set $\partial e=\{v,v'\}$ 
+Consider $S\subset \mathbb{R}^2$, a convex subdomain of the plane. Recall that a segment of $S$ is any set of the form $\{xv+(1-x)v', 0\leqslant x\leqslant 1\}$ for some $v,v'\in S$. For any such segment $e=\{xv+(1-x)v', 0\leqslant x\leqslant 1\}$, we then set $\partial e=\{v,v'\}$ 
 and denote by $\overset{\circ}{e} =e\setminus \{v,v'\}$ its interior. A segment is then called non-trivial if $\overset{\circ}{e}\not=\emptyset$. Denote by  $\mathbb{G}$ the set of non-trivial segments of $S$.
 
 If $e,e'$ are two non-trivial segments, we define the angle from $e$ to $e'$ as 
@@ -250,12 +250,12 @@ honeycombs of Definition \ref{def:toric_honeycomb}.
 \end{figure}
 
 \noindent
+Remark that our choice of colors is coherent with the colors coming from \cite{Buch_Kresch_Purbhoo_Tamvakis} 
+and \cite{françois2024positiveformulaproductconjugacy} : the colors $0$ and $1$ play a symmetric role that differs from the one played by the color $3$.
 
-Remark that our choice of colors is coherent with the colors coming from \cite{Buch_Kresch_Purbhoo_Tamvakis} and \cite{françois2024positiveformulaproductconjugacy} : the colors $0$ and $1$ play a symmetric role that differs from the one played by the color $3$.
 
 
-
-\begin{definition}
+\begin{definition}[Structure graph]
 The \textit{structure graph} of a honeycomb 
 $h$ is the finite graph $G(h)=(V,E)$ with colored edges such that $V=\bigcup_{e\in \mathcal{E}}\partial e$, $E=\{\partial e, e\in \mathcal{E}\}$, and the color map $c:E\rightarrow\{0,1,3\}$ is defined by $c(v,v')=c(e)$ if $\partial e=\{v,v'\}$.
 \end{definition}
@@ -286,7 +286,7 @@ $$\partial T=\bigsqcup_{i\in\{0,1,2\}}\partial_iT \text{ , where }
 
 \begin{definition}[Triangular honeycomb]
     \label{def:triangular_honey}
-    For $n\geq 1$, a \textit{triangular honeycomb} $h$ of size $n$ is a non-degenerate 
+    For $n\geqslant 1$, a \textit{triangular honeycomb} $h$ of size $n$ is a non-degenerate 
     honeycomb $h=(\mathcal{E},c)$ on the surface $T$ endowed 
     with the Euclidian metric such that
     \begin{enumerate}
@@ -393,16 +393,17 @@ $L_1,\ldots,L_p$. If $L_i$ a boundary component,
 there exists a triangle $T_{j_i}$ and $\ell_i\in\{0,1,2\}$ 
 such that $L_i=\partial_{\ell_i} T^{j_i}$. 
 
-For each $1\leq i\leq p+2g-2$, let $f_i:T\rightarrow \mathcal{T}$ be an orientation preserving isometry such that $f_i(T)=T^i$ (where $T^i$ is seen as a subset of $\mathcal{T}$ by the above construction). For a triangular honeycomb $h=(\mathcal{E},c)$, set $t_i(h)=\bigcup_{e\in\mathcal{E}}f_i(e)$. 
-\begin{definition}\label{def:(g,p)_honey}
-A \textit{$(g,p)$-honeycomb }is a tuple $(h^i)_{1\leq i\leq N}$ of triangular honeycombs such that\\ $t_i(h^i)_{\vert \partial_j T^i}=t_{i'}(h^{i'})_{\vert \partial_{j'}T^{i'}}$ for any $(i,j)\sim(i',j')$.
+For each $1\leqslant i\leqslant p+2g-2$, let $f_i:T\rightarrow \mathcal{T}$ be an orientation preserving isometry such that $f_i(T)=T^i$ (where $T^i$ is seen as a subset of $\mathcal{T}$ by the above construction). For a triangular honeycomb $h=(\mathcal{E},c)$, set $t_i(h)=\bigcup_{e\in\mathcal{E}}f_i(e)$. 
+\begin{definition}[$(g,p)$-honeycomb]\label{def:(g,p)_honey}
+A \textit{$(g,p)$-honeycomb }is a tuple $(h^i)_{1\leqslant i\leqslant N}$ of triangular honeycombs such that 
+$t_i(h^i)_{\vert \partial_j T^i}=t_{i'}(h^{i'})_{\vert \partial_{j'}T^{i'}}$ for any $(i,j)\sim(i',j')$.
 \end{definition} 
 See Figure \ref{fig:ex_g2_p_3} for the representation of a $(g,p)$-honeycomb for $g=2$ and $p=3$.
 \begin{remark}
 The natural euclidean metric on each equilateral 
 triangle yields a metric on $\mathcal{T}$ which is flat 
 except at the vertices of the triangulation belonging to 
-the interior of $\mathcal{T}$. Hence,  writing $h^i=(\mathcal{E}^i,c^i)$ for $1\leq i\leq 2p+g+2$, $\bigcup_{i=1}^{N}\mathcal{E}^i$ defines again a non-degenerate honeycomb on $\mathcal{T}$, where we extended Definition \ref{def:toric_honeycomb} from a subdomain of $\mathbb{R}^2$ to any locally flat Riemannian oriented surface.
+the interior of $\mathcal{T}$. Hence,  writing $h^i=(\mathcal{E}^i,c^i)$ for $1\leqslant i\leqslant 2p+g+2$, $\bigcup_{i=1}^{N}\mathcal{E}^i$ defines again a non-degenerate honeycomb on $\mathcal{T}$, where we extended Definition \ref{def:toric_honeycomb} from a subdomain of $\mathbb{R}^2$ to any locally flat Riemannian oriented surface.
 \end{remark}
 
 
@@ -416,7 +417,7 @@ E = \bigcup_{1\leqslant i\leqslant N} \{f_i(e), e\in E^i\} \ .$$
 We define a coloring of the edges of this graph by setting $c(f_i(e))=c_i(e_i)$ if $e\in E^i$.
 
 \noindent
-If $h$ is a $(g,p)$ honeycomb and $1\leq i\leq p$, we set $\partial_i h = t(h)\cap L_i$. Each element $v$ of $t(h)\cap L_i$ belongs to a unique triangle $T^{j_i}$ and inherits a triple of coordinate $(v_0,v_1,v_2)$ from this triangle.  Moreover, as in the triangular case, the orientation of $S$ yields an orientation on each boundary component. 
+If $h$ is a $(g,p)$ honeycomb and $1\leqslant i\leqslant p$, we set $\partial_i h = t(h)\cap L_i$. Each element $v$ of $t(h)\cap L_i$ belongs to a unique triangle $T^{j_i}$ and inherits a triple of coordinate $(v_0,v_1,v_2)$ from this triangle.  Moreover, as in the triangular case, the orientation of $S$ yields an orientation on each boundary component. 
 For $h\in \honey^{(g,p)}$, order the boundary points so that 
 $$t(h)\cap \bigcup_{1\leqslant i\leqslant p}L_i=\{v^{(i-1)n+j},1\leqslant i\leqslant p,j\leqslant n\},$$ 
 where  $\partial_ih=\{v^{(i-1)n+j},\, 1\leqslant j\leqslant n\}$ with $v^{(i-1)n+j}_{\ell_i+1}>  v^{(i-1)n+j'}_{\ell_i+1}$ if $1\leqslant j<j'\leqslant n$. Hence, the structure graph $G(h)$ inherits the previous order on its boundary points. 
@@ -551,7 +552,7 @@ if $v_1$ and $v_2$ are boundary components of a loop, and we write $v=s(e)$. We 
 
 \noindent
 We refer to Figure \ref{fig:fig_loops} for an example of such a configuration of loops and its corresponding 
-edge-labelled tree.In the following, let us denote by $d_v$ the degree of a vertex $v\in V$.
+edge-labelled tree. In the following, let us denote by $d_v$ the degree of a vertex $v\in V$.
 
 \begin{figure}[h!]
     \centering
@@ -1342,7 +1343,7 @@ $\ell^h(e)$ the type of $e$, defined in Definition \ref{def:triangular_honey}, (
     
     
     Since $L$ is a close polygonal curve, there are at least two consecutive vertices 
-    $z_i,z_{i+1}$  such that $\alpha_i=\alpha_{i+1}=4\pi/3$, and thus $z_i=w_{j_i}$ and $z_{i+1}=w_{j_{i+1}}$ for some $1\leq i_j\not=i_{j+1}\leq m$. 
+    $z_i,z_{i+1}$  such that $\alpha_i=\alpha_{i+1}=4\pi/3$, and thus $z_i=w_{j_i}$ and $z_{i+1}=w_{j_{i+1}}$ for some $1\leqslant i_j\not=i_{j+1}\leqslant m$. 
     Moreover, $[w_{j_i},w_{j_{i+1}}]$ is a segment, and thus $\{w_{j_i},w_{j_{i+1}}\}\in E$. 
     Since the angle from $\{v_{j_i},w_{j_i}\}$ (resp. $\{v_{j_{i+1}},w_{j_{i+1}}\}$) to 
     $\{w_{j_i},w_{j_{i+1}}\}$ 
@@ -2384,14 +2385,14 @@ for the last equality.
 
 Let $\mathcal{T}$ be an oriented surface with boundary obtained 
 by gluing $N$ equilateral triangles $T^1,\ldots,T^N$ by pairs along some of their boundaries in an orientation reversing way, 
-such that $p$ edges $L_1,\ldots,L_{p}$ of the equilateral triangles are not glued together. For each $1\leq i\leq N$, let $f_i:T\rightarrow \mathcal{T}$ be an orientation-preserving isometry from $T$ to $T^i$ (viewed as a subset of $\mathcal{T}$). For $1\leqslant j\leqslant p$, let $1 \leqslant s_j \leqslant N $ and 
+such that $p$ edges $L_1,\ldots,L_{p}$ of the equilateral triangles are not glued together. For each $1\leqslant i\leqslant N$, let $f_i:T\rightarrow \mathcal{T}$ be an orientation-preserving isometry from $T$ to $T^i$ (viewed as a subset of $\mathcal{T}$). For $1\leqslant j\leqslant p$, let $1 \leqslant s_j \leqslant N $ and 
 $ 0 \leqslant \ell_j \leqslant 2$ 
 be such that $L_j=\partial_{\ell_j}T^{s_j}$. Each edge $L_j$ has a natural orientation $\ell_j$ coming from the unique equilateral it belongs to.  
 
 \noindent
-Recall that a honeycomb on $\mathcal{T}$ is defined as a sequence $(h^i)_{1\leq i\leq N}$ of triangular honeycombs such that $t_i(h^i)_{\vert \partial_j T^i}=t_{i'}(h^{i'})_{\vert \partial_{j'}T^{i'}}$ whenever $\partial_jT^i$ is glued to $\partial_{j'}T^{i'}$, where for a triangular honeycomb $h=(\mathcal{E},c)$, $t_i(h)=\bigcup_{e\in\mathcal{E}}f_i(e)$. 
+Recall that a honeycomb on $\mathcal{T}$ is defined as a sequence $(h^i)_{1\leqslant i\leqslant N}$ of triangular honeycombs such that $t_i(h^i)_{\vert \partial_j T^i}=t_{i'}(h^{i'})_{\vert \partial_{j'}T^{i'}}$ whenever $\partial_jT^i$ is glued to $\partial_{j'}T^{i'}$, where for a triangular honeycomb $h=(\mathcal{E},c)$, $t_i(h)=\bigcup_{e\in\mathcal{E}}f_i(e)$. 
 
-Let $h=(h^i)_{1\leq i\leq N}$ be such a honeycomb and denote by $G_i=(V_i,E_i)$ the structure graph of $h^i$ for $1\leq i\leq N$. Then, the structure graph $G(h)$ of $h$, as defined after 
+Let $h=(h^i)_{1\leqslant i\leqslant N}$ be such a honeycomb and denote by $G_i=(V_i,E_i)$ the structure graph of $h^i$ for $1\leqslant i\leqslant N$. Then, the structure graph $G(h)$ of $h$, as defined after 
 Definition \ref{def:(g,p)_honey}, can be describe as 
 $$G(h)=\left(\bigcup_{i=1}^NG_i\right)_{S*S'}$$ 
 in the sense of Definition \ref{def:sieving}, 
@@ -2428,7 +2429,7 @@ $G_i$ to a map $s:\interior_3(V) \to \{-1,1\}$.
 
 \begin{definition}[Label map of a honeycomb]
     \label{def:map_L_arbitrary_honeycomb}
-Let $G=(V,E)\in\mathcal{G}_{\mathcal{T}}$ and $h=(h_i)_{1\leq i\leq N}\in \honey_{\mathcal{T}}^G$, with $h_i=(\mathcal{E}_i,c_i)$ for $1\leq i\leq N$. Let $\phi:G(h)\rightarrow G$ be the corresponding graph isomorphism. Then, the \textit{label map} $\mathcal{L}[h]$ is the element of $\Omega^1(G)$ whose value at $(v,v') \in \vec{E}$ such that $v\in \interior_3(V)$ and $\{v,v'\}=\phi(\partial e)$ for $e\in \mathcal{E}_i$ is
+Let $G=(V,E)\in\mathcal{G}_{\mathcal{T}}$ and $h=(h_i)_{1\leqslant i\leqslant N}\in \honey_{\mathcal{T}}^G$, with $h_i=(\mathcal{E}_i,c_i)$ for $1\leqslant i\leqslant N$. Let $\phi:G(h)\rightarrow G$ be the corresponding graph isomorphism. Then, the \textit{label map} $\mathcal{L}[h]$ is the element of $\Omega^1(G)$ whose value at $(v,v') \in \vec{E}$ such that $v\in \interior_3(V)$ and $\{v,v'\}=\phi(\partial e)$ for $e\in \mathcal{E}_i$ is
 $$\mathcal{L}[h](v,v')=s(v)L(e) \ ,$$
 where $L$ is the coordinate 
 map defined in Definition \ref{def:triangular_honey}. (2) for $h_i$.
@@ -3002,14 +3003,14 @@ if $v_1$ and $v_2$ are boundary components of a loop, and we write $v=s(e)$. We 
 In this section, 
 for $T \geqslant 0$ and $x,y \in \mathcal{H}$, let us denote by $k_T(x,y)$ the kernel of the unitary Dyson Brownian motion on $\mathcal{H}$ at time $T$. This kernel has an explicit expression for $x,y\in\mathcal{H}_{reg}$ as 
 \begin{equation}\label{eq:kernel_brownian}
-k_{T}(x,y)=\frac{\Delta(y)}{\Delta(x)}\det(p_T(2\pi x_i,2\pi y_j),1\leq i,j\leq n),
+k_{T}(x,y)=\frac{\Delta(y)}{\Delta(x)}\det \left[ \,p_T(2\pi x_i,2\pi y_j),1\leqslant i,j\leqslant n\right] \ ,
 \end{equation}
 where $p_{T}$ is the heat kernel of the Brownian motion on the circle $\mathbb{R}/2\pi \mathbb{Z}$.
 
 \begin{lemma}[Partition function of a cylinder]
     Let $T > 0$, $\alpha_1\in\mathcal{H},\alpha_2 \in \mathcal{H}_{reg}$. Then, the Yang-Mills partition function associated to a cylinder of volume $T$ with holonomies $\alpha_1,\alpha_2$ on its boundaries is
     \begin{equation*}
-        Z_{0, 2, T}(\alpha_1, \alpha_2) =\frac{1}{\Delta(\alpha_2)^2} k_T(\alpha_1,\alpha_2).
+        Z_{0, 2, T}(\alpha_1, \alpha_2) =\frac{1}{\Delta(\alpha_2)^2} k_T(\alpha_1,\alpha_2) \ .
     \end{equation*}
 \end{lemma}
 
@@ -3018,7 +3019,7 @@ where $p_{T}$ is the heat kernel of the Brownian motion on the circle $\mathbb{R
 \end{proof}
 
 \begin{proposition}[Volume formula for Yang-Mills partition function]\label{prop:volume_formula_yang_mills}
-    Let $ g \geqslant 0,p\geq 1$ be integers, $(\alpha_1, \dots, \alpha_p) \in \mathcal{H}^p$ 
+    Let $ g \geqslant 0,p\geqslant 1$ be integers, $(\alpha_1, \dots, \alpha_p) \in \mathcal{H}^p$ 
     and $T > 0$. Assume that loops $\gamma=\{\gamma_1,\ldots,\gamma_p\}$ associated to $\alpha_1, \dots, \alpha_p$ enclose contractible domains $D_1,\ldots,D_p$ and that $S\setminus \bigcup_{i=1}^pD_i$ has volume $T$. Then, the Yang--Mills partition function on $S\setminus \bigcup_{i=1}^pD_i$ with holonomy $\alpha_i$ around $\gamma_i$ is given by 
     \begin{equation*}
         Z_{g,p, T}(\alpha_1, \dots, \alpha_p) 
@@ -3042,15 +3043,16 @@ the volume of flat connections with holonomies $u_1,\ldots,u_p$ on the boundary,
 The proof is done by induction on the number $p$ of loops on $S$. Let $\alpha_p$ be the holonomy around the oriented loop $\gamma_p$ of $S$, and denote by $\tilde{S}$ the surface obtained by cutting $S$ along $\gamma_p$. 
 
 If $\tilde{S}=S_1\sqcup S_2$ is disconnected, with $\gamma_1$ being positively oriented on $S_1$, then by  \cite[Proposition 5.1.3]{levy2003yang}.
-$$\operatorname{YM}_{\mathcal{L}}(\alpha_1,\ldots,\alpha_p)=\operatorname{YM}_{\mathcal{L}_{1}}(\alpha_{i_1},\ldots,{i_s},\alpha_p)\operatorname{YM}_{\mathcal{L}_2}(\alpha_{j_1},\ldots,\alpha_{j_s},1-\alpha_p),$$
+$$\operatorname{YM}_{\mathcal{L}}(\alpha_1,\ldots,\alpha_p)=\operatorname{YM}_{\mathcal{L}_{1}}(\alpha_{i_1},\ldots,{i_s},\alpha_p) 
+\operatorname{YM}_{\mathcal{L}_2}(\alpha_{j_1},\ldots,\alpha_{j_s},1-\alpha_p) \ ,$$
 where $\mathcal{L}_1$ is the loop configuration given by $S_1$ together with the loops $\gamma_{i_1},\ldots,\gamma_{i_r},\gamma_{p}$ which lie on $S_1$, and $\mathcal{L}_2$ is the loop configuration given by $S_2$ and the remaining loops $\gamma_{i_1},\ldots,\gamma_{i_r},\gamma_{p}$ lying on $S_2$. 
 
 If $\tilde{S}$ is connected and $\tilde{\mathcal{L}}$ is the loop configuration on $\tilde{S}$ obtained by keeping the loops $\gamma_1,\ldots,\gamma_{p-1}$ and the two copies $\gamma_p^+,\gamma_p^-$ obtained by cutting along $\gamma_p$, then by  \cite[Proposition 5.4.3]{levy2003yang},
-$$\operatorname{YM}_{\mathcal{L}}(\alpha_1,\ldots,\alpha_p)=\operatorname{YM}_{\tilde{\mathcal{L}}}(\alpha_1,\ldots,\alpha_p,1-\alpha_p).$$
+$$\operatorname{YM}_{\mathcal{L}}(\alpha_1,\ldots,\alpha_p)=\operatorname{YM}_{\tilde{\mathcal{L}}}(\alpha_1,\ldots,\alpha_p,1-\alpha_p) \ .$$
 Iterating on all the loops yields 
 $$\operatorname{YM}_{\mathcal{L}}(\alpha_1,\ldots,\alpha_p) 
         = 
-        \prod_{v\in V}Z_{g_v, d_v,T}(\alpha_{e_1^v}, \dots, \alpha_{e_{d_v}^v}) ,$$
+        \prod_{v\in V}Z_{g_v, d_v,T}(\alpha_{e_1^v}, \dots, \alpha_{e_{d_v}^v}) \ ,$$
         where for each $v\in V$, $e_1^v, \dots, e_{d_v}^v$ are the oriented edges starting from $v$ in the graph $\mathcal{T}(\mathcal{L})$ constructed from $\mathcal{L}$ above. Using Proposition \ref{prop:volume_formula_yang_mills} yields the result.
 \end{proof}
 % \bibliographystyle{plain}

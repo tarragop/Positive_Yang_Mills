@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main"] 1773238927 "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.aux" "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.bbl" "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main" 1773436445
-  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.aux" 1773436445 23398 8fcf7de9786abe2dc08bb743dc05a173 "pdflatex"
+["bibtex /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main"] 1773764662 "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.aux" "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.bbl" "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main" 1773766147
+  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.aux" 1773766147 25099 536b1179be62423682e3a9c0e105bce7 "pdflatex"
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1643926307 65483 fc69f364ef63c07bf68a2ab4b323f197 ""
-  "main-blx.bib" 1773436445 343 93ff5ce3bbeb98b5edc177abf49766b2 ""
-  "mybib.bib" 1771842844 85560 56cec4204eafc35fbcff81bc3d32dc8d ""
+  "main-blx.bib" 1773766147 343 93ff5ce3bbeb98b5edc177abf49766b2 ""
+  "mybib.bib" 1773764519 85826 ccf114b42e4a078c87660786bad50645 ""
   (generated)
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.bbl"
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.blg"
-["pdflatex"] 1773436443 "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.tex" "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.pdf" "main" 1773436445
+["pdflatex"] 1773766145 "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.tex" "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.pdf" "main" 1773766147
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/boundary_conditions_honey.pdf" 1769604735 78211 262291546e681fe80e0ecb4910addd5a ""
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/boundary_limit_hive.pdf" 1763638745 53327 b4799cf086039fe6c91ac646309f2187 ""
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/common_boundary.pdf" 1763638745 61194 6ebc8be5218c0dec800cf4bb0db65a6f ""
@@ -16,12 +16,11 @@
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/labels_s_s_prime.pdf" 1769868905 58929 90611aaf59719abd9da96acb6d73f8d9 ""
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/loops.png" 1773436413 56023 f7ae7ec6b098f4ead0b9787a4a00495c ""
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/m_edge.pdf" 1771864365 51330 fe6d5b27ea5a48ab9ee19909ed961705 ""
-  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/images/tree_surface_loops.pdf" 1773436040 60154 4a442a148f91e4c0545e171ee3e97984 ""
-  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.aux" 1773436445 23398 8fcf7de9786abe2dc08bb743dc05a173 "pdflatex"
-  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.bbl" 1773238927 15474 f9df48f4f542b1b3bff8b8a614a6358d "bibtex /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main"
-  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.out" 1773436445 5996 893bb93785f066208eeb5e57e854d8aa "pdflatex"
-  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.run.xml" 1773436445 2523 2f5b492d83eb5511f5f79b5dd5ceb93d "pdflatex"
-  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.tex" 1773238941 188387 749c6972b6bc6d568f3a816b6aa68d07 ""
+  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.aux" 1773766147 25099 536b1179be62423682e3a9c0e105bce7 "pdflatex"
+  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.bbl" 1773764662 17196 4ed7072704163e3d2979a175a5f5e070 "bibtex /Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main"
+  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.out" 1773766147 6156 651fd002e426e85b3c2f34ba5456f0d2 "pdflatex"
+  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.run.xml" 1773766147 2523 2f5b492d83eb5511f5f79b5dd5ceb93d "pdflatex"
+  "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/main.tex" 1773766145 195214 c0549edf446d6b3e28b0c0fde95669e9 ""
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/toric_honey_example_3_4_5_6_7_sparse.pdf" 1771863277 37098 5b5bb6fca395968f29c7e435722288ca ""
   "/Users/francois/Library/CloudStorage/OneDrive-UniversitéParis-Dauphine/Bureau/local_tex/Yang_mills_project/Positive_Yang_Mills/toric_honey_example_triangle.pdf" 1767549466 30277 d7637dbf43fd5d4ee08009dabbcc9043 ""
   "/Users/francois/Library/texlive/2022/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk" 1740937992 7808 c8cf67d6ef5603a15900ff53c314420b ""
@@ -137,6 +136,7 @@
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex" 1601326656 21989 fdc867d05d228316de137a9fc5ec3bbe ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex" 1601326656 8893 e851de2175338fdf7c17f3e091d94618 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex" 1601326656 4202 b95061a2334c704bfa941fb8d5c0d0a2 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex" 1601326656 3937 3f208572dd82c71103831da976d74f1a ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex" 1601326656 3931 8b99416ab2e0d0d6af4e0cc444f11055 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex" 1608933718 11518 738408f795261b70ce8dd47459171309 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex" 1621110968 186007 6e7dfe0bd57520fd5f91641aa72dcac8 ""
