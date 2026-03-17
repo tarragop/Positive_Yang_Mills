@@ -14,6 +14,7 @@
 \usepackage{stmaryrd}
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\usetikzlibrary{positioning}
 \usepackage{makecell}
 \usepackage{mathtools}
 \usepackage{hyperref}
@@ -115,17 +116,18 @@ Using this method, Witten successfully obtained a general formula for the volume
 This first result, which is a series of complex numbers, has been improved to an alternating sum of positive numbers by Jeffrey \cite{jeffrey1994extended} 
 and then Meinrenken and Woodward \cite{Meinrenken_Woodward}.
 
-In the present paper, we provide a positive formula for the volume of such moduli spaces as  a sum of volumes of explicit finite dimensional polytopes. 
-These polytopes consist of coordinates of a collection of geodesics in a polygonal surface. The surface itself simply reflects the pants decomposition 
-of the corresponding punctured oriented surface, while the collection of geodesics is a colored generalization of the honeycomb model introduced by 
+In the present paper, we provide a positive formula for the volume of such moduli spaces as  a sum of volumes of explicit finite dimensional polytopes. Denote by $M_{g,p}(\alpha_1,\ldots,\alpha_p)$ the moduli space of flat unitary connections on an oriented punctured compact surface of genus $g$ with $p$ removed points, such that the holonomy around the $i$-th point belong to an orbit $\alpha_i\subset \U(n)$ which is supposed to be non-degenerated. Then, our result may be informally stated as follows, see Theorem \ref{th:Z_g_p_0} for a precise statement:
+$$\Vol\left[M_{n,p}(\alpha_1,\ldots,\alpha_p)\right]=\left(\frac{2^{(n+1)[2]}(2\pi)^{(n-1)(n-2)}}{n!n}\right)^{2g+p-2}\frac{n}{\prod_{j=1}^{p} \Delta(\alpha_j)}\sum_{G\in \mathcal{G}^{(g,p)}}\Vol\left[P^G_{\alpha_1,\ldots,\alpha_p}\right],$$
+where $\Delta$ is an explicit function involving a Vandermonde determinant and $\{P^G, G\in \mathcal{G}^{(g,p)}\}$ is a collection of explicit polytopes indexed by a family of graphs $\mathcal{G}^{(g,p)}$ and whose boundaries depend on the values of $\alpha_1,\ldots,\alpha_p$. These polytopes consist of coordinates of a collection of segments on a polygonal surface, see Figure \ref{fig:ex_g2_p_3} for a typical example of such configurations. The surface itself simply reflects the pants decomposition 
+of the original punctured oriented surface, while the collection of segments is a colored generalization of the honeycomb model introduced by 
 Knutson and Tao \cite{knutson2004honeycomb} to describe the spectrum of the sum of two hermitian matrices with prescribed spectra. 
 The fact that our model is a generalization of \cite{knutson2004honeycomb} should not be a surprise, since the solution of the eigenvalue problem 
 for the sum of hermitian matrices yields a particular subexample of a flat connection on a three-holed sphere, see \cite{Klyachko, belkale2008quantum}. 
-Actually, this subexample has been used to get the previously mentioned signed formula for the volume of the moduli spaces on the three-holed sphere, see \cite{Meinrenken_Woodward}.
+Actually, this subexample has been used to get the previously mentioned signed formulas for the volume of the moduli spaces on the three-holed sphere, see \cite{Meinrenken_Woodward}.
 
 
 The proof of the present result is mainly based on the positive formula given in \cite{françois2024positiveformulaproductconjugacy} in the case of the three-holed sphere. 
-Roughly speaking, this formula has been obtained by following the initial method of Verlinde together with the recent results on the computation 
+Roughly speaking, this formula had been obtained by following the initial method of Verlinde together with the recent results on the computation 
 of the structure constants of the quantum cohomology of the Grassmannians \cite{Buch_Kresch_Purbhoo_Tamvakis}. 
 In \cite{françois2024positiveformulaproductconjugacy}, the formula was given in terms of volumes of a so-called coloured hive model, 
 which consists of a union of some explicit but degenerate polytopes. 
@@ -136,8 +138,7 @@ the Riemannian metric or consider the pull-back of the canonical Lebesgue measur
 Both definitions agree in the case of a convex body (that is, a convex polytope of the same dimension as the ambient space), but they start to differ when degeneracies appear. 
 The choice of a volume form was relatively inconsequential in the case of \cite{knutson2004honeycomb}, since there was only one polytope 
 considered and the change of volume form only amounted to a change by an overall constant. 
-However, we are considering here a sum of volume of polytopes, each of them degenerate and being in different subspaces of the ambient space, 
-and we thus have to ensure that the chosen volumes are coherent from one polytope to the other. 
+However, we are considering here a sum of volumes of polytopes which are degenerate and lying each of them in different subspaces of the ambient space, so that we must ensure that the chosen volumes are coherent from one polytope to the other. 
 In \cite{françois2024positiveformulaproductconjugacy}, the correct choice was to use the pull-back corresponding to particular bijective projections. 
 
 It appears that the formulation of \cite{françois2024positiveformulaproductconjugacy} in terms of hives does not fit easily in the surgery formulas of Witten. 
@@ -204,8 +205,8 @@ $$\mathcal{H}_{reg}^0=\left\{\theta\in \mathcal{H} \;
 \theta_1>\theta_2>\ldots>\theta_n \text{ and }\sum_{i=1}^n \theta_i\in\mathbb{N}\right\}.$$
 Consider the moduli space $\mathcal{M}_{g, n}(\alpha_1, \dots, \alpha_p)$ of flat $\U(n)$-valued connections 
 on a compact oriented surface with genus $g$ having $p$ 
-boundary components $L_1,\ldots,L_p$, for which the holonomy around 
-each $L_i$, $1\leqslant i\leqslant p$, belongs to 
+boundary components $\mathcal{L}_1,\ldots,\mathcal{L}_p$, for which the holonomy around 
+each $\mathcal{L}$, $1\leqslant i\leqslant p$, belongs to 
 $\mathcal{O}_{\alpha_i}$. Then, there is a symplectic structure on the quotient space $M_{g, n}(\alpha_1, \dots, \alpha_p)=\mathcal{M}_{g, n}(\alpha_1, \dots, \alpha_p)/\mathcal{G}_n$, where $\mathcal{G}_n$ is the $\U(n)$-valued gauge group on the surface, see \cite{meinrenken1999moduli}. The space $M_{g, n}(\alpha_1, \dots, \alpha_p)$ inherits thus a canonical volume form from the symplectic form. 
 
 The main goal of the present paper is to provide an explicit and positive formula for the corresponding volume of $M_{g, n}(\alpha_1, \dots, \alpha_p)$. This formula is given in terms of certain configurations of lines, called honeycomb, which are a generalization of the honeycomb model introduced in \cite{knutson2004honeycomb} and are described in the next two paragraphs.
@@ -486,16 +487,16 @@ canonical Riemannian metric on $\mathbb{R}^{E^{(g,p)}}$. Hence,
 \end{equation}
 In the following statement, we write $\Vol(K)$ for the integration of $ \diff \Vol$ on a 
 $n_{g,p}$-dimensional submanifold and we let $\Delta(x)=2^{n(n-1)/2}\prod_{i<j}\sin(\pi(x_i-x_j))$ 
-denotes the absolute value of the Vandermonde determinant of $(e^{ix_j})_{1\leqslant j\leqslant n}$.
+denote the absolute value of the Vandermonde determinant of $(e^{ix_j})_{1\leqslant j\leqslant n}$.
 
+Let $Z_{g, p}(\alpha_1, \dots, \alpha_p)$ be the volume function for the moduli space of flat unitary connections on a compact oriented surface with genus $g$ and with $p$ boundary components around which the holonomies belong to $\alpha_1,\ldots,\alpha_p$. Since the product of the determinant of the holonomies around the removed point is the identity, $Z_{g, p}(\alpha_1, \dots, \alpha_p)$ is non-zero only if $\sum_{i=1}^p\vert \alpha_i\vert\in \mathbb{N}$, where $\vert x\vert=\sum_{j=1}^n\vert x_j\vert$ for $x\in \mathbb{R}^n$.
 \begin{theorem}[Volume formula for $(g, p)$ partition function]
     \label{th:Z_g_p_0}
-    Let $Z_{g, p, 0}(\alpha_1, \dots, \alpha_p)$ be the volume function for the moduli space of flat connection on a compact oriented surface 
-    with $p$ boundary components and with genus $g$. 
-    Then, for $\alpha_1, \dots, \alpha_p\in\mathcal{H}_{reg}$ such that $\sum_{i=1}^p\vert \alpha_i\vert_1\in \mathbb{N}$, we have
+    
+    For $\alpha_1, \dots, \alpha_p\in\mathcal{H}_{reg}$ such that \\ $\sum_{i=1}^p\vert \alpha_i\vert\in \mathbb{N}$, 
     \begin{equation}
         \label{eq:Z_g_p_0}
-        Z_{g, p, 0}(\alpha_1, \dots, \alpha_p) = 
+        Z_{g, p}(\alpha_1, \dots, \alpha_p) = 
         \frac{c_{0,3}^{N}}{n^{2g+p-3}\prod_{j=1}^{p} \Delta(\alpha_j)}
         \sum_{\substack{ G \in \mathcal{G}^{(g,p)}}}
         \frac{\Vol \left[ \honey^G(\alpha_1, 
@@ -505,10 +506,9 @@ denotes the absolute value of the Vandermonde determinant of $(e^{ix_j})_{1\leqs
 \end{theorem}
 
 \noindent
-The sum on the right hand-side is finite, 
-since each set $\mathcal{G}_{d}^{(g,p)}$ is finite and $d\leqslant n-1$. 
+The sum on the right hand-side is finite since the set $\mathcal{G}^{(g,p)}$ is finite. 
 As it will appear below, for given $\alpha_1, \dots, \alpha_p\in\mathcal{H}_{reg}$ 
-the volumes appearing in the sum will be non-zero only for $G\in \mathcal{G}_{d}^{(g,p)}$ 
+the volumes appearing in the sum will be non-zero only for a subset $G\in \mathcal{G}_{d}^{(g,p)}$ 
 where $d=\sum_{i=1}^p\sum_{j=1}^n\alpha_j^i-(p-2)n$. 
 \\
 The formula of Theorem \ref{th:Z_g_p_0} also yields a formula for 
@@ -521,9 +521,9 @@ There are several other conventions to define the volume of flat connections, de
 
 \begin{remark}[Volume and conditioned processes]\label{rmk:_volume_conditioned_process}
 For each $G\in\mathcal{G}^{(g,p)}$, choosing a spanning tree $S\subset E^{(g,p)}$ of $G$ yields a natural parametrization of $\honey^G(\alpha_1,\ldots,\alpha_p)$ in terms of  the coordinates $P(e),e\in S$. By construction, each of those coordinates belongs to $[0,1]$. Considering the uniform probability measure on $[0,1]^S$, one can prove that the formula $\frac{\Vol \left[ \honey^G(\alpha_1, 
-        \dots, \alpha_p) \right]}{\sqrt{\# \mbox{ Spanning trees of } G}}$ is then exactly the probability that the vector $(L(e))_{e\in S}$ belongs to some convex set $K_G$, see Lemma \ref{lem:product_gluing} for a definition of $K_G$. After the summation on all graphs $G$, $Z_{g,p,0}(\alpha_1,\ldots,\alpha_p)$ can be seen as the probability that a random process remains in a union of convex set, up to an explicit constant. Visually, the non-conditioned process would allow segments to exit the domain and to meet at the trivalent vertices with angles being any multiple of $\pi/3$. 
+        \dots, \alpha_p) \right]}{\sqrt{\# \mbox{ Spanning trees of } G}}$ is then exactly the probability that the vector $(L(e))_{e\in S}$ belongs to some convex set $K_G$, see Lemma \ref{lem:differential_gluing_honey} for a definition of $K_G$. After the summation on all graphs $G$, $Z_{g, p}(\alpha_1,\ldots,\alpha_p)$ can be seen as the probability that a random process remains in a union of convex set, up to an explicit constant. Visually, the non-conditioned process would allow segments to exit the domain and to meet at the trivalent vertices with angles being any multiple of $\pi/3$. 
 \end{remark}
-\subsection{Yang-Mills marginal for disjoint curves}
+\subsection{Yang-Mills marginal for disjoint curves}\label{subsec:Yang-mills_result}
 As a consequence of Theorem \ref{th:Z_g_p_0}, there is an explicit formula 
 for the marginal of $\U(n)$-valued Yang--Mills partition function of an
 oriented surface 
@@ -541,19 +541,17 @@ $\Gamma_1,\ldots,\Gamma_p$ on $S$. For each
 $\Gamma_i, \,1\leqslant i\leqslant p$, let $\alpha_i$ be an element of 
 $\mathcal{H}_{reg}$.
 \\
-We associate to $(S,\Gamma_1,\ldots,\Gamma_p)$ a labeled finite directed graph $\mathcal{T}=(V,E)$ such that vertices are labeled by $\mathbb{R}_{\geqslant 0} \times \mathbb{N}$ and directed edges are labeled by $\mathcal{H}_{reg}$ as follows :
+We associate to $(S,\Gamma_1,\ldots,\Gamma_p)$ a labeled finite directed graph $\mathcal{T}=(V,E)$ such that vertices are labelled by $\mathbb{R}_{\geqslant 0} \times \mathbb{N}$ and directed edges are labelled by $\mathcal{H}_{reg}$ as follows :
 \begin{itemize}
 \item the set $V$ of vertices of $\mathcal{T}$ is the set of connected components of $S\setminus \bigcup_{i=1}^p\Gamma_i$. 
-Each vertex $v\in V$ is labeled $(A_v,g_v)$ where $A_v$ is the area of the corresponding connected component and $g_v$ is its genus.
-\item For $v_1,v_2\in V$, there is a direct edge $e$ between $v_1$ and $v_2$ 
-if $v_1$ and $v_2$ are boundary components of a loop. Since loops of $\mathcal{L}$ are non-intersecting, each boundary component corresponds to a unique loop $\Gamma_j$ of $\mathcal{L}$, and we label the corresponding edge $e$ by $\alpha_j$ of $1-\alpha_j$ depending on the orientation of the curve around the surface $v_1$.
+Each vertex $v\in V$ is labelled $(A_v,g_v)$ where $A_v$ is the area of the corresponding connected component and $g_v$ is its genus.
+\item For $v_1,v_2\in V$, there is a directed edge $e$ from $v_1$ to $v_2$ 
+if $v_1$ and $v_2$ are boundary components of a loop, and we write $v=s(e)$. We label the corresponding oriented edge $e$ by $\alpha_e$, with the condition that $\alpha_{\bar{e}}=1-\alpha_e$ if $\bar{e}$ is the oriented edge $(v_2,v_1)$.
 \end{itemize}
 
 \noindent
 We refer to Figure \ref{fig:fig_loops} for an example of such a configuration of loops and its corresponding 
-edge-labeled tree.In the following, let us denote by $d_v$ the degree of a vertex $v\in V$. For $T \geqslant 0$ and $x,y \in \mathcal
-H$, let us denote by $p_T(x,y)$ the projection of the heat kernel 
-on $\U(n)$ to $\mathcal{H}$.
+edge-labelled tree.In the following, let us denote by $d_v$ the degree of a vertex $v\in V$.
 
 \begin{figure}[h!]
     \centering
@@ -564,12 +562,36 @@ on $\U(n)$ to $\mathcal{H}$.
     \hfill
     \begin{minipage}{0.35\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/tree_surface_loops.pdf}
+    \scalebox{0.7}{\begin{tikzpicture}[
+    vertex/.style={minimum size=1cm},
+    edge/.style={thick}
+]
+
+% Définition des sommets, plus espacés
+\node[vertex] (v7) {$v_7$};
+\node[vertex, above right=1cm and 0.5cm of v7] (v6) {$v_6$};
+\node[vertex, below right=1cm and 0.5cm of v6] (v5) {$v_5$};
+\node[vertex, above right=0.5cm and 1cm of v5] (v3) {$v_3$};
+\node[vertex, above left=1cm and 0.5cm of v3] (v4) {$v_4$};
+\node[vertex, below right=1cm and 0.3cm of v3] (v2) {$v_2$};
+\node[vertex, below left=0.5cm and 1cm of v2] (v1) {$v_1$};
+
+% Arêtes labélisées et incurvées
+\draw[edge] (v2) to [bend right] node[above] {$\Gamma_1$} (v1);
+\draw[edge] (v2) edge[loop above] node {$\Gamma_2$} ();
+\draw[edge] (v2) to [bend left] node[left] {$\Gamma_3$} (v3);
+\draw[edge] (v3) to [bend right] node[above] {$\quad\Gamma_4$} (v4);
+\draw[edge] (v3) to [bend left] node[left] {$\Gamma_5\quad$} (v5);
+\draw[edge] (v5) to[bend right] node[above] {   $\quad\Gamma_6$} (v6);
+\draw[edge] (v5) to[bend left] node[above] {$\Gamma_7$} (v7);
+
+\end{tikzpicture}}
     \end{minipage}
-    \caption{A disjoint loops configurations and its corresponding edge-labeled tree}
+    \caption{A disjoint loops configuration and its corresponding edge-labelled tree}
     \label{fig:fig_loops}
 \end{figure}
-
+ For $T \geqslant 0$ and $x,y \in \mathcal
+H$, let us denote by $k_T(x,\cdot)$ the transition kernel from $x$ to $y$ of the unitary Dyson Brownian motion on $\mathcal{H}$, which is the projection on $\mathcal{H}$ of the $\U(n)$-valued Brownian motion starting at $\mathcal{O}(x)$, see \eqref{eq:kernel_brownian}.
 
 \begin{corollary}[Yang-Mills partition function]
     \label{cor:yang_mills_g_p}
@@ -579,17 +601,16 @@ on $\U(n)$ to $\mathcal{H}$.
         \label{eq:yang_mills_marginal_g_p}
         \operatorname{YM}(\alpha_1,\ldots,\alpha_p) 
         =\int_{\mathcal{H}^{\sum_{i=1}^{\#V}d_v}} 
-        \prod_{v\in V}Z_{g, p, 0}(\mu_1^v, \dots, \mu_{v_v}^v) 
-        \prod_{e_i, v\in e_i}p_{A_v/d_v}(\mu_i^v,\alpha_i) 
-        \prod V(\mu_i^v)^2\diff \mu_i^v \ ,
+        \prod_{v\in V}Z_{g_v, d_v}(\mu_1^v, \dots, \mu_{d_v}^v) 
+        \prod_{e\in E, v=s( e)}k_{A_v/d_v}(1-\mu_i^v,\alpha_e) 
+        \diff \mu_i^v \ ,
     \end{equation}
-where $Z_{0, 1, 0}(\mu)=\delta_{0}$, 
-$Z_{0,2,0}(\mu,\nu)=\delta_{\mu=\nu}$ and $Z_{g,p,0}$ 
+where $Z_{0, 1}(\mu)=\delta_{0}$ and $Z_{g, p}$ 
 is given in \eqref{eq:Z_g_p_0} otherwise.
 \end{corollary}
 
 \begin{remark}[Yang-Mills marginals and conditioned processes]\label{rmk:Yang-Mills_volume_conditioned_process}
-As a consequence of Theorem \ref{th:Z_g_p_0} and Remark \ref{rmk:_volume_conditioned_process}, the latter formula express the partition function $ \operatorname{YM}(\alpha_1,\ldots,\alpha_p)$ as the probability that a random process remains in some domain and has the right boundary values. This random process consists in concatenations of Brownian motions on circle and straight paths in some frozen domains and the domain of restriction corresponds to the condition of being non-crossing for the Brownian motion and yielding $(g,p)-$honeycombs in the frozen domains. It would be interesting to see wether such interpretation allows simulations of a generical process contributing to the formula \eqref{eq:yang_mills_marginal_g_p}.
+As a consequence of Theorem \ref{th:Z_g_p_0} and Remark \ref{rmk:_volume_conditioned_process}, the latter formula expresses the partition function $ \operatorname{YM}(\alpha_1,\ldots,\alpha_p)$ as the probability that a random process remains in some domain and has the right boundary values. This random process consists in concatenations of Brownian motions on circle and straight paths in some frozen domains and the domain of restriction corresponds to the condition of being non-crossing for the Brownian motion and yielding $(g,p)-$honeycombs in the frozen domains. It would be interesting to see wether such interpretation allows simulations of a generical process contributing to the formula \eqref{eq:yang_mills_marginal_g_p}.
 \end{remark}
 
 
@@ -1504,7 +1525,7 @@ $H_{d, n} = (R_{d, n}, E_{d, n})$ with vertices $R_{d, n}$ and edges $E_{d, n}$.
 Each vertex $v=r+se^{\pi i/3}\in H_{d,n}$ comes with a coordinate 
 $(v_0,v_1,v_2)=(n+d-r-s,r,s)$. 
 Each edge $e$ of $H_{d,n}$ written  $e=(v,v - e^{2\pi i\ell/3})$ with $\ell\in\{0,1,2\}$ is 
-labeled $(\ell(e),h(e))\in\{0,1,2\}\times \{0,\ldots,n+d\}$ with 
+labelled $(\ell(e),h(e))\in\{0,1,2\}\times \{0,\ldots,n+d\}$ with 
 \begin{equation}
     \label{eq:def_type_height_dual_hive}
     \ell(e)=\ell \text{ and } h(e)= v_{\ell} \ .
@@ -2166,9 +2187,9 @@ that $(v,w)<(v',w')$ is and only if $\{v,w\}<\{v',w'\}$ in the former sense.
     \label{cor:paramietrization_label}
     For a color map $C$ and $G^C\in \mathcal{G}_d$,
     $$\mathcal{L} \left(\honey_{n,d}^{G^C}(\alpha,\beta,\gamma) \right) 
-    = \mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma})\cap K^C \ ,$$
-    where $K^C\subset \Omega^1(G^C)$ is the cone defined as 
-    $$K^C = \left\{\omega \in \Omega^1(G^C) \mid 
+    = \mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma})\cap K_{G^C} \ ,$$
+    where $K_{G^C}\subset \Omega^1(G^C)$ is the cone defined as 
+    $$K_{G^C} = \left\{\omega \in \Omega^1(G^C) \mid 
     \vert \omega(e)\vert<\vert \omega(e')\vert\,\text{ if } e<e' \right\}.$$ 
 \end{corollary}
 
@@ -2199,7 +2220,7 @@ that $(v,w)<(v',w')$ is and only if $\{v,w\}<\{v',w'\}$ in the former sense.
     \Psi^{-1}\left(\mathcal{K}_{<}\right).$$
     One then checks that $\Psi^{-1}(\mathcal{H}^C(\alpha,\beta,\gamma)) = 
     \mathcal{F}_{G^C}(\alpha,\beta,\gamma)$ 
-    and $\Psi^{-1}(\mathcal{K}_{<})=K^C$. 
+    and $\Psi^{-1}(\mathcal{K}_{<})=K_{G^C}$. 
 \end{proof}
 
 
@@ -2291,7 +2312,7 @@ which has thus affine with integer coefficients in the canonical basis
 and is a bijection from $\Omega^1(R)$ to $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma})$. 
 Since, by Proposition \ref{prop:honey_hive} and Corollary \ref{cor:paramietrization_label}, 
 $\Psi^C:\Omega^1(G^C)\rightarrow \mathbb{E}^{E_{n,d}}$ is an affine integral map 
-and a bijection from $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))\cap K^C$ to $\dualhive^C
+and a bijection from $\mathcal{F}_{G^C}(\phi_{\alpha,\beta,\gamma}))\cap K_{G^C}$ to $\dualhive^C
 (\alpha,\beta,\gamma)$ and by (1) above, $Rot[C\rightarrow C_0]$ is an integral isomorphism from $\dualhive^C(\alpha,\beta,\gamma)$ 
 to $\dualhive^{C_0}(\alpha,\beta,\gamma)$. We deduce that 
 $$p_{S}\circ Rot[C\rightarrow C_0]\circ \Psi^C\circ i_R: \Omega^1(R) \rightarrow \R^S$$
@@ -2461,9 +2482,11 @@ V\rightarrow\mathbb{R}$ by
     $$\mathcal{L}(\honey_{\mathcal{T}}^G(\gamma^{(1)}, 
     \ldots,\gamma^{(p)})) = 
     \mathcal{F}_{G}(\phi_{\gamma^{(1)},\ldots,\gamma^{(p)}}) 
-    \cap (K_{G_1}\times \dots\times K_{G_N}) \ ,$$
-    where $i(G)=(G_1,\ldots,G_N)$ and where $\Omega^1(G)$ 
-    is identified with $\prod_{i=1}^N\Omega^1(G_i)$. 
+    \cap K_G \ ,$$
+    where $i(G)=(G_1,\ldots,G_N)$, $\Omega^1(G)$ 
+    is identified with $\prod_{i=1}^N\Omega^1(G_i)$ and 
+    $$K_G=K_{G_1}\times \dots\times K_{G_N},$$
+    with $K_{G_i}$ defined in Corollary \ref{cor:paramietrization_label}.
 \end{lemma}
 
 Let us introduce some notations to prove this lemma. Set $n(\mathcal{T})=\frac{3N-p}{2}$ and denote 
@@ -2473,7 +2496,6 @@ Each $B_j$ is then adjacent to two triangles $T^{r^{(1)}_j}$ and $T^{r^{(2)}_j}$
 and there exists $\ell^{(1)}_j,\ell^{(2)}_j$ such that 
 $B_j=\partial_{\ell^{(1)}_j}T^{r^{(1)}_j}=\partial_{\ell^{(2)}_j}T^{r^{(2)}_j}$.
 \noindent
-We then write $K_{G}=K_{G_1}\times \dots\times K_{G_N}$.
 
 \begin{proof}
     Let $G = (V, E)\in\mathcal{G}_T$. 
@@ -2959,7 +2981,7 @@ since $c_{g,p}=\frac{c_{g,p-1}c_{0,3}}{n}$.
 \section{Yang-Mills partition function on compact oriented surfaces}
 \label{sec:proof_positive_area}
 
-The goal of this section is to derive an explicit volume formula 
+The goal of this section is to prove Corollary \ref{cor:yang_mills_g_p}, which provides an explicit volume formula 
 for the marginal Yang–Mills partition function on an oriented surface of genus $g$ 
 with prescribed non-degenerate holonomies (up to conjugation) 
 along a finite collection of disjoint loops. 
@@ -2967,64 +2989,69 @@ As shown in \cite{levy2003yang}, this partition function depends
 only on the prescribed conjugacy classes and on the areas of the 
 connected components delimited by the loops. 
 
-\begin{definition}[Disjoint loops configuration]
-A \textit{disjoint loops configuration} $\mathcal{L}=(S,\Gamma_1,\ldots,\Gamma_p)$ 
-is the data of a compact oriented surface together with $p$ disjoints 
-Jordan curves $\Gamma_1,\ldots,\Gamma_p$ on $S$ and for each 
-$\Gamma_i, \,1\leqslant i\leqslant p$ an element $\alpha_i\in \mathcal{H}_{reg}$.
-A \textit{skeleton} is the data of a labeled finite graph $\mathcal{T}=(V,E)$ such vertices are labeled by $\R_{\geqslant 0} \times \mathbb{N} $ 
-and edges are labeled by elements of $\mathcal{H}_{reg}$.
-\end{definition} 
-
-To each disjoint loops configuration $\mathcal{L}$, one associates a skeleton $\mathcal{T}(\mathcal{L})$ as follows :
+To each disjoint loops configuration $\mathcal{L}$, recall the construction of the oriented graph $\mathcal{T}(\mathcal{L})=(V,E)$ from Section \ref{subsec:Yang-mills_result} :
 \begin{itemize}
 \item the set $V$ of vertices of $\mathcal{T}(\mathcal{L})$ is the set of connected components of $S\setminus \bigcup_{i=1}^p\Gamma_i$. 
-Each vertex $v\in V$ is labeled $(A_v,g_v)$ where $A_v \geqslant 0$ is the area of the corresponding connected component and $g_v \in \N$ is its genus.
-\item For $v_1,v_2\in V$, there is an edge $e$ between $v_1$ and $v_2$ 
-if $v_1$ and $v_2$ are boundary components of a loop.
-Since loops of $\mathcal{L}$ are non-intersecting, each boundary component corresponds to a unique loop $\Gamma_j$ of $\mathcal{L}$, and then we label $\alpha_j$ the edge $e$.
+Each vertex $v\in V$ is labelled $(A_v,g_v)$ where $A_v$ is the area of the corresponding connected component and $g_v$ is its genus.
+\item For $v_1,v_2\in V$, there is a directed edge $e$ from $v_1$ to $v_2$ 
+if $v_1$ and $v_2$ are boundary components of a loop, and we write $v=s(e)$. We label the corresponding oriented edge $e$ by $\alpha_e$, with the condition that $\alpha_{\bar{e}}=1-\alpha_e$ if $\bar{e}$ is the oriented edge $(v_2,v_1)$.
 \end{itemize}
+
 
 \noindent
 In this section, 
-for $T \geqslant 0$ and $x,y \in \SU(n)$, let us denote by $p_T(x,y)$ the projection of the heat kernel 
-on $\U(n)$ to $\mathcal{H}$ and $p_T(x) = p_T(\mathrm{id}, x)$.
+for $T \geqslant 0$ and $x,y \in \mathcal{H}$, let us denote by $k_T(x,y)$ the kernel of the unitary Dyson Brownian motion on $\mathcal{H}$ at time $T$. This kernel has an explicit expression for $x,y\in\mathcal{H}_{reg}$ as 
+\begin{equation}\label{eq:kernel_brownian}
+k_{T}(x,y)=\frac{\Delta(y)}{\Delta(x)}\det(p_T(2\pi x_i,2\pi y_j),1\leq i,j\leq n),
+\end{equation}
+where $p_{T}$ is the heat kernel of the Brownian motion on the circle $\mathbb{R}/2\pi \mathbb{Z}$.
 
 \begin{lemma}[Partition function of a cylinder]
-    Let $T > 0$, $\alpha_1,\alpha_2 \in \mathcal{H}_{reg}$. Then,
+    Let $T > 0$, $\alpha_1\in\mathcal{H},\alpha_2 \in \mathcal{H}_{reg}$. Then, the Yang-Mills partition function associated to a cylinder of volume $T$ with holonomies $\alpha_1,\alpha_2$ on its boundaries is
     \begin{equation*}
-        Z_{0, 2, T}(\alpha_1, \alpha_2) =\frac{1}{\Delta(\alpha_2)^2} p_T(\alpha_1,\alpha_2) \ ,
+        Z_{0, 2, T}(\alpha_1, \alpha_2) =\frac{1}{\Delta(\alpha_2)^2} k_T(\alpha_1,\alpha_2).
     \end{equation*}
- where $p_T$ is the heat kernel at time $T$ of the Dyson Brownian motion on $\mathcal{H}$ starting at $\alpha_1$.
 \end{lemma}
 
 \begin{proof}
     This is a consequence of \cite[Proposition 4.2.4 and $(5.3)$]{levy2003yang}.
 \end{proof}
 
-\begin{proposition}[Volume formula for Yang-Mills partition function]
-    Let $p, g \geqslant 0$ be integers, $(\alpha_1, \dots, \alpha_p) \in \mathcal{H}^p$ 
-    and $T > 0$. Assume that loops $\gamma_1,\ldots,\gamma_p$ associated to $\alpha_1, \dots, \alpha_p$ enclose contractible domains $D_1,\ldots,D_p$ with 
-    respective areas $t_1, \dots, t_p$ and that the area of $S\setminus \bigcup_{i=1}^pD_i$ is $T$. Then, the Yang--Mills partition function is given by 
+\begin{proposition}[Volume formula for Yang-Mills partition function]\label{prop:volume_formula_yang_mills}
+    Let $ g \geqslant 0,p\geq 1$ be integers, $(\alpha_1, \dots, \alpha_p) \in \mathcal{H}^p$ 
+    and $T > 0$. Assume that loops $\gamma=\{\gamma_1,\ldots,\gamma_p\}$ associated to $\alpha_1, \dots, \alpha_p$ enclose contractible domains $D_1,\ldots,D_p$ and that $S\setminus \bigcup_{i=1}^pD_i$ has volume $T$. Then, the Yang--Mills partition function on $S\setminus \bigcup_{i=1}^pD_i$ with holonomy $\alpha_i$ around $\gamma_i$ is given by 
     \begin{equation*}
-        Z_{g, p, T}(\alpha_1, \dots, \alpha_p) 
-        = \int_\mathcal{H} Z_{g, p, 0}(\alpha_1, \dots, \alpha_{p-1}, u) \, 
-        Z_{0, 2, T}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \Delta(u)^2\diff u \ .
+        Z_{g,p, T}(\alpha_1, \dots, \alpha_p) 
+        =\int_{\mathcal{H}} Z_{g, p}(u_1, \dots, u_p) \, 
+        \prod_{i=1}^pk_{\frac{T}{p}}(1-u,\alpha_i)  \prod_{\ell=1}^p\diff u_i  \ .
     \end{equation*}
 \end{proposition}
 
 \begin{proof}
-Recall that the partition function is invariant by area preserving diffeomorphism. Let us introduce a curve $\gamma$ enclosing the curve $\gamma_p$ such that the area of the domain enclosed by $\gamma_p$ and $\gamma$ is $T'$, with $0< T'< T$. Then, by the Markov property of the Yang-Mills partition function, see \cite[Proposition 5.1.2]{levy2003yang} or \cite[Eq. (2.63)]{witten1992two},
+Recall that the partition function is invariant by area preserving diffeomorphisms. Let us introduce a curve $\gamma$ enclosing the curve $\gamma_p$ such that the area of the domain enclosed by $\gamma_p$ and $\gamma$ is $T'$, with $0< T'< T$. Then, by the Markov property of the Yang-Mills partition function, see \cite[Proposition 5.1.2]{levy2003yang} or \cite[Eq. (2.63)]{witten1992two},
 $$Z_{g, p, T}(\alpha_1, \dots, \alpha_p)=\int_{\mathcal{H}} Z_{g, p, T-T'}(\alpha_1, \dots, \alpha_{p-1}, u) \, 
-        Z_{0, 2, T'}(u^{-1}, \alpha_p) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \Delta(u)^2\diff u \ .$$
+        Z_{0, 2, T'}(1-u, \alpha_p) \Delta(u)^2\diff u \ .$$
 Choosing $T'=T(1-\frac{1}{p})$ and doing the same for the $p-1$ other curves yields
-$$Z_{g, p, T}(\alpha_1, \dots, \alpha_p)=\int_{\mathcal{H}} Z_{g, p, 0}(u_1, \dots, u_p) \, 
-        \prod_{i=1}^pZ_{0, 2, \frac{T}{p}}(u_i^{-1}, \alpha_i) \prod_{\ell=1}^p p_{t_\ell}(\alpha_\ell) \prod_{i=1}^p \left(\Delta(u_i)^2\diff u_i \right)\ ,$$
-where $Z_{g,p,0}(u_1, \dots, u_p)$, 
+$$Z_{g, p, T}(\alpha_1, \dots, \alpha_p)=\int_{\mathcal{H}} Z_{g, p}(u_1, \dots, u_p) \, 
+        \prod_{i=1}^pk_{\frac{T}{p}}(1-u_i, \alpha_i)\prod_{i=1}^p \diff u_i \ ,$$
+where $Z_{g, p}(u_1, \dots, u_p)=Z_{g, p,0}(u_1, \dots, u_p)$ is the 
 the volume of flat connections with boundary holonomies $u_1,\ldots,u_p$, see \cite{sengupta2003volume}. 
 \end{proof}
 \begin{proof}[Proof of Corollary \ref{cor:yang_mills_g_p}]
-The corollary is then a deduction of the latter proposition, the Markov properties of the Yang-Mills marginal, see \cite[Proposition 5.1.2]{levy2003yang} and Theorem \ref{th:Z_g_p_0}. The proof is done by induction on the number $M$ of vertices of the skeleton $\mathcal{T}(\mathcal{L})$. If $M=1$, any curve is 
+
+The proof is done by induction on the number $p$ of loops on $S$. Let $\alpha_p$ be the holonomy around the oriented loop $\gamma_p$ of $S$, and denote by $\tilde{S}$ the surface obtained by cutting $S$ along $\gamma_p$. 
+
+If $\tilde{S}=S_1\sqcup S_2$ is disconnected, with $\gamma_1$ being positively oriented on $S_1$, then by  \cite[Proposition 5.1.3]{levy2003yang}.
+$$\operatorname{YM}_{\mathcal{L}}(\alpha_1,\ldots,\alpha_p)=\operatorname{YM}_{\mathcal{L}_{1}}(\alpha_{i_1},\ldots,{i_s},\alpha_p)\operatorname{YM}_{\mathcal{L}_2}(\alpha_{j_1},\ldots,\alpha_{j_s},1-\alpha_p),$$
+where $\mathcal{L}_1$ is the loop configuration given by $S_1$ together with the loops $\gamma_{i_1},\ldots,\gamma_{i_r},\gamma_{p}$ which lie on $S_1$, and $\mathcal{L}_2$ is the loop configuration given by $S_2$ and the remaining loops $\gamma_{i_1},\ldots,\gamma_{i_r},\gamma_{p}$ lying on $S_2$. 
+
+If $\tilde{S}$ is connected and $\tilde{\mathcal{L}}$ is the loop configuration on $\tilde{S}$ obtained by keeping the loops $\gamma_1,\ldots,\gamma_{p-1}$ and the two copies $\gamma_p^+,\gamma_p^-$ obtained by cutting along $\gamma_p$, then by  \cite[Proposition 5.4.3]{levy2003yang},
+$$\operatorname{YM}_{\mathcal{L}}(\alpha_1,\ldots,\alpha_p)=\operatorname{YM}_{\tilde{\mathcal{L}}}(\alpha_1,\ldots,\alpha_p,1-\alpha_p).$$
+Iterating on all the loops yields 
+$$\operatorname{YM}_{\mathcal{L}}(\alpha_1,\ldots,\alpha_p) 
+        = 
+        \prod_{v\in V}Z_{g_v, d_v,T}(\alpha_{e_1^v}, \dots, \alpha_{e_{d_v}^v}) ,$$
+        where for each $v\in V$, $e_1^v, \dots, e_{d_v}^v$ are the oriented edges starting from $v$ in the graph $\mathcal{T}(\mathcal{L})$ constructed from $\mathcal{L}$ above. Using Proposition \ref{prop:volume_formula_yang_mills} yields the result.
 \end{proof}
 % \bibliographystyle{plain}
 % \bibliography{mybib}

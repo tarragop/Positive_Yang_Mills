@@ -416,7 +416,7 @@
   \entry{levy2003yang}{book}{}{}
     \name{author}{1}{}{%
       {{hash=LT}{%
-         family={L\'evy},
+         family={L{\'e}vy},
          familyi={L\bibinitperiod},
          given={T.},
          giveni={T\bibinitperiod},
@@ -426,7 +426,7 @@
     \strng{fullhash}{LT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{L\'03}
+    \field{labelalpha}{L{\'e}v03}
     \field{sortinit}{L}
     \field{sortinithash}{L}
     \verb{doi}
